@@ -1,0 +1,15 @@
+
+//includecodefrom(4200) //QID for Remapping and Rondomize
+//includecodefrom(4001)  //QID of Background Code 1
+//includecodefrom(4002) //QID of Background Code 2
+includecodefrom(4647)
+includecodefrom(4648)
+includecodefrom(4649)
+
+
+<script type="text/javascript">
+includeqtextfrom(4647)
+includeqtextfrom(4648)
+$SettingsJS
+</script>
+includeqtextfrom(4649)

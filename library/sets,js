@@ -1,0 +1,62 @@
+//mergearrays(array,array): Combines two arrays into one long array
+//unionarrays(array,array): Unions two arrays, preventing duplicates, into a new array
+//intersectarrays(array,array): Finds the intersection of two arrays
+//diffarrays(array1,array2): Returns all elements in array1 that are not also in array2
+
+
+function union_arrays (x, y) {
+  var obj = {};
+  for (var i = x.length-1; i >= 0; -- i)
+     obj[x[i]] = x[i];
+  for (var i = y.length-1; i >= 0; -- i)
+     obj[y[i]] = y[i];
+  var res = []
+  for (var k in obj) {
+    if (obj.hasOwnProperty(k))  // <-- optional
+      res.push(obj[k]);
+  }
+  return res;
+}
+
+function intersection_array (x,y) {
+  var reshash=[], res=[];
+  for(var i=0;i<x.length;i++)
+    reshash[x[i]]=true;
+  for(var i=0;i<y.length;i++)
+    if(reshash[y[i]]) res.push(y[i]);
+  return res;
+}
+
+
+function intersection_destructive(a, b)
+{
+  // arrays a,b will be destroyed after intersection
+  // furthermore a and b have to sorted
+  var result = new Array();
+  while( a.length > 0 && b.length > 0 )
+  {  
+     if (a[0] < b[0] ){ 
+     	a.shift(); 
+     } else if (a[0] > b[0] ){ b.shift(); }
+     else /* they're equal */
+     {
+       result.push(a.shift());
+       b.shift();
+     }
+  }
+  return result;
+}
+
+function difference_array(x, y)
+{
+  var diffhash=[], diff=[];
+  for(var i=0;i<x.length;i++)
+    diffhash[x[i]]=true;
+  for(var i=0;i<y.length;i++)
+    if(diffhash[y[i]]) delete diffhash[y[i]];
+    else diffhash[y[i]]=true;
+  for(var k in diffhash)
+    diff.push(k);
+  return diff;
+}
+

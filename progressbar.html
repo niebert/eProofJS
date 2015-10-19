@@ -1,0 +1,57 @@
+<html>
+<head>
+	<TITLE>Processbar</TITLE>
+ 
+<script language="javascript">
+function ProcessBar__QID__ () {
+
+	//---Methods----------------------------
+	this.progressStep = function () {
+		var x = document.getElementById("xProgressBar");
+		var y = document.getElementById("yTimeLeft");
+		if ((y.innerHTML).length > 0) {
+        	x.innerHTML +="o";
+        	var ys = y.innerHTML; 
+        	y.innerHTML = ys.substr(1,ys.length);
+       } else {
+			this.stop();
+			//clearInterval(this.aCycle);
+			//y.innerHTML = x.innerHTML;
+			//x.innerHTML = "";
+       }
+	};
+	this.init = function (pCount) {
+		var x = document.getElementById("xProgressBar");
+		var y = document.getElementById("yTimeLeft");
+		x.innerHTML = "";
+		var i=0;
+		y.innerHTML ="";
+		while (i!=pCount) {
+			y.innerHTML +="o";
+			i++;
+		};
+	}
+	this.start = function () {
+		this.aCycle = setInterval("vProcessBar.progressStep();", 500);
+   }
+   this.stop = function () {
+	  	clearInterval(this.aCycle);
+	}
+}	
+var vProcessBar = new ProcessBar__QID__();
+</SCRIPT>
+</head>
+<body>
+<div id="dPROCESSBAR">
+  <table border=1 align="center" cellspacing="0"><tr><td><table border="0" align="center"><tr><td id="xProgressBar" bgcolor="blue" style="color:blue" ></td><td id="yTimeLeft"  style="color:white">ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</td></tr></table></td></tr></table>
+</div>  
+<form>
+	<button onclick="vProcessBar.stop()">Increase Process</button>
+</form>
+<script language="javascript">
+var vProcessBar = new ProcessBar__QID__();
+vProcessBar.init(20);
+vProcessBar.start();
+</SCRIPT>
+</body>
+</html>

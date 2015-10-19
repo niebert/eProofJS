@@ -1,0 +1,36 @@
+TODO:
+[X] "Load XML" and "Load XML please Wait" double ALERT
+[X] "Save" and "Save IMath please Wait"  double ALERT
+[X] Suggestion for first Step does not work
+[] Search for unused Steps in the Solution and store as List in Element id="USEDIDS__QID__"
+[] Authoring ON is not applied on Justifications
+[] Randomize Steps creates Error for Suggestions does not work
+[] ExportID Does not work 
+[] Delete Steps in Authoring Mode with [X] does not work.
+[] AuthoringMode > Insert Solution 4 StudentAnswer > generate the Solution for StudentAnswer
+FINAL:
+[] Remove Debug setting
+
+TUTORIAL:
+[] MY-Steps may not have a "_F3" extension as distraktor
+
+LOGIC:
+[] Wenn Step oder Justification unused mark Step/Just as "FALSE" or "UNUSED"
+"FALSE" if ID contains "_F
+[] <OUTSTEP class="MARKUSED_SID" id="MARKUNUSED_SID-S3">UNUSED</OUTSTEP> insert in getStepDefHTML()
+
+ERROR:
+Add a new conclusion with an ID "MY1_F2" causes an Error in Authoring-Tool:
+updateMappedID() for vID=[MY1_F2] failed! MappedID for [MY1] does not exist!
+A Mapped-ID for [MY1_F] 2*a+2*b exists.
+
+MESSAGE:
+calcPath(' ','C2')-Error: No Solution Path exists! for new conclusions [C..]
+
+
+AUTO-GENERATED eProofJS Body for IMathAS
+----------------------------------------
+PROOFCONTROL DIV must be set to    style="display:none"
+MAINCONTROL  DIV must be set to    style="display:none"
+
+  

@@ -1,0 +1,55 @@
+//--------------------------------------
+//---TheoremHTML------------------------
+//--------------------------------------
+$TheoremHTML = "<hr/><h2>".$STR_Theorem.": " 
+$TheoremHTML .= " (".$Theorem_Title.")</h2>"
+
+//--------------------------------------
+//---PRECONDITIONS SINGLE MULTI---------
+
+$PreconditionCount         = count($Precondition)-1
+if (count($Precondition) < 1) {
+   $ErrorHTML .= "<hr><b>WARNING:</b> "
+   $ErrorHTML .= "This question is an <a href=\"http://e-proof.weebly.com\" target=\"_blank\">e-Proof</a> and "
+   $ErrorHTML .=  "should contain Preconditions. Please create at least one Preconditions for the Proof.<hr/>"
+   $AuthoringMode = 1
+} else if (count($Precondition) > 1) {
+   $PreconditionSingle_Multi = $STR_Precondition_Multi
+} else {
+   $PreconditionSingle_Multi = $STR_Precondition_Single
+}
+//--------------------------------------
+//-----CONCLUSIONS SINGLE MULTI---------
+//--------------------------------------
+if (count($Conclusion) > 1) {
+   $ErrorHTML .= "<hr><b>WARNING:</b> "
+   $ErrorHTML .= "This question is an <a href=\"http://e-proof.weebly.com\" target=\"_blank\">e-Proof</a> and "
+   $ErrorHTML .=  "should contain <u>Conclusions</u>. Please create at least one Conclusions for the Proof.<hr/>"
+   $AuthoringMode = 1
+} else if (count($Conclusion) > 1) {
+  $ConclusionSingle_Multi = $STR_Conclusion_Multi
+} else {
+  $ConclusionSingle_Multi = $STR_Conclusion_Single
+}
+//---------------------------
+//----PreconditionHTML------
+$vHTML = "<ul>"
+$max_i = count($Precondition)-1
+for ($i=0..$max_i) {
+     $vHTML .= "<li>[".$PreconditionID[$i]."] ".$Precondition[$i]."</li>"
+}
+$vHTML .= "</ul>"
+$PreconditionHTML .= $vHTML
+$TheoremHTML .= $PreconditionSingle_Multi.$PreconditionHTML
+//---------------------------
+//----ConclusionHTML---------
+$vHTML = "<ul>"
+$max_i = count($Conclusion)-1
+for ($i=0..$max_i) {
+     $vHTML .= "<li>[".$ConclusionID[$i]."] ".$Conclusion[$i]."</li>"
+}
+$vHTML .= "</ul><hr/>"
+$ConclusionHTML .= $vHTML
+$TheoremHTML .= $ConclusionSingle_Multi.$ConclusionHTML 
+//-------------------------------------
+//-------------------------------------

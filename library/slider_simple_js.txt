@@ -1,0 +1,39 @@
+<body onload="drawszlider(121, 56);">
+
+Place this code where you want your slider to appear:
+
+<div id="szlider">
+    <div id="szliderbar">
+    </div>
+    <div id="szazalek">
+    </div>
+</div>
+
+You have to style the progress bar and the text indicating the actual percentage. The default CSS file fooks something like this:
+
+#szlider{
+    width:100%;
+    height:15px;
+    border:1px solid #000;
+    overflow:hidden; }
+#szliderbar{
+    width:37%;
+    height:15px;
+    border-right: 1px solid #000000;
+    background: #d65946; }
+#szazalek {
+    color: #000000;
+    font-size: 15px;
+    font-style: italic;
+    font-weight: bold;
+    left: 25px;
+    position: relative;
+    top: -16px; }
+
+Finally a very short and simple JavaScript code. You will have to call this function to draw the slider. It has twho attributes, the first is the full width and the second is the actual state. For example if you want to display 50 percent call the function drawszlider(100,50) but you get the same result for drawszlider(30,15).
+
+function drawszlider(ossz, meik){
+    var szazalek=Math.round((meik*100)/ossz);
+    document.getElementById("szliderbar").style.width=szazalek+'%';
+    document.getElementById("szazalek").innerHTML=szazalek+'%';
+}
