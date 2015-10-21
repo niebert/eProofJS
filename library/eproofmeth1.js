@@ -233,10 +233,15 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	//# Nested: getIMathEProofInnerHTML()
 	//#################################################################
-	this.getIMathEProofInnerHTML = function(cln,pQID,pThisQ,pSID) {
+	this.getIMathEProofInnerHTML = function(cln,pQID,pThisQ,pSID,pMode) {
 		//------------------------------
 		//---OPERATION on innerHTML-----
 		//------------------------------
+		var vMode = "DEFAULT";
+		if (pMode) {
+			// e.g. pMode = "AUTHORING" or "DEBUG";
+			vMode = pMode;
+		};
 		var vControl = this.getChildById(cln,"PROOFCONTROL"+this.aQID);
 		this.hideNode(vControl);
 		vControl = this.getChildById(cln,"MAINCONTROL"+this.aQID);
@@ -250,6 +255,7 @@ function appendMethods_EProof__SID__ () {
 		vOut = this.replaceString(vOut,"__SID__",vSID);
 		vOut = this.replaceString(vOut,"__QID__",vQID);
 		vOut = this.replaceString(vOut,"__THISQ__",vThisQ);
+		vOut = this.replaceString(vOut,"vRootID,'AUTHORING'","vRootID,'DEFAULT'");
 		//vOut = this.replaceString(vOut,"\t"," ");
 		vOut = this.replaceString(vOut,"\t","");
 		//---Remove HTML Comments-------
@@ -716,7 +722,7 @@ function appendMethods_EProof__SID__ () {
 		vReturn += vStartJS + vMathJaxPath + "MathJax.js?config=" + vMathJaxConfig + vEndJS;
 		//vReturn += this.LT+"script src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML\""+this.GT+""+this.LT+"/script"+this.GT+this.CR;
 		//vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","_SID"); 
-		vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","__SID__"); 
+		vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","__SID__","DEFAULT"); 
 		return vReturn;	
 	};
 	//#################################################################

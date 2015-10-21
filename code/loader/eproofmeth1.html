@@ -5,7 +5,7 @@
 //# Author of Class:      Engelbert Niehaus                    
 //# email:                niehaus@uni-landau.de                 
 //# created               24.2.2015             
-//# last modifications    13.10.2015 15:37:27            
+//# last modifications    20.10.2015 09:01:23            
 //# GNU Public License - OpenSource
 //# created with JavaScript Class Generator by Engelbert Niehaus 
 //#################################################################
@@ -690,7 +690,12 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	this.getWeeblyEProof = function(pLibPath,pMathJaxPath,pMathJaxConfig) {
 		var vLoadXML = this.getChildById(this.aRootDOM,"tLOAD"+this.aQID);
-		var vLibPath  = pLibPath || "http://math.uni-landau.de/javascript/eProofJS/library/";
+		//var vLibPath  = pLibPath || "http://math.uni-landau.de/javascript/eProofJS/library/";
+		// In Weebly local theme files are referenced
+		//<script type="text/javascript" src="/files/theme/plugin.js" ></script>
+		//<script type="text/javascript" src="/files/theme/mobile.js" ></script>
+		//<script type="text/javascript" src="/files/theme/custom.js" ></script>
+		var vLibPath  = pLibPath || "/files/theme/";
 		var vMathJaxPath = pMathJaxPath || "http://cdn.mathjax.org/mathjax/latest/";
 		var vMathJaxConfig = pMathJaxConfig || "AM_HTMLorMML"; 
 		if (pMathJaxConfig == "LaTeX") {
@@ -711,7 +716,7 @@ function appendMethods_EProof__SID__ () {
 		vReturn += vStartJS + vMathJaxPath + "MathJax.js?config=" + vMathJaxConfig + vEndJS;
 		//vReturn += this.LT+"script src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML\""+this.GT+""+this.LT+"/script"+this.GT+this.CR;
 		//vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","_SID"); 
-		vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","_SID"); 
+		vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","__SID__"); 
 		return vReturn;	
 	};
 	//#################################################################
@@ -720,7 +725,7 @@ function appendMethods_EProof__SID__ () {
 	this.getWrappedHTML = function(pString)
 	{
 		var vDate = new Date().toLocaleString();
-		//pString = pString.replace(/13.10.2015 15:37:27/g,vDate);
+		//pString = pString.replace(/20.10.2015 09:01:23/g,vDate);
 		var vHTML = this.LT+"HTML"+this.GT+this.CR;
 		vHTML += "  "+this.LT+"HEAD"+this.GT+this.CR;
 		vHTML += "    "+this.LT+"META http-equiv='Content-Type' content='text/html"+this.CO+" charset=UTF-8'"+this.GT+this.CR;
@@ -1309,12 +1314,6 @@ function appendMethods_EProof__SID__ () {
 		};
 	};
 	//#################################################################
-	//# Nested: submit2IMathAS
-	//#################################################################
-	this.submit2IMathAS = function () {
-		alert("submit e-Proof to IMathAS-System setting['Offline']="+this.aOffline);
-	};
-	//#################################################################
 	//# Nested: selectCheck(pSelectID)
 	//#################################################################
 	this.selectCheck = function (pSelectID) {
@@ -1339,34 +1338,54 @@ function appendMethods_EProof__SID__ () {
 	this.selectSuggestion = function (pStep) {
 		var vCon = this.getElementById("inCONSUGGESTION"+this.aQID+pStep).value;
 		var vID = this.getElementById("inIDSUGGESTION"+this.aQID+pStep).value;
+		var vNextID = this.getElementById("NEXT"+this.aQID+pStep).value;
+		var vMoveNode = true;
+		if (vID == vNextID) {
+			vMoveNode = false;
+			alert("MOVING not necessary in selectSuggestion():1351");
+		};
 		if (vID == "") {
 			alert("WARNING: No Step ID was selected!"+this.CR+"selectSuggestion()");
 		} else if (vCon == "") {
 			alert ("WARNING: No Connection was selected!"+this.CR+"selectSuggestion()");
 		} else {
-			//alert("selectSuggestion():1342 vID=["+vID+"]"); 
-			this.aStudentAnswerList = this.getAllSteps("SCAN");
-			var vSelIndex = this.getIndex4ID(vID);
-			//var vSelIndex = this.aID2Index[vID];
-			var vSelStep = this.aIndex2Step[vSelIndex];
-			var vSelNode = this.aStep2SA[vSelStep];
+			//alert("selectSuggestion():1342 find SelNode for vID=["+vID+"]"); 
+			var vListSA = document.getElementsByClassName("STUDENTANSWER"+this.aQID);
+			var vSelIndex = 0;
+			var vFound = false;
+			var vSelNode = null;
+			while ((!vFound) && (vSelIndex != vListSA.length)) {
+				vSelNode = vListSA[vSelIndex];
+				var vCheckID = this.getChildByClassName(vSelNode,"inSTEPID"+this.aQID).value;
+				if (vCheckID == vID) {
+					vFound = true;
+				} else {
+					vSelIndex++
+				};
+			};
+			//alert("selectSuggestion():1371 SelNode for vID=["+vID+"] vMapID=["+this.aMappedID[vID]+"] found at index="+vSelIndex); 
+			//----END search SelNode -- does not work as subroutine-Call-----
+			//var vSelStep = vSelNode.getAttribute("step"); //does not work Offline
+			var vSelStep = this.getChildByClassName(vSelNode,"STEPNR"+this.aQID).value;
+			//alert("selectSuggestion():1375 vSelStep="+vSelStep);
 			var vConNode = this.getChildById(vSelNode,"sCONNECTION"+this.aQID+vSelStep);
 			var vPosNode = this.getChildById(vSelNode,"sPOSITION"+this.aQID+vSelStep);
-			//alert("vCon="+vCon+" selectSuggestion("+pStep+") vNewStep="+vSelStep);
+			//alert("vCon="+vCon+" ID=["+vCheckID+"] selectSuggestion("+pStep+") vNewStep="+vSelStep);
 			if (!vSelNode) {
-				alert("vSelNode undefined - selectSuggestion():1364");
+				alert("vSelNode undefined - selectSuggestion():1357");
 			};
 			if (vConNode) {
 				vConNode.value = vCon;
 			} else {
-				alert("vConNode undefined - selectSuggestion():1364");
+				alert("vConNode undefined - selectSuggestion():1362");
 				vCon=1;
 			};
 			this.updateConnection(vConNode);
 			//---Move selected Node to follwing new Index-----------
-			var vNewIndex = (this.getIndex4Step(pStep) || 0) + 1;
-			var vNewStep = this.aIndex2Step[vNewIndex];
-			//alert("selectSuggestion() vID=["+vID+"] vSelIndex="+vSelIndex+" vNewIndex="+vNewIndex); 
+			var vSugNodeIndex = this.getElementById("oldPOSITION"+this.aQID+pStep).value;
+			var vNewIndex = parseInt(vSugNodeIndex+"") + 1;
+			var vNewStep = pStep; //this.aIndex2Step[vNewIndex];
+			//alert("selectSuggestion("+pStep+") vID=["+vID+"] vSelIndex="+vSelIndex+" vNewIndex="+vNewIndex); 
 			var vIDm = this.aMappedID[vID]; 
 			if (this.lower(vSelIndex,vNewIndex)) {
 				if (vSelIndex != 0)	{	
@@ -1374,15 +1393,22 @@ function appendMethods_EProof__SID__ () {
 					alert("WARNING: Step ["+vIDm+"] already used at position "+vSelIndex+". Step will be moved to positon "+vNew+".");
 				};
 			};
+			//--------------------------------------------------------------------
+			//---Provide User Feedback for Selected Step--------------------------
+			//--------------------------------------------------------------------
 			alert(vLanguage["Suggestion"]+" ("+vNewIndex+"): "+this.vConnectionArray[vCon]+" ["+vIDm+"] ");			
+			//--------------------------------------------------------------------
+			//---Now we can move the selected step to the appropriate position----
 			var vUsedList = this.getUsedSteps();
-			alert("vSelIndex="+vSelIndex+" vNewIndex="+vNewIndex+" vUsedList.length="+vUsedList.length);
+			//alert("vSelIndex="+vSelIndex+" vNewIndex="+vNewIndex+" vUsedList.length="+vUsedList.length+" selectSuggestion():1379");
 			if (this.greater(vNewIndex,vUsedList.length) ) {
-				alert("Append Selected Step ["+vIDm+"]");
+				//alert("Append Selected Step ["+vIDm+"]");
 				vNewIndex = 0;
 			};
-			alert("selectSuggestion() vCon="+vCon+" vMappedID="+this.aMappedID[vID]+" vSelIndex="+vSelIndex+" vNew="+vNewIndex+" vNewStep="+vNewStep);
-			this.moveStep(vSelIndex+1,vNewIndex);
+			//alert("selectSuggestion():1384 vCon="+vCon+" vMappedID="+this.aMappedID[vID]+" vSelIndex="+vSelIndex+" vNew="+vNewIndex+" vNewStep="+vNewStep);
+			if (vMoveNode) {
+				this.moveStep(vSelIndex,vNewIndex);
+			};
 			this.hide("SUGGESTIONS"+this.aQID+pStep);
 		};
 	};

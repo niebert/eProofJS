@@ -511,9 +511,9 @@
 					<TR class="SAVEXMLAREA__QID__" id="SAVEXMLAREA__QID__" style="display:none" >
 						<TD align="center">
 							<h2>SAVE File</h2>
-							<INPUT type="checkbox" class="checkUSESOLUTION__QID__" id="checkUSESOLUTION__QID__" checked onchange="vEProof__QID__.saveOnChange()" > Use Solution
-							<INPUT type="checkbox" class="checkENCRYPT__QID__" id="checkENCRYPT__QID__" onchange="vEProof__QID__.saveOnChange()" > Encrypt Solution
-							<INPUT type="checkbox" class="checkSTUDANSWERSOLUTION__QID__" id="checkSTUDANSWERSOLUTION__QID__" onchange="vEProof__QID__.saveOnChange()" > Append Student Answer to Solution
+							<INPUT type="checkbox" class="checkUSESOLUTION__QID__" id="checkUSESOLUTION__QID__" onchange="vEProof__QID__.saveOnChange()" style="display:none"> <!-- Use Solution -->
+							<INPUT type="checkbox" class="checkSTUDANSWERSOLUTION__QID__" id="checkSTUDANSWERSOLUTION__QID__" checked onchange="vEProof__QID__.saveOnChange()" > Student Answer to Solution
+							<INPUT type="checkbox" class="checkENCRYPT__QID__" id="checkENCRYPT__QID__" onchange="vEProof__QID__.saveOnChange()" > Encrypt IMathAS-Solution 
 							<INPUT type="checkbox" class="checkSTUDANSWEREXPORT__QID__" id="checkSTUDANSWEREXPORT__QID__" onchange="vEProof__QID__.saveOnChange()" > Export Student Answer
 							<BR>
 							File Format:
@@ -540,9 +540,11 @@
 							<HR>Weebly Export:<BR>
 							<TEXTAREA name="tWEEBLYEXPORT__QID__" class="tWEEBLYEXPORT__QID__" id="tWEEBLYEXPORT__QID__" cols="100" rows="6"  wrap="off">
 							</TEXTAREA>
-							<HR>iMathAS - Common Control for Settings:<BR>
-							<TEXTAREA name="tIMATHCOMMONCONTROL_I__QID__" class="tIMATHCOMMONCONTROL_I__QID__" id="tIMATHCOMMONCONTROL_I__QID__" cols="100" rows="6"  wrap="off">
-							</TEXTAREA>
+							<DIV id="exportSETTINGSEXTRA" style="display:none">
+								<HR>iMathAS - Common Control for Settings:<BR>
+								<TEXTAREA name="tIMATHCOMMONCONTROL_I__QID__" class="tIMATHCOMMONCONTROL_I__QID__" id="tIMATHCOMMONCONTROL_I__QID__" cols="100" rows="6"  wrap="off">
+								</TEXTAREA>
+							</DIV>
 						</TD>
 					</TR>
 					<TR class="PREFERENCESAREA__QID__" id="PREFERENCESAREA__QID__" style="display:none">
@@ -993,7 +995,7 @@ __do__so+=1
 											  <li><b><font color="red">[X]</font>-Button:</b> Mit dem <font color="red">[X]</font>-Knopf in dem jeweilgen Beweisschritt kann man das Beweisfragment aus Ihrem Beweis entfernen. Dieser ist dann aber nicht unwiederbringlich gel&ouml;scht, sondern kann unten bei [Nicht verwendete Beweisschritte] mit [+] wieder eingeblendet werden.</li>
 											  <li><b><font color="green">[Vorschlag]</font>-Button:</b> Mit dem <font color="green">[Vorschlag]</font>-Knopf kann man Vorschl&auml;ge anzeigen lassen. Die Vorschl&auml;ge werden f&uuml;r den nachfolgenden Beweisschritt angezeigt. Wenn der <font color="green">[Vorschlag]</font>-Knopf gefr&uuml;ckt wurde, kann es zu Punktabz&uuml,gen kommen, wenn das im e-Beweis so eingestellt wurde. Eine Vorschlagsauswahl ersetzt dann den Beweisschritt nachfolgenden Beweisschritt entsprechend. Der Vorschlagsknopf am Ende des Beweis hängt einen neuen Beweisschritt an den Beweis an.</li>
 											  <li><b>Nicht verwendete Beweisschritte:</b> In einem Beweis k&ouml;nnen auch Beweisschritte enthalten, die nicht f&uuml;r den Beweis notwendig sind. Diese landen hinter dem Beweis unten auf der Seite in einem Container der <i>"nicht verwendeten Beweisschritte"</i>. Auch gel&ouml;schte Beweisfragemente finden sich hier. Mit dem [+] oder der Angabe der Position im Beweis kann man diese wieder an einer bestimmten Stelle in Ihren Beweis integrieren.</li>
-											  <li><b>Editierbare Beweisschritte [EDIT]:</b> Wenn ein Beweisfragement den Identifikator [MY..] besitzt, kann dieser auch ver&auml;ndert werden. Um den Beweisschritt zu ver&auml;ndern, klicken Sie auf den [EDIT]-Knopf, der aber nur angezeigt wird, wenn die Einstellungen des e-Beweises dieses vorsehen.</li>
+											  <li><b>Editierbare Beweisschritte [EDIT]:</b> Wenn ein Beweisfragement den Identifikator [MY..] besitzt, kann dieser auch ver&auml;ndert werden. Um den Beweisschritt zu ver&auml;ndern, klicken Sie auf den [EDIT]-Knopf, der aber nur angezeigt wird, wenn die Einstellungen des e-Beweises dieses vorsehen. </li>
 											  <li><b>Ausblenden der Hilfe:</b> Diese Hilfe kann wieder ausgeblendet werden, wenn Sie unten erneut auf den Hilfe-Knopf oder oben neben der &Uuml;berschrift <b>Hilfe</b> auf [X] dr&uuml;cken.</li>
 											</ul>
 										</DIV>
@@ -1005,13 +1007,13 @@ __do__so+=1
 											<tbody>
 												<tr>
 													<td class="EPROOFLINKS__QID__" id="LINKHEADERURL1__QID__">
-														<b>Information:</b> &nbsp;&nbsp; <a href="" target="_blank">Tutorial</a>
+														<b>Information:</b> &nbsp;&nbsp; <a id="LINKINFO1__QID__" href="link-defined-in-eproofmain.js" target="_blank">Tutorial</a>
 													</td>
 													<td class="EPROOFLINKS__QID__" id="LINKHEADERURL2__QID__">
-														<a href="http://e-proof.weebly.com/german-tutorials.html" target="_blank">Video/Screencast</a>
+														<a id="LINKINFO2__QID__" href="link-defined-in-eproofmain.js" target="_blank">Video/Screencast</a>
 													</td>
-													<td class="EPROOFLINKS__QID__" id="LINKHEADERLINETR0__QID__">
-														<BUTTON type='button' class='btHelp__QID__' id='btHelp__QID__' onclick="vEProof__QID__.toggle('HELP__QID__')" > Help </BUTTON>		
+													<td id="buttonHEADERLINETR1__QID__">
+													<a id="LINKINFO3__QID__" href="link-defined-in-eproofmain.js" target="_blank">ASCII-Math</a>
 													</td>
 												</tr>
 												<tr>
@@ -1021,7 +1023,8 @@ __do__so+=1
 														<SELECT class='sSTEPCOUNT__QID__'  id='sSTEPCOUNT__QID__' onchange="vEProof__QID__.updateStepCount(this.value)">
 														</SELECT>
 													</td>
-													<td id="buttonHEADERLINETR1__QID__">
+													<td class="EPROOFLINKS__QID__" id="LINKHEADERLINETR0__QID__">
+														<BUTTON type='button' class='btHelp__QID__' id='btHelp__QID__' onclick="vEProof__QID__.toggle('HELP__QID__')" > Help </BUTTON>		
 													</td>
 												</tr>
 												<tr>
@@ -1176,7 +1179,7 @@ __do__so+=1
 		var vRootID = "EPROOF___QID___";
 		vRootID = "EPROOF__QID__";
 		var vRootDOM = document.getElementById(vRootID);
-		vEProof__QID__.load('__QID__','__THISQ__',vRootDOM,vRootID);
+		vEProof__QID__.load('__QID__','__THISQ__',vRootDOM,vRootID,'AUTHORING');
 		//alert("Root.id="+r.id);
 		//window.setTimeout("vEProof__QID__.load('__QID__','__THISQ__',vRootDOM,vRootID)",400);
 		//---------------------------

@@ -1586,7 +1586,7 @@ function init_template_ID_EProof__SID__(pTemplateID) {
 //# last modifications    __DATE__             
 //#################################################################
 
-function load_EProof__SID__(pQID,pThisQ,pRootDOM,pRootID) {
+function load_EProof__SID__(pQID,pThisQ,pRootDOM,pRootID,pMode) {
 	//----Debugging------------------------------------------
 	// The following alert-Command is useful for debugging 
 	//alert("eproof.js:load(pInArray)-Call")
@@ -1598,6 +1598,16 @@ function load_EProof__SID__(pQID,pThisQ,pRootDOM,pRootID) {
 	this.appendMethods();
 	//-------------------------------------------------------
 	//this.aDebug = "0"; //set this in eproofmain.js
+	if (pMode) {
+		this.aMode = pMode;
+		if (this.aMode == "AUTHORING") {
+			this.aShowControl = "1"; 
+		} else if (this.aMode == "DEBUG") {
+			this.aDebug = "1";
+		};
+	} else {
+		this.aMode = "DEFAULT";
+	};
 	//-------------------------------------------------------
 	if (this.aDebug == "1") {
 		this.showDebug();
@@ -1625,7 +1635,7 @@ function load_EProof__SID__(pQID,pThisQ,pRootDOM,pRootID) {
 	this.aLocalEProof = "";
 	if (pThisQ == "__THISQ__") {
 		//alert("Load From Storage");
-		this.load_Form_LocalStorage();	
+		this.load_Form_LocalStorage();
 		this.aThisQ = "1";
 		this.aOffline = "1";
 	} else {
@@ -1673,7 +1683,11 @@ function load_EProof__SID__(pQID,pThisQ,pRootDOM,pRootID) {
 
 function load_Form_LocalStorage_EProof__SID__() {
 	//alert("Load from Local Storage");
-	this.aLocalEProof = localStorage.getItem("imathEPROOF");
+	if (this.aMode != "AUTHORING") {
+		this.aLocalEProof = localStorage.getItem("imathEPROOF");
+	//} else {
+	//	alert(" load_Form_LocalStorage this.aMode="+this.aMode);
+	};
 	//alert("this.aLocalEProof="+this.aLocalEProof);
 	if (this.aLocalEProof) {
 		var vArr = this.aLocalEProof.split(",");
@@ -1730,6 +1744,9 @@ function load_IMathAS_EProof__SID__() {
 	this.decodeSol();
 	//alert("(3) this.aSettings[AuthoringMode]="+typeof(this.aSettings["AuthoringMode"]));
 	var vRandSteps = this.aSettings["randomize_proofstep_IDs"];
+	if (this.aMode == "AUTHORING") {
+		this.aSettings["AuthoringMode"] = "1";
+	};
 	if (this.aSettings["AuthoringMode"] == "1") {
 		//alert("writeSolution2SA="+this.aSettings["AuthoringMode"]);
 		this.writeSolution2SA();
@@ -2156,9 +2173,12 @@ function preProcess4Lanugage_EProof__SID__() {
 	this.createDisplayOptions();
 	this.getElementById("LINKINFO1"+this.aQID).setAttribute("href",this.vLink_Tutorial);
 	this.getElementById("LINKINFO2"+this.aQID).setAttribute("href",this.vLink_Screencast);
+	this.getElementById("LINKINFO3"+this.aQID).setAttribute("href",this.vLink_ASCIIMath);
+	//this.getElementById("LINKINFO4"+this.aQID).setAttribute("href",this.vLink_ASCIIMath);
 	if (this.aSettings["show_links"] == "0") {
 		this.getElementById("LINKHEADERURL1"+this.aQID).innerHTML = this.LT+"b"+this.GT+"Information"+this.LT+"/b"+this.GT;
 		this.getElementById("LINKHEADERURL2"+this.aQID).innerHTML = "";
+		this.hideNode(this.getElementById("LINKINFO3"+this.aQID));
 	};
 	this.getElementById("HEADERLINETR1"+this.aQID).innerHTML =(vLanguage["Number_of"]+" "+vLanguage["ProofSteps"]+":").bold();
 	this.getElementById("HEADERLINETR2"+this.aQID).innerHTML =(vLanguage["Display"]+" "+vLanguage["Proof"]+":").bold();
@@ -2690,8 +2710,8 @@ function saveIMathAS_EProof__SID__() {
 	vOut = this.createStepsIMathAS("ProofStep",vOut);
 	if (this.aCrypt) {
 		vOut = this.createSolutionIMathAS("CryptSolution",vOut);
-	} else {
-		vOut = this.createSolutionIMathAS("SolutionStep",vOut);
+	//} else {
+	//	vOut = this.createSolutionIMathAS("SolutionStep",vOut);
 	};
 	var vRet = "//--- Student Answers not defined/exported ---"+this.CR;
 	var vFormSA = this.createStudentAnswer2IMathAS();

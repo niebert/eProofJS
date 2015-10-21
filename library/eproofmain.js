@@ -31,6 +31,7 @@ function EProof__SID__ () {
 	// no superclass defined
 
 	//---Attributes-------------------------
+	this.aMode = "DEFAULT"; //"DEAULT", "AUTHORING", "DEBUG" parameter of Load
 	this.aShowControl = "0"; 
 	this.aDebug = "0";
 	//---------------
@@ -89,6 +90,7 @@ function EProof__SID__ () {
 	this.aSolution        = new Array(); //Array with all Solution Steps
 	this.vLink_Screencast = "http://e-proof.weebly.com/german-tutorials.html";
 	this.vLink_Tutorial   = "http://math.uni-landau.de/download/IMathAS/eProof_iMathAS_Tutorial.pdf";
+	this.vLink_ASCIIMath  = "http://www.wjagray.co.uk/maths/ASCIIMathTutorial.html";
 	this.vMaxQuestionPart = 6;
 	this.vUpdateEdit = 0;
 	this.aLLE = 1.0;
@@ -1116,9 +1118,13 @@ function EProof__SID__ () {
 	//#################################################################
 	this.clearSuggestionStep = function (pStep) {	
 		var vSA = this.getElementById("SELECTFROM"+this.aQID+pStep);
-		this.getChildById(vSA,"selectCONNECTION"+this.aQID+pStep).value = "";
-		this.getChildById(vSA,"selectSTEPID"+this.aQID+pStep).value = "";
-		this.getChildById(vSA,"selectJUSTIFICATION"+this.aQID+pStep).value = "";
+		if (vSA) {
+			this.getChildById(vSA,"selectCONNECTION"+this.aQID+pStep).value = "";
+			this.getChildById(vSA,"selectSTEPID"+this.aQID+pStep).value = "";
+			this.getChildById(vSA,"selectJUSTIFICATION"+this.aQID+pStep).value = "";
+		//} else {
+		//	alert("STUDENTANSWER for Step="+pStep+" is not defined - clearSuggestionStep():1126" );
+		};
 	};
 	//#################################################################
 	//# Nested: clickAssessment()
@@ -1675,6 +1681,9 @@ function EProof__SID__ () {
 		//StepVar="Precondition"
 		var vStepType = pStepVar.toUpperCase();
 		var vArrID = new Array();
+		if (!this.aID4StepType[vStepType]) {
+			this.createStep2SA();
+		};	
 		if (this.aID4StepType[vStepType]) vArrID = this.aID4StepType[vStepType];
 		var i=0;
 		var vName = "";
@@ -1710,7 +1719,10 @@ function EProof__SID__ () {
 	this.createStepsInnerXML = function (pStepType,pSize) {
 		var vOutput = "";
 		var vArrID = new Array();
-		if (this.aID4StepType[pStepType]) vArrID = this.aID4StepType[pStepType];
+		if (!this.aID4StepType[pStepType]) {
+			this.createStep2SA();
+		};	
+		vArrID = this.aID4StepType[pStepType];
 		var i=0;
 		var vName = "";
 		var vValue = "";
@@ -1879,10 +1891,10 @@ function EProof__SID__ () {
 	this.createSolutionIMathAS = function (pStepType,pMainOut) {
 		var vTPL = this.getExportTemplate("tTPLSOLUTIONSTEP");
 		//alert(vTPL);
-		var vSolSeq = "";
+		var vSolSeq = new Array();
 		if (this.aExportSol) {
 			vSolSeq = this.createSolutionSequence();
-		}
+		};
 		var vPreID = " ";
 		if (this.aExportSA) {
 			this.appendStudAns2SolSequence(vSolSeq,vPreID);
@@ -1921,7 +1933,7 @@ function EProof__SID__ () {
 	//# Nested: createSolutionForm(pHash)
 	//#################################################################
 	this.createSolution2Form = function () {
-		var vSolSeq = "";
+		var vSolSeq = new Array();
 		if (this.aExportSol) {
 			vSolSeq = this.createSolutionSequence();
 		};
@@ -1959,7 +1971,14 @@ function EProof__SID__ () {
 	//# Nested: createSolutionStep5IMathAS(pTPL,pHash)
 	//#################################################################
 	this.createSolutionStepIMathAS = function (pTPL,pHash) {
-		 var i = 0;
+		var vCon = pHash["CONNECTION"];
+		pHash["ID"] = pHash["inSTEPID"];
+		if (vCon == "???") {
+			alert("ERROR Export IMathAS: Step ["+this.aMappedID[pHash["inSTEPID"]]+"] has an undefined connection between proof steps");
+		};
+		pHash["JUSTSOL"] = "'"+(pHash["JUSTIFICATIONARRAY"]).join("','")+"'";
+		pHash["OPTJUSTSOL"] = "'"+(pHash["OPTJUSTIFICATIONARRAY"]).join("','")+"'";
+		var i = 0;
 		 var vFormat = new Array("PREVIOUS","CONNECTION","ID","JUSTSOL","OPTJUSTSOL");
 		 while (i !=vFormat.length) {
 		 	var iID = vFormat[i];
@@ -1983,8 +2002,9 @@ function EProof__SID__ () {
 		var vSolSeq = new Array();
 		if (this.aExportSol) {
 			vSolSeq = this.createSolutionSequence();
-		} else {
-			vOut += this.createStepsInnerXML(pStepType,"2");
+		//} else {
+			//---duplicates PROOFSTEP_XML Size=2 in XML export----- 
+			//vOut += this.createStepsInnerXML(pStepType,"2");
 		};
 		var vPreID = " ";
 		if (this.aExportSA) {
