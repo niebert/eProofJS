@@ -8,12 +8,12 @@ style='visibility:hidden'
 <hr>
  <br>
 <input class="COPYTOLOAD$vQID" id="COPYTOLOAD$vQID" value="tXMLFILE$vQID1" type="text"><br>
-<__TEXT__AREA__ class="tXMLFILE$vQID" id="tXMLFILE$vQID1" cols="100" rows="13" wrap="off">&lt;EPROOF&gt;
+<textarea class="tXMLFILE$vQID" id="tXMLFILE$vQID1" cols="100" rows="13" wrap="off">&lt;EPROOF&gt;
   &lt;VARIABLE NAME='Theorem_Title' VALUE='Binomial Law' /&gt;
   &lt;VARIABLE NAME='Theorem_Label' VALUE='Theorem' /&gt;
   &lt;VARIABLE NAME='Author' VALUE='Engelbert Niehaus' /&gt;
   &lt;VARIABLE NAME='eMail' VALUE='niehaus@uni-landau.de' /&gt;
-  &lt;VARIABLE NAME='LANGUAGE' VALUE='DE' /&gt;
+  &lt;VARIABLE NAME='LANGUAGE' VALUE='EN' /&gt;
   &lt;VARIABLE NAME='Theorem_Appendix' VALUE='See __lt__a  href__eq____qu__https://en.wikipedia.org/wiki/Binomial_theorem__qu__ target__eq____qu__blank__qu____gt__Binomial Theorem__lt__/a__gt__ for a more details.' /&gt;
   &lt;VARIABLE NAME='Per_Error_Minus_Percent' VALUE='10' /&gt;
   &lt;VARIABLE NAME='Assessment_Minus_Percent' VALUE='2' /&gt;
@@ -26,8 +26,8 @@ style='visibility:hidden'
   &lt;VARIABLE NAME='remap_proofstep_IDs' VALUE='1' /&gt;
   &lt;VARIABLE NAME='randomize_proofstep_IDs' VALUE='1' /&gt;
   &lt;VARIABLE NAME='cryptkey' VALUE='ACBSD' /&gt;
-  &lt;VARIABLE NAME='show_Load_Save_Control' VALUE='0' /&gt;
-  &lt;VARIABLE NAME='show_Main_Control' VALUE='0' /&gt;
+  &lt;VARIABLE NAME='show_Load_Save_Control' VALUE='1' /&gt;
+  &lt;VARIABLE NAME='show_Main_Control' VALUE='1' /&gt;
   &lt;VARIABLE NAME='show_links' VALUE='1' /&gt;
   &lt;VARIABLE NAME='show_assessment' VALUE='1' /&gt;
   &lt;VARIABLE NAME='show_suggestions' VALUE='1' /&gt;
@@ -75,7 +75,7 @@ style='visibility:hidden'
     &lt;STEPDEF SIZE='5' ID='C1' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='' /&gt;
   &lt;/VARLIST&gt;
 &lt;/EPROOF&gt;
-</__TEXT__AREA__>
+</textarea>
 <hr>
 <select class="tplDISPLAYSELECT$vQID" id="tplDISPLAYSELECT$vQID">
 <option class="optDISPLAYOPTION$vQID" id="EDITComplete$vQID" value="EDITComplete">EDIT: Complete</option>
@@ -86,13 +86,13 @@ style='visibility:hidden'
 <div class="displaySOLUTIONSTEP$vQID" id="displaySOLUTIONSTEP$vQID">
 <table border="0" width="95%">
 <tbody><tr>
-<td class="solSTEPNR$vQID" step="0" id="solSTEPNR$vQID" align="center" valign="top" width="35px">
+<td class="solSTEPNR$vQID" step="0" id="solSTEPNR$vQID" valign="top" width="35px" align="center">
 (0)
 </td>
-<td class="solCONNECTION$vQID" step="0" id="solCONNECTION$vQID" align="center" valign="top" width="35px">
+<td class="solCONNECTION$vQID" step="0" id="solCONNECTION$vQID" valign="top" width="35px" align="center">
 ???
 </td>
-<td class="solSTEPID$vQID" step="0" id="solSTEPID$vQID" align="center" valign="top" width="55px">
+<td class="solSTEPID$vQID" step="0" id="solSTEPID$vQID" valign="top" width="55px" align="center">
 [ID]
 </td>
 <td class="solSTEPDEF$vQID" step="0" id="solSTEPDEF$vQID" valign="top">
@@ -105,18 +105,18 @@ Step Definition
 </div>
 <hr>
 <div class="STUDENTANSWER$vQID" id="tplSTUDENTANSWER$vQID">
-<hr align="left" width="55%">
+<hr width="55%" align="left">
 <div class="editSTUDENTANSWER$vQID" id="editSTUDENTANSWER$vQID">
 <select class="sPOSITION$vQID" id="sPOSITION$vQID" step="0" onchange="vEProof$vQID.moveStepOrder(this,this.value)"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select>
 <input size="2" class="PREVIOUSLINK$vQID" step="0" id="PREVIOUSLINK$vQID" value="" style="display:none" type="text">
 <input size="2" class="mapPREVIOUSLINK$vQID" step="0" id="mapPREVIOUSLINK$vQID" value="" onchange="vEProof$vQID.updatePreviousLink(this)" style="display:none" type="text">  
-<button type="button" class="bUseStep$vQID" step="0" id="bUseStep$vQID" onclick="vEProof$vQID.appendStep(this)" style="display:none">Hinzufügen</button>
-<select class="sCONNECTION$vQID" id="sCONNECTION$vQID" step="0" onchange="vEProof$vQID.updateConnection(this)"><option value="0">Bezug?</option><option value="1">START: Beweissequenz</option><option value="2">Folgerung</option><option value="3">Gleichheit</option><option value="4">kleiner gleich</option><option value="5">kleiner</option><option value="6">groesser gleich</option><option value="7">groesser ...</option><option value="8">Teilmenge</option><option value="9">Definition von Variablen</option><option value="10">Text oder Kommentar</option><option value="11">Typ Beweis</option><option value="12">q.e.d.</option></select>
-<select class="sSTEPID$vQID" id="sSTEPID$vQID" step="0" onchange="vEProof$vQID.moveStepID(this,this.value)"><option value="S3_F1">S1</option><option value="S3">S2</option><option value="S5">S3</option><option value="S1">S4</option><option value="S4">S5</option><option value="S1_F1">S6</option><option value="MY1">MY</option><option value="S1_F2">S7</option><option value="S7">S8</option><option value="S6">S9</option><option value="C1">C</option><option value="P1">P</option></select>
+<button type="button" class="bUseStep$vQID" step="0" id="bUseStep$vQID" onclick="vEProof$vQID.appendStep(this)" style="display:none">Append Step</button>
+<select class="sCONNECTION$vQID" id="sCONNECTION$vQID" step="0" onchange="vEProof$vQID.updateConnection(this)"><option value="0">Connection?</option><option value="1">START: Sequence of Steps</option><option value="2">Implication</option><option value="3">Equality</option><option value="4">lower equal</option><option value="5">lower than</option><option value="6">greater equal</option><option value="7">greater than</option><option value="8">Subset</option><option value="9">Definition of Variables</option><option value="10">Text or Comment</option><option value="11">Type of Proof</option><option value="12">q.e.d.</option></select>
+<select class="sSTEPID$vQID" id="sSTEPID$vQID" step="0" onchange="vEProof$vQID.moveStepID(this,this.value)"><option value="S1">S1</option><option value="S3_F1">S2_F1</option><option value="S3">S2</option><option value="S4">S3</option><option value="S5">S4</option><option value="S6">S5</option><option value="S7">S6</option><option value="S1_F1">S1_F3</option><option value="S1_F2">S1_F4</option><option value="MY1">MY</option><option value="C1">C</option><option value="P1">P</option></select>
 <button type="button" class="bDelete$vQID" step="0" id="bDelete$vQID" onclick="vEProof$vQID.deleteProofStep(this)" style="color:red">X</button>
 <button type="button" class="bEdit$vQID" step="0" id="bEdit$vQID" onclick="vEProof$vQID.toggleEdit(this)">EDIT</button>
 <nobr class="nobrJUSTIFICATION" step="0" id="nobrJUSTIFICATION">
-<button type="button" class="bJustifications$vQID" step="0" id="bJustifications$vQID" onclick="vEProof$vQID.toggleJustifications(this)">Begründungen</button>
+<button type="button" class="bJustifications$vQID" step="0" id="bJustifications$vQID" onclick="vEProof$vQID.toggleJustifications(this)">Justifications</button>
 <outtext class="outJUSTIFICATIONID$vQID" step="0" id="outJUSTIFICATIONID$vQID">[]</outtext>
 <outtext class="labelOPTJUSTIFICATION$vQID" step="0" id="labelOPTJUSTIFICATION$vQID"> - optional:</outtext>
 <input size="15" class="optJUSTIFICATION$vQID" step="0" id="optJUSTIFICATION$vQID" value="" onchange="vEProof$vQID.checkOptJustifications(this)" type="text">
@@ -152,10 +152,10 @@ JustUnnec:<input step="0" size="6" class="assJUSTUNNECESSARY$vQID" id="assJUSTUN
 <table border="0" width="95%">
 <tbody><tr>
 <td valign="top" width="90px">
-<button type="button" class="bSaveEditor$vQID" step="0" id="bSaveEditor$vQID" onclick="vEProof$vQID.saveStep(this)">Speichern</button>
+<button type="button" class="bSaveEditor$vQID" step="0" id="bSaveEditor$vQID" onclick="vEProof$vQID.saveStep(this)">Save</button>
 </td>
 <td class="inSTEPEDITOR$vQID" id="inSTEPEDITOR$vQID" valign="top">
-<__TEXT__AREA__ rows="9" class="taSTEPEDITOR$vQID" step="0" id="taSTEPEDITOR$vQID" style="width:98%;" onkeyup="vEProof$vQID.updateTextarea(this)"></__TEXT__AREA__>
+<textarea rows="9" class="taSTEPEDITOR$vQID" step="0" id="taSTEPEDITOR$vQID" style="width:98%;" onkeyup="vEProof$vQID.updateTextarea(this)"></textarea>
 </td>
 </tr>
 </tbody></table>
@@ -163,13 +163,13 @@ JustUnnec:<input step="0" size="6" class="assJUSTUNNECESSARY$vQID" id="assJUSTUN
 <div class="displaySTUDENTANSWER$vQID" id="displaySTUDENTANSWER$vQID">
 <table border="0" width="95%">
 <tbody><tr>
-<td class="outSTEPNR$vQID" step="0" id="outSTEPNR$vQID" align="center" valign="top" width="35px">
+<td class="outSTEPNR$vQID" step="0" id="outSTEPNR$vQID" valign="top" width="35px" align="center">
 (0)
 </td>
-<td class="outCONNECTION$vQID" step="0" id="outCONNECTION$vQID" align="center" valign="top" width="35px">
+<td class="outCONNECTION$vQID" step="0" id="outCONNECTION$vQID" valign="top" width="35px" align="center">
 ???
 </td>
-<td class="outSTEPID$vQID" step="0" id="outSTEPID$vQID" align="center" valign="top" width="55px">
+<td class="outSTEPID$vQID" step="0" id="outSTEPID$vQID" valign="top" width="55px" align="center">
 [ID]
 </td>
 <td class="outSTEPDEF$vQID" step="0" id="outSTEPDEF$vQID" valign="top">
@@ -196,15 +196,15 @@ Step Definition next Line
 <table class="SUGASSESSMAN$vQID" id="SUGASSESSMAN$vQID" style="margin-left:3.3em" border="0"> 
 <tbody><tr>
 <td>
-<button type="button" class="bSuggestion$vQID" step="0" id="bSuggestion$vQID" onclick="vEProof$vQID.toggleSuggestionStep(this.getAttribute('step'))" style="display:none;color:green"><font color="green">Vorschlag</font></button>
+<button type="button" class="bSuggestion$vQID" step="0" id="bSuggestion$vQID" onclick="vEProof$vQID.toggleSuggestionStep(this.getAttribute('step'))" style="display:none;color:green"><font color="green">Suggestion</font></button>
 </td>
 <td>
-<button type="button" class="bAssessStep$vQID" step="0" id="bAssessStep$vQID" onclick="vEProof$vQID.assessStep(this)" style="display:none;color:red">Bewertung</button>
+<button type="button" class="bAssessStep$vQID" step="0" id="bAssessStep$vQID" onclick="vEProof$vQID.assessStep(this)" style="display:none;color:red">Assessment</button>
 </td>
 <td>
 <outstep class="outMYSTEPASSESS$vQID" id="outMYSTEPASSESS$vQID" step="0" style="display: none; visibility: hidden;">
-<b valign="top" class="outMYSTEPASSESSTITLE$vQID" id="outMYSTEPASSESSTITLE$vQID">manuelle Bewertung</b>
-<tt valign="top" class="outMYSTEPASSESSTEXT$vQID" id="outMYSTEPASSESSTEXT$vQID" style="display:none">selbstdefinierter Beweisschritt</tt>
+<b valign="top" class="outMYSTEPASSESSTITLE$vQID" id="outMYSTEPASSESSTITLE$vQID">manual Assessment</b>
+<tt valign="top" class="outMYSTEPASSESSTEXT$vQID" id="outMYSTEPASSESSTEXT$vQID" style="display:none">Self-defined</tt>
 <b valign="top" class="outMYSTEPASSESSSCORE$vQID" id="outMYSTEPASSESSSCORE$vQID" align="right">
 <input size="3" class="inMYSTEPASSESSSCORE$vQID" id="inMYSTEPASSESSSCORE$vQID" value="" onchange="vEProof$vQID.assessStepDisplay(this)" type="text">%
 </b>
@@ -215,95 +215,95 @@ Step Definition next Line
 </div>
 </div>
 <div class="assessSTUDENTANSWER$vQID" id="assessSTUDENTANSWER$vQID" style="display:none">
-<table align="center" bgcolor="#EAEAEA" border="1" width="70%">
+<table bgcolor="#EAEAEA" border="1" width="70%" align="center">
 <tbody><tr>
 <td>
-<table class="ASSESSTABLE$vQID" id="ASSESSTABLE$vQID" align="center" border="0" cellspacing="10px">
+<table class="ASSESSTABLE$vQID" id="ASSESSTABLE$vQID" border="0" cellspacing="10px" align="center">
 <tbody><tr style="font-size:120%">
 <td colspan="3" id="outSTEPSCORETITLE$vQID" align="center">
 <b class="outSTEPNR$vQID" id="outSTEPNR_ASSESSMENTTITLE$vQID">(0)</b>
-<b class="outASSESSMENTTITLE$vQID" id="outASSESSMENTTITLE$vQID">Bewertung Beweisfragment</b>
+<b class="outASSESSMENTTITLE$vQID" id="outASSESSMENTTITLE$vQID">Assessment Fragment of Proof</b>
 <b class="outSTEPID_ASSESSMENT$vQID" id="outSTEPID_ASSESSMENT$vQID">[ID]</b> 
 </td>
 </tr>
 <tr class="outASSESSCONNECTION$vQID" id="outASSESSCONNECTION$vQID" style="color:red">
-<td class="outASSESSCONNECTIONTITLE$vQID" id="outASSESSCONNECTIONTITLE$vQID" valign="top">Bezug Beweisfragment:</td>
+<td class="outASSESSCONNECTIONTITLE$vQID" id="outASSESSCONNECTIONTITLE$vQID" valign="top">Connection Fragment of Proof:</td>
 <td class="outASSESSCONNECTIONTEXT$vQID" id="outASSESSCONNECTIONTEXT$vQID" valign="top">
 (f)
 </td>
-<td class="outASSESSCONNECTIONSCORE$vQID" id="outASSESSCONNECTIONSCORE$vQID" align="right" valign="top">
+<td class="outASSESSCONNECTIONSCORE$vQID" id="outASSESSCONNECTIONSCORE$vQID" valign="top" align="right">
 -30.00%
 </td>
 </tr>
 <tr class="outpreLINKSTEPS$vQID" id="outpreLINKSTEPS$vQID" style="color:red">
-<td class="outpreLINKSTEPSTITLE$vQID" id="outpreLINKSTEPSTITLE$vQID" valign="top">vorheriger Schritt:</td>
+<td class="outpreLINKSTEPSTITLE$vQID" id="outpreLINKSTEPSTITLE$vQID" valign="top">previous Step:</td>
 <td class="outpreLINKSTEPSTEXT$vQID" id="outpreLINKSTEPSTEXT$vQID" valign="top">
 2 Missing Steps to previous Step or No Link to next step
 </td>
-<td class="outpreLINKSTEPSSCORE$vQID" id="outpreLINKSTEPSSCORE$vQID" align="right" valign="top">
+<td class="outpreLINKSTEPSSCORE$vQID" id="outpreLINKSTEPSSCORE$vQID" valign="top" align="right">
 -20.0%
 </td>
 </tr>
 <tr class="outpostLINKSTEPS$vQID" id="outpostLINKSTEPS$vQID" style="color:red">
-<td class="outpostLINKSTEPSTITLE$vQID" id="outpostLINKSTEPSTITLE$vQID" valign="top">nächster Schritt:</td>
+<td class="outpostLINKSTEPSTITLE$vQID" id="outpostLINKSTEPSTITLE$vQID" valign="top">next Step:</td>
 <td class="outpostLINKSTEPSTEXT$vQID" id="outpostLINKSTEPSTEXT$vQID" valign="top">
 5 Missing Steps to next Step or No Link to next step
 </td>
-<td class="outpostLINKSTEPSSCORE$vQID" id="outpostLINKSTEPSSCORE$vQID" align="right" valign="top">
+<td class="outpostLINKSTEPSSCORE$vQID" id="outpostLINKSTEPSSCORE$vQID" valign="top" align="right">
 -50.0%
 </td>
 </tr>
 <tr class="outJUSTCORRECT$vQID" id="outJUSTCORRECT$vQID" style="color:green">
-<td class="outJUSTCORRECTTITLE$vQID" id="outJUSTCORRECTTITLE$vQID" valign="top">Korrekte Begründungen:</td>
+<td class="outJUSTCORRECTTITLE$vQID" id="outJUSTCORRECTTITLE$vQID" valign="top">Correct Justifications:</td>
 <td class="outJUSTCORRECTTEXT$vQID" id="outJUSTCORRECTTEXT$vQID" valign="top">
 []
 </td>
-<td class="outJUSTCORRECTSCORE$vQID" id="outJUSTCORRECTSCORE$vQID" align="right" valign="top">
+<td class="outJUSTCORRECTSCORE$vQID" id="outJUSTCORRECTSCORE$vQID" valign="top" align="right">
 (r)
 </td>
 </tr>
 <tr class="outJUSTMISSING$vQID" id="outJUSTMISSING$vQID" style="color:red">
-<td class="outJUSTMISSINGTITLE$vQID" id="outJUSTMISSINGTITLE$vQID" valign="top">Fehlende Begründungen:</td>
+<td class="outJUSTMISSINGTITLE$vQID" id="outJUSTMISSINGTITLE$vQID" valign="top">Missing Justifications:</td>
 <td class="outJUSTMISSINGTEXT$vQID" id="outJUSTMISSINGTEXT$vQID" valign="top">
 []
 </td>
-<td class="outJUSTMISSINGSCORE$vQID" id="outJUSTMISSINGSCORE$vQID" align="right" valign="top">
+<td class="outJUSTMISSINGSCORE$vQID" id="outJUSTMISSINGSCORE$vQID" valign="top" align="right">
 -0%
 </td>
 </tr>
 <tr class="outJUSTUNNECESSARY$vQID" id="outJUSTUNNECESSARY$vQID" style="color:red">
-<td class="outJUSTUNNECESSARYTITLE$vQID" id="outJUSTUNNECESSARYTITLE$vQID" valign="top">Unnötige Begründungen:</td>
+<td class="outJUSTUNNECESSARYTITLE$vQID" id="outJUSTUNNECESSARYTITLE$vQID" valign="top">Unnecessary Justifications:</td>
 <td class="outJUSTUNNECESSARYTEXT$vQID" id="outJUSTUNNECESSARYTEXT$vQID" valign="top">
 []
 </td>
-<td class="outJUSTUNNECESSARYSCORE$vQID" id="outJUSTUNNECESSARYSCORE$vQID" align="right" valign="top">
+<td class="outJUSTUNNECESSARYSCORE$vQID" id="outJUSTUNNECESSARYSCORE$vQID" valign="top" align="right">
 -20%
 </td>
 </tr>
 <tr class="outSUGUSED$vQID" id="outSUGUSED$vQID">
-<td class="outSUGUSEDTITLE$vQID" id="outSUGUSEDTITLE$vQID" valign="top">Vorschläge verwendet:</td>
+<td class="outSUGUSEDTITLE$vQID" id="outSUGUSEDTITLE$vQID" valign="top">Suggestions used:</td>
 <td class="outSUGUSEDTEXT$vQID" id="outSUGUSEDTEXT$vQID" valign="top">
 Used for this Step
 </td>
-<td class="outSUGUSEDSCORE$vQID" id="outSUGUSEDSCORE$vQID" align="right" valign="top">
+<td class="outSUGUSEDSCORE$vQID" id="outSUGUSEDSCORE$vQID" valign="top" align="right">
 -0.0%
 </td>
 </tr>
 <tr class="outASSESSUSED$vQID" id="outASSESSUSED$vQID">
-<td class="outASSESSUSEDTITLE$vQID" id="outASSESSUSEDTITLE$vQID" valign="top">Bewertung verwendet:</td>
+<td class="outASSESSUSEDTITLE$vQID" id="outASSESSUSEDTITLE$vQID" valign="top">Assessment used:</td>
 <td class="outASSESSUSEDTEXT$vQID" id="outASSESSUSEDTEXT$vQID" valign="top">
 Used for this Step
 </td>
-<td class="outASSESSUSEDSCORE$vQID" id="outASSESSUSEDSCORE$vQID" align="right" valign="top">
+<td class="outASSESSUSEDSCORE$vQID" id="outASSESSUSEDSCORE$vQID" valign="top" align="right">
 -0.0%
 </td>
 </tr>
 <tr class="outSCORESTEP$vQID" id="outSCORESTEP$vQID" colspan="3">
-<td class="outSCORESTEPTITLE$vQID" id="outSCORESTEPTITLE$vQID" valign="top"><b>Bewertung Beweisfragment:</b></td>
+<td class="outSCORESTEPTITLE$vQID" id="outSCORESTEPTITLE$vQID" valign="top"><b>Assessment Fragment of Proof:</b></td>
 <td class="outSCORESTEPTEXT$vQID" id="outSCORESTEPTEXT$vQID" valign="top">
 TOTAL
 </td>
-<td class="outSCORESTEPSCORE$vQID" id="outSCORESTEPSCORE$vQID" align="right" valign="top">
+<td class="outSCORESTEPSCORE$vQID" id="outSCORESTEPSCORE$vQID" valign="top" align="right">
 0.0%
 </td>
 </tr>
@@ -313,17 +313,17 @@ TOTAL
 </tbody></table>
 </div>
 <div class="SUGGESTIONS$vQID" id="SUGGESTIONS$vQID" style="display:none">
-<table align="center" bgcolor="#EAEAEA" border="1" width="96%">
+<table bgcolor="#EAEAEA" border="1" width="96%" align="center">
 <tbody><tr>
 <td>
-<table align="center" border="0" cellspacing="10px" width="96%">
+<table border="0" cellspacing="10px" width="96%" align="center">
 <tbody><tr>
 <td colspan="3">
 <b>(<outtext class="outNEXTNR$vQID" step="0" id="outNEXTNR$vQID">
 0
 </outtext>) 
-<outtext class="bSelectSuggestion$vQID" step="0" id="bSelectSuggestion$vQID">Vorschlag</outtext></b>
-<button type="button" class="bSelectSuggestionOK$vQID" step="0" id="bSelectSuggestionOK$vQID" onclick="vEProof$vQID.selectSuggestion(this.getAttribute('step'))">Beweisfragment  auswählen</button>
+<outtext class="bSelectSuggestion$vQID" step="0" id="bSelectSuggestion$vQID">Suggestion</outtext></b>
+<button type="button" class="bSelectSuggestionOK$vQID" step="0" id="bSelectSuggestionOK$vQID" onclick="vEProof$vQID.selectSuggestion(this.getAttribute('step'))">Fragment of Proof  select</button>
 <input class="inCONSUGGESTION$vQID" id="inCONSUGGESTION$vQID" value="" style="display:none" type="text">
 <input class="inIDSUGGESTION$vQID" id="inIDSUGGESTION$vQID" value="" style="display:none" type="text">
 </td>
@@ -373,7 +373,7 @@ ConnectionList:
 <b>Student Answers:</b><br>
 //0:PrevID//1:Con=TYP//2:ID=MY1//3:Just=CK,DU,P1//4:OptJust//5:ManScore=0.9//6:SugUsed//7:AssUsed//8:SelCon//9:SelID//10:SelJUST//11:StepNr
 <br>
-<__TEXT__AREA__ class="imathSTUDENTANSWER" name="imathSTUDENTANSWER" id="imathSTUDENTANSWER" rows="10" cols="125" wrap="off">$imathSTUDENTANSWER</__TEXT__AREA__>
+<textarea class="imathSTUDENTANSWER" name="imathSTUDENTANSWER" id="imathSTUDENTANSWER" rows="10" cols="125" wrap="off">$imathSTUDENTANSWER</textarea>
 <hr>
 <div class="imathSTORAGE" id="imathSTORAGE">
 $answerbox[0]
@@ -382,35 +382,35 @@ $answerbox[0]
     <input id="imathDISPLAYOPTION" value="$imathDISPLAYOPTION" type="text">
     <input id="imathSTEPCOUNT" value="$imathSTEPCOUNT" type="text"></div>
 <b>Settings:</b><br>
-<__TEXT__AREA__ class="imathSETTINGS" name="imathSETTINGS" id="imathSETTINGS" rows="4" cols="125" wrap="off">$imathSETTINGS</__TEXT__AREA__>
+<textarea class="imathSETTINGS" name="imathSETTINGS" id="imathSETTINGS" rows="4" cols="125" wrap="off">$imathSETTINGS</textarea>
 <hr>
 <b>Preconditions:</b><br>
-<__TEXT__AREA__ class="imathPRECONDITION" name="imathPRECONDITION" id="imathPRECONDITION" rows="4" cols="125" wrap="off">$imathPRECONDITION</__TEXT__AREA__>
+<textarea class="imathPRECONDITION" name="imathPRECONDITION" id="imathPRECONDITION" rows="4" cols="125" wrap="off">$imathPRECONDITION</textarea>
 <hr>
 <b>Conclusions:</b><br>
-<__TEXT__AREA__ class="imathCONCLUSION" name="imathCONCLUSION" id="imathCONCLUSION" rows="4" cols="125" wrap="off">$imathCONCLUSION</__TEXT__AREA__>
+<textarea class="imathCONCLUSION" name="imathCONCLUSION" id="imathCONCLUSION" rows="4" cols="125" wrap="off">$imathCONCLUSION</textarea>
 <hr>
 <b>Justifications:</b><br>
-<__TEXT__AREA__ class="imathJUSTIFICATION" name="imathJUSTIFICATION" id="imathJUSTIFICATION" rows="4" cols="125" wrap="off">$imathJUSTIFICATION</__TEXT__AREA__>
+<textarea class="imathJUSTIFICATION" name="imathJUSTIFICATION" id="imathJUSTIFICATION" rows="4" cols="125" wrap="off">$imathJUSTIFICATION</textarea>
 <hr>
 <b>Proof Steps:</b><br>
-<__TEXT__AREA__ class="imathPROOFSTEP" name="imathPROOFSTEP" id="imathPROOFSTEP" rows="4" cols="125" wrap="off">$imathPROOFSTEP</__TEXT__AREA__>
+<textarea class="imathPROOFSTEP" name="imathPROOFSTEP" id="imathPROOFSTEP" rows="4" cols="125" wrap="off">$imathPROOFSTEP</textarea>
 <hr>
 <b>Solutions:</b>
 <button type="button" class="bEncode$vQID" id="bEncode$vQID" onclick="vEProof$vQID.encodeSol()">Encode Sol</button>
 <br>
-<__TEXT__AREA__ class="imathSOLUTION" name="imathSOLUTION" id="imathSOLUTION" rows="4" cols="125" wrap="off">$imathSOLUTION</__TEXT__AREA__>
+<textarea class="imathSOLUTION" name="imathSOLUTION" id="imathSOLUTION" rows="4" cols="125" wrap="off">$imathSOLUTION</textarea>
 <hr>
 <b>Solutions encrypted:</b>
 <button type="button" class="bDecode$vQID" id="bDecode$vQID" onclick="vEProof$vQID.decodeSol()">Decode Sol</button>
 <br>
-<__TEXT__AREA__ class="imathENCRYPTED" name="imathENCRYPTED" id="imathENCRYPTED" rows="4" cols="125" wrap="off">$imathENCRYPTED</__TEXT__AREA__>
+<textarea class="imathENCRYPTED" name="imathENCRYPTED" id="imathENCRYPTED" rows="4" cols="125" wrap="off">$imathENCRYPTED</textarea>
 <hr>
 </div> 
 
 <div class="PROOFCONTROL$vQID" id="PROOFCONTROL$vQID" border="0" bgcolor="#ddf" style="display: none; visibility: hidden;" align="center">
 <center>
-<table align="center" bgcolor="#ddf" border="0" width="96%">
+<table bgcolor="#ddf" border="0" width="96%" align="center">
 <tbody><tr style="display: none; visibility: hidden;" class="CONTROLBUTTONS$vQID" id="CONTROLBUTTONS$vQID">
 <td align="left">
 <button type="button" class="bLOADCONTROL$vQID" id="bLOADCONTROL$vQID" onclick="vEProof$vQID.clickLoad()" style="color:blue">Load</button>
@@ -431,15 +431,15 @@ $answerbox[0]
 <button type="button" class="bIMPORTCANCEL$vQID" id="bIMPORTCONTROL$vQID" onclick="vEProof$vQID.clickCloseControl()" style="color:red">Cancel</button><br>
 Copy the XML-code for an e-Proof into Textbox and press button [Import e-Proof] to load the new e-Proof.
 <br>
-<__TEXT__AREA__ name="tLOAD$vQID" class="tLOAD$vQID" id="tLOAD$vQID" cols="100" rows="13" wrap="off"></__TEXT__AREA__>
+<textarea name="tLOAD$vQID" class="tLOAD$vQID" id="tLOAD$vQID" cols="100" rows="13" wrap="off"></textarea>
 </td>
 </tr>
 <tr class="SAVEXMLAREA$vQID" id="SAVEXMLAREA$vQID" style="display: none; visibility: hidden;">
 <td align="center">
 <h2>SAVE File</h2>
-<input class="checkUSESOLUTION$vQID" id="checkUSESOLUTION$vQID" checked="" onchange="vEProof$vQID.saveOnChange()" type="checkbox"> Use Solution
-<input class="checkENCRYPT$vQID" id="checkENCRYPT$vQID" onchange="vEProof$vQID.saveOnChange()" type="checkbox"> Encrypt Solution
-<input class="checkSTUDANSWERSOLUTION$vQID" id="checkSTUDANSWERSOLUTION$vQID" onchange="vEProof$vQID.saveOnChange()" type="checkbox"> Append Student Answer to Solution
+<input class="checkUSESOLUTION$vQID" id="checkUSESOLUTION$vQID" onchange="vEProof$vQID.saveOnChange()" style="display:none" type="checkbox"> 
+<input class="checkSTUDANSWERSOLUTION$vQID" id="checkSTUDANSWERSOLUTION$vQID" checked="" onchange="vEProof$vQID.saveOnChange()" type="checkbox"> Student Answer to Solution
+<input class="checkENCRYPT$vQID" id="checkENCRYPT$vQID" onchange="vEProof$vQID.saveOnChange()" type="checkbox"> Encrypt IMathAS-Solution 
 <input class="checkSTUDANSWEREXPORT$vQID" id="checkSTUDANSWEREXPORT$vQID" onchange="vEProof$vQID.saveOnChange()" type="checkbox"> Export Student Answer
 <br>
 File Format:
@@ -450,7 +450,7 @@ File Format:
 <button type="button" class="bEXPORT$vQID" step="0" id="bEXPORT$vQID" onclick="vEProof$vQID.saveOnChange()" style="color:blue">Save</button>
 <button type="button" class="bEXPORTCLOSE$vQID" step="0" id="bEXPORTCLOSE$vQID" onclick="vEProof$vQID.clickCloseControl()" style="color:red">Cancel</button>
 <br>
-<__TEXT__AREA__ name="tSAVEXML$vQID" class="tSAVEXML$vQID" id="tSAVEXML$vQID" cols="100" rows="13" wrap="off"></__TEXT__AREA__>
+<textarea name="tSAVEXML$vQID" class="tSAVEXML$vQID" id="tSAVEXML$vQID" cols="100" rows="13" wrap="off"></textarea>
 </td>
 </tr>
 <tr class="SAVEIMATHAREA$vQID" id="SAVEIMATHAREA$vQID" style="display: inline; visibility: visible;" wrap="off">
@@ -460,11 +460,13 @@ File Format:
  Question-ID (QID):<input class="tQID$vQID" size="6" id="tQID$vQID" name="tQID$vQID" value="$vQID" onchange="vEProof$vQID.saveEProofIMath2Form()" type="text">
 <button type="button" class="bIMPORTCANCEL$vQID" id="bIMPORTCONTROL$vQID" onclick="vEProof$vQID.clickCloseControl()" style="color:red">Cancel</button><br>
 <hr>Background Question Text 1:<br>
-<__TEXT__AREA__ name="tSAVEIMATH$vQID" class="tSAVEIMATH$vQID" id="tSAVEIMATH$vQID" cols="100" rows="6" wrap="off"></__TEXT__AREA__>
+<textarea name="tSAVEIMATH$vQID" class="tSAVEIMATH$vQID" id="tSAVEIMATH$vQID" cols="100" rows="6" wrap="off"></textarea>
 <hr>Weebly Export:<br>
-<__TEXT__AREA__ name="tWEEBLYEXPORT$vQID" class="tWEEBLYEXPORT$vQID" id="tWEEBLYEXPORT$vQID" cols="100" rows="6" wrap="off"></__TEXT__AREA__>
+<textarea name="tWEEBLYEXPORT$vQID" class="tWEEBLYEXPORT$vQID" id="tWEEBLYEXPORT$vQID" cols="100" rows="6" wrap="off"></textarea>
+<div id="exportSETTINGSEXTRA" style="display:none">
 <hr>iMathAS - Common Control for Settings:<br>
-<__TEXT__AREA__ name="tIMATHCOMMONCONTROL_I$vQID" class="tIMATHCOMMONCONTROL_I$vQID" id="tIMATHCOMMONCONTROL_I$vQID" cols="100" rows="6" wrap="off"></__TEXT__AREA__>
+<textarea name="tIMATHCOMMONCONTROL_I$vQID" class="tIMATHCOMMONCONTROL_I$vQID" id="tIMATHCOMMONCONTROL_I$vQID" cols="100" rows="6" wrap="off"></textarea>
+</div>
 </td>
 </tr>
 <tr class="PREFERENCESAREA$vQID" id="PREFERENCESAREA$vQID" style="display: none; visibility: hidden;">
@@ -482,7 +484,7 @@ File Format:
 <input class="SETTING$vQID" id="SET_Offline" value="" type="hidden">
 <br>
 <div class="PREFERENCESTABLE$vQID" id="PREFERENCESTABLE$vQID">
-<table align="center" border="0" width="100%">
+<table border="0" width="100%" align="center">
 <tbody><tr>
 <td valign="top">
    <b>Author:</b> 
@@ -701,12 +703,12 @@ File Format:
 <tr class="TEMPLATEAREA$vQID" id="TEMPLATEAREA$vQID" style="display:none">
 <td align="center">
 <hr><b>tTPL1 Preconditions</b><br>
-<__TEXT__AREA__ class="tTPLIMATHAS" id="tTPLIMATHAS" cols="125" rows="8">//--------------------------------------------------------------------------------------
+<textarea class="tTPLIMATHAS" id="tTPLIMATHAS" cols="125" rows="8">//--------------------------------------------------------------------------------------
 //-----e-PROOF (___THEOREM_LABEL___): ___THEOREM_TITLE___
 //--------------------------------------------------------------------------------------
 //-----Author:  ___AUTHOR___
 //-----e-Mail:  ___EMAIL___
-//-----created: _13.10.2015 15:38:29_
+//-----created: ___DATE___
 //--------------------------------------------------------------------------------------
 //
 //--------------------------------------------------------------------------------------
@@ -795,20 +797,20 @@ ___INCLUDECODE___
 //----uncomment the following lines by removing '//'--------
 ___INCLUDEQTEXT___
 //----------------------------------------------------------
-</__TEXT__AREA__>
+</textarea>
 <hr><b>tLOOP1 Preconditions</b><br>
 
-<__TEXT__AREA__ class="tTPLSTEPSIMATHAS" id="tTPLSTEPSIMATHAS" cols="125" rows="3">__do_____STEPTYPE___[__do__pi]   = "___STEP_DEF___"
+<textarea class="tTPLSTEPSIMATHAS" id="tTPLSTEPSIMATHAS" cols="125" rows="3">__do_____STEPTYPE___[__do__pi]   = "___STEP_DEF___"
 __do_____STEPTYPE___ID[__do__pi] = "___ID___"
 __do__pi += 1
-</__TEXT__AREA__>
+</textarea>
 
 
 <hr><b>tLOOP5 Solution</b><br>
 
-<__TEXT__AREA__ id="tTPLSOLUTIONSTEP" cols="125" rows="3">__do__SolutionStep[__do__so]=array("___PREVIOUS___","___ID___","___CONNECTION___",array(___JUSTSOL___),array(___OPTJUSTSOL___))
+<textarea id="tTPLSOLUTIONSTEP" cols="125" rows="3">__do__SolutionStep[__do__so]=array("___PREVIOUS___","___ID___","___CONNECTION___",array(___JUSTSOL___),array(___OPTJUSTSOL___))
 __do__so+=1
-</__TEXT__AREA__>
+</textarea>
 
 </td>
 </tr>
@@ -818,7 +820,7 @@ __do__so+=1
 </div>
 <div class="MAINCONTROL$vQID" id="MAINCONTROL$vQID" border="1" bgcolor="#ddf" style="display: none; visibility: hidden;" align="center">
 <center>
-<table align="center" bgcolor="#ddf" border="0" width="96%">
+<table bgcolor="#ddf" border="0" width="96%" align="center">
 <tbody><tr class="trASSESSAUTHORCONTROL$vQID" id="trASSESSAUTHORCONTROL$vQID" bgcolor="#ddf">
 <td align="center">
 <button type="button" class="bSUGGESTBUTTON$vQID" id="bSUGGESTBUTTON$vQID" onclick="vEProof$vQID.toggleSuggestionButton()" style="color:green">Suggestion Button</button>
@@ -840,7 +842,7 @@ __do__so+=1
 </td>
 <td align="center">
 <button type="button" class="bAUTHORMODE$vQID" id="bAUTHORMODE$vQID" onclick="vEProof$vQID.toggleAuthoringMode()" style="color:red">Authoring Mode</button>
-<outtext class="infoAUTHORMODE$vQID" id="infoAUTHORMODE$vQID">[OFF]</outtext>
+<outtext class="infoAUTHORMODE$vQID" id="infoAUTHORMODE$vQID">[ON]</outtext>
 </td>
 <td align="center">
 <button type="button" class="bCLEARLOCALSTORAGE$vQID" id="bCLEARLOCALSTORAGE$vQID" onclick="vEProof$vQID.clear_LocalStorage()" style="color:red">Clear Local Storage</button>
@@ -852,10 +854,10 @@ __do__so+=1
 <br>
 </div>
 <div style="display: none; visibility: hidden;" class="PROOFTABLE$vQID" id="PROOFTABLE$vQID">
-<table align="center" bgcolor="#ddf" border="1" width="96%">
+<table bgcolor="#ddf" border="1" width="96%" align="center">
 <tbody><tr>
 <td>
-<table align="center" bgcolor="#ddf" border="0" width="100%">
+<table bgcolor="#ddf" border="0" width="100%" align="center">
 <tbody><tr>
 <td>&nbsp;</td>
 <td>
@@ -865,14 +867,14 @@ __do__so+=1
 <outtext class="THEOREMLABEL$vQID" id="THEOREMLABEL$vQID">Theorem</outtext>:
 <outtext class="THEOREMTITLE$vQID" id="THEOREMTITLE$vQID">Binomial Law</outtext>
 </h3>
-<div class="editTITLE$vQID" id="editTITLE$vQID" style="display: none; visibility: hidden;">
+<div class="editTITLE$vQID" id="editTITLE$vQID" style="display: inline; visibility: visible;">
 <input size="10" class="editTHEOREMLABEL$vQID" id="editTHEOREMLABEL$vQID" value="Label" onchange="vEProof$vQID.updateTitle()" type="text">
 <input size="70" class="editTHEOREMTITLE$vQID" id="editTHEOREMTITLE$vQID" value="Title" onchange="vEProof$vQID.updateTitle()" type="text">
 </div>
 <div class="PRECONDITIONLIST$vQID" id="PRECONDITIONLIST$vQID"></div>
-<button type="button" class="bAddStepID$vQID" steptype="PRECONDITION" id="bAddStepPRECONDITION$vQID" onclick="vEProof$vQID.addStepDefinition(this)" style="color: green; display: none; visibility: hidden;">+Step PRECONDITION</button>
+<button type="button" class="bAddStepID$vQID" steptype="PRECONDITION" id="bAddStepPRECONDITION$vQID" onclick="vEProof$vQID.addStepDefinition(this)" style="color: green; display: inline; visibility: visible;">+Step PRECONDITION</button>
 <div class="CONCLUSIONLIST$vQID" id="CONCLUSIONLIST$vQID"></div>
-<button type="button" class="bAddStepID$vQID" steptype="CONCLUSION" id="bAddStepCONCLUSION$vQID" onclick="vEProof$vQID.addStepDefinition(this)" style="color: green; display: none; visibility: hidden;">+Step CONCLUSION</button>
+<button type="button" class="bAddStepID$vQID" steptype="CONCLUSION" id="bAddStepCONCLUSION$vQID" onclick="vEProof$vQID.addStepDefinition(this)" style="color: green; display: inline; visibility: visible;">+Step CONCLUSION</button>
 <div class="THEOREMAPPENDIX$vQID" id="THEOREMAPPENDIX$vQID">See <a href="https://en.wikipedia.org/wiki/Binomial_theorem" target="blank">Binomial Theorem</a> for a more details.</div>
 </div>
 
@@ -884,11 +886,11 @@ __do__so+=1
 <input name="bHELP$vQID" value=" X " onclick="vEProof$vQID.toggle('HELP$vQID')" type="button">
 </td>
 <td valign="center">
-<h3 id="HELPTITLE$vQID">Hilfe</h3>
+<h3 id="HELPTITLE$vQID">Help</h3>
 </td>
 </tr>
 </tbody></table>
-<div class="HELP_EN$vQID" id="HELP_EN$vQID" style="display: none; visibility: hidden;">
+<div class="HELP_EN$vQID" id="HELP_EN$vQID" style="display: inline; visibility: visible;">
 <ul> 
   <li><b>Move Proof Steps:</b> You can move the steps of the proof by changing the number in the select box. The justifications and all other settings associated with the proof step are moved as well, because they are treated as a unit.</li>
   <li><b>3 Question Marks:</b> 3 question marks '???' indicate to the user, that a connection to the previous proof step must be defined or the step should be marked as START of a sequence of proof steps.so ist noch kein Bezug zum vorherigen Beweisschritt gesetzt worden. An Implication (among others) is the most commom link between two proof steps.</li>
@@ -902,7 +904,7 @@ __do__so+=1
   <li><b>Hide Help Page:</b> You can hide the help page, if you press the Help-Button again or press the [X]-Button.</li>
 </ul>
 </div>
-<div class="HELP_DE$vQID" id="HELP_DE$vQID" style="display: inline; visibility: visible;">
+<div class="HELP_DE$vQID" id="HELP_DE$vQID" style="display:none">
 <ul>
   <li><b>Beweisfragmente verschieben:</b> Die Beweisfragmente können mit der Positionsnummer an eine andere Stelle im Beweis verschoben werden. Die zugehörigen Begründungen und Bezüge bilden ein Einheit mit dem Beweisfragment und werden daher ebenfalls verschoben.</li>
   <li><b>3 Fragezeichen:</b> Wenn in dem Beweisfragement links noch 3 Fragezeichen stehen "???", so ist noch kein Bezug zum vorherigen Beweisschritt gesetzt worden. Diesen sollte man angeben oder wenn es keinen Bezug zum vorherigen Beweisschritt gibt, sollte man den Bezug auf "START" einer neuen Beweissequenz setzen.</li>
@@ -912,7 +914,7 @@ __do__so+=1
   <li><b><font color="red">[X]</font>-Button:</b> Mit dem <font color="red">[X]</font>-Knopf in dem jeweilgen Beweisschritt kann man das Beweisfragment aus Ihrem Beweis entfernen. Dieser ist dann aber nicht unwiederbringlich gelöscht, sondern kann unten bei [Nicht verwendete Beweisschritte] mit [+] wieder eingeblendet werden.</li>
   <li><b><font color="green">[Vorschlag]</font>-Button:</b> Mit dem <font color="green">[Vorschlag]</font>-Knopf kann man Vorschläge anzeigen lassen. Die Vorschläge werden für den nachfolgenden Beweisschritt angezeigt. Wenn der <font color="green">[Vorschlag]</font>-Knopf gefrückt wurde, kann es zu Punktabzü,gen kommen, wenn das im e-Beweis so eingestellt wurde. Eine Vorschlagsauswahl ersetzt dann den Beweisschritt nachfolgenden Beweisschritt entsprechend. Der Vorschlagsknopf am Ende des Beweis hängt einen neuen Beweisschritt an den Beweis an.</li>
   <li><b>Nicht verwendete Beweisschritte:</b> In einem Beweis können auch Beweisschritte enthalten, die nicht für den Beweis notwendig sind. Diese landen hinter dem Beweis unten auf der Seite in einem Container der <i>"nicht verwendeten Beweisschritte"</i>. Auch gelöschte Beweisfragemente finden sich hier. Mit dem [+] oder der Angabe der Position im Beweis kann man diese wieder an einer bestimmten Stelle in Ihren Beweis integrieren.</li>
-  <li><b>Editierbare Beweisschritte [EDIT]:</b> Wenn ein Beweisfragement den Identifikator [MY..] besitzt, kann dieser auch verändert werden. Um den Beweisschritt zu verändern, klicken Sie auf den [EDIT]-Knopf, der aber nur angezeigt wird, wenn die Einstellungen des e-Beweises dieses vorsehen.</li>
+  <li><b>Editierbare Beweisschritte [EDIT]:</b> Wenn ein Beweisfragement den Identifikator [MY..] besitzt, kann dieser auch verändert werden. Um den Beweisschritt zu verändern, klicken Sie auf den [EDIT]-Knopf, der aber nur angezeigt wird, wenn die Einstellungen des e-Beweises dieses vorsehen. </li>
   <li><b>Ausblenden der Hilfe:</b> Diese Hilfe kann wieder ausgeblendet werden, wenn Sie unten erneut auf den Hilfe-Knopf oder oben neben der Überschrift <b>Hilfe</b> auf [X] drücken.</li>
 </ul>
 </div>
@@ -924,30 +926,31 @@ __do__so+=1
 <tbody>
 <tr>
 <td class="EPROOFLINKS$vQID" id="LINKHEADERURL1$vQID">
-<b>Information:</b> &nbsp;&nbsp; <a href="" target="_blank">Tutorial</a>
+<b>Information:</b> &nbsp;&nbsp; <a id="LINKINFO1$vQID" href="http://math.uni-landau.de/download/IMathAS/eProof_iMathAS_Tutorial.pdf" target="_blank">Tutorial</a>
 </td>
 <td class="EPROOFLINKS$vQID" id="LINKHEADERURL2$vQID">
-<a href="http://e-proof.weebly.com/german-tutorials.html" target="_blank">Video/Screencast</a>
+<a id="LINKINFO2$vQID" href="http://e-proof.weebly.com/german-tutorials.html" target="_blank">Video/Screencast</a>
 </td>
-<td class="EPROOFLINKS$vQID" id="LINKHEADERLINETR0$vQID">
-<button type="button" class="btHelp$vQID" id="btHelp$vQID" onclick="vEProof$vQID.toggle('HELP$vQID')">Hilfe</button>
+<td id="buttonHEADERLINETR1$vQID">
+<a id="LINKINFO3$vQID" href="http://www.wjagray.co.uk/maths/ASCIIMathTutorial.html" target="_blank">ASCII-Math</a>
 </td>
 </tr>
 <tr>
-<td id="HEADERLINETR1$vQID"><b>Anzahl der Beweisfragmente:</b></td>
+<td id="HEADERLINETR1$vQID"><b>Number of Fragments of Proof:</b></td>
 <td id="editHEADERLINETR1$vQID">
 <select class="sSTEPCOUNT$vQID" id="sSTEPCOUNT$vQID" onchange="vEProof$vQID.updateStepCount(this.value)"><option value="0">0</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option></select>
 </td>
-<td id="buttonHEADERLINETR1$vQID">
+<td class="EPROOFLINKS$vQID" id="LINKHEADERLINETR0$vQID">
+<button type="button" class="btHelp$vQID" id="btHelp$vQID" onclick="vEProof$vQID.toggle('HELP$vQID')">Help</button>
 </td>
 </tr>
 <tr>
-<td id="HEADERLINETR2$vQID"><b>Darstellung Beweis:</b></td>
+<td id="HEADERLINETR2$vQID"><b>Display Proof:</b></td>
 <td id="editHEADERLINETR2$vQID">
-<select class="sDISPLAYOPTION$vQID" id="sDISPLAYOPTION$vQID" onchange="vEProof$vQID.setVisibility4Proof(this.value)"><option value="EDITComplete">EDIT: Vollständig</option><option value="EDITShort">EDIT: Kurz</option><option value="Complete">Vollständig</option><option value="Short">Kurz</option><option value="Hide">Ausblenden</option></select>
+<select class="sDISPLAYOPTION$vQID" id="sDISPLAYOPTION$vQID" onchange="vEProof$vQID.setVisibility4Proof(this.value)"><option value="EDITComplete">EDIT: Complete</option><option value="EDITShort">EDIT: Short</option><option value="Complete">Complete</option><option value="Short">Short</option><option value="Hide">Hide</option></select>
 </td>
 <td id="buttonHEADERLINETR2$vQID">
-<button type="button" class="btSave$vQID" id="btSave$vQID" onclick="vEProof$vQID.save(this)">Speichern</button>
+<button type="button" class="btSave$vQID" id="btSave$vQID" onclick="vEProof$vQID.save(this)">Save</button>
 </td>
 </tr><tr>
 </tr>
@@ -957,7 +960,7 @@ __do__so+=1
 
 <div style="display: inline; visibility: visible;" class="STUDENTANSWERLIST$vQID" id="STUDENTANSWERLIST$vQID">
 <hr>
-<h3 class="PROOFLABEL$vQID" id="PROOFLABEL$vQID">Beweis:</h3>
+<h3 class="PROOFLABEL$vQID" id="PROOFLABEL$vQID">Proof:</h3>
 
 <div class="SELECTFROM$vQID" id="SELECTFROM$vQID0" style="display:none"> 
 Do not add 0 after ID because it will be appended by setClassName4Step()
@@ -984,24 +987,24 @@ Total Score:<input step="0" size="4" class="TOTALSCORE$vQID" value="0.0" id="TOT
 <select class="sPOSSPACE$vQID" id="sPOSSPACE$vQID" style="visibility:hidden">
 <option value="99">16</option>
 </select>
-<button type="button" class="bSuggestionFirst$vQID" step="0" id="bSuggestionFirst$vQID" onclick="vEProof$vQID.toggleSuggestionStep('0')" style="color: green; display: inline; visibility: visible;"><font color="green">Vorschlag</font></button>
-<button type="button" class="bReset$vQID" step="0" id="bReset$vQID" onclick="vEProof$vQID.resetProof(this)" style="color:red">Beweis löschen</button>
+<button type="button" class="bSuggestionFirst$vQID" step="0" id="bSuggestionFirst$vQID" onclick="vEProof$vQID.toggleSuggestionStep('0')" style="color: green; display: inline; visibility: visible;"><font color="green">Suggestion</font></button>
+<button type="button" class="bReset$vQID" step="0" id="bReset$vQID" onclick="vEProof$vQID.resetProof(this)" style="color:red">Delete Proof</button>
 <button type="button" class="bManAssess$vQID" manassvisible="0" id="bManAssess$vQID" onclick="vEProof$vQID.toggleManualAssessment(this)" style="display:none">Manual Asessment</button>
 <button type="button" class="bAuthoringMode$vQID" authoringvisible="0" id="bAuthoringMode$vQID" onclick="vEProof$vQID.toggleAuthoringMode(this)" style="display:none">Authoring Mode</button>
 </div>
 <div class="SUGGESTIONS$vQID" id="SUGGESTIONS$vQID0" style="display:none">
-<table align="center" bgcolor="#EAEAEA" border="1" width="96%">
+<table bgcolor="#EAEAEA" border="1" width="96%" align="center">
 <tbody><tr>
 <td>
-<table align="center" border="0" cellspacing="10px" width="96%">
+<table border="0" cellspacing="10px" width="96%" align="center">
 <tbody><tr>
 <td colspan="2">
 <b>(<outtext class="outNEXTNR$vQID" step="0" id="outNEXTNR$vQID">
 1
 </outtext>) 
-<outtext class="bSelectSuggestion$vQID" step="0" id="bSelectSuggestion$vQID0">Vorschlag</outtext></b>
-<button type="button" class="bSelectSuggestionOK$vQID" step="0" id="bSelectSuggestionOK$vQID0" onclick="vEProof$vQID.selectSuggestion(this.getAttribute('step'))">Beweisfragment  auswählen</button>
-<input class="creaSUGGESTION$vQID" id="inCONSUGGESTION$vQID0" value="" style="display:none" type="text">
+<outtext class="bSelectSuggestion$vQID" step="0" id="bSelectSuggestion$vQID0">Suggestion</outtext></b>
+<button type="button" class="bSelectSuggestionOK$vQID" step="0" id="bSelectSuggestionOK$vQID0" onclick="vEProof$vQID.selectSuggestion(this.getAttribute('step'))">Fragment of Proof  select</button>
+<input class="inCONSUGGESTION$vQID" id="inCONSUGGESTION$vQID0" value="" style="display:none" type="text">
 <input class="inIDSUGGESTION$vQID" id="inIDSUGGESTION$vQID0" value="" style="display:none" type="text">
 
 </td>
@@ -1034,16 +1037,16 @@ Total Score:<input step="0" size="4" class="TOTALSCORE$vQID" value="0.0" id="TOT
 <button type="button" class="bShowSuggestionAppend$vQID" step="0" id="bShowSuggestionAppend$vQID" onclick="vEProof$vQID.toggleSuggestionAppend(this)" style="display:none"><font color="green">Append Suggestion</font></button>
 </div>
 
-<button type="button" class="btSave$vQID" id="btSaveII$vQID" onclick="vEProof$vQID.save(this)">Speichern</button>
+<button type="button" class="btSave$vQID" id="btSaveII$vQID" onclick="vEProof$vQID.save(this)">Save</button>
 <div class="UNUSED$vQID" id="UNUSED$vQID" style="display: inline; visibility: visible;">
 <hr>
-<table align="center" bgcolor="#EAEAEA" border="0" width="98%">
+<table bgcolor="#EAEAEA" border="0" width="98%" align="center">
 <tbody><tr>
 <td>
 &nbsp;&nbsp;
 </td> 
 <td> 
-<button type="button" class="btToggleUnused$vQID" id="btToggleUnused$vQID" onclick="vEProof$vQID.toggle('UNUSEDSTEPS$vQID')">+ <b>Nicht verwendete Beweisschritte</b></button>
+<button type="button" class="btToggleUnused$vQID" id="btToggleUnused$vQID" onclick="vEProof$vQID.toggle('UNUSEDSTEPS$vQID')">+ <b>Unused Fragments of the Proof</b></button>
 <div class="UNUSEDSTEPS$vQID" id="UNUSEDSTEPS$vQID" style="display:none"></div>
 </td>
 <td>
@@ -1057,8 +1060,8 @@ Total Score:<input step="0" size="4" class="TOTALSCORE$vQID" value="0.0" id="TOT
 <div class="ASSESSMENTandSOLUTION" id="ASSESSMENTandSOLUTION$vQID">
 <hr>
 <button type="button" class="btXAS$vQID" id="btXAS$vQID" onclick="vEProof$vQID.hide('SOLUTION$vQID');vEProof$vQID.hide('ASSESSMENT$vQID')" style="visibility:hidden"> X </button>
-<button type="button" class="btSolution$vQID" id="btSolution$vQID" onclick="vEProof$vQID.clickSolution()" style="display: inline; visibility: visible;"><font color="green">Lösung</font></button>
-<button type="button" class="btAssessment$vQID" id="btAssessment$vQID" onclick="vEProof$vQID.clickAssessment()" style="display: inline; visibility: visible;"><font color="red">Bewertung Beweis</font></button>
+<button type="button" class="btSolution$vQID" id="btSolution$vQID" onclick="vEProof$vQID.clickSolution()" style="display: inline; visibility: visible;"><font color="green">Solution</font></button>
+<button type="button" class="btAssessment$vQID" id="btAssessment$vQID" onclick="vEProof$vQID.clickAssessment()" style="display: inline; visibility: visible;"><font color="red">Assessment Proof</font></button>
 <div id="ASSESSMENT$vQID" style="display:none"></div>
 <div class="SOLUTION$vQID" id="SOLUTION$vQID" style="display:none"></div>
 </div> 
@@ -1066,12 +1069,12 @@ Total Score:<input step="0" size="4" class="TOTALSCORE$vQID" value="0.0" id="TOT
 <div class="PROOFSTEPandJUSTIFICATION" id="PROOFSTEPandJUSTIFICATION$vQID">
 <hr>
 <button type="button" class="btXPJ$vQID" id="btXPJ$vQID" onclick="vEProof$vQID.toggleList('JUSTIFICATION','0','PROOFSTEP','0')" style="visibility:hidden"> X </button>
-<button type="button" class="btProofStep$vQID" id="btProofStep$vQID" onclick="vEProof$vQID.toggleList('JUSTIFICATION','0','PROOFSTEP','1')">Beweisfragmente</button>
-<button type="button" class="btJustification$vQID" id="btJustification$vQID" onclick="vEProof$vQID.toggleList('JUSTIFICATION','1','PROOFSTEP','0')">Begründungen</button>
+<button type="button" class="btProofStep$vQID" id="btProofStep$vQID" onclick="vEProof$vQID.toggleList('JUSTIFICATION','0','PROOFSTEP','1')">Fragments of Proof</button>
+<button type="button" class="btJustification$vQID" id="btJustification$vQID" onclick="vEProof$vQID.toggleList('JUSTIFICATION','1','PROOFSTEP','0')">Justifications</button>
 <div class="PROOFSTEPLIST$vQID" id="PROOFSTEPLIST$vQID" style="display:none"></div>
-<button type="button" class="bAddStepID$vQID" steptype="PROOFSTEP" id="bAddStepPROOFSTEP$vQID" onclick="vEProof$vQID.addStepDefinition(this)" style="color: green; display: none; visibility: hidden;">+Step PROOFSTEP</button>
+<button type="button" class="bAddStepID$vQID" steptype="PROOFSTEP" id="bAddStepPROOFSTEP$vQID" onclick="vEProof$vQID.addStepDefinition(this)" style="color: green; display: inline; visibility: visible;">+Step PROOFSTEP</button>
 <div class="JUSTIFICATIONLIST$vQID" id="JUSTIFICATIONLIST$vQID" style="display:none"></div>
-<button type="button" class="bAddStepID$vQID" steptype="JUSTIFICATION" id="bAddStepJUSTIFICATION$vQID" onclick="vEProof$vQID.addStepDefinition(this)" style="color: green; display: none; visibility: hidden;">+Step JUSTIFICATION</button>
+<button type="button" class="bAddStepID$vQID" steptype="JUSTIFICATION" id="bAddStepJUSTIFICATION$vQID" onclick="vEProof$vQID.addStepDefinition(this)" style="color: green; display: inline; visibility: visible;">+Step JUSTIFICATION</button>
 </div> 
 
 <hr>
@@ -1090,7 +1093,7 @@ var vEProof$vQID = new EProof_SID();
 var vRootID = "EPROOF_$vQID_";
 vRootID = "EPROOF$vQID";
 var vRootDOM = document.getElementById(vRootID);
-vEProof$vQID.load('$vQID','$thisq',vRootDOM,vRootID);
+vEProof$vQID.load('$vQID','$thisq',vRootDOM,vRootID,'DEFAULT');
 //alert("Root.id="+r.id);
 //window.setTimeout("vEProof$vQID.load('$vQID','$thisq',vRootDOM,vRootID)",400);
 //---------------------------
