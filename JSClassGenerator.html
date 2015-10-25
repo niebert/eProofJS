@@ -67,7 +67,7 @@ function createJSClass()
 	var vClassTail    	= document.fCreator.tClassTail.value;
 	var vAttribArray    = vAttributes.split(/\n/);
 	var vMethodArray    = vMethods.split(/\n/);
-	var vAttribConstructor = "	//---Attributes-------------------------\n";
+	var vAttribConstructor = ""; //"	//---Attributes-------------------------\n";
 	var vMethodConstructor = "	//---Methods----------------------------\n";
 	var vOutput = vHeader;
 	if (vSuperClassname == "") {
@@ -166,6 +166,14 @@ function loadLocalStorage() {
 		};
 	};
 }
+function clearLocalStorage() {
+	//alert("vDOM_ID.length="+vDOM_ID.length);
+	for (var i=0;i < vDOM_ID.length; i++ ) {
+		var vID = vDOM_ID[i];
+		localStorage.removeItem(vID);
+	};
+}
+
 </script>
 
 
@@ -182,6 +190,8 @@ function loadLocalStorage() {
 <b>Import Javascript Classes in <a href="../javascript2htmlcreator/index.html" target="_blank">HTML-Javascript Environment</a></b>
 <br>
 <input type="button" onclick="saveLocalStorage()" value="Save Local Storage">
+-------
+<input type="button" onclick="clearLocalStorage()" value="Clear Local Storage">
 </center>
 <form name="fCreator">
 <table bgcolor="#A9BCF5" border="1">
@@ -211,28 +221,17 @@ function loadLocalStorage() {
 	<tr>
 		<td>
 			<b>Attributes</b><br>
-			<textarea name="tAttributes" id="tAttributes" cols="60" rows="10">aChildClassName = "STUDENTANSWER"
-aQID = "__QID__"
-aRootID = "EPROOF"
-aRootDOM = document.getElementById(this.aRootID+this.aQID)
-aNodeID = "STUDENTANSWERLIST"
-aNodeDOM = this.aRootDOM.getElementById(this.aNodeID)
-			</textarea>
+			<textarea name="tAttributes" id="tAttributes" cols="60" rows="10">aTreeXML = null
+aRootID = "TREEXML"
+aRootDOM = document.getElementById(this.aRootID)
+aDOMIDs = new Array("MYID1","MYID2","OTHERID1")			</textarea>
 		</td>
 		<td>
 			<b>Methods</b><br>
 			<textarea name="tMethods" id="tMethods" cols="60" rows="10">load_IMathAS()
-save_IMathAS()
-preProcess4JS()
-preProcess()
-postProcess()
-postProcess4JS_only()
-getListIMathAS(pTextareaID)
-getItemsIMathAS(pTextareaID,pListArray)
-createSelectPosition()
-createSelectConnection4JS()
-createSelectStepID()
-createEditJustifications4JS()
+load_LS()
+save_LS()
+parseXML()
 			</textarea>
 		</td>
 	</tr>
@@ -268,7 +267,7 @@ createEditJustifications4JS()
 
 //---------------------------------------------------------------------
 //---Import this Class in HTML-File with
-// &lt;SCRIPT LANGUAGE="JavaScript" SRC="myclass.js"&gt; &lt;/SCRIPT&gt;
+// &lt;SCRIPT LANGUAGE="JavaScript" SRC="___CLASSFILENAME___"&gt; &lt;/SCRIPT&gt;
 //---------------------------------------------------------------------
 //---Constructor of Class ___CLASSNAME___() 
 // Call the constructor for creating an instance of class ___CLASSNAME___
@@ -278,7 +277,7 @@ createEditJustifications4JS()
 //----Attributes-------------------------------------------------------
 //---------------------------------------------------------------------
 // If you want to access the attributes of ___CLASSNAME___, use
-// the attribute name with a leading "this.", e.g.
+// the attribute name with a leading "this." in the definition of method of ___CLASSNAME___, e.g.
 // this.myattrib3 = "Hello World";
 //---------------------------------------------------------------------
 //----Methodes---------------------------------------------------------
@@ -296,10 +295,14 @@ createEditJustifications4JS()
 
 function ___CLASSNAME___ () {
 ___SUPERCLASS___
-___ATTRIBUTES___
 	//---------------------------------------------------------------------
-    //---Methods of Class "___CLASSNAME___()" defined as JS functions 
-    //---------------------------------------------------------------------
+    	//---Attributes of Class "___CLASSNAME___()"
+    	//---------------------------------------------------------------------
+___ATTRIBUTES___
+
+	//---------------------------------------------------------------------
+    	//---Methods of Class "___CLASSNAME___()" defined as JS functions 
+    	//---------------------------------------------------------------------
 
 			</textarea>
 		</td>
@@ -320,16 +323,16 @@ ___ATTRIBUTES___
 	//#################################################################
 
 	this.___METHODNAME___ = function (___METHODPARAMETERS___) {
-	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
-	//alert("___CLASSFILENAME___:___METHODCALL___-Call")
-	//----Create Object/Instance of ___CLASSNAME___----
-	//    var vMyInstance = new ___CLASSNAME___();
-	//    vMyInstance.___METHODCALL___;
-	//-------------------------------------------------------
+		//----Debugging------------------------------------------
+		// The following alert-Command is useful for debugging 
+		//alert("___CLASSFILENAME___:___METHODCALL___-Call")
+		//----Create Object/Instance of ___CLASSNAME___----
+		//    var vMyInstance = new ___CLASSNAME___();
+		//    vMyInstance.___METHODCALL___;
+		//-------------------------------------------------------
 	
-	//&gt;&gt;&gt;&gt; INSERT YOUR CODE HERE &lt;&lt;&lt;&lt;&lt;
-	//___METHODCODE___
+		//&gt;&gt;&gt;&gt; INSERT YOUR CODE HERE &lt;&lt;&lt;&lt;&lt;
+		//___METHODCODE___
     	
 
 	};
@@ -353,6 +356,7 @@ ___ATTRIBUTES___
 		<td colspan="2" align="center">
  		<b>Class Tail</b><br>
 			<textarea name="tClassTail" cols="125" rows="3">
+} 
 //-------------------------------------------
 //---End Definition of Class-----------------
 // JS Class: ___CLASSNAME___
@@ -366,12 +370,7 @@ ___ATTRIBUTES___
 <script>
 // Check browser support
 if (typeof(Storage) != "undefined") {
-    // Store
-   //alert("LastName='"+localStorage.getItem("lastname")+"'");
-   alert("Local Storage");
-   //localStorage.setItem("lastname", "Smith");
-    // Retrieve
-    //document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+   //alert("Local Storage");
     loadLocalStorage();
 } else {
     document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
