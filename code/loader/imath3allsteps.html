@@ -1,0 +1,30 @@
+<body><form><center><textarea id='input'  rows='10' cols='100'>
+//-----------------------------------------------
+//------(2)-CREATE ALL SOURCE STEPS--------------
+//-----------------------------------------------
+//$vTypeArr = array("DISPLAYOPTION",...,"SCORE")
+//"0-DISPLAYOPTION","1-STEPCOUNT","2-STUDENTANSWER",
+//"3-PRECONDITION","4-CONCLUSION","5-JUSTIFICATION","6-PROOFSTEP",
+//"7-SOLUTION","8-ENCRYPTED","9-SETTINGS","10-SCORE")
+$SOURCESTEPS = ""
+$min_k = 3
+$max_k = 6
+for ($k=$min_k..$max_k) {
+  $vType = $vTypeArr[$k] 
+  $max_i = count($vInArray[$k])-1  
+  for ($i=0..$max_i) {
+    //if (stringpos("#__co__#",$vInArray[$k][$i]) >0 ) {
+    if (count($vInArray[$k][$i]) > 1) {
+      //----Define ID and StepDef from vInArray--------------
+      $inID      = $vInArray[$k][$i][0] 
+      $inSTEPDEF = $vInArray[$k][$i][1]
+      $SOURCESTEPS .= "<div class=\"SOURCE".$vQID."-".$vType."\" id=\"SOURCE".$vQID."-".$vID."\">"
+      $SOURCESTEPS .= $inSTEPDEF
+      $SOURCESTEPS .= "</div>"
+    }
+  }
+}
+//---------------------------
+$SOURCESTEPS = ""
+//---------------------------
+</textarea></center></form></body></html>
