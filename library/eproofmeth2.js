@@ -2179,6 +2179,7 @@ function preProcess4Lanugage_EProof__SID__() {
 		this.getElementById("LINKHEADERURL1"+this.aQID).innerHTML = this.LT+"b"+this.GT+"Information"+this.LT+"/b"+this.GT;
 		this.getElementById("LINKHEADERURL2"+this.aQID).innerHTML = "";
 		this.hideNode(this.getElementById("LINKINFO3"+this.aQID));
+		//this.getElementById("LINKINFO3"+this.aQID).innerHTML = "";
 	};
 	this.getElementById("HEADERLINETR1"+this.aQID).innerHTML =(vLanguage["Number_of"]+" "+vLanguage["ProofSteps"]+":").bold();
 	this.getElementById("HEADERLINETR2"+this.aQID).innerHTML =(vLanguage["Display"]+" "+vLanguage["Proof"]+":").bold();
@@ -2723,13 +2724,13 @@ function saveIMathAS_EProof__SID__() {
 		vRet = this.saveArr2IMathAS(vArr,vPre,vJoin,vPost);
 	}
 	vOut = this.replaceString(vOut,"___STUDENTANSWERS___",vRet);
-	vArr = (this.aSettings["COMMONCONTROL"]).split(",");
+	vArr = (this.aSettings["COMMONCONTROL"]).split(/,|__[coCO]+__/);
 	vPre  = "includecodefrom(";
 	vJoin = ")"+this.CR+vPre;
 	vPost = ")"+this.CR;
 	vRet = this.saveArr2IMathAS(vArr,vPre,vJoin,vPost);
 	vOut = this.replaceString(vOut,"___INCLUDECODE___",vRet);
-	vArr = (this.aSettings["QUESTIONTEXT"]).split(",");
+	vArr = (this.aSettings["QUESTIONTEXT"]).split(/,|__[coCO]+__/);
 	vPre  = "// includeqtextfrom(";
 	vJoin = ")"+this.CR+vPre;
 	vRet = this.saveArr2IMathAS(vArr.slice(1),vPre,vJoin,vPost);
