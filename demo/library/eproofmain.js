@@ -1244,7 +1244,10 @@ function EProof__SID__ () {
 		//this.hide("MAINCONTROL"+this.aQID);
 		this.saveEProofIMath2Form();
 		this.getElementById("tIMATHCOMMONCONTROL_I"+this.aQID).value = this.createSettingsForm();
-		this.getElementById("tWEEBLYEXPORT"+this.aQID).value = this.getWeeblyEProof();
+		// getWeebly(pLibPath,pMathJaxPath,pMathJaxConfig,pQID,pThisQ,pSID,pAuthoring)
+		this.getElementById("tWEEBLYEXPORT"+this.aQID).value = this.getWeeblyEProof("/files/theme/",null,"LaTeX","_WEB","_TQ","_SID","DEFAULT");
+		this.getElementById("tEPROOFJSEXPORT"+this.aQID).value = this.getWeeblyEProof("library/","../MathJax/","ASCIIMath","__QID__","__THISQ__","__SID__","DEFAULT","HTMLROOT");
+		this.getElementById("tAUTHORINGEXPORT"+this.aQID).value = this.getWeeblyEProof("library/","../MathJax/","ASCIIMath","__QID__","__THISQ__","__SID__","AUTHORING","HTMLROOT");
 		//this.showHideBoolean("PROOFCONTROL"+this.aQID,this.aSettings["show_Load_Save_Control"]);
 		//this.showHideBoolean("MAINCONTROL"+this.aQID,this.aSettings["show_Main_Control"]);
 
