@@ -1,4 +1,4 @@
-<html><head>
+<html id="HTMLROOT"><head>
    <TITLE>e-Proof-Creator for iMathAS</TITLE>
 <!--
 #################################################################
@@ -8,6 +8,7 @@
 #     Used Library: library/ASCIIMathML.js 
 #                   Version 2.0.1 Sept 27, 2007, by Peter Jipsen
 #                   library/xmlparser.js 
+#                   MathJax
 #                
 # Author/Editor:      Engelbert Niehaus                    
 # email:              niehaus@uni-landau.de                 
@@ -69,8 +70,8 @@
   <VARIABLE NAME='remap_proofstep_IDs' VALUE='1' />
   <VARIABLE NAME='randomize_proofstep_IDs' VALUE='1' />
   <VARIABLE NAME='cryptkey' VALUE='ACBSD' />
-  <VARIABLE NAME='show_Load_Save_Control' VALUE='1' />
-  <VARIABLE NAME='show_Main_Control' VALUE='1' />
+  <VARIABLE NAME='show_Load_Save_Control' VALUE='0' />
+  <VARIABLE NAME='show_Main_Control' VALUE='0' />
   <VARIABLE NAME='show_links' VALUE='1' />
   <VARIABLE NAME='show_assessment' VALUE='1' />
   <VARIABLE NAME='show_suggestions' VALUE='1' />
@@ -534,8 +535,14 @@
 							 Software-ID (SID):<input type="text" class="tSID__QID__" size='6' id="tSID__QID__" name="tSID__QID__" value="_SID"  onchange="vEProof__QID__.saveEProofIMath2Form()" >
 							 Question-ID (QID):<input type="text" class="tQID__QID__" size='6' id="tQID__QID__" name="tQID__QID__" value="$vQID" onchange="vEProof__QID__.saveEProofIMath2Form()" >
 							<BUTTON type='button' class='bIMPORTCANCEL__QID__' id='bIMPORTCONTROL__QID__'  onclick="vEProof__QID__.clickCloseControl()" style="color:red">Cancel</BUTTON></br>
-							<HR>Background Question Text 1:<BR>
+							<HR>iMathAS Background Question Text 0:<BR>
 							<TEXTAREA name="tSAVEIMATH__QID__" class="tSAVEIMATH__QID__" id="tSAVEIMATH__QID__" cols="100" rows="6"  wrap="off">
+							</TEXTAREA>
+							<HR><tt>eProofJS.html</tt> Export:<BR>
+							<TEXTAREA name="tEPROOFJSEXPORT__QID__" class="tEPROOFJSEXPORT__QID__" id="tEPROOFJSEXPORT__QID__" cols="100" rows="6"  wrap="off">
+							</TEXTAREA>
+							<HR><tt>eProofJSauthoring.html</tt> Export:<BR>
+							<TEXTAREA name="tAUTHORINGEXPORT__QID__" class="tAUTHORINGEXPORT__QID__" id="tAUTHORINGEXPORT__QID__" cols="100" rows="6"  wrap="off">
 							</TEXTAREA>
 							<HR>Weebly Export:<BR>
 							<TEXTAREA name="tWEEBLYEXPORT__QID__" class="tWEEBLYEXPORT__QID__" id="tWEEBLYEXPORT__QID__" cols="100" rows="6"  wrap="off">

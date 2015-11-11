@@ -166,9 +166,10 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	//# Nested: getIMathEProofClone()
 	//#################################################################
-	this.getIMathEProofClone = function(pLoadXML) {
+	this.getIMathEProofClone = function(pLoadXML,pRootID) {
 		// clone e-Proof
-		var vIMathRoot = document.getElementById("EMULATIONiMathAS");
+		var vRootID = pRootID || "EMULATIONiMathAS";
+		var vIMathRoot = document.getElementById(vRootID);
 		var cln = vIMathRoot.cloneNode(true);
 		var vLoadXML = this.getChildById(cln,"tLOAD"+this.aQID);
 		vLoadXML.innerHTML = pLoadXML || "";
@@ -694,7 +695,15 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	//# Nested: getWeeblyEProof()
 	//#################################################################
-	this.getWeeblyEProof = function(pLibPath,pMathJaxPath,pMathJaxConfig) {
+	this.getWeeblyEProof = function(pLibPath,pMathJaxPath,pMathJaxConfig,pQID,pThisQ,pSID,pAuthoring,pRootID) {
+		var vInsertLibs = true;
+		if (pRootID) {	
+			vInsertLibs = false;
+		};
+		var vQID = pQID || "__QID__";
+		var vThisQ = pThisQ || "__THISQ__";
+		var vSID = pSID || "__SID__";
+		var vAuthoring = pAuthoring || "DEFAULT";
 		var vLoadXML = this.getChildById(this.aRootDOM,"tLOAD"+this.aQID);
 		//var vLibPath  = pLibPath || "http://math.uni-landau.de/javascript/eProofJS/library/";
 		// In Weebly local theme files are referenced
@@ -704,25 +713,35 @@ function appendMethods_EProof__SID__ () {
 		var vLibPath  = pLibPath || "/files/theme/";
 		var vMathJaxPath = pMathJaxPath || "http://cdn.mathjax.org/mathjax/latest/";
 		var vMathJaxConfig = pMathJaxConfig || "AM_HTMLorMML"; 
-		if (pMathJaxConfig == "LaTeX") {
+		if (pMathJaxConfig.toUpperCase() == "LATEX") {
 			// LaTeX-Config: TeX-AMS-MML_HTMLorMML 
 			vMathJaxConfig = "TeX-AMS-MML_HTMLorMML";
+		} else if (pMathJaxConfig.toUpperCase() == "ASCIIMATH") {
+			// ASCII-Math Config: AM_HTMLorMML
+			vMathJaxConfig = "AM_HTMLorMML";
 		};
-		var cln = this.getIMathEProofClone(vLoadXML.value);
+		var cln = this.getIMathEProofClone(vLoadXML.value,pRootID);
 		//this.getIMathEProofAnswerBox(cln);
 		cln = this.getIMathEProofClearSteps(cln);
-		var vStartJS = this.LT+"script type=\"text/javascript\" src=\"";
-		var vEndJS = "\""+this.GT+this.LT+"/script"+this.GT+this.CR;
 		var vReturn = "";
-		vReturn += vStartJS + vLibPath +"language.js" + vEndJS;
-		vReturn += vStartJS + vLibPath +"eproofmain.js" + vEndJS;
-		vReturn += vStartJS + vLibPath +"eproofmeth1.js" + vEndJS;
-		vReturn += vStartJS + vLibPath +"eproofmeth2.js" + vEndJS;
-		//Path: "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"
-		vReturn += vStartJS + vMathJaxPath + "MathJax.js?config=" + vMathJaxConfig + vEndJS;
-		//vReturn += this.LT+"script src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML\""+this.GT+""+this.LT+"/script"+this.GT+this.CR;
-		//vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","_SID"); 
-		vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","__SID__","DEFAULT"); 
+		if (vInsertLibs) {
+			var vStartJS = this.LT+"script type=\"text/javascript\" src=\"";
+			var vEndJS = "\""+this.GT+this.LT+"/script"+this.GT+this.CR;
+			vReturn += vStartJS + vLibPath +"language.js" + vEndJS;
+			vReturn += vStartJS + vLibPath +"eproofmain.js" + vEndJS;
+			vReturn += vStartJS + vLibPath +"eproofmeth1.js" + vEndJS;
+			vReturn += vStartJS + vLibPath +"eproofmeth2.js" + vEndJS;
+			//Path: "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"
+			vReturn += vStartJS + vMathJaxPath + "MathJax.js?config=" + vMathJaxConfig + vEndJS;
+			//vReturn += this.LT+"script src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML\""+this.GT+""+this.LT+"/script"+this.GT+this.CR;
+			//vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","_SID"); 
+		} else {
+			vReturn += this.LT + "html id='HTMLROOT'"+ this.GT;
+		};
+		vReturn += this.getIMathEProofInnerHTML(cln,vQID,vThisQ,vSID,vAuthoring); 
+		if (!vInsertLibs) {
+			vReturn += this.LT + "/html"+ this.GT;
+		};
 		return vReturn;	
 	};
 	//#################################################################

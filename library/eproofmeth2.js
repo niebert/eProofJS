@@ -1638,12 +1638,14 @@ function load_EProof__SID__(pQID,pThisQ,pRootDOM,pRootID,pMode) {
 		this.load_Form_LocalStorage();
 		this.aThisQ = "1";
 		this.aOffline = "1";
+		this.show("bSAVEIMATHCONTROL"+this.aQID);
 	} else {
 		//--Online-Mode iMathAS
 		//alert("Load From IMathAS");
 		this.aThisQ = pThisQ;
 		this.aOffline = "0";
-	}
+		this.hide("bSAVEIMATHCONTROL"+this.aQID);
+	};
 	//alert("load(1)");
 	this.preProcess();
 	//alert("load(2)");
@@ -2027,12 +2029,12 @@ function moveStepID_EProof__SID__(pSelectDOM,pID) {
 	var vNewPos = this.getChildByClassName(vSA,"oldPOSITION"+this.aQID).value;
 	//alert("vSelPos="+vSelPos + " vNewPos="+vNewPos + " vStep="+vStep+" pID="+pID+" pMappedID="+vMapID+ " this.aCount="+this.aCount);
 	var vUsedNodes   = this.getUsedSteps();
-	alert("moveStepID: vStep=" + vStep + " pID=" +pID+" vSelPos="+vSelPos+ " TO vNewPos="+vNewPos+"vUsedNodes.length="+vUsedNodes.length);
+	//alert("moveStepID: vStep=" + vStep + " pID=" +pID+" vSelPos="+vSelPos+ " TO vNewPos="+vNewPos+"vUsedNodes.length="+vUsedNodes.length);
 	if (this.greater(vSelPos,vUsedNodes.length)) {
 		//---OldPos is coming from UnusedSteps
 		if (vNewPos == vUsedNodes.length) {
 			//---The NewPos is in UsedSteps---
-			alert("moveStepID():2018 - Minimize");
+			//alert("moveStepID():2018 - Minimize");
 			if (this.greater(vNewPos,0)) {
 				//vNewPos--;
 			};

@@ -3,7 +3,7 @@ TODO:
 [X] "Save" and "Save IMath please Wait"  double ALERT
 [X] Suggestion for first Step does not work
 [] Search for unused Steps in the Solution and store as List in Element id="USEDIDS__QID__"
-[] Authoring ON is not applied on Justifications
+[X] Authoring ON is not applied on Justifications
 [] Randomize Steps creates Error for Suggestions does not work
 [] ExportID Does not work 
 [] Delete Steps in Authoring Mode with [X] does not work.
@@ -13,6 +13,7 @@ FINAL:
 
 TUTORIAL:
 [] MY-Steps may not have a "_F3" extension as distraktor
+[] Install MathJax parallel to eProofJS-Folder.
 
 LOGIC:
 [] Wenn Step oder Justification unused mark Step/Just as "FALSE" or "UNUSED"
