@@ -2622,7 +2622,7 @@ function save_Form_LocalStorage_EProof__SID__(pForm,pOut) {
 //# Comment:                        
 //#
 //# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# last modifications    __DATE__             
 //#################################################################
 function saveOnChange_EProof__SID__() {
 	//var vCrypt = this.getElementById("SELECTSAVETYPE"+this.aQID).value;
@@ -2655,7 +2655,7 @@ function saveOnChange_EProof__SID__() {
 //# Comment:                        
 //#
 //# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# last modifications    __DATE__             
 //#################################################################
 function saveOfflineHTML_EProof__SID__() {
 	var vOut = this.getEProofHTML();
@@ -2668,7 +2668,7 @@ function saveOfflineHTML_EProof__SID__() {
 //# Comment:                        
 //#
 //# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# last modifications    __DATE__             
 //#################################################################
 function saveXML_EProof__SID__() {
 	//var vCrypt = this.getElementById("SELECTSAVETYPE"+this.aQID).value;
@@ -2682,9 +2682,11 @@ function saveXML_EProof__SID__() {
 		vOut += this.createStepsXML("PROOFSTEP",2);
 		vOut += this.createCryptSol("CRYPTSOL");
 	} else {
-		vOut += this.createStepsXML("PROOFSTEP",2);
-		vOut += this.createProofStepsXML("PROOFSTEP",5);
-		//vOut += this.createSolutionXML("SOLUTION",2);
+		//vOut += this.createStepsXML("PROOFSTEP",2);
+		//vOut += this.createProofStepsXML("PROOFSTEP",5);
+		// createSolutionXML includes exports PROOFSTEPS 2 
+		//vOut += this.createSolutionXML("SOLUTION",2,5);
+		vOut += this.createSolutionXML("PROOFSTEP",2,5);
 	};
 	if (this.aSAexport) {
 		vOut += this.createStudentAnswer2XML("STUDENTANSWER",10);
@@ -2700,7 +2702,7 @@ function saveXML_EProof__SID__() {
 //# Comment: export IMathAS Version of the e-Proof                       
 //#
 //# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# last modifications    __DATE__             
 //#################################################################
 function saveIMathAS_EProof__SID__() {
 	alert("Save IMathAS");
@@ -2714,8 +2716,8 @@ function saveIMathAS_EProof__SID__() {
 	if (this.aCrypt) {
 		vOut = this.createSolutionIMathAS("CryptSolution",vOut);
 	//} else {
-	//	vOut = this.createSolutionIMathAS("SolutionStep",vOut);
 	};
+	vOut = this.createSolutionIMathAS("SolutionStep",vOut);
 	var vRet = "//--- Student Answers not defined/exported ---"+this.CR;
 	var vFormSA = this.createStudentAnswer2IMathAS();
 	var vArr = vFormSA.split(this.CR);
@@ -2751,7 +2753,7 @@ function saveIMathAS_EProof__SID__() {
 //# Comment:  Save Content to IMathAS in Online Mode integrated in IMathAS                      
 //#
 //# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# last modifications    __DATE__             
 //#################################################################
 function saveArr2IMathAS_EProof__SID__(pArr,pPre,pJoin,pPost) {
 	var vRet = "";
@@ -2770,7 +2772,7 @@ function saveArr2IMathAS_EProof__SID__(pArr,pPre,pJoin,pPost) {
 //# Comment:                        
 //#
 //# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# last modifications    __DATE__             
 //#################################################################
 function saveSol2IMathAS_EProof__SID__() {
 	this.getIMathById("SOLUTION").value = this.createSol2IMathAS();

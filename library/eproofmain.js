@@ -88,8 +88,8 @@ function EProof__SID__ () {
 	this.aMappedID  	  = new Array();
 	this.aOriginalID  	  = new Array();
 	this.aSolution        = new Array(); //Array with all Solution Steps
-	this.vLink_Screencast = "http://e-proof.weebly.com/german-tutorials.html";
-	this.vLink_Tutorial   = "http://math.uni-landau.de/download/IMathAS/eProof_iMathAS_Tutorial.pdf";
+	this.vLink_Screencast = "http://e-proof.weebly.com/videos.html";
+	this.vLink_Tutorial   = "http://e-proof.weebly.com/tutorials.html";
 	this.vLink_ASCIIMath  = "http://www.wjagray.co.uk/maths/ASCIIMathTutorial.html";
 	this.vMaxQuestionPart = 6;
 	this.vUpdateEdit = 0;
@@ -1708,11 +1708,15 @@ function EProof__SID__ () {
 	//#################################################################
 	//# Nested: createStepsXML(pStepType,pSize)
 	//#################################################################
-	this.createStepsXML = function (pStepType,pSize) {
+	this.createStepsXML = function (pStepType,pSize,pTagWrap) {
 		var vOutput = "";
-		vOutput += "  "+this.LT+"VARLIST NAME='"+pStepType+"_OPTIONS'"+this.GT+this.CR;
+		if (!pTagWrap) {
+			vOutput += "  "+this.LT+"VARLIST NAME='"+pStepType+"_OPTIONS'"+this.GT+this.CR;
+		};
 		vOutput += this.createStepsInnerXML(pStepType,pSize);
-		vOutput += "  "+this.LT+"/VARLIST"+this.GT+this.CR;
+		if (!pTagWrap) {
+			vOutput += "  "+this.LT+"/VARLIST"+this.GT+this.CR;
+		};
 		//return "create Step XML"+pStepType+" Size="+pSize+" ";
 		return vOutput;
 	};
@@ -1993,15 +1997,24 @@ function EProof__SID__ () {
 	//#################################################################
 	//# Nested: createSolutionXML()
 	//#################################################################
-	this.createSolutionXML = function () {
-		return this.createProofStepsXML("PROOFSTEP","5");
+	this.createSolutionXML = function (pStepType,pSize2,pSize5) {
+		var vOut = "";
+		vOut += "  "+this.LT+"VARLIST NAME='"+pStepType+"_OPTIONS'"+this.GT+this.CR;
+		vOut += this.createStepsXML("PROOFSTEP","2","NO_TAG_WARP");
+		vOut += this.createProofStepsXML("PROOFSTEP","5","NO_TAG_WARP");
+		//vOut += this.createStepsXML("PROOFSTEP","2");
+		//vOut += this.createProofStepsXML("PROOFSTEP","5");
+		vOut += "  "+this.LT+"/VARLIST"+this.GT+this.CR;		
+		return vOut; 
 	};
 	//#################################################################
 	//# Nested: createProofStepsXML(pStepType,pSize)
 	//#################################################################
-	this.createProofStepsXML = function (pStepType,pSize) {
+	this.createProofStepsXML = function (pStepType,pSize,pTagWrap) {
 		var vOut = "";
-		vOut += "  "+this.LT+"VARLIST NAME='"+pStepType+"_OPTIONS'"+this.GT+this.CR;
+		if (!pTagWrap) {
+			vOut += "  "+this.LT+"VARLIST NAME='"+pStepType+"_OPTIONS'"+this.GT+this.CR;
+		};
 		var vSolSeq = new Array();
 		if (this.aExportSol) {
 			vSolSeq = this.createSolutionSequence();
@@ -2027,7 +2040,9 @@ function EProof__SID__ () {
 			vPreID = vID;
 			i++;
 		};
-		vOut += "  "+this.LT+"/VARLIST"+this.GT+this.CR;		
+		if (!pTagWrap) {
+			vOut += "  "+this.LT+"/VARLIST"+this.GT+this.CR;
+		};
 		return vOut;
 	};
 	//#################################################################
