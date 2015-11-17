@@ -2,6 +2,7 @@ var vControlButtons = false;
 
 var vPartNr = 0;
 var vFileNr = 0;
+var vLimitGlobal = 63000; // < 2^16=65536
 
 //---------------------------------------------
 function allTabs2Blank(pDOM)
@@ -659,8 +660,8 @@ function splitStepsSizeFixed() {
 	var vPart = "";
 	var vPartNr = 0;
 	var vPartSize = 0;
-	var vLimit = 60000;
-	//alert("vArr.length="+vArr.length);
+	var vLimit = vLimitGlobal; //2^16=65536
+ 	//alert("vArr.length="+vArr.length);
 	var i = 0;
 	while (i != vArr.length) {
 		vPart +=vArr[i]+"\n";
@@ -697,7 +698,7 @@ function processSplitAndRemove() {
 		vDone = true; 
 	} else {
 		var vNameArr = ["vLanguage","eProofMain","eProofMeth1","eProofMeth2"];
-		var vLimitMax = 62500;
+		var vLimitMax = vLimitGlobal;  //62500 < 2^16=65536
 		var vLimit = vLimitMax;
 		var vInput = document.getElementById("input");
 		var vOutput = document.getElementById("output");
@@ -806,7 +807,7 @@ function splitSteps() {
 	//var vArr = vString.split("\n");
 	var vPart = "";
 	var vPartNr = 0;
-	var vLimit = 60000;
+	var vLimit = vLimitGlobal; //60000 < 2^16=65536;
 	alert("vString.length="+vString.length);
 	var i = 0;
 	while (i*vLimit < vString.length) {
@@ -836,7 +837,7 @@ function splitParts() {
 	//var vArr = vString.split("\n");
 	var vPart = "";
 	var vPartNr = 0;
-	var vLimit = 62500;
+	var vLimit = vLimitGlobal; //62500 < 2^16=65536;
 	alert("vString.length="+vString.length);
 	var i = 0;
 	while (i*vLimit < vString.length) {
