@@ -6,7 +6,7 @@
 //# Author of Class:      Engelbert Niehaus                    
 //# email:                niehaus@uni-landau.de                 
 //# created               24.2.2015             
-//# last modifications    28.10.2015 13:47:12             
+//# last modifications    17.11.2015, 07:55:56             
 //# GNU Public License - OpenSource
 //# created with JavaScript Class Generator by Engelbert Niehaus 
 //#################################################################
@@ -88,8 +88,8 @@ function EProof__SID__ () {
 	this.aMappedID  	  = new Array();
 	this.aOriginalID  	  = new Array();
 	this.aSolution        = new Array(); //Array with all Solution Steps
-	this.vLink_Screencast = "http://e-proof.weebly.com/german-tutorials.html";
-	this.vLink_Tutorial   = "http://math.uni-landau.de/download/IMathAS/eProof_iMathAS_Tutorial.pdf";
+	this.vLink_Screencast = "http://e-proof.weebly.com/videos.html";
+	this.vLink_Tutorial   = "http://e-proof.weebly.com/tutorials.html";
 	this.vLink_ASCIIMath  = "http://www.wjagray.co.uk/maths/ASCIIMathTutorial.html";
 	this.vMaxQuestionPart = 6;
 	this.vUpdateEdit = 0;
@@ -1244,7 +1244,10 @@ function EProof__SID__ () {
 		//this.hide("MAINCONTROL"+this.aQID);
 		this.saveEProofIMath2Form();
 		this.getElementById("tIMATHCOMMONCONTROL_I"+this.aQID).value = this.createSettingsForm();
-		this.getElementById("tWEEBLYEXPORT"+this.aQID).value = this.getWeeblyEProof();
+		// getWeebly(pLibPath,pMathJaxPath,pMathJaxConfig,pQID,pThisQ,pSID,pAuthoring)
+		this.getElementById("tWEEBLYEXPORT"+this.aQID).value = this.getWeeblyEProof("/files/theme/",null,"LaTeX","_WEB","_TQ","_SID","DEFAULT");
+		this.getElementById("tEPROOFJSEXPORT"+this.aQID).value = this.getWeeblyEProof("library/","../MathJax/","ASCIIMath","__QID__","__THISQ__","__SID__","DEFAULT","HTMLROOT");
+		this.getElementById("tAUTHORINGEXPORT"+this.aQID).value = this.getWeeblyEProof("library/","../MathJax/","ASCIIMath","__QID__","__THISQ__","__SID__","AUTHORING","HTMLROOT");
 		//this.showHideBoolean("PROOFCONTROL"+this.aQID,this.aSettings["show_Load_Save_Control"]);
 		//this.showHideBoolean("MAINCONTROL"+this.aQID,this.aSettings["show_Main_Control"]);
 
@@ -1623,7 +1626,7 @@ function EProof__SID__ () {
 	this.createSettingIMathAS = function (pHash) {
 		var vTPL = this.getElementById("tTPLIMATHAS").value;
 		vTPL = this.replaceString(vTPL,"__do__",this.DO);
-		vTPL = this.replaceString(vTPL,"_28.10.2015 13:47:12_",this.getDateString());
+		vTPL = this.replaceString(vTPL,"_17.11.2015, 07:55:56_",this.getDateString());
 		var vSettings = "";
 		for (var iID in this.aSettings) {
 			var vSearch = "___"+iID.toUpperCase()+"___";
@@ -1705,11 +1708,15 @@ function EProof__SID__ () {
 	//#################################################################
 	//# Nested: createStepsXML(pStepType,pSize)
 	//#################################################################
-	this.createStepsXML = function (pStepType,pSize) {
+	this.createStepsXML = function (pStepType,pSize,pTagWrap) {
 		var vOutput = "";
-		vOutput += "  "+this.LT+"VARLIST NAME='"+pStepType+"_OPTIONS'"+this.GT+this.CR;
+		if (!pTagWrap) {
+			vOutput += "  "+this.LT+"VARLIST NAME='"+pStepType+"_OPTIONS'"+this.GT+this.CR;
+		};
 		vOutput += this.createStepsInnerXML(pStepType,pSize);
-		vOutput += "  "+this.LT+"/VARLIST"+this.GT+this.CR;
+		if (!pTagWrap) {
+			vOutput += "  "+this.LT+"/VARLIST"+this.GT+this.CR;
+		};
 		//return "create Step XML"+pStepType+" Size="+pSize+" ";
 		return vOutput;
 	};
@@ -1990,15 +1997,24 @@ function EProof__SID__ () {
 	//#################################################################
 	//# Nested: createSolutionXML()
 	//#################################################################
-	this.createSolutionXML = function () {
-		return this.createProofStepsXML("PROOFSTEP","5");
+	this.createSolutionXML = function (pStepType,pSize2,pSize5) {
+		var vOut = "";
+		vOut += "  "+this.LT+"VARLIST NAME='"+pStepType+"_OPTIONS'"+this.GT+this.CR;
+		vOut += this.createStepsXML("PROOFSTEP","2","NO_TAG_WARP");
+		vOut += this.createProofStepsXML("PROOFSTEP","5","NO_TAG_WARP");
+		//vOut += this.createStepsXML("PROOFSTEP","2");
+		//vOut += this.createProofStepsXML("PROOFSTEP","5");
+		vOut += "  "+this.LT+"/VARLIST"+this.GT+this.CR;		
+		return vOut; 
 	};
 	//#################################################################
 	//# Nested: createProofStepsXML(pStepType,pSize)
 	//#################################################################
-	this.createProofStepsXML = function (pStepType,pSize) {
+	this.createProofStepsXML = function (pStepType,pSize,pTagWrap) {
 		var vOut = "";
-		vOut += "  "+this.LT+"VARLIST NAME='"+pStepType+"_OPTIONS'"+this.GT+this.CR;
+		if (!pTagWrap) {
+			vOut += "  "+this.LT+"VARLIST NAME='"+pStepType+"_OPTIONS'"+this.GT+this.CR;
+		};
 		var vSolSeq = new Array();
 		if (this.aExportSol) {
 			vSolSeq = this.createSolutionSequence();
@@ -2024,7 +2040,9 @@ function EProof__SID__ () {
 			vPreID = vID;
 			i++;
 		};
-		vOut += "  "+this.LT+"/VARLIST"+this.GT+this.CR;		
+		if (!pTagWrap) {
+			vOut += "  "+this.LT+"/VARLIST"+this.GT+this.CR;
+		};
 		return vOut;
 	};
 	//#################################################################

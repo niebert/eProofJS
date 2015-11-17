@@ -88,8 +88,8 @@ function EProof__SID__ () {
 	this.aMappedID  	  = new Array();
 	this.aOriginalID  	  = new Array();
 	this.aSolution        = new Array(); //Array with all Solution Steps
-	this.vLink_Screencast = "http://e-proof.weebly.com/german-tutorials.html";
-	this.vLink_Tutorial   = "http://math.uni-landau.de/download/IMathAS/eProof_iMathAS_Tutorial.pdf";
+	this.vLink_Screencast = "http://e-proof.weebly.com/videos.html";
+	this.vLink_Tutorial   = "http://e-proof.weebly.com/tutorials.html";
 	this.vLink_ASCIIMath  = "http://www.wjagray.co.uk/maths/ASCIIMathTutorial.html";
 	this.vMaxQuestionPart = 6;
 	this.vUpdateEdit = 0;
