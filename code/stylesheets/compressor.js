@@ -611,30 +611,6 @@ function replaceMetaQID(pDOM) {
 	}
 };
 //---------------------------------------------
-function createIncludeCode() {
-	//alert("Common Control");
-	replaceIncludeCode("COMMONCONTROL");
-	//alert("Question Text");
-	replaceIncludeCode("QUESTIONTEXT");
-};
-//---------------------------------------------
-//---------------------------------------------
-function replaceIncludeCode(pDOM) {
-//---------------------------------------------
-	if (!pDOM) {
-		pDOM = "COMMONCONTROL";
-	};
-	var vInDOM = pDOM+"_SRC"; 
-	var vString = document.getElementById(vInDOM).value;
-	for (var i=0;i<4;i++) {
-		var iQID = "iQID"+i;
-		var vSearch = "__"+iQID+"__";
-		var vReplace = document.getElementById(iQID).value;
-		vString = replaceString(vString,vSearch,vReplace);
-	};
-	document.getElementById(pDOM).value = vString;
-};
-//---------------------------------------------
 function replaceQID(pDOM) {
 //---------------------------------------------
 	if (!pDOM) {
