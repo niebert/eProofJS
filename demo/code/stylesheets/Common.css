@@ -272,16 +272,10 @@ A:HOVER
 	text-decoration: underline;
 }
 
-SELECT, INPUT, BUTTON
+SELECT, TEXTAREA, INPUT, BUTTON
 {
     font-family: Arial, Helvetica;
     font-size: 90%;
-
-}
-TEXTAREA
-{
-    font-family: Courier;
-    font-size: 110%;
 }
 
 TABLE
