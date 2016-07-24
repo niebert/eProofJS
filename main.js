@@ -7,7 +7,38 @@ const Menu = electron.Menu
 const app = electron.app
 
 let template = [{
-  label: 'Edit W',
+  label: 'File',
+  submenu: [{
+    label: 'New',
+    accelerator: 'CmdOrCtrl+Z',
+    role: 'undo'
+  }, {
+    label: 'Open',
+    accelerator: 'Shift+CmdOrCtrl+Z',
+    role: 'redo'
+  }, {
+    type: 'separator'
+  }, {
+    label: 'Save',
+    accelerator: 'CmdOrCtrl+X',
+    role: 'cut'
+  }, {
+    label: 'Save As ...',
+    accelerator: 'CmdOrCtrl+C',
+    role: 'copy'
+  }, {
+    label: 'Settings',
+    accelerator: 'CmdOrCtrl+V',
+    role: 'paste'
+  }, {
+    type: 'separator'
+  }, {
+    label: 'Quit',
+    accelerator: 'CmdOrCtrl+A',
+    role: 'selectall'
+  }]
+}, {
+  label: 'Edit',
   submenu: [{
     label: 'Undo',
     accelerator: 'CmdOrCtrl+Z',
