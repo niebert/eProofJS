@@ -256,7 +256,8 @@ function appendMethods_EProof__SID__ () {
 		vOut = this.replaceString(vOut,"__SID__",vSID);
 		vOut = this.replaceString(vOut,"__QID__",vQID);
 		vOut = this.replaceString(vOut,"__THISQ__",vThisQ);
-		vOut = this.replaceString(vOut,"vRootID,'AUTHORING'","vRootID,'DEFAULT'");
+    vOut = this.replaceString(vOut,"vRootID,'AUTHORING'","vRootID,'DEFAULT'");
+    vOut = this.replaceString(vOut,"vRootID,'ELECTRON'","vRootID,'DEFAULT'");
 		//vOut = this.replaceString(vOut,"\t"," ");
 		vOut = this.replaceString(vOut,"\t","");
 		//---Remove HTML Comments-------
@@ -311,6 +312,24 @@ function appendMethods_EProof__SID__ () {
 		//var vStepCount = this.getElementById("imathSTEPCOUNT"+this.aQID);
 		var vStepCount = this.getIMathById("STEPCOUNT");
 		return vStepCount.value;
+	};
+  //#################################################################
+	//# Nested: getStepCount()
+	//#################################################################
+  this.getConnectionRAW = function (pConNo) {
+    var vSolCon = this.vConnection2Node[pConNo].getAttribute("source");
+    if (vSolCon) {
+      return this.decodeValue(vSolCon);
+    } else {
+      return " ";
+    }
+	};
+  //#################################################################
+	//# Nested: getStepCount()
+	//#################################################################
+  this.getStepRAW = function (pID) {
+		var vStepRAW = this.aAllID2RAW[pID];
+		return this.decodeValue(vStepRAW);
 	};
 	//#################################################################
 	//# Nested: getStepCount()
@@ -625,16 +644,14 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	this.getTemplateDOM = function () {
 		//var vUsedList = this.getChildrenByClassName(this.aUsedDOM,"inSTEPID"+this.aQID);
-		var vRes = this.aTemplateDOM;
-		if (!vRes) {
-			vRes = document.getElementById(this.aTemplateID);
-			if (vRes) {
-				alert("this.getTemplateDOM() Template found with ID="+vRes.id);
+    var vTplID = "tplSTUDENTANSWER"+this.aQID;
+		var vRes = document.getElementById(vTplID);
+		if (vRes) {
+				console.log("this.getTemplateDOM() Template found with ID="+vRes.id);
 				this.aTemplateDOM = vRes;
-			} else {
-				alert("loading Template with this.getTemplateDOM() was not sucessful!");
-			};
-		}
+		} else {
+				console.log("loading Template [tplSTUDENTANSWER] with this.getTemplateDOM() was not sucessful!");
+		};
 		return vRes;
 	};
 	//#################################################################
@@ -669,6 +686,7 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	this.getUnusedSteps = function (pSCAN) {
 		if ((!this.aUnusedSteps) || (pSCAN)) {
+      //-----Do not use this.getElementById because it mig
 			this.aUnusedDOM = this.getElementById("UNUSEDSTEPS"+this.aQID);
 			this.aUnusedSteps = this.getChildrenByClassName(this.aUnusedDOM,"STUDENTANSWER"+this.aQID);
 			//alert("getUnusedSteps() length="+this.aUnusedSteps.length);
@@ -775,7 +793,7 @@ function appendMethods_EProof__SID__ () {
 		}
 		return vReturn;
 	};
-	//#################################################################
+  //#################################################################
 	//# Nested: initCharCounter()
 	//#################################################################
 	this.initCharCounter = function () {
@@ -784,7 +802,37 @@ function appendMethods_EProof__SID__ () {
 			this.aCharCounter[iChar] = 0;
 		};
 	};
+  //#################################################################
+	//# Nested: initLoad()
 	//#################################################################
+	this.initLoad = function () {
+		//this.aCharCounter = Hash for Leader Chars e.g. "P" CharCounter=4 creates "P4"
+    //this.clearProofInput();
+    this.init();
+    this.initIMathForm();
+    //this.clear_LocalStorage();
+
+	};
+  //#################################################################
+	//# Nested: initIMathForm()
+	//#################################################################
+	this.initIMathForm = function () {
+	  localStorage.removeItem("imathEPROOF");
+    var vListID = new Array("PRECONDITION","CONCLUSION","PROOFSTEP","JUSTIFICATION","STUDENTANSWER","DISPLAYOPTION","STEPCOUNT");
+  	var i=0;
+  	while (i != vListID.length) {
+  		//vID = "imath"+vListID[i]+this.aQID;
+  		//vID = "imath"+vListID[i];
+  		//vID = this.aIMATH[vListID[i]];
+  		//vNode = this.getChildById(this.aRootDOM,vID);
+  		vNode = this.getIMathById(vListID[i]);
+  		if (vNode) {
+        vNode.value = "";
+      };
+      i++;
+    };
+	};
+  //#################################################################
 	//# Nested: initExportHashSA(pHash)
 	//#################################################################
 	this.initExportHashSA = function (pHash) {
@@ -1155,17 +1203,23 @@ function appendMethods_EProof__SID__ () {
 	//# Nested: redefineMappedID(pID,pMappedID)
 	//#################################################################
 	this.redefineMappedID = function (pID,pMappedID) {
+    var vMapNodeID = "";
+    var vMapNode = null;
 		if (pID) {
 			if (this.aMappedID[pID]) {
-				this.aMappedID[pID] = pMappedID;
-				this.getElementById("MAPID-"+this.aQID+"-"+pID).value = pMappedID;
-				this.aOriginalID[pMappedID] = pID;
-				this.getElementById("LIST-ID-"+this.aQID+"-"+pID).innerHTML = "["+pMappedID+"]";
+        if (this.aOriginalID[pMappedID]) {
+          this.aMappedID[pID] = pMappedID;
+          this.aOriginalID[pMappedID] = pID;
+  				this.write2Value("MAPID-"+this.aQID+"-"+pID,pMappedID);
+          this.write2InnerHTML("LIST-ID-"+this.aQID+"-"+pID,"["+pMappedID+"]");
+  		  } else {
+          console.log("redefineMappedID() - aOriginalID["+pMappedID+"] was undefined");
+        };
 			} else {
-				alert("redefineMappedID('"+pID+"','"+pMappedID+"') failed! MappedID for ["+pID+"] undefined");
+				console.log("redefineMappedID('"+pID+"','"+pMappedID+"') failed! MappedID for ["+pID+"] undefined");
 			}
 		} else {
-			alert("Error: redefineMappedID(pID,'"+pMappedID+"') pID was undefined - OrgID=["+this.aOriginalID[pMappedID]+"] eproofmain.js:1020");
+			console.log("Error: redefineMappedID(pID,'"+pMappedID+"') pID was undefined - OrgID=["+this.aOriginalID[pMappedID]+"] eproofmain.js:1020");
 		};
 	};
 	//#################################################################
@@ -1318,6 +1372,8 @@ function appendMethods_EProof__SID__ () {
 			//this.save(pButtonDOM);
 			this.updateIMathById(this.aStepType4ID[vID]);
 			var vOut = this.saveEProof2Form();
+      console.log("saveStep() Step"+vStep+" ["+vID+"] Type=["+this.aID4StepType[vID]+"]");
+      this.updateAllJustifications();
 		} else {
 			alert("Error: saveStep()-Call - vListSE undefined");
 		};
@@ -2153,11 +2209,43 @@ function appendMethods_EProof__SID__ () {
 		this.getElementById("LLE"+this.aQID).value = vLLE.toFixed(2);
 		this.getElementById("USEDIDS"+this.aQID).value = vUsedArray.join(",");
 	};
+  //#################################################################
+	//# Nested: updateMathNodes(pIDArray)
 	//#################################################################
-	//# Nested: updateStepDef(pID,pTextareaID)
-	//#################################################################
-	this.updateStepDef = function (pID,pTextareaID,pValue) {
+  // find all nodes with the provided IDs in the pIDArray and
+  // process the MathMode to render the mathematical expressions
+	this.updateMathNodes = function (pIDArray) {
+    var i = 0;
+    var vNode = null;
+    while (i != pIDArray.length) {
+      vNode = this.getElementById(pIDArray[i]);
+      if (vNode) {
+        this.processMathNode(vNode);
+      };
+    };
+  };
+  //#################################################################
+  //# Nested: updateMathNodes(pIDArray)
+  //#################################################################
+  // find all nodes with the provided IDs in the pIDArray and
+  // process the MathMode to render the mathematical expressions
+  this.updateMathJustification = function () {
+    var vStep =0;
+  	var vJustNode = null;
+  	var vUpdateEdit = false;
+  	while (vStep != this.aCount) {
+  		vStep++;
+  		vJustNode = this.getElementById("displayJUSTIFICATIONS"+this.aQID+vStep);
+  	  this.processMathNode(vJustNode);
+  	}
+  };
+
+  //#################################################################
+  //# Nested: updateStepDef(pID,pTextareaID)
+  //#################################################################
+  this.updateStepDef = function (pID,pTextareaID,pValue) {
 		//this.aStudentAnswerList = this.getElementsByClassName("STUDENTANSWER"+this.aQID);
+    console.log("updateStepDef("+pTextareaID+") ["+pID+"]");
 		this.aStudentAnswerList = this.getAllSteps();
 		//alert("updateStepDef('"+pID+"','"+pTextareaID+"','"+pValue+"')");
 		//if TextareaID is not JUSTIFICATION then it is necessary to update two DOMs
@@ -2169,12 +2257,14 @@ function appendMethods_EProof__SID__ () {
 		//----Update AllID2RAW------------
 		if (this.aAllID2RAW[pID]) {
 			this.aAllID2RAW[pID] = pValue;
-		};
+		} else if (pID){
+      if (pID != "") {
+        this.aAllID2RAW[pID] = pValue;
+      }
+    };
 		//-----update Display above the StepDefinition Input Line
-		var vOutNode = this.getElementById("ID-"+this.aQID+"-"+pID);
-		vOutNode.innerHTML = pValue;
-		this.processMathNode(vOutNode);
-		var vStep = this.getStep4ID(pID);
+    this.writeInnerHTML4Math("ID-"+this.aQID+"-"+pID,pValue);
+    var vStep = this.getStep4ID(pID);
 		if (this.greater(vStep,0)) {
 			this.writeInnerHTML4Math("outSTEPDEF"+this.aQID+vStep,pValue)
 		};
@@ -2324,7 +2414,29 @@ function appendMethods_EProof__SID__ () {
 			}
 		}
 	};
+  //#################################################################
+	//# Nested: write2InnerHTML
 	//#################################################################
+	this.write2InnerHTML = function (pID,pValue) {
+    var vOutNode = document.getElementById(pID);
+    if (vOutNode) {
+      vOutNode.innerHTML = pContent;
+    } else {
+      console.log("ID="+pID+" in write2Value() not defined");
+    }
+	};
+///#################################################################
+//# Nested: write2Value
+//#################################################################
+this.write2Value = function (pID,pValue) {
+  var vOutNode = document.getElementById(pID);
+  if (vOutNode) {
+    vOutNode.value = pContent;
+  } else {
+    console.log("ID="+pID+" in write2Value() not defined");
+  }
+};
+//#################################################################
 	//# Nested: writeHash2Value
 	//#################################################################
 	this.writeHash2Value = function (pParent,pHash,pPostfix) {
@@ -2374,6 +2486,7 @@ function appendMethods_EProof__SID__ () {
 	//# Nested: writeInnerHTML4Math
 	//#################################################################
 	this.writeInnerHTML4Math = function (pNodeID,pContent) {
+    pContent = this.decodeTextareaCR(pContent);
 		var vOutNode = this.getElementById(pNodeID);
 		if (vOutNode) {
 			vOutNode.innerHTML = pContent;
@@ -2527,7 +2640,7 @@ function appendMethods_EProof__SID__ () {
 		if (pValue) {
 			pValue = pValue.replace(/__qu__/g,this.QU);
 			vRet = this.decodeValueNoQuotes(pValue);
-		}
+  	}
 		return vRet;
 	};
 	//#################################################################
@@ -2549,6 +2662,10 @@ function appendMethods_EProof__SID__ () {
 			eval(decodeURI("pValue=pValue.replace(/__OE__/g,%22%EF%BF%BD%22)"));
 			pValue = pValue.replace(/__UE__/g,"Ü");
 			pValue = pValue.replace(/__sz__/g,"ß");
+      if (this.aElectron != "0") {
+        //alert("ELECTRON");
+        pValue = this.replaceString(pValue,")^",") \\ ^");
+      };
 			return pValue;
 		} else {
 			return "";
@@ -2584,7 +2701,7 @@ function appendMethods_EProof__SID__ () {
 		pValue = pValue.replace(/,/g,this.CR);
 		return pValue;
 	};
-	//#################################################################
+  //#################################################################
 	//# Nested: decodeTextarea
 	//#################################################################
 	this.decodeTextarea = function (pValue) {
@@ -2593,7 +2710,7 @@ function appendMethods_EProof__SID__ () {
 	  //eval(decodeURI("pValue%20=%20pValue.replace(/__n__/g,%22%5Cn%22)"));
 	  return pValue;
 	};
-	//#################################################################
+  	//#################################################################
 	//# Nested: encodeTextarea
 	//#################################################################
 	this.encodeTextarea = function (pValue) {
@@ -2603,7 +2720,13 @@ function appendMethods_EProof__SID__ () {
 	  //eval(decodeURI("pValue%20=%20pValue.replace(/%5Cn/g,%22__n__%22)"));
 	  return pValue;
 	};
+  //#################################################################
+	//# Nested: decodeTextareaCR
 	//#################################################################
+	this.decodeTextareaCR = function (pValue) {
+	  return pValue.replace(/__n__/g,this.CR);;
+	};
+//#################################################################
 	//# Nested: encodeTextareaCR
 	//#################################################################
 	this.encodeTextareaCR = function (pValue) {
@@ -2629,7 +2752,11 @@ function appendMethods_EProof__SID__ () {
 			eval(decodeURI("pValue%20=%20pValue.replace(/%EF%BF%BD/g,%22__OE__%22)"));
 			pValue = pValue.replace(/Ü/g,"__UE__");
 			pValue = pValue.replace(/ß/g,"__sz__");
-			return pValue;
+      if (this.aElectron != "0") {
+        //alert("ELECTRON");
+        pValue = this.replaceString(pValue,") \\ ^",")^");
+      };
+    		return pValue;
 		} else {
 			return "";
 		};

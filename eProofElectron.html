@@ -32,9 +32,10 @@
 //---LaTeX-------
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/javascript" src="../MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="MathJax/MathJax.js?config=AM_HTMLorMML&delayStartupUntil=configured"></script>
 -->
   <meta http-equiv="content-type" content="text/html; charset=UTF8" >
-<script type="text/javascript" src="MathJax/MathJax.js?config=AM_HTMLorMML"></script>
+<script type="text/javascript" src="MathJax/MathJax.js?config=AM_HTMLorMML&delayStartupUntil=onload"></script>
 <script type="text/javascript" src="library/language.js"></script>
 <script type="text/javascript" src="library/eproofmain.js"></script>
 <script type="text/javascript" src="library/eproofmeth1.js"></script>
@@ -92,7 +93,7 @@
     <STEPDEF SIZE='2' ID='P1' VALUE='Let __math__ a__CO__b in RR __math__ ' />
   </VARLIST>
   <VARLIST NAME='CONCLUSION_OPTIONS'>
-    <STEPDEF SIZE='2' ID='C1' VALUE='__math__(a+b)^2 __eq__a^2 + 2ab + b^2__math__' />
+    <STEPDEF SIZE='2' ID='C1' VALUE='__math__ ( a+b )^2 __eq__a^2 + 2ab + b^2__math__' />
   </VARLIST>
   <VARLIST NAME='JUSTIFICATION_OPTIONS'>
     <STEPDEF SIZE='2' ID='CLA' VALUE=' __math__AA_(x__CO__y in RR) : x + y __eq__ y + x __math__' />
@@ -114,7 +115,7 @@
     <STEPDEF SIZE='2' ID='S1_F2' VALUE='__math__a^2+b^2__math__' />
     <STEPDEF SIZE='2' ID='MY1' VALUE='__math__2*a+2*b__math__' />
     <STEPDEF SIZE='5' ID='P1' CONNECTION=' ' JUST='' OPTJUST='' VALUE='' />
-    <STEPDEF SIZE='5' ID='S1' CONNECTION='__eq____gt__' JUST='' OPTJUST='SQ' VALUE='__math__(a+b)^2 __eq__ (a+b)*(a+b)__math__ ' />
+    <STEPDEF SIZE='5' ID='S1' CONNECTION='__eq____gt__' JUST='' OPTJUST='SQ' VALUE='__math__ (a+b)^2 __eq__ (a+b)*(a+b)__math__ ' />
     <STEPDEF SIZE='5' ID='S3' CONNECTION='__eq__' JUST='DL' OPTJUST='' VALUE='__math__(a+b)*a+(a+b)*b__math__ with __math__x:__eq__a+b in RR__math__' />
     <STEPDEF SIZE='5' ID='S4' CONNECTION='__eq__' JUST='DL' OPTJUST='' VALUE='__math__(a*a+b*a)+(a*b+b*b)__math__' />
     <STEPDEF SIZE='5' ID='S5' CONNECTION='__eq__' JUST='SQ' OPTJUST='' VALUE='__math__(a^2+b*a)+(a*b+b^2)__math__' />
@@ -390,7 +391,10 @@
 						<TR>
 							<TD>
 								<table border=0 align="center" cellspacing="10px"  width="96%" >
-									<TR>
+                  <col width="10%">
+                  <col width="20%">
+                  <col width="70%">
+                  <TR>
 										<TD colspan="3">
 											<B>(<OUTTEXT class="outNEXTNR__QID__" step="0" id="outNEXTNR__QID__">
 												0
@@ -411,7 +415,7 @@
 										</TD>
 										<TD  class='IDSUGGESTION__QID__' step='0'  id='IDSUGGESTION__QID__'>
 												<INPUT type="radio" class='rIDSUGGESTION__QID__' name="rIDSUGGESTION__QID__" id='rIDNUGGESTION__QID__' />
-												<OUTTEXT class='outIDSUGGESTION__QID__' step='0'  id='outIDSUGGESTION__QID__'>Proof Step Def</OUTTEXT>
+												<OUTTEXT class='outIDSUGGESTION__QID__' step='0'  id='outIDSUGGESTION__QID__'>Proof Step Definition for Long ProofSteps</OUTTEXT>
 										</TD>
 									</TR>
 								</table>
@@ -424,20 +428,20 @@
 			<div class="tplCONNECTIONLIST__QID__" id="tplCONNECTIONLIST__QID__">
 			ConnectionList:
 				<ul id="ulCONNECTIONLIST__QID__">
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-0" >`???`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-1" ></EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-2" >`=>`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-3" >`=`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-4" >`<=`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-5" >`<`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-6" >`>=`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-7" >`>`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-8" >`subseteq`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-9" >`DEF`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-10" >`TEXT`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-11" >`TYP`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-12" >`q.e.d.`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-13" >`LINK-NODE`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-0" source="__math__???__math__">`???`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-1" source=""></EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-2" source="__math____eq____gt____math__">`=>`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-3" source="__math____eq____math__">`=`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-4" source="__math____lt____eq____math__">`<=`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-5" source="__math____lt____math__">`<`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-6" source="__math____gt____eq____math__">`>=`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-7" source="__math____gt____math__">`>`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-8" source="__math__subseteq__math__">`subseteq`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-9" source="__math__DEF__math__">`DEF`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-10" source="__math__TEXT__math__">`TEXT`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-11" source="__math__TYP__math__">`TYP`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-12" source="__math__q.e.d.__math__">`q.e.d.`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-13" source="__math__LINK-NODE__math__">`LINK-NODE`</EPROOFCONNECTION></li>
 				</ul>
 			</div>
 			<HR>
@@ -1093,16 +1097,22 @@ __do__so+=1
 												<TR>
 													<TD>
 														<table border=0 align="center" cellspacing="10px"  width="96%" >
+                              <col width="10%">
+                              <col width="20%">
+                              <col width="70%">
 															<TR>
-																<TD colspan="2">
+																<TD> <!--  colspan="3" -->
 																	<B>(<OUTTEXT class="outNEXTNR__QID__" step="0" id="outNEXTNR__QID__">
 																		1
 																	</OUTTEXT>)
-																	<OUTTEXT class='bSelectSuggestion__QID__' step='0'  id='bSelectSuggestion__QID__0'  >Select Suggestion</OUTTEXT></B>
+                                </TD>
+                                <TD>
+																	<OUTTEXT class='bSelectSuggestion__QID__' step='0'  id='bSelectSuggestion__QID__0'  >Suggestion</OUTTEXT></B>
+                                </TD>
+                                <TD>
 																	<BUTTON type='button' class='bSelectSuggestionOK__QID__' step='0'  id='bSelectSuggestionOK__QID__0'  onclick="vEProof__QID__.selectSuggestion(this.getAttribute('step'))">  OK   </BUTTON>
-																	<INPUT type="text" class='inCONSUGGESTION__QID__'  id='inCONSUGGESTION__QID__0' value=""  style="display:none" />
+                                	<INPUT type="text" class='inCONSUGGESTION__QID__'  id='inCONSUGGESTION__QID__0' value=""  style="display:none" />
 																	<INPUT type="text" class='inIDSUGGESTION__QID__'  id='inIDSUGGESTION__QID__0' value="" style="display:none" />
-
 																</TD>
 															</TR>
 															<TR class='SUGGESTIONTR__QID__' step='0'  id='SUGGESTIONTR__QID__0'>
@@ -1110,12 +1120,12 @@ __do__so+=1
 																	[ID]
 																</TD>
 																<TD  class='CONSUGGESTION__QID__' step='0'  id='CONSUGGESTION__QID__0'>
-																		<INPUT type="radio" class='rCONSUGGESTION__QID__' value="0" name="rCONSUGGESTION__QID__0" id='rCONSUGGESTION__QID__0' />
+																		<INPUT type="radio" class='rCONSUGGESTION__QID__' value="0" name="rCONSUGGESTION__QID__0" id='rCONSUGGESTION__QID__0' /> Select Connection
 																		<OUTTEXT class='outCONSUGGESTION__QID__' step='0'  id='outCONSUGGESTION__QID__'>???</OUTTEXT>
 																</TD>
 																<TD class='IDSUGGESTION__QID__' step='0'  id='IDSUGGESTION__QID__0'>
 																		<INPUT type="radio" class='rIDSUGGESTION__QID__' name="rIDSUGGESTION__QID__0" id='rIDSUGGESTION__QID__0' />
-																		<OUTTEXT class='outIDSUGGESTION__QID__' step='0'  id='outIDSUGGESTION__QID__0'>StepDef</OUTTEXT>
+																		<OUTTEXT class='outIDSUGGESTION__QID__' step='0'  id='outIDSUGGESTION__QID__0'>StepDefinition for Long ProofSteps</OUTTEXT>
 																</TD>
 															</TR>
 														</table>
@@ -1187,18 +1197,19 @@ __do__so+=1
 		//-----Proof Pre-Processing------
 		//__SID__ is the extension of the Class and
 		var vEProof__QID__ = new EProof__SID__();
-		var vRootID = "EPROOF___QID___";
+    var vRootID = "EPROOF___QID___";
 		vRootID = "EPROOF__QID__";
 		var vRootDOM = document.getElementById(vRootID);
-		vEProof__QID__.load('__QID__','__THISQ__',vRootDOM,vRootID,'DEFAULT');
+		vEProof__QID__.load('__QID__','__THISQ__',vRootDOM,vRootID,'ELECTRON');
 		//alert("Root.id="+r.id);
 		//window.setTimeout("vEProof__QID__.load('__QID__','__THISQ__',vRootDOM,vRootID)",400);
 		//---------------------------
+    //MathJax.Hub.Configured();
 	</script>
 	<!-- =====END DIV EPROOF===================================================== -->
 
 </FORM> <!-- END: FORM -->
 <center>
-<font size=-2>Version: 2015/10/07</font>
+<font size=-2>Version: 2016/07/17</font>
 </center>
 </body></html>

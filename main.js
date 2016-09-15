@@ -5,36 +5,65 @@ const electron = require('electron')
 const BrowserWindow = electron.BrowserWindow
 const Menu = electron.Menu
 const app = electron.app
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let mainWindow
 
+function createWindow () {
+  // Create the browser window.
+  mainWindow = new BrowserWindow({width: 1024, height: 700})
+
+  // and load the index.html of the app.
+  mainWindow.loadURL(`file://${__dirname}/eProofElectron.html`)
+
+  // Open the DevTools.
+  //mainWindow.webContents.openDevTools()
+
+  // Emitted when the window is closed.
+  mainWindow.on('closed', function () {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    mainWindow = null
+  })
+}
+
+
+//--------MENU---------------------
 let template = [{
   label: 'File',
   submenu: [{
     label: 'New',
-    accelerator: 'CmdOrCtrl+Z',
-    role: 'undo'
+    click() {
+      console.log("MENU CALL: NEW XML e-Proof");
+      mainWindow.webContents.send('menucall', 'readFile("xmlproof/new.xml","tLOAD"+vEProof__QID__.aQID,vEProof__QID__)');
+    }
   }, {
     label: 'Open',
-    accelerator: 'Shift+CmdOrCtrl+Z',
-    role: 'redo'
+    accelerator: 'CmdOrCtrl+O',
+    click() {
+      console.log("MENU CALL: Open XML e-Proof");
+      mainWindow.webContents.send('menucall', 'vEProof__QID__.openOpenDialog("tLOAD__QID__")');
+    }
   }, {
     type: 'separator'
   }, {
     label: 'Save',
-    accelerator: 'CmdOrCtrl+X',
+    accelerator: 'CmdOrCtrl+S',
     role: 'cut'
   }, {
     label: 'Save As ...',
-    accelerator: 'CmdOrCtrl+C',
+    accelerator: 'Shift+CmdOrCtrl+S',
     role: 'copy'
   }, {
-    label: 'Settings',
-    accelerator: 'CmdOrCtrl+V',
+    label: 'Preferences',
+    accelerator: 'Shift+CmdOrCtrl+P',
     role: 'paste'
   }, {
     type: 'separator'
   }, {
     label: 'Quit',
-    accelerator: 'CmdOrCtrl+A',
+    accelerator: 'CmdOrCtrl+Q',
     role: 'selectall'
   }]
 }, {
@@ -155,10 +184,10 @@ let template = [{
   label: 'Help',
   role: 'help',
   submenu: [{
-    label: 'Learn More',
-    click: function () {
-      electron.shell.openExternal('http://electron.atom.io')
-    }
+      label: 'Learn More',
+      click: function () {
+        electron.shell.openExternal('http://electron.atom.io')
+      }
   }]
 }]
 
@@ -278,28 +307,6 @@ app.on('window-all-closed', function () {
   let reopenMenuItem = findReopenMenuItem()
   if (reopenMenuItem) reopenMenuItem.enabled = true
 })
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
-let mainWindow
-
-function createWindow () {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({width: 1024, height: 700})
-
-  // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/eProofElectron.html`)
-
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools()
-
-  // Emitted when the window is closed.
-  mainWindow.on('closed', function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
-    mainWindow = null
-  })
-}
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

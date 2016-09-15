@@ -1,14 +1,14 @@
 //#################################################################
 //# Javascript Class: EProof__SID__()
-//#       SuperClass: 
+//#       SuperClass:
 //#   Class Filename: eproofmain.js
-//#                
-//# Author of Class:      Engelbert Niehaus                    
-//# email:                niehaus@uni-landau.de                 
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//#
+//# Author of Class:      Engelbert Niehaus
+//# email:                niehaus@uni-landau.de
+//# created               24.2.2015
+//# last modifications    __DATE__
 //# GNU Public License - OpenSource
-//# created with JavaScript Class Generator by Engelbert Niehaus 
+//# created with JavaScript Class Generator by Engelbert Niehaus
 //#################################################################
 
 //TODO:
@@ -19,7 +19,7 @@
 //---Import this Class in HTML-File with
 // <SCRIPT LANGUAGE="JavaScript" SRC="myclass.js"> </SCRIPT>
 //---------------------------------------------------------------------
-//---Constructor of Class EProof__SID__() 
+//---Constructor of Class EProof__SID__()
 // Call the constructor for creating an instance of class EProof__SID__
 // by the following command in HTML-file that imports this class
 // var vMyInstance = new EProof__SID__();
@@ -31,8 +31,9 @@ function EProof__SID__ () {
 	// no superclass defined
 
 	//---Attributes-------------------------
+	this.aElectron = "0";
 	this.aMode = "DEFAULT"; //"DEAULT", "AUTHORING", "DEBUG" parameter of Load
-	this.aShowControl = "0"; 
+	this.aShowControl = "0";
 	this.aDebug = "0";
 	//---------------
 	this.aUseMathJax = "1";
@@ -48,15 +49,15 @@ function EProof__SID__ () {
 	this.aStudentAnswerList = null; // Duplicate Attribute this.aAllSteps
 	this.aCount = 0;
 	this.aCountHash = new Array();
-	this.aAllSteps   = null; 
-	this.aUsedID      = "USEDSTEPS"; //append QID in load() and 
+	this.aAllSteps   = null;
+	this.aUsedID      = "USEDSTEPS"; //append QID in load() and
 	this.aUsedDOM     = null; //set DOM in this.preProcess()
-	this.aUsedSteps   = null; 
+	this.aUsedSteps   = null;
 	this.aUnusedID    = "UNUSEDSTEPS"; // append QID load() and
 	this.aUnusedDOM   = null; //set DOM in this.preProcess()
-	this.aUnusedSteps = null; 
+	this.aUnusedSteps = null;
 	this.aTemplateID  = "tplSTUDENTANSWER"; // append QID when loaded
-	this.aTemplateDOM = null; //set in this.preProcess() 
+	this.aTemplateDOM = null; //set in this.preProcess()
 	this.onLoadAMprocess = false;
 	this.aListHeader      = new Array(); //Hash for PRECONDITION, PROOFSTEP, CONCLUSION, JUSTIFICATION
 	this.aAllID           = new Array(); //Array with all IDs ("P1","S1",...,"C1")
@@ -72,13 +73,13 @@ function EProof__SID__ () {
 	this.aErrorAssessment = 0.3; //this.aSettings["Assessment_Minus_Percent"]
 	this.aErrorSuggestion = 0.2; //this.aSettings["Suggestion_Minus_Percent"]
 	this.aErrorConMult    = 3;
-	this.aID2SA	  	      = new Array(); //Hash maps ID to StudentAnswer 
+	this.aID2SA	  	      = new Array(); //Hash maps ID to StudentAnswer
 	this.aID2Solutions    = new Array(); //Hash for Proof Step ID
 	this.aID4StepType     = new Array(); //Hash maps Type to ID-Array Types are PRECONDITION, PROOFSTEP, CONCLUSION, JUSTIFICATION with ID-Arrays
-	this.aStepType4ID     = new Array(); //Hash maps ID to StepType PRECONDITION, PROOFSTEP, CONCLUSION, JUSTIFICATION 
+	this.aStepType4ID     = new Array(); //Hash maps ID to StepType PRECONDITION, PROOFSTEP, CONCLUSION, JUSTIFICATION
 	//---Start: Array/Hash for createStep4SA()----------------------------
 	//---Following Arrays/Hash are created by method createStep2SA()------
-	this.aStep2SA	  	  = new Array(); // Hash with Step Number to StudentAnswer 
+	this.aStep2SA	  	  = new Array(); // Hash with Step Number to StudentAnswer
 	this.aIndex2Step  	  = new Array();
 	this.aStep2Index  	  = new Array();
 	this.aIndex2ID        = new Array();
@@ -104,9 +105,9 @@ function EProof__SID__ () {
 	this.BR = this.LT+"BR/"+this.GT;
 	this.vEditorID = "taSTEPEDITOR";
 	this.aSeparator = "__#S#__";
-	this.aSepInput = ","; //This is used to separate Input e.g. "P1,C1,J2"	
-	this.aNewLine = "__#NL#__";	
-	this.aComma = "__#CO#__";	
+	this.aSepInput = ","; //This is used to separate Input e.g. "P1,C1,J2"
+	this.aNewLine = "__#NL#__";
+	this.aComma = "__#CO#__";
 	this.aCrypt     = false; //will be set by CheckBox "checkENCRYPT"
 	this.aExportSA  = false; //will be set by CheckBox "checkSTUDANSWERSOLUTION"
 	this.aExportSol = true;  //will be set by CheckBox "checkSUSESOLUTION"
@@ -118,7 +119,7 @@ function EProof__SID__ () {
 	this.aIMathID = new Array("PRECONDITION","CONCLUSION","JUSTIFICATION","PROOFSTEP");
 	this.aStudAns2DOM = new Array("PREVIOUSLINK","sCONNECTION","inSTEPID","inJUSTIFICATION","optJUSTIFICATION","inMYSTEPASSESSSCORE","inSUGGESTIONSUSED","inASSESSMENTUSED","selectCONNECTION","selectSTEPID","selectJUSTIFICATION","STEPNR");
 	this.aIMathArray = new Array("DISPLAYOPTION","STEPCOUNT","STUDENTANSWER","PRECONDITION","CONCLUSION","JUSTIFICATION","PROOFSTEP","SOLUTION","ENCRYPTED","SETTINGS");
-	this.aIMATH = new Array(); //init Hash of Form IDs by method preprocess() 
+	this.aIMATH = new Array(); //init Hash of Form IDs by method preprocess()
 	this.vConnection2Index = new Array();
 	//this.vConnectionArray = new Array("???","TYP"," ","="+this.GT,"=",this.LT+"=",this.LT,this.GT+"=",this.GT,"subseteq","DEF","TEXT","q.e.d.");
 	this.vConnectionArray = new Array("???"," ","="+this.GT,"=",this.LT+"=",this.LT,this.GT+"=",this.GT,"subseteq","DEF","TEXT","TYP","q.e.d.");
@@ -130,7 +131,8 @@ function EProof__SID__ () {
 	//--------------------------------------------
 
 	//---Methods----------------------------
-	this.appendMethods 	   = appendMethods_EProof__SID__;
+	this.appendElectronMethods  = null;
+	this.appendMethods 	   			= appendMethods_EProof__SID__;
 	this.addStepDefinition = addStepDefinition_EProof__SID__;
 	this.append_template   = append_template_EProof__SID__;
 	this.assessStep        = assessStep_EProof__SID__;
@@ -239,6 +241,7 @@ function EProof__SID__ () {
 	this.toggleSuggestionStep    = toggleSuggestionStep_EProof__SID__;
 	this.update		 		     = update_EProof__SID__;
 	this.updateAllJustifications = updateAllJustifications_EProof__SID__;
+	this.updateAllMath           = updateAllMath_EProof__SID__;
 	this.updateIMathById         = updateIMathById_EProof__SID__;
 	this.updateInput		     = updateInput_EProof__SID__;
 	this.updateJustifications    = updateJustifications_EProof__SID__;
@@ -256,7 +259,11 @@ function EProof__SID__ () {
 	this.processMathNode = function (pNode) {
 		if (this.aUseMathJax == "1") {
 			//MathJax.Hub.Queue(["Typeset",MathJax.Hub,pNode]);
-			MathJax.Hub.Typeset(pNode);
+			var vContent = pNode.innerHTML;
+			if (vContent.indexOf("`")>=0) {
+					MathJax.Hub.Queue(["Typeset",MathJax.Hub,pNode]);
+					//MathJax.Hub.Typeset(pNode);
+			};
 		} else {
 			AMprocessNode(pNode);
 		}
@@ -351,7 +358,7 @@ function EProof__SID__ () {
 		var vArr,vNewArr,vList,vSelection,vNode,vName;
 		var getSugCall = null;
 		var SelectHash = new Array();
-		var vOrgArray = new Array(); 
+		var vOrgArray = new Array();
 		SelectHash["ID"] = this.getElementById("inSTEPID"+this.aQID+pStep).value;
 		while (k!=vArrDOM.length) {
 			//alert("addFalseSuggestionStep("+pStep+") vArrDOM["+k+"]="+vArrDOM[k])
@@ -363,22 +370,22 @@ function EProof__SID__ () {
 			if (vOrgList != "") vOrgArray = vOrgList.split(",");
 			//alert("addFalseSuggestionStep("+pStep+") vOrgList=["+vOrgList+"]");
 			SelectHash["COUNT"] = parseInt(this.aSettings["unnecessary_"+vCountUn[k]]);
-			SelectHash["ARRAY"] = vOrgArray; 
+			SelectHash["ARRAY"] = vOrgArray;
 			//alert("SelectHash['STEP"+pStep+"COUNT"+k+"']="+SelectHash["COUNT"]);
 			SelectHash["SELARRAY"] = vSelArray[k];
 			if (this.greater(SelectHash["COUNT"],vOrgArray.length)) {
 				//i.e. Orginal False Suggestions are less than defined by unnecessary-Count
 				//k=1 (ID Selection): select S2_F1, S2_F2 as false IDs for S2
 				if (k==0) {
-					SelectHash["ARRAY"].push("="+this.GT); 
+					SelectHash["ARRAY"].push("="+this.GT);
 					if (SelectHash["COUNT"] != 0) SelectHash["COUNT"]--;
-				} if (k==1) { 
+				} if (k==1) {
 					this.addDefinedFalseIDs(SelectHash);
 					//this.sortArrayID(SelectHash["ARRAY"]);
 				};
 				this.addRandomFalseSuggestions(SelectHash,pStep);
 				var vSelList = SelectHash["ARRAY"].join(",");
-				//if (vNode.value != "") 
+				//if (vNode.value != "")
 				if (vSelList == "") {
 					vNode.value = vOrgList;
 				} else if (vOrgList == "") {
@@ -425,7 +432,7 @@ function EProof__SID__ () {
 	//# Nested: addPrefix2DOM(pParentDOM)
 	//#################################################################
 	this.addPrefix2DOM = function (pParentDOM,pPrefix) {
-		var vParent = null; 
+		var vParent = null;
 		//this.alertDOM("addPrefix2DOM()-call pParentDOM.id="+pParentDOM.id)
 		if (pParentDOM) {
 			vParent = pParentDOM;
@@ -474,7 +481,7 @@ function EProof__SID__ () {
 		//var vOldPos = this.getElementById("oldPOSITION"+this.aQID+vStep).value;
 		var vOldPos = this.aStep2Index[vStep]+1;
 		//alert("appendStep(): vStep=" + vStep + " vOldPos =" +vOldPos+ " TO pNewPos=0");
-		this.moveStep(vOldPos,0);	
+		this.moveStep(vOldPos,0);
 		var c = this.getStepCount();
 		//alert("appendStep(): Count="+c+" vStep=" + vStep + " vOldPos =" +vOldPos+ " TO pNewPos=0");
 		this.setStepCount(c+1);
@@ -490,8 +497,8 @@ function EProof__SID__ () {
 		//this.aStudentAnswerList = this.getElementsByClassName("STUDENTANSWER"+this.aQID);
 		//var vListArray = this.aStudentAnswerList;
 		//this.aStudentAnswerList = this.getElementsByClassName("STUDENTANSWER"+this.aQID);
-		//var vListArray = this.getAllSteps("SCAN"); 
-		var vListArray = this.getAllSteps(); 
+		//var vListArray = this.getAllSteps("SCAN");
+		var vListArray = this.getAllSteps();
 		var vOutString = "";
 		var vStep = this.getStep4Index(1);
 		//alert("append_PreviousStep_Justification() - Index=1 Step="+vStep);
@@ -513,7 +520,7 @@ function EProof__SID__ () {
 				alert("PREVIOUSLINK undefined for k="+k);
 			}
 			var vMapNode = this.getChildByClassName(vListArray[k],"mapPREVIOUSLINK"+this.aQID);
-			if (vPrevLink != "") { 
+			if (vPrevLink != "") {
 				if (this.aMappedID[vPrevLink]) {
 					vMapNode.value = this.aMappedID[vPrevLink];
 				} else {
@@ -557,7 +564,7 @@ function EProof__SID__ () {
 		};
 	};
 	//#################################################################
-	//# Nested: alertDOM  
+	//# Nested: alertDOM
 	//#################################################################
 	this.alertDOM = function (pMessage) {
 		if (this.aSettings["alertDOM"] == "1") {
@@ -592,7 +599,7 @@ function EProof__SID__ () {
 	//# Nested: appendSolStep2Array (pSolStep,pSequence)
 	//#################################################################
 	this.appendSolStep2Array = function (pSolStep,pSequence) {
-		var vHash = new Array(); 
+		var vHash = new Array();
 		// [0] PrevID -|- [1] ID -|- [2] Con -|- [3] JustArray -|- [4] OptJustArray [5] JustOK = unionarray of [3] and [4]
 		var vID = pSolStep[1];
 		vHash["PREVIOUS"] = pSolStep[0];
@@ -600,20 +607,20 @@ function EProof__SID__ () {
 		vHash["ID"] = vID;
 		var vConIndex = parseInt(pSolStep[2]+"");
 		vHash["CONNECTIONINDEX"] = pSolStep[2];
-		vHash["CONNECTION"] = this.vConnectionArray[vConIndex];					
+		vHash["CONNECTION"] = this.vConnectionArray[vConIndex];
 		vHash["JUSTIFICATIONARRAY"] = pSolStep[3];
 		vHash["JUSTSOL"] = this.createSolArrayString(pSolStep[3]);
-		vHash["OPTJUSTIFICATIONARRAY"] = pSolStep[4];	
-		vHash["OPTJUSTSOL"] = this.createSolArrayString(pSolStep[4]);	
+		vHash["OPTJUSTIFICATIONARRAY"] = pSolStep[4];
+		vHash["OPTJUSTSOL"] = this.createSolArrayString(pSolStep[4]);
 		vHash["STEPDEF"] = this.aAllID2RAW[vID];
 		//-------
 		pSequence.push(vHash);
-	};	
+	};
 	//#################################################################
 	//# Nested: appendStudAns2SolSequence (pSequence)
 	//#################################################################
 	this.appendStudAns2SolSequence = function (pSequence,pPreID) {
-		var vUsedNodes = this.getUsedSteps(); 
+		var vUsedNodes = this.getUsedSteps();
 		//this.getChildrenByClassName(this.aUsedDOM,"STUDENTANSWER"+this.aQID);
 		var vStep = 0;
 		var vPreID = " ";
@@ -621,7 +628,7 @@ function EProof__SID__ () {
 		var i=0;
 		while (i != vUsedNodes.length) {
 			vStep = this.getChildByClassName(vUsedNodes[i],"STEPNR"+this.aQID).value;
-			var vHash = new Array(); 
+			var vHash = new Array();
 			// [0] PrevID -|- [1] ID -|- [2] Con -|- [3] JustArray -|- [4] OptJustArray [5] JustOK = unionarray of [3] and [4]
 			//var vPreID_Def = this.getElementById("PREVIOUS"+this.aQID+vStep).value;
 			var vPreID_Def = this.getChildById(vUsedNodes[i],"PREVIOUS"+this.aQID+vStep).value;
@@ -632,10 +639,10 @@ function EProof__SID__ () {
 			var vConIndex = this.getChildById(vUsedNodes[i],"sCONNECTION"+this.aQID+vStep).value;
 			vHash["CONNECTIONINDEX"] = vConIndex;
 			vHash["CONNECTION"] = this.vConnectionArray[parseInt(vConIndex)];
-			var JustString = this.getChildById(vUsedNodes[i],"inJUSTIFICATION"+this.aQID+vStep).value; 
+			var JustString = this.getChildById(vUsedNodes[i],"inJUSTIFICATION"+this.aQID+vStep).value;
 			vHash["JUSTIFICATIONARRAY"] = JustString.split(",");
-			JustString = this.getChildById(vUsedNodes[i],"optJUSTIFICATION"+this.aQID+vStep).value; 
-			vHash["OPTJUSTIFICATIONARRAY"] = this.array2original(JustString.split(","));					
+			JustString = this.getChildById(vUsedNodes[i],"optJUSTIFICATION"+this.aQID+vStep).value;
+			vHash["OPTJUSTIFICATIONARRAY"] = this.array2original(JustString.split(","));
 			vHash["STEPDEF"] = this.aAllID2RAW[vID];
 			//-------
 			if (vHash["CONNECTION"] =="???") {
@@ -646,7 +653,7 @@ function EProof__SID__ () {
 			vPreID = vID;
 			i++;
 		};
-	};				
+	};
 	//#################################################################
 	//# Nested: addErrorLink(pStep,pCount)
 	//#################################################################
@@ -668,7 +675,7 @@ function EProof__SID__ () {
 			vID = pArrayID[i];
 			vMapID = this.aMappedID[vID];
 			if (vMapID) {
-				vRes.push(vMapID) 
+				vRes.push(vMapID)
 			} else {
 				//vRes.push(vID+"undef");
 			};
@@ -688,7 +695,7 @@ function EProof__SID__ () {
 			vID = pArrayID[i];
 			vOrgID = this.aOriginalID[vID];
 			if (vOrgID) {
-				vRes.push(vOrgID) 
+				vRes.push(vOrgID)
 			};
 			i++;
 		};
@@ -699,7 +706,7 @@ function EProof__SID__ () {
 	//#################################################################
 	this.calcErrorLink = function (pStep,pCount,pDefaultError) {
 		var vDefaultError = this.aErrorDefault;
-		if (pDefaultError) vDefaultError = pDefaultError; 
+		if (pDefaultError) vDefaultError = pDefaultError;
 		var reduc = vDefaultError * pCount;
 		if (this.greater(reduc,0.5)) reduc = 0.5;
 		//this.aErrorStep["STEP"+pStep] += reduc;
@@ -725,7 +732,7 @@ function EProof__SID__ () {
 	//# Nested: calcAssessment()
 	//#################################################################
 	this.calcAssessment = function (pAddUsed) {
-		var vUsedNodes = this.getUsedSteps(); 
+		var vUsedNodes = this.getUsedSteps();
 		var i = 0;
 		var vStep=1;
 		this.aScoreTotal = 0.0;
@@ -762,7 +769,7 @@ function EProof__SID__ () {
 		//this.aDefaultError = parseInt(this.aSettings["Per_Error_Minus_Percent"])/100;
 		var vCount = this.getUsedCount(pStep,"inASSESSMENTUSED");
 		if (pAddUsed) {
-			this.getElementById("inASSESSMENTUSED"+this.aQID+pStep).value = vCount+pAddUsed;	
+			this.getElementById("inASSESSMENTUSED"+this.aQID+pStep).value = vCount+pAddUsed;
 		};
 		//alert("LLE="+this.aLLE);
 		if (vCount != 0) {
@@ -798,12 +805,12 @@ function EProof__SID__ () {
 			vOutHash["postLINKSTEPS"] = this.calcStepDistance(vID,vNext)-1;
 		};
 		this.addErrorLink(pStep,vOutHash["preLINKSTEPS"]);
-		this.addErrorLink(pStep,vOutHash["postLINKSTEPS"]);	
+		this.addErrorLink(pStep,vOutHash["postLINKSTEPS"]);
 		if (this.aID2Solutions[vID]) {
 			var vAssArr = this.aID2Solutions[vID]["ASSESS"];
 			var vAssHash = new Array();
 			//alert("calcAssessmentStep("+pStep+") vID=["+vID+"] vAssArr.length="+vAssArr.length+" Distance to ["+vPrevious+"]="+vOutHash["preLINKSTEPS"]+" Distance to ["+vNext+"]="+vOutHash["postLINKSTEPS"]);
-			this.calcSolutionRecord(pStep,vPrevious,vID,vNext,vOutHash,this.aErrorStep["STEP"+pStep]); 
+			this.calcSolutionRecord(pStep,vPrevious,vID,vNext,vOutHash,this.aErrorStep["STEP"+pStep]);
 		} else {
 			vOutHash["maxSCORESTEP"] = "0.0";
 			vOutHash["assCONNECTION"] = "0";
@@ -894,7 +901,7 @@ function EProof__SID__ () {
 			k++;
 		};
 		//alert("vScoreTemp="+vScoreTemp.toFixed(2)+" MainError="+this.aErrorStep["STEP"+pStep].toFixed(2));
-		if (this.greater(0,vScoreTemp)) vScoreTemp = 0.0; 
+		if (this.greater(0,vScoreTemp)) vScoreTemp = 0.0;
 		this.aScoreStep["STEP"+pStep] = vScoreTemp;
 		//this.getElementById("outSCORESTEPTEXT"+this.aQID+pStep).value = "---";
 		this.getElementById("maxSCORESTEP"+this.aQID+pStep).value = vScoreTemp.toFixed(2);
@@ -987,7 +994,7 @@ function EProof__SID__ () {
 				//alert("Previous Array "+k+" ["+vArrPrev.join(",")+"]");
 				while (k) {
 					k--;
-					vArr = vBackPathArr[k]; 
+					vArr = vBackPathArr[k];
 					if (vArr.length != 1) {
 						//alert("Previous Array "+k+" ["+vArrPrev.join(",")+"]");
 						vArr = this.findConnectedSteps(vArrPrev,"NEXT");
@@ -998,7 +1005,7 @@ function EProof__SID__ () {
 					//alert("Stored Result Arr "+k+" ["+vArr.join(",")+"]");
 					vPathArr.push(vArr);
 					vArrPrev = vArr;
-					if (vArr.length == 0) { 
+					if (vArr.length == 0) {
 						alert("calcPath()-Error:552 Path contains no NEXT IDs for ["+vArrPrev.join(",")+"]!")
 					}
 				};
@@ -1059,7 +1066,7 @@ function EProof__SID__ () {
 	this.checkSolStep = function (pID) {
 		if (!this.aID2Solutions[pID]) {
 			this.aID2Solutions[pID] = new Array();
-			// ASSESS is a collection of all solution steps, 
+			// ASSESS is a collection of all solution steps,
 			// that are necessary to assess the step with ID=pID
 			this.aID2Solutions[pID]["ASSESS"] = [];
 			this.aID2Solutions[pID]["PREV"] = [];
@@ -1077,7 +1084,7 @@ function EProof__SID__ () {
 		if (vUnusedNodes.length == 0) {
 			this.hideElement("UNUSED"+this.aQID);
 		} else {
-			this.show("UNUSED"+this.aQID); 
+			this.show("UNUSED"+this.aQID);
 		}
 	};
 	//#################################################################
@@ -1116,7 +1123,7 @@ function EProof__SID__ () {
 	//#################################################################
 	//# Nested: clearSuggestionStep(pStep)
 	//#################################################################
-	this.clearSuggestionStep = function (pStep) {	
+	this.clearSuggestionStep = function (pStep) {
 		var vSA = this.getElementById("SELECTFROM"+this.aQID+pStep);
 		if (vSA) {
 			this.getChildById(vSA,"selectCONNECTION"+this.aQID+pStep).value = "";
@@ -1133,7 +1140,7 @@ function EProof__SID__ () {
 		var vNode = document.getElementById('ASSESSMENT'+this.aQID);
 		this.hide('SOLUTION'+this.aQID);
 		this.toggleNode(vNode);
-		if (vNode.style.display!="none") {		
+		if (vNode.style.display!="none") {
 			this.createSummaryAssess();
 		};
 		this.visible('btXAS'+this.aQID);
@@ -1145,7 +1152,7 @@ function EProof__SID__ () {
 		var vNode = document.getElementById('SOLUTION'+this.aQID);
 		this.hide('ASSESSMENT'+this.aQID);
 		this.toggleNode(vNode);
-		if (vNode.style.display!="none") {		
+		if (vNode.style.display!="none") {
 			this.createSolution();
 		};
 		this.visible('btXAS'+this.aQID);
@@ -1173,6 +1180,14 @@ function EProof__SID__ () {
 	this.clickLoadXML = function () {
 		this.clickCloseControl();
 		alert("Load XML-File - please wait!");
+		this.load_XML();
+	};
+	//#################################################################
+	//# Nested: clickLoadXML()
+	//#################################################################
+	this.clickLoadNewXML = function () {
+		this.clickCloseControl();
+		alert("Load New XML-File - please wait!");
 		this.load_XML();
 	};
 	//#################################################################
@@ -1265,7 +1280,7 @@ function EProof__SID__ () {
 		//return this.vAllID2Index[a]-this.vAllID2Index[b];
 		var found1 = this.findarray(a,this.vAllID);
 		var found2 = this.findarray(b,this.vAllID);
-		return found1 - found2; 
+		return found1 - found2;
 	};
 	//#################################################################
 	//# Nested: compareInt(a,b)
@@ -1344,7 +1359,7 @@ function EProof__SID__ () {
 		var vListString = "";
 		if (pList1 != "") {
 			if (pList2 != "") {
-				vListArray = this.unionarrays(pList1.split(","),pList2.split(","));		
+				vListArray = this.unionarrays(pList1.split(","),pList2.split(","));
 				vListString = vListArray.join(",");
 			} else {
 				vListString = pList1;
@@ -1352,7 +1367,7 @@ function EProof__SID__ () {
 		} else {
 			vListString = pList2;
 		}
-		return vListString; 
+		return vListString;
 	};
 	//#################################################################
 	//# Nested: correctMappedID()
@@ -1362,7 +1377,7 @@ function EProof__SID__ () {
 		//this.aCharCounter     = new Array(); //Hash for Leader Chars e.g. "P" CharCounter=4 creates "P4"
 		//this.aMappedID  	  = new Array();
 		//this.aOriginalID  	  = new Array();
-		if (this.aSettings['remap_proofstep_IDs'] == "1") {				
+		if (this.aSettings['remap_proofstep_IDs'] == "1") {
 			var vChar = "";
 			var vOrgID = "";
 			for (iID in this.aMappedID) {
@@ -1397,6 +1412,9 @@ function EProof__SID__ () {
 	this.createAllStudentAnswers = function() {
 		//alert("createAllStudentAnswers() "+this.aAllID.length);
 		var vTplDOM = this.getTemplateDOM();
+		if (!vTplDOM) {
+			console.log("createAllStudentAnswers() uses undefined Template");
+		};
 		var i=0;
 		var vStep = 0;
 		var cln = null;
@@ -1414,7 +1432,7 @@ function EProof__SID__ () {
 			vHashInnerHTML["displayJUSTIFICATIONS"] = "";
 			vHashInnerHTML["outSTEPID"] = "["+this.aMappedID[vID]+"]";
 			vHashInnerHTML["outSTEPID_ASSESSMENT"] = "["+this.aMappedID[vID]+"]";
-			vHashInnerHTML["outSTEPDEF"] = this.aAllID2Node[vID].innerHTML;
+			vHashInnerHTML["outSTEPDEF"] = this.getStepRAW(vID);
 			cln = vTplDOM.cloneNode(true);
 			cln.className = vPrefix+"STUDENTANSWER"+this.aQID;
 			cln.id = cln.className + vStep;
@@ -1450,7 +1468,7 @@ function EProof__SID__ () {
 	//#################################################################
 	//# Nested: createAssessmentStep(pStep)
 	//#################################################################
-	this.createAssessmentStep = function (pStep,pPos,pMax) {	
+	this.createAssessmentStep = function (pStep,pPos,pMax) {
 		this.calcAssessmentStep(pStep);
 		//--------------------------
 		var vSA = this.getElementById("STUDENTANSWER"+this.aQID+pStep);
@@ -1484,18 +1502,18 @@ function EProof__SID__ () {
 		};
 		vNode = this.getChildById(vSA,"assCONNECTION"+this.aQID+pStep);
 		var s = vNode.value;
-		var vConR= this.vConnection2Node[s].innerHTML;
+		var vConR= this.getConnectionRAW(s);
 		if (this.vConnectionArray[s]==" ") {
 			vConR="START";
 		}
-		vText = vLanguage["Connection"] + " ''" + vConSA +"'' ";
+		vText = vLanguage["Connection"] + " [" +this.vConnectionName[s]+"] ";
 		vOutRow.style.color = "red";
 		vValue = "-"+this.createPercent(this.aErrorDefault*this.aErrorConMult);
 		if ((s==0)  || (s != vCon)) {
 			vText += vLanguage["WRONG"];
 		} else if (s == vCon) {
 			vValue = "-0%";
-			vText += vLanguage["RIGHT"]; 
+			vText += vLanguage["RIGHT"];
 			vOutRow.style.color = "green";
 		} else {
 			vText += vLanguage["WRONG"] + " - " +vLanguage["Use"]+" ''";
@@ -1515,7 +1533,7 @@ function EProof__SID__ () {
 		//----COR JUST-------
 		var vJustCor = this.getChildById(vSA,"assJUSTCORRECT"+this.aQID+pStep).value;
 		vText = "["+this.list2mapped(vJustCor)+"] ";
-		vValue = vLanguage["RIGHT"];		
+		vValue = vLanguage["RIGHT"];
 		this.setStepAssValue(pStep,vAssRoot,"outJUSTCORRECT",vText,vValue);
 		//----Ass JUSTIFICATIONS-------
 		this.setJustAssValue(pStep,vAssRoot,vSA,"JUSTMISSING");
@@ -1536,12 +1554,12 @@ function EProof__SID__ () {
 	this.createChar4ID = function (pID) {
 		var vChar = "";
 		if (this.aSettings["AuthoringMode"] == "1") {
-			//remove last numbers in ID-String e.g. [S3_F5] to [S3_F] or [S3] to [S]   
+			//remove last numbers in ID-String e.g. [S3_F5] to [S3_F] or [S3] to [S]
 			vChar = pID.replace(/[\-0-9]+$/g,"");
 		} else {
-			//remove FALSE identification in ID-String e.g. [S3_F5] to [S3]   
+			//remove FALSE identification in ID-String e.g. [S3_F5] to [S3]
 			vChar = pID.replace(/_F[\-0-9]+$/g,"");
-			//remove last numbers in ID-String e.g.  [S3] to [S]   
+			//remove last numbers in ID-String e.g.  [S3] to [S]
 			vChar = vChar.replace(/[^A-Z_]/g,"");
 		}
 		return vChar;
@@ -1551,7 +1569,7 @@ function EProof__SID__ () {
 	//#################################################################
 	this.createCryptSol = function (pDomID) {
 		var vOutput = "  "+this.LT+"CRYPTSOL"+this.GT+this.CR;
-		vOutput += this.getEncodedSol();   
+		vOutput += this.getEncodedSol();
 		vOutput += this.CR+"  "+this.LT+"/CRYPTSOL"+this.GT+this.CR;
 		return vOutput;
 	};
@@ -1561,7 +1579,7 @@ function EProof__SID__ () {
 	this.createMappedID = function (pID) {
 		var vChar = this.createChar4ID(pID);
 		return vChar+this.newCharCounter(vChar);
-	};	
+	};
 	//#################################################################
 	//# Nested: createLanguageIMathAS()
 	//#################################################################
@@ -1571,7 +1589,7 @@ function EProof__SID__ () {
 			vOut += this.CR + "vLanguage[\""+iID+"\"] = \""+this.DO+"STR_"+iID+"\""+this.SC;
 		};
 		return vOut;
-	};	
+	};
 	//#################################################################
 	//# Nested: createPercent(pValue)
 	//#################################################################
@@ -1686,7 +1704,7 @@ function EProof__SID__ () {
 		var vArrID = new Array();
 		if (!this.aID4StepType[vStepType]) {
 			this.createStep2SA();
-		};	
+		};
 		if (this.aID4StepType[vStepType]) vArrID = this.aID4StepType[vStepType];
 		var i=0;
 		var vName = "";
@@ -1728,7 +1746,7 @@ function EProof__SID__ () {
 		var vArrID = new Array();
 		if (!this.aID4StepType[pStepType]) {
 			this.createStep2SA();
-		};	
+		};
 		vArrID = this.aID4StepType[pStepType];
 		var i=0;
 		var vName = "";
@@ -1834,13 +1852,15 @@ function EProof__SID__ () {
 			vIDm= this.aMappedID[vID];
 			vHTML += vHR;
 			vHTML += this.LT+"b style='font-size:20px'"+this.GT+vLanguage["Proof"]+" "+vLanguage["for"]+" ["+vIDm+"]: ";
-			vHTML += this.aAllID2Node[vID].innerHTML+""+this.LT+"/b"+this.GT;
+			vHTML += this.getStepRAW(vID)+""+this.LT+"/b"+this.GT;
 			//vStep = this.getChildByClassName(vSolutionPath[i],"STEPNR"+this.aQID).value;
 			vHTML += this.createSolution4ID(vID);
 			vHR =  this.LT+"hr  width='50%' align='left'/"+this.GT;
 			i++;
 		};
-		this.getElementById("SOLUTION"+this.aQID).innerHTML = vHTML;
+		var vSolutionNode = this.getElementById("SOLUTION"+this.aQID);
+		vSolutionNode.innerHTML = vHTML;
+		this.processMathNode(vSolutionNode);
 	};
 	//#################################################################
 	//# Nested: createSolution4ID(pID)
@@ -1858,7 +1878,7 @@ function EProof__SID__ () {
 			//vHTML +=  this.LT+"li"+this.GT+"Solution Path-Step["+i+"] for Conclusion ["+pID+"] contain Steps ["+vPath[i].join(",")+"]"+this.LT+"/li"+this.GT;
 			vHTML += this.createSolutionStep(i,vPath[i-1][0],vPath[i][0]);
 			i++;
-		};	
+		};
 		//vHTML +=  this.LT+"/ul"+this.GT;
 		return vHTML;
 	};
@@ -1883,7 +1903,7 @@ function EProof__SID__ () {
 				vInnerHash["solSTEPID"] = "["+this.aMappedID[pID2]+"]";
 			};
 			if (this.aAllID2Node[pID2]) {
-				vInnerHash["solSTEPDEF"] = this.aAllID2Node[pID2].innerHTML;
+				vInnerHash["solSTEPDEF"] = this.getStepRAW(pID2);
 			};
 			this.evaluateSolutionStep(vRes[0],vInnerHash);
 		}
@@ -1913,7 +1933,7 @@ function EProof__SID__ () {
 		while (i != vSolSeq.length) {
 			//var vHash = vSolSeq[i];
 			vOut += this.createSolutionStepIMathAS(vTPL,vSolSeq[i]);
-			vIMath += this.createSolutionStep2Form(vSolSeq[i]); 
+			vIMath += this.createSolutionStep2Form(vSolSeq[i]);
 			i++;
 		};
 		if (pStepType !="Solution") {
@@ -1952,7 +1972,7 @@ function EProof__SID__ () {
 		var i=0;
 		while (i != vSolSeq.length) {
 			//var vHash = vSolSeq[i];
-			vOut += this.createSolutionStep2Form(vSolSeq[i]); 
+			vOut += this.createSolutionStep2Form(vSolSeq[i]);
 			i++;
 		};
 		return vOut;
@@ -1973,7 +1993,7 @@ function EProof__SID__ () {
 			i++;
 		 }
 		 return vOut+this.CR;
-	}; 
+	};
 	//#################################################################
 	//# Nested: createSolutionStep5IMathAS(pTPL,pHash)
 	//#################################################################
@@ -1993,7 +2013,7 @@ function EProof__SID__ () {
 			i++;
 		 }
 		 return pTPL;
-	}; 
+	};
 	//#################################################################
 	//# Nested: createSolutionXML()
 	//#################################################################
@@ -2004,8 +2024,8 @@ function EProof__SID__ () {
 		vOut += this.createProofStepsXML("PROOFSTEP","5","NO_TAG_WARP");
 		//vOut += this.createStepsXML("PROOFSTEP","2");
 		//vOut += this.createProofStepsXML("PROOFSTEP","5");
-		vOut += "  "+this.LT+"/VARLIST"+this.GT+this.CR;		
-		return vOut; 
+		vOut += "  "+this.LT+"/VARLIST"+this.GT+this.CR;
+		return vOut;
 	};
 	//#################################################################
 	//# Nested: createProofStepsXML(pStepType,pSize)
@@ -2019,7 +2039,7 @@ function EProof__SID__ () {
 		if (this.aExportSol) {
 			vSolSeq = this.createSolutionSequence();
 		//} else {
-			//---duplicates PROOFSTEP_XML Size=2 in XML export----- 
+			//---duplicates PROOFSTEP_XML Size=2 in XML export-----
 			//vOut += this.createStepsInnerXML(pStepType,"2");
 		};
 		var vPreID = " ";
@@ -2036,7 +2056,7 @@ function EProof__SID__ () {
 			vID = vHash["inSTEPID"];
 			//alert("createProofStepsXML():1253 - vID=["+vID+"]");
 			this.checkID4StepDefExport(vPreID,vID,vUsedID,vHash);
-			vOut += this.createStepSize5XML(vHash); 
+			vOut += this.createStepSize5XML(vHash);
 			vPreID = vID;
 			i++;
 		};
@@ -2060,7 +2080,7 @@ function EProof__SID__ () {
 			vOut += this.createStudentAnswerStep2XML(vStep,pSize);
 			i++;
 		};
-		vOut += "  "+this.LT+"/VARLIST"+this.GT+this.CR;		
+		vOut += "  "+this.LT+"/VARLIST"+this.GT+this.CR;
 		return vOut;
 	};
 	//#################################################################
@@ -2068,7 +2088,7 @@ function EProof__SID__ () {
 	//#################################################################
 	this.createStudentAnswerStep2XML = function (pStep,pSize) {
 		//this.aStudAnsFormat = new Array("PREVIOUS","CONNECTION","ID","JUST","OPTJUST","MANSCORE","SUGUSED","ASSUSED","SELCON","SELID","SELJUST","VALUE");
-		//this.aListID = new Array("OPTJUST","JUST","SELCON","SELID","SELJUST");	
+		//this.aListID = new Array("OPTJUST","JUST","SELCON","SELID","SELJUST");
 		//this.aStudAns2DOM = new Array("PREVIOUSLINK","sCONNECTION","inSTEPID","inJUSTIFICATION","optJUSTIFICATION","inMYSTEPASSESSSCORE","inSUGGESTIONSUSED","inASSESSMENTUSED","selectCONNECTION","selectSTEPID","selectJUSTIFICATION","VALUE");
 		var vOut = "";
 		vOut += "    "+this.LT+"STEPDEF SIZE='"+pSize+"' ";
@@ -2088,7 +2108,7 @@ function EProof__SID__ () {
 		var i = 1;
 		while (i != this.aStudAns2DOM.length) {
 			var vAtt = this.aStudAnsFormat[i];
-			vOut += vAtt+"='"+vHash[vAtt]+"' ";	
+			vOut += vAtt+"='"+vHash[vAtt]+"' ";
 			i++;
 		};
 		vOut += "' /"+this.GT+this.CR;
@@ -2120,7 +2140,7 @@ function EProof__SID__ () {
 	//#################################################################
 	this.createStudentAnswerStep2IMathAS = function (pStep,pSA) {
 		//this.aStudAnsFormat = new Array("PREVIOUS","CONNECTION","ID","JUST","OPTJUST","MANSCORE","SUGUSED","ASSUSED","SELCON","SELID","SELJUST","VALUE");
-		//this.aListID = new Array("OPTJUST","JUST","SELCON","SELID","SELJUST");	
+		//this.aListID = new Array("OPTJUST","JUST","SELCON","SELID","SELJUST");
 		//this.aStudAns2DOM = new Array("PREVIOUSLINK","sCONNECTION","inSTEPID","inJUSTIFICATION","optJUSTIFICATION","inMYSTEPASSESSSCORE","inSUGGESTIONSUSED","inASSESSMENTUSED","selectCONNECTION","selectSTEPID","selectJUSTIFICATION","VALUE");
 		var vOut = "";
 		var vHash = new Array();
@@ -2129,7 +2149,7 @@ function EProof__SID__ () {
 			var vDOM = this.aStudAns2DOM[i];
 			var vAtt = this.aStudAnsFormat[i];
 			var vValue = this.getChildById(pSA,vDOM+this.aQID+pStep).value || "";
-			//if (this.greater(vValue.length,150)) alert("createStudnentAnswertStep2SA():2025 "+vDOM+"="+vValue); 
+			//if (this.greater(vValue.length,150)) alert("createStudnentAnswertStep2SA():2025 "+vDOM+"="+vValue);
 			vHash[vAtt] = this.encodeCommaForm(vValue);
 			i++;
 		};
@@ -2137,7 +2157,7 @@ function EProof__SID__ () {
 		vHash["CONNECTION"] = this.vConnectionArray[parseInt(vHash["CONNECTION"]+"")];
 		i=0;
 		while (i != this.aListID.length) {
-			vHash[this.aListID[i]] = this.list2IMathAS(vHash[this.aListID[i]]) || ""; 
+			vHash[this.aListID[i]] = this.list2IMathAS(vHash[this.aListID[i]]) || "";
 			i++;
 		};
 		return this.exportHashSA2Form(vHash);
@@ -2165,7 +2185,7 @@ function EProof__SID__ () {
 			};
 			vOut += "ID='"+pHash["ID"]+"' ";
 			vOut += "CONNECTION='"+this.encodeValue(vCon)+"' ";
-			var vJust = 
+			var vJust =
 			vOut += "JUST='"+pHash["JUST"] +"' ";
 			vOut += "OPTJUST='"+pHash["OPTJUST"]+"' ";
 			vOut += "VALUE='"+this.encodeValue(pHash["STEPDEF"])+"' /"+this.GT+this.CR;
@@ -2197,7 +2217,7 @@ function EProof__SID__ () {
 		var vRet = "";
 		if (pArr) {
 			if (pArr.length != 0) {
-				vRet = "\""+pArr.join("\",\"")+"\"";	
+				vRet = "\""+pArr.join("\",\"")+"\"";
 			};
 		};
 		return vRet;
@@ -2212,7 +2232,7 @@ function EProof__SID__ () {
 		this.calcAssessment(pAddUsedCount);
 		this.createSolution();
 		this.createAssessment();
-		var vUsedNodes = this.getUsedSteps(); 
+		var vUsedNodes = this.getUsedSteps();
 		//this.getChildrenByClassName(this.aUsedDOM,"STUDENTANSWER"+this.aQID);
 		var vTitle =  this.LT+"h2"+this.GT+""+vLanguage["Assessment"]+":"+this.LT+"/h2"+this.GT;
 		var vAssessHTML = "";
@@ -2242,7 +2262,9 @@ function EProof__SID__ () {
 		vAssessHTML +=  this.LT+"/ul"+this.GT;
 		var vScoreHTML =  this.LT+"b"+this.GT+""+this.createPercent(this.aScoreTotal) + " "+ vLanguage["Average"] +" "+vLanguage["for"] + " "+ this.aUsedCount+" "+vLanguage["ProofSteps"] +""+this.LT+"/b"+this.GT;
 		vAssessHTML = vTitle + vScoreHTML+vHR+vAssessHTML + vScoreHTML;
-		this.getElementById("ASSESSMENT"+this.aQID).innerHTML = vAssessHTML;
+		var vAssessmentNode = this.getElementById("ASSESSMENT"+this.aQID)
+		vAssessmentNode.innerHTML = vAssessHTML;
+		this.processMathNode(vAssessmentNode);
 		//return vSolArrayHTML;
 	};
 	//#################################################################
@@ -2253,9 +2275,9 @@ function EProof__SID__ () {
 		vScoreTmp = vScoreTmp.bold();
 		var vLinkStep = parseInt(this.getChildById(pSA,pPrePost+"LINKSTEPS"+this.aQID+pStep).value);
 		if (vLinkStep == 0) {
-			vScoreTmp = vScoreTmp.fontcolor("green"); 
+			vScoreTmp = vScoreTmp.fontcolor("green");
 		} else {
-			vScoreTmp = vScoreTmp.fontcolor("red"); 
+			vScoreTmp = vScoreTmp.fontcolor("red");
 		};
 		vScoreTmp =  this.getChildById(pSA,"out"+pPrePost+"LINKSTEPSTEXT"+this.aQID+pStep).innerHTML + " "+ vScoreTmp;
 		return this.LT+"li"+this.GT+vScoreTmp+" "+this.LT+"/li"+this.GT;
@@ -2304,10 +2326,12 @@ function EProof__SID__ () {
 			vScoreCell = vScoreCell.fontcolor("red");
 		};
 		vScoreCell = this.getElementById("outASSESSCONNECTIONTEXT"+this.aQID+pStep).innerHTML + vScoreCell.bold();
-		vInnerHash["solCONNECTION"] = this.vConnection2Node[vCon].innerHTML+""+this.LT+"br/"+this.GT+""+vConAssHTML;
+		var vSolCon = this.getConnectionRAW(vCon);
+		vInnerHash["solCONNECTION"] = vSolCon + this.LT+"br/"+this.GT+""+vConAssHTML;
 		vInnerHash["solSTEPNR"] += vPre+this.createPercent(this.aScoreStep["STEP"+pStep])+vPost;
 		vInnerHash["solSTEPID"] = "["+vMapID+"]";
-		vInnerHash["solSTEPDEF"] = this.aAllID2Node[vID].innerHTML;	
+		//vInnerHash["solSTEPDEF"] = this.aAllID2Node[vID].innerHTML;
+		vInnerHash["solSTEPDEF"] = this.getStepRAW(vID);
 		vOut = "";
 		var vManualScore = this.getElementById("inMYSTEPASSESSSCORE"+this.aQID+pStep).value;
 		if (vManualScore != "") {
@@ -2339,6 +2363,7 @@ function EProof__SID__ () {
 		vOut += this.createDisplayJustifications(vJustUnnec,vMapID,vTitle);
 		vInnerHash["solJUSTIFICATIONS"] = vOut;
 		this.writeHash2InnerHTML(cln,vInnerHash,"");
+		//this.processMathNode(cln);
 		return cln.innerHTML;
 	};
 	//#################################################################
@@ -2366,7 +2391,7 @@ function EProof__SID__ () {
 		this.setStepAssValue(pStep,pAssRoot,"out"+pReadID+"USED",vText,vValue);
 	};
 	//#################################################################
-	//# Nested: diffarrays  
+	//# Nested: diffarrays
 	//# diffarrays(array1,array2): Returns all elements in array1 that are not also in array2
 	//#################################################################
 	this.diffarrays = function (x, y) {
@@ -2375,7 +2400,7 @@ function EProof__SID__ () {
 		while (i != x.length) {
 			diffhash[x[i]]=true;
 			i++;
-		}	  
+		}
 		i=0;
 		while (i != y.length) {
 			if(diffhash[y[i]]) delete diffhash[y[i]];
@@ -2421,8 +2446,8 @@ function EProof__SID__ () {
 			vConHTML = this.vConnection2Node[vCon].innerHTML;
 		};
 		pInnerHash["solCONNECTION"] = vConHTML;
-		var vJust = pSolStep[3]; 
-		//alert("vJust=["+vJust+"]")		
+		var vJust = pSolStep[3];
+		//alert("vJust=["+vJust+"]")
 		pInnerHash["solJUSTIFICATIONS"] = this.createDisplayJustifications(vJust,this.aMappedID[pSolStep[1]]);
 	};
 	//#################################################################
@@ -2434,7 +2459,7 @@ function EProof__SID__ () {
 			//vID = this.aMappedID[pID];
 			//alert("Old=["+pID+"] New=["+vID+"]");
 		};
-		return vID 
+		return vID
 	};
 	//#################################################################
 	//# Nested: this.exportArrID(pArr)
@@ -2444,7 +2469,7 @@ function EProof__SID__ () {
 		if (this.aSettings["remap_proofstep_IDs"] == "1") {
 			//vArr = this.array2mapped(pArr);
 		};
-		return vArr 
+		return vArr
 	};
 	//#################################################################
 	//# Nested: this.exportListID(pList)
@@ -2454,7 +2479,7 @@ function EProof__SID__ () {
 		if (this.aSettings["remap_proofstep_IDs"] == "1") {
 			//vList = this.list2mapped(pList);
 		};
-		return vList 
+		return vList
 	};
 	//#################################################################
 	//# Nested: this.exportHashID(pHash)
@@ -2473,7 +2498,7 @@ function EProof__SID__ () {
 					vHash["PREVIOUS"] = this.exportID(vHash["PREVIOUS"]);
 				}
 			};
-			//this.aListID = new Array("OPTJUST","JUST","SELCON","SELID","SELJUST");	
+			//this.aListID = new Array("OPTJUST","JUST","SELCON","SELID","SELJUST");
 			var i=1; //not i=0 because this.aListID[0]="OPTJUST"
 			while (i != this.aListID.length) {
 				var vList = this.aListID[i];
@@ -2493,7 +2518,7 @@ function EProof__SID__ () {
 	};
 	//#################################################################
 	//# Method: exportHashSA2Form(pHash)
-	//#################################################################	
+	//#################################################################
 	this.exportHashSA2Form = function (pHash) {
 		var vOut = "";
 		var i = 0;
@@ -2501,7 +2526,7 @@ function EProof__SID__ () {
 		i++;
 		while (i != this.aStudAns2DOM.length) {
 			var vAtt = this.aStudAnsFormat[i];
-			vOut += this.aSeparator+pHash[vAtt];	
+			vOut += this.aSeparator+pHash[vAtt];
 			i++;
 		};
 		//vOut += this.CR;
@@ -2510,7 +2535,7 @@ function EProof__SID__ () {
 	};
 	//#################################################################
 	//# Method: exportSolStep(pPrevID,pID,pCon,pJust,pJustOpt)
-	//#################################################################	
+	//#################################################################
 	this.exportSolStep = function (pPrevID,pID,pCon,pJust,pOptJust) {
 		var vOut = "";
 		if (!pCon) {
@@ -2530,7 +2555,7 @@ function EProof__SID__ () {
 	};
 	//#################################################################
 	//# Method: exportStep(pID,pValue)
-	//#################################################################	
+	//#################################################################
 	this.exportStep = function (pID,pValue) {
 		var vOut = "";
 		if ((pID != "") && (pValue != "")) {
@@ -2540,12 +2565,12 @@ function EProof__SID__ () {
 		return vOut;
 	};
 	//#################################################################
-	//# Method: exportStudentAnswer(pXMLnode) 
-	//#################################################################	
+	//# Method: exportStudentAnswer(pXMLnode)
+	//#################################################################
 	this.exportStudentAnswer = function (pXMLnode) {
 		//0:PrevID//1:Con=TYP//2:ID=MY1//3:Just=CK,DU,P1//4:OptJust//5:ManScore=0.9//6:SugUsed//7:AssUsed//8:SelCon//9:SelID//10:SelJUST//11:StepDef=(a+b)*c
 		var i=0;
-		var vHash = new Array(); 
+		var vHash = new Array();
 		//this.aStudAnsFormat = new Array("PREVIOUS","CONNECTION","ID","JUST","OPTJUST","MANSCORE","SUGUSED","ASSUSED","SELCON","SELID","SELJUST","VALUE");
 		//this.aStudAns2DOM = new Array("PREVIOUSLINK","sCONNECTION","inSTEPID","inJUSTIFICATION","optJUSTIFICATION","inMYSTEPASSESSSCORE","inSUGGESTIONSUSED","inASSESSMENTUSED","selectCONNECTION","selectSTEPID","selectJUSTIFICATION","VALUE");
 		while (i != this.aStudAnsFormat.length) {
@@ -2554,10 +2579,10 @@ function EProof__SID__ () {
 			i++;
 		};
 		if (vHash['CONNECTION'] == "") vHash['CONNECTION'] = "???";
-		//this.aListID = new Array("OPTJUST","JUST","SELCON","SELID","SELJUST");	
+		//this.aListID = new Array("OPTJUST","JUST","SELCON","SELID","SELJUST");
 		i=0;
 		while (i != this.aListID.length) {
-			vHash[this.aListID[i]] = this.list2IMathAS(vHash[this.aListID[i]]); 
+			vHash[this.aListID[i]] = this.list2IMathAS(vHash[this.aListID[i]]);
 			i++;
 		};
 		//var vOut = "";
@@ -2573,7 +2598,7 @@ function EProof__SID__ () {
 	};
 	//#################################################################
 	//# Method: exportDefaultSA(pID)
-	//#################################################################	
+	//#################################################################
 	this.exportDefaultSA = function (pID) {
 		var vOut = "";
 		vOut += this.aSeparator+"???"+this.aSeparator;
@@ -2583,11 +2608,11 @@ function EProof__SID__ () {
 		return vOut;
 	};
 	//#################################################################
-	//# Method: exportXMLTree  
-	//#################################################################	
+	//# Method: exportXMLTree
+	//#################################################################
 	this.exportXMLtree = function () {
 		//----Debugging------------------------------------------
-		// The following alert-Command is useful for debugging 
+		// The following alert-Command is useful for debugging
 		//alert("XMLparser:1389 exportXMLTree()-Call")
 		//-------------------------------------------------------
 		var vUsedID = new Array();
@@ -2608,7 +2633,7 @@ function EProof__SID__ () {
 		var vCryptSol = "";
 		if (vNode.length == 0) {
 			alert("ERROR in XML-File, EPROOF-Definition could not be parsed!"+this.CR+"xmlparser.js:186 - exportTree()-Call");
-			vErrorCode++;		
+			vErrorCode++;
 		} else if (this.greater(vNode.length,1)) {
 			alert("ERROR: XML-File contains more than 1 EPROOF-Definition!"+this.CR+"xmlparser.js:188 - exportTree()-Call");
 			vErrorCode++;
@@ -2621,7 +2646,13 @@ function EProof__SID__ () {
 			while (i != vVariableNode.length) {
 				vName  = vVariableNode[i].getAttribute("NAME");
 				vValue  = vVariableNode[i].getAttribute("VALUE");
-				vSetting += vCR + vName + this.aSeparator + vValue;
+				if (vName.toUpperCase() == "TITLE") {
+					console.log("XML parse TITLE:"+ vValue);
+					vSetting += vCR + "Theorem_Title" + this.aSeparator + vValue;
+					vSetting += this.CR + "Theorem_Label" + this.aSeparator + "Theorem";
+				} else {
+					vSetting += vCR + vName + this.aSeparator + vValue;
+				}
 				vCR = this.CR;
 				//vValue = this.decodeValue(vValue);
 				//this.loadSettingsVar(vName,vValue);
@@ -2648,7 +2679,7 @@ function EProof__SID__ () {
 			while (i != vVariableNode.length) {
 				vValue = "";
 				vName  = vVariableNode[i].getAttribute('NAME');
-				vStepType = vName.replace(/_OPTIONS/,""); 
+				vStepType = vName.replace(/_OPTIONS/,"");
 				//alert("VARLIST NAME="+vName);
 				//vValue  = vVariableNode[i].childNodes[0].nodeValue;
 				//------
@@ -2658,8 +2689,8 @@ function EProof__SID__ () {
 				var vSteps = "";
 				var vPrevID = " ";
 				var vNextPrevID = " ";
-				var vCon = ""; 
-				var vID = ""; 
+				var vCon = "";
+				var vID = "";
 				while (j != vStepDefs.length) {
 					vSize  = vStepDefs[j].getAttribute('SIZE');
 					vID = vStepDefs[j].getAttribute('ID');
@@ -2688,7 +2719,7 @@ function EProof__SID__ () {
 							//if (vValue != "") {
 								vSteps += this.exportStep(vID,vValue);
 							};
-							vSolution += this.exportSolStep(vPrevID,vID,vCon,vJust,vOptJust);						
+							vSolution += this.exportSolStep(vPrevID,vID,vCon,vJust,vOptJust);
 						} else {
 							//alert("LINKNODE for ["+vID+"]");
 							vPrevID = vID;
@@ -2696,7 +2727,7 @@ function EProof__SID__ () {
 						//this.exportDefaultSA(vID);
 					} else if (vSize=="2") {
 						vSteps += this.exportStep(vID,vValue);
-						vNextPrevID = " ";				
+						vNextPrevID = " ";
 					} else if (vSize=="10") {
 						//var vAtt = new Array("PREVIOUS","CONNECTION","JUST","OPTJUST","MANSCORE")
 						vStudAnsExported = true;
@@ -2864,7 +2895,7 @@ function EProof__SID__ () {
 
 	};
 	//#################################################################
-	//# Nested: form2list  
+	//# Nested: form2list
 	//#################################################################
 	this.form2list = function (pString) {
 		var vReturn = "";
