@@ -242,13 +242,22 @@ function appendElectronMethods_EProof__SID__ () {
          };
        });
   };
+  //#################################################################
+  //# Nested: renameCharCounter1()
+  //#################################################################
+  this.openIMathAScode = function () {
+    var vURL="./code/index.html";
+    window.open(vURL);
+    console.log("JAVSCRIPT: window.open('"+vURL+"')");
+    //shell.openExternal(pURL);
+  }
 
   //#################################################################
   //# Nested: renameCharCounter1()
   //#################################################################
   this.openWindow = function (pURL) {
     //window.open(pURL);
-    console.log("openWindow('"+pURL+"')");
+    console.log("ELECTRON: openWindow('"+pURL+"')");
     shell.openExternal(pURL);
   }
 
