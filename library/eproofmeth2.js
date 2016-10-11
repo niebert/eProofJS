@@ -737,7 +737,7 @@ function createDisplayOptions_EProof__SID__() {
 	//-------------------------------------------------------
 	var vSelNode = this.getElementById("tplDISPLAYSELECT"+this.aQID);
 	var vContent = "";
-    vContent += this.LT+"OPTION value='EDITComplete' "+this.GT+"EDIT: "+vLanguage["Complete"]+this.LT+"/OPTION"+this.GT;
+    vContent += this.LT+"OPTION selected value='EDITComplete' "+this.GT+"EDIT: "+vLanguage["Complete"]+this.LT+"/OPTION"+this.GT;
     vContent += this.LT+"OPTION value='EDITShort'"+this.GT+"EDIT: "+vLanguage["Short"]+this.LT+"/OPTION"+this.GT;
 	vContent += this.LT+"OPTION value='Complete'"+this.GT+vLanguage["Complete"]+this.LT+"/OPTION"+this.GT;
     vContent += this.LT+"OPTION value='Short'"+this.GT+vLanguage["Short"]+this.LT+"/OPTION"+this.GT;
