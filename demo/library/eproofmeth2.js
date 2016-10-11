@@ -1,19 +1,19 @@
 //#################################################################
 //# Javascript Class:         EProof__SID__()
 //#   Method Definition File: eproofmeth2.js
-//#                
-//# Author of Class:      Engelbert Niehaus                    
-//# email:                niehaus@uni-landau.de                 
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//#
+//# Author of Class:      Engelbert Niehaus
+//# email:                niehaus@uni-landau.de
+//# created               24.2.2015
+//# last modifications    __DATE__
 //# GNU Public License - OpenSource
-//# created with JavaScript Class Generator by Engelbert Niehaus 
+//# created with JavaScript Class Generator by Engelbert Niehaus
 //#################################################################
 	//var Test = "$A"
 	//alert("CharCode $="+Test.charCodeAt(0));
 	//setTimeout("postProcessProof()",1000);
 	//var s = document.getElementById("EPROOF__SID__");
-	// textarea rows="10" cols="125" id="HTMLoutput" wrap="off" /textarea 
+	// textarea rows="10" cols="125" id="HTMLoutput" wrap="off" /textarea
 	//var s = document.getElementById("STUDENTANSWERLIST__SID__")
 	//var r = document.getElementById("HTMLoutput");
 	//r.value = s.innerHTML;
@@ -27,7 +27,7 @@
 //----Methodes---------------------------------------------------------
 // In the definition of the methods of  'EProof__SID__'
 // the function name is extended with '_EProof__SID__'.
-// This is done to avoid name space conflicts, if you overwrite a 
+// This is done to avoid name space conflicts, if you overwrite a
 // method 'my_method()' that was inherited from a superclass 'MySuperClass' e.g.
 //   SuperClass: MySuperClass.my_method()
 //   Class:       EProof__SID__.my_method()
@@ -36,16 +36,16 @@
 // and
 //   function my_method_MySuperClass(...) { .....
 //---------------------------------------------------------------------
-//---Methods of Class "EProof__SID__()" defined as JS functions 
+//---Methods of Class "EProof__SID__()" defined as JS functions
 //---------------------------------------------------------------------
 //#################################################################
-//# Method: addStepDefinition(pButtonDOM)  
+//# Method: addStepDefinition(pButtonDOM)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Adds a new Step Definition to an defined StepType                      
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Adds a new Step Definition to an defined StepType
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 function addStepDefinition_EProof__SID__ (pButton) {
 	var vStepType = pButton.getAttribute("steptype");
@@ -54,7 +54,7 @@ function addStepDefinition_EProof__SID__ (pButton) {
 	if (vStepType =="PROOFSTEP") {
 		vChar = "S";
 	} else {
-		vChar = vStepType.substring(0, 1); 
+		vChar = vStepType.substring(0, 1);
 	};
 	//alert("addStepDefinition():50 eproofmeth.js vChar='"+vChar+"' vStepType='"+vStepType+"'");
 	var vInNode  = this.getElementById(this.aIMATH[vStepType]);
@@ -68,18 +68,18 @@ function addStepDefinition_EProof__SID__ (pButton) {
 	this.reloadProof();
 };
 //#################################################################
-//# Method: append_template(pAnswerHash,pInnerHash,pStep)  
+//# Method: append_template(pAnswerHash,pInnerHash,pStep)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Provide an Object ID of a DOM template that will be cloned                       
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Provide an Object ID of a DOM template that will be cloned
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function append_template_EProof__SID__(pAnswerHash,pInnerHash,pStep) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:append_template()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -110,13 +110,13 @@ function append_template_EProof__SID__(pAnswerHash,pInnerHash,pStep) {
 };
 //----End of Method append_template() Definition
 //#################################################################
-//# Method: assessStep_EProof(pButtonDOM,pIncrement)  
+//# Method: assessStep_EProof(pButtonDOM,pIncrement)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Provide an Object ID of a DOM template that will be cloned                       
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Provide an Object ID of a DOM template that will be cloned
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 function assessStep_EProof__SID__ (pButtonDOM) {
 	var vIncrement = 1;
@@ -132,7 +132,7 @@ function assessStep_EProof__SID__ (pButtonDOM) {
 	var vStep = pButtonDOM.getAttribute("step");
 	//alert("assessStep()-Call -pButtonDOM.step="+vStep);
 	var vNode = this.getElementById("assessSTUDENTANSWER"+this.aQID+vStep);
-	if (vNode.style.display=="none") { 
+	if (vNode.style.display=="none") {
 		var vAssUsed = this.getElementById("inASSESSMENTUSED"+this.aQID+vStep);
 		var vCount = parseInt(vAssUsed.value);
 		vAssUsed.value = vCount + vIncrement;
@@ -144,13 +144,13 @@ function assessStep_EProof__SID__ (pButtonDOM) {
 };
 //----End of Method assessStep() Definition
 //#################################################################
-//# Method: assessStepDisplay_EProof(pButtonDOM,pIncrement)  
+//# Method: assessStepDisplay_EProof(pButtonDOM,pIncrement)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Provide an Object ID of a DOM template that will be cloned                       
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Provide an Object ID of a DOM template that will be cloned
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 function assessStepDisplay_EProof__SID__ (pButtonDOM) {
 	var vStep = pButtonDOM.getAttribute("step");
@@ -159,18 +159,18 @@ function assessStepDisplay_EProof__SID__ (pButtonDOM) {
 };
 //----End of Method assessStepDisplay() Definition
 //#################################################################
-//# Method: checkPreviousLink(pInDOM)  
+//# Method: checkPreviousLink(pInDOM)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function checkPreviousLink_EProof__SID__(pInDOM) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:checkPreviousLink()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -187,31 +187,31 @@ function checkPreviousLink_EProof__SID__(pInDOM) {
 };
 //----End of Method checkPreviousLink() Definition
 //#################################################################
-//# Method: clear_LocalStorage(pForm,pOut)  
+//# Method: clear_LocalStorage(pForm,pOut)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:  clear the Data of imathEPROOF in LocalStorage                    
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:  clear the Data of imathEPROOF in LocalStorage
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
-function clear_LocalStorage_EProof__SID__() {	
+function clear_LocalStorage_EProof__SID__() {
 	localStorage.removeItem("imathEPROOF");
 	alert("Local Storage cleared for 'imathEPROOF'");
 };
 //----End of Method clear_LocalStorage() Defsaveion
 //#################################################################
-//# Method: correct_StudentAnswer()  
+//# Method: correct_StudentAnswer()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:  correct "co__#__co" by "co__##__co" and                     
+//#
+//# Comment:  correct "co__#__co" by "co__##__co" and
 //#           correct "CR__co" by "CR#__co"
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
-function correct_StudentAnswer_EProof__SID__() {	
+function correct_StudentAnswer_EProof__SID__() {
 	var vDOM = this.getIMathById("STUDENTANSWER");
 	var vValue = vDOM.value;
 	vValue = vValue.replace(/co__#__co/g,"co__##__co");
@@ -224,26 +224,26 @@ function correct_StudentAnswer_EProof__SID__() {
 	vValue = vValue.replace(/co__#__co/g,"co__##__co");
 	eval(decodeURI("vValue=vValue.replace(/co__%5Cn/g,%22co__#%5Cn%22)"));
 	eval(decodeURI("vValue=vValue.replace(/co__"+this.DO+"/g,%22co__#%22)"));
-	vDOM.value = vValue; 
+	vDOM.value = vValue;
 	//alert(encodeURI("vValue=vValue.replace(/\\n__co/g,\"\\n#__co\")"));
     //alert(encodeURI("vValue=vValue.replace(/co__$/g,\"co__#\")"));
 };
 //----End of Method correct_StudentAnswer() Defsaveion
-					
+
 //#################################################################
-//# Method: createAllID2Node  
+//# Method: createAllID2Node
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: reads the imathPRECONDITION textarea and extracts the                        
+//#
+//# Comment: reads the imathPRECONDITION textarea and extracts the
 //#          ID for example [P1] and maps aAllID2Node to DOM-Node
 //#          pASCIIMath (Boolean) determines ASCII Math Processing
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function createAllID2Node_EProof__SID__(pASCIIMath) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:createAllID2Node()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -263,7 +263,7 @@ function createAllID2Node_EProof__SID__(pASCIIMath) {
 		k=0;
 		while (k != vListArray.length) {
 			if (this.greater(vListArray[k].indexOf(this.aSeparator) , 0)) {
-				var vSplitStep = vListArray[k].split(this.aSeparator); 
+				var vSplitStep = vListArray[k].split(this.aSeparator);
 				var vID = vSplitStep[0].replace(/\s/g,"");
 				var vName = "ID-"+this.aQID+"-"+vID;
 				var vStepNode = this.getElementById(vName);
@@ -305,18 +305,18 @@ function createAllID2Node_EProof__SID__(pASCIIMath) {
 //----End of Method createAllID2Node Definition
 
 //#################################################################
-//# Method: createDisplayJustifications  
+//# Method: createDisplayJustifications
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 
 function createDisplayJustifications_EProof__SID__(pJustSelected,pStepID,pTitle) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof__qid__.js:createDisplayJustifications(pJustString)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -326,22 +326,22 @@ function createDisplayJustifications_EProof__SID__(pJustSelected,pStepID,pTitle)
 	return this.createJustifications(vJust,"","",false,pStepID,pTitle);
 };
 //#################################################################
-//# Method: createEditJustificationsStep  
+//# Method: createEditJustificationsStep
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 function createEditJustificationsStep_EProof__SID__(pStep,pTitle) {
 	//alert("createEditJustificationsStep("+pStep+"):3383");
 	var st = this.aQID+pStep;
-	var vSA = this.getElementById("STUDENTANSWER"+this.aQID+pStep);	
-	var vID = this.getChildById(vSA,"inSTEPID"+st).value;	
-	var vJust = this.getChildById(vSA,"inJUSTIFICATION"+st).value;	
-	var vSelJust = this.getChildById(vSA,"selectJUSTIFICATION"+st).value;	
-	var vAppJust = this.getChildById(vSA,"appendJUSTIFICATION"+st).value;	
+	var vSA = this.getElementById("STUDENTANSWER"+this.aQID+pStep);
+	var vID = this.getChildById(vSA,"inSTEPID"+st).value;
+	var vJust = this.getChildById(vSA,"inJUSTIFICATION"+st).value;
+	var vSelJust = this.getChildById(vSA,"selectJUSTIFICATION"+st).value;
+	var vAppJust = this.getChildById(vSA,"appendJUSTIFICATION"+st).value;
 	//var vJustArray = unionarrays(vJust.split(","),vSelJust.split(","));
 	//vSelJust = this.concatList(vJust,SelJust);
 	//vSelJust = this.concatList(vSelJust,vAppJust);
@@ -349,19 +349,19 @@ function createEditJustificationsStep_EProof__SID__(pStep,pTitle) {
 	//alert( this.createJustifications(vJust,vSelJust,vAppJust,false,this.aMappedID[vID],pTitle));
 	var vCheckBox = true;
 	return this.createJustifications(vJust,vSelJust,vAppJust,vCheckBox,this.aMappedID[vID],pTitle);
-}		
+}
 //#################################################################
-//# Method: createJustifications  
+//# Method: createJustifications
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 function createJustifications_EProof__SID__(pJustSelected,pJustSelectFrom,pAppendJust,pCheckBox,pStepID,pTitle) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof__qid__.js:createJustifications(pJustString)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -436,11 +436,11 @@ function createJustifications_EProof__SID__(pJustSelected,pJustSelectFrom,pAppen
 //#################################################################
 //# Method: createSol2IMathAS()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 function createSol2IMathAS_EProof__SID__() {
 	var i=0;
@@ -449,7 +449,7 @@ function createSol2IMathAS_EProof__SID__() {
 	var vPrevID = " ";
 	var vID = "";
 	var vCon = "";
-	var vJust = ""; 
+	var vJust = "";
 	var vJustOpt = "";
 	var vOut = "";
 	var k=0;
@@ -474,13 +474,13 @@ function createSol2IMathAS_EProof__SID__() {
 	return vOut;
 };
 //#################################################################
-//# Method: createSuggestionStep  
+//# Method: createSuggestionStep
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 
 function createSuggestionStep_EProof__SID__(pStep) {
@@ -507,7 +507,7 @@ function createSuggestionStep_EProof__SID__(pStep) {
 		vSF = this.getChildById(this.aRootDOM,"SELECTFROM"+this.aQID+"0");
 		vSA = this.getChildById(this.aRootDOM,"SUGGESTIONS"+this.aQID+"0");
 		//alert("vSF.id='"+vSF.id+"'");
-		vOutNode = this.getChildById(this.aRootDOM,"sugSTEPID"+this.aQID+pStep);		
+		vOutNode = this.getChildById(this.aRootDOM,"sugSTEPID"+this.aQID+pStep);
 		//alert("vOutNode.id='"+vOutNode.id+"'");
 	};
 	vOutNode.innerHTML = vSugID;
@@ -544,7 +544,7 @@ function createSuggestionStep_EProof__SID__(pStep) {
 		k=0;
 		var vIDArray = vIDSelect.split(",");
 		//vIDArray.sort(function(a,b) {arrayindex(a)-arrayindex(b)});
-		this.sortArrayID(vIDArray); 
+		this.sortArrayID(vIDArray);
 		var vClass = "rIDSUGGESTION"+this.aQID+pStep;
 		while (k != vIDArray.length) {
 			vID = vIDArray[k];
@@ -557,18 +557,18 @@ function createSuggestionStep_EProof__SID__(pStep) {
 				if (this.aMappedID[vID]) {
 					vOutID += "["+this.aMappedID[vID]+"] ";
 					if (this.aAllID2Node[vID]) {
-						vOutID += this.aAllID2Node[vID].innerHTML;	
+						vOutID += this.aAllID2Node[vID].innerHTML;
 					} else {
-						vOutID += "Undefined Proof Step for ["+vID+"] Mapped to ["+this.aMappedID[vID]+"]	";	
+						vOutID += "Undefined Proof Step for ["+vID+"] Mapped to ["+this.aMappedID[vID]+"]	";
 					};
-				} else { 	
+				} else {
 					vOutID += "[UNDEF-"+vID+"] ";
 				};
 				vCR =  this.LT+"BR/"+this.GT;
 			};
 			k++;
 		}
-	} else {	
+	} else {
 		vOutID = vLanguage["No_connection_to_next"];
 	};
 	vOutNode = this.getElementById("CONSUGGESTION"+this.aQID+pStep);
@@ -577,20 +577,20 @@ function createSuggestionStep_EProof__SID__(pStep) {
 	vOutNode.innerHTML = vOutID;
 }
 //----------------------
-						
+
 //#################################################################
-//# Method: createSelectPosition  
+//# Method: createSelectPosition
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function createSelectPosition_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:createSelectPosition()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -611,18 +611,18 @@ function createSelectPosition_EProof__SID__() {
 //----End of Method createSelectPosition Definition
 
 //#################################################################
-//# Method: createSelectConnection4JS  
+//# Method: createSelectConnection4JS
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function createSelectConnection_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:createSelectConnection4JS()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -638,18 +638,18 @@ function createSelectConnection_EProof__SID__() {
 	this.writeInnerHTML("sCONNECTION"+this.aQID,vContent);
 };
 //#################################################################
-//# Method: createSelectConnection4JS  
+//# Method: createSelectConnection4JS
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function createSelectConnection4JS_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:createSelectConnection4JS()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -674,20 +674,20 @@ function createSelectConnection4JS_EProof__SID__() {
 };
 //----End of Method createSelectConnection4JS Definition
 
-						
+
 //#################################################################
-//# Method: createSelectStepID  
+//# Method: createSelectStepID
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function createSelectStepID_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:createSelectStepID()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -704,18 +704,18 @@ function createSelectStepID_EProof__SID__() {
 //----End of Method createSelectStepID Definition
 
 //#################################################################
-//# Method: createDisplayOptions  
+//# Method: createDisplayOptions
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function createDisplayOptions_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:createDisplayOptions()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -723,7 +723,7 @@ function createDisplayOptions_EProof__SID__() {
 	//-------------------------------------------------------
 	var vSelNode = this.getElementById("tplDISPLAYSELECT"+this.aQID);
 	var vContent = "";
-    vContent += this.LT+"OPTION value='EDITComplete' "+this.GT+"EDIT: "+vLanguage["Complete"]+this.LT+"/OPTION"+this.GT;
+    vContent += this.LT+"OPTION selected value='EDITComplete' "+this.GT+"EDIT: "+vLanguage["Complete"]+this.LT+"/OPTION"+this.GT;
     vContent += this.LT+"OPTION value='EDITShort'"+this.GT+"EDIT: "+vLanguage["Short"]+this.LT+"/OPTION"+this.GT;
 	vContent += this.LT+"OPTION value='Complete'"+this.GT+vLanguage["Complete"]+this.LT+"/OPTION"+this.GT;
     vContent += this.LT+"OPTION value='Short'"+this.GT+vLanguage["Short"]+this.LT+"/OPTION"+this.GT;
@@ -732,18 +732,18 @@ function createDisplayOptions_EProof__SID__() {
 };
 //----End of Method createDisplayOptions Definition
 //#################################################################
-//# Method: exportXML  
+//# Method: exportXML
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function exportXML_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	alert("eproof.js:exportXML()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -753,15 +753,15 @@ function exportXML_EProof__SID__() {
 //#################################################################
 //# Method: deleteID
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Delete the Step Definition of and ID and all Usage in                        
+//#
+//# Comment: Delete the Step Definition of and ID and all Usage in
 //#          Solution, Justification and StudentAnswer
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 function deleteID_EProof__SID__(pButtonDOM) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof:3757 - deleteID(pButtonDOM)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -786,14 +786,14 @@ function deleteID_EProof__SID__(pButtonDOM) {
 	this.reloadProof();
 };
 //#################################################################
-//# Method: getCheckedJustifications(pChildSA)  
+//# Method: getCheckedJustifications(pChildSA)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Is called from Checkboxes to update the Justifications 
+//#
+//# Comment: Is called from Checkboxes to update the Justifications
 //#          for a single Proof Step. pChildSA ist the Button-Object.
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 // pChildSA is a Child of StudentAnswer
 function getCheckedJustifications_EProof__SID__(pChildSA) {
@@ -822,13 +822,13 @@ function getCheckedJustifications_EProof__SID__(pChildSA) {
 	return vReturn;
 };
 //#################################################################
-//# Method: getChildById  
+//# Method: getChildById
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 function getChildById_EProof__SID__(pParentDOM,pNodeID) {
 	var vParent = document;
@@ -836,7 +836,7 @@ function getChildById_EProof__SID__(pParentDOM,pNodeID) {
 		vParent = pParentDOM;
 	} else {
 		vParent = this.aRootDOM;
-	}; 
+	};
 	var vReturn = this.getChildByIdRecursive(vParent,pNodeID);
 	if (!vReturn) {
 		vReturn = document.getElementById(pNodeID);
@@ -847,17 +847,17 @@ function getChildById_EProof__SID__(pParentDOM,pNodeID) {
 	return vReturn;
 };
 //#################################################################
-//# Method: getChildByIdRecursive 
+//# Method: getChildByIdRecursive
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 function getChildByIdRecursive_EProof__SID__(pParentDOM,pNodeID) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof__qid__.js:getChildByID(pParentDOM,pNodeID)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -890,18 +890,18 @@ function getChildByIdRecursive_EProof__SID__(pParentDOM,pNodeID) {
 };
 //----End of Method getChildById Definition
 //#################################################################
-//# Method: getChildrenByClassName 
+//# Method: getChildrenByClassName
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function getChildrenByClassName_EProof__SID__(pParentDOM,pClassName) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof__qid__.js:getChildrenByClassName(pParentDOM,pClassName)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -936,18 +936,18 @@ function getChildrenByClassName_EProof__SID__(pParentDOM,pClassName) {
 };
 //----End of Method getChildrenByClassName Definition
 //#################################################################
-//# Method: getChildByClassName 
+//# Method: getChildByClassName
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function getChildByClassName_EProof__SID__(pParentDOM,pClassName) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof__qid__.js:getChildrenByClassName(pParentDOM,pClassName)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -983,18 +983,18 @@ function getChildByClassName_EProof__SID__(pParentDOM,pClassName) {
 //----End of Method getChildrenByClassName Definition
 
 //#################################################################
-//# Method: getListIMathAS  
+//# Method: getListIMathAS
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function getListIMathAS_EProof__SID__(pStepRoot,pTextareaID,pOutNodeID) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:getListIMathAS(pTextareaID)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1024,20 +1024,20 @@ function getListIMathAS_EProof__SID__(pStepRoot,pTextareaID,pOutNodeID) {
 };
 //----End of Method getListIMathAS Definition
 
-						
+
 //#################################################################
-//# Method: getItemsIMathAS  
+//# Method: getItemsIMathAS
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function getItemsIMathAS_EProof__SID__(pStepRoot,pTextareaID,pListArray) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:getItemsIMathAS(pTextareaID,pListArray)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1052,7 +1052,7 @@ function getItemsIMathAS_EProof__SID__(pStepRoot,pTextareaID,pListArray) {
 		var k=0;
 		while (this.lower(k,pListArray.length)) {
 			if (this.greater(pListArray[k].indexOf(this.aSeparator) , 0)) {
-				var vSplitStep = pListArray[k].split(this.aSeparator); 
+				var vSplitStep = pListArray[k].split(this.aSeparator);
 				var vID = vSplitStep[0].replace(/\s/g,"");
 				//alert("vID='"+vID+"' in getItemsIMathAS()-Call");
 				if (vID != "") {
@@ -1082,17 +1082,17 @@ function getItemsIMathAS_EProof__SID__(pStepRoot,pTextareaID,pListArray) {
 //----End of Method getItemsIMathAS Definition
 
 //#################################################################
-//# Method: getStepDefHTML 
+//# Method: getStepDefHTML
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 function getStepDefHTML_EProof__SID__(pID,pChar,pMappedID,pTextareaID,pStepDefinition,pStepDefRaw) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:getStepDefHTM(pID,pChar,pMappedID,pTextareaID,pStepDefinition,pStepDefRaw)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1126,11 +1126,11 @@ function getStepDefHTML_EProof__SID__(pID,pChar,pMappedID,pTextareaID,pStepDefin
 //#################################################################
 //# Method: getParentStudentAnswer(pNodeDOM)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function getParentStudentAnswer_EProof__SID__(pNodeDOM) {
@@ -1142,13 +1142,13 @@ function getParentStudentAnswer_EProof__SID__(pNodeDOM) {
 	return vReturnNode;
 };
 //#################################################################
-//# Method: getElementById  
+//# Method: getElementById
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function getElementById_EProof__SID__(pNodeID) {
@@ -1156,13 +1156,13 @@ function getElementById_EProof__SID__(pNodeID) {
 	return vReturn;
 };
 //#################################################################
-//# Method: getStudentAnswerByClassName 
+//# Method: getStudentAnswerByClassName
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function getStudentAnswerByClassName_EProof__SID__(pChildOfStudentAnswer,pClassNameID) {
@@ -1171,13 +1171,13 @@ function getStudentAnswerByClassName_EProof__SID__(pChildOfStudentAnswer,pClassN
 	return vList
 };
 //#################################################################
-//# Method: getStudentAnswerById  
+//# Method: getStudentAnswerById
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function getStudentAnswerById_EProof__SID__(pChildOfStudentAnswer,pNodeID) {
@@ -1185,31 +1185,31 @@ function getStudentAnswerById_EProof__SID__(pChildOfStudentAnswer,pNodeID) {
 	return vList[0];
 };
 //#################################################################
-//# Method: getElementsByClassName 
+//# Method: getElementsByClassName
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function getElementsByClassName_EProof__SID__(pClassName) {
 	return this.getChildrenByClassName(this.aRootDOM,pClassName);
 };
 //#################################################################
-//# Method: hide(pID)  
+//# Method: hide(pID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function hide_EProof__SID__(pID) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:hide()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1226,18 +1226,18 @@ function hide_EProof__SID__(pID) {
 };
 //----End of Method hide() Definition
 //#################################################################
-//# Method: hideSA(pSA,pID)  
+//# Method: hideSA(pSA,pID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function hideSA_EProof__SID__(pSA,pID) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:hide()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1250,18 +1250,18 @@ function hideSA_EProof__SID__(pSA,pID) {
 //----End of Method hide() Definition
 
 //#################################################################
-//# Method: hideNode(pNode)  
+//# Method: hideNode(pNode)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function hideNode_EProof__SID__(pNode) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:hide()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1275,18 +1275,18 @@ function hideNode_EProof__SID__(pNode) {
 };
 //----End of Method hide() Definition
 //#################################################################
-//# Method: hideElement(pID)  
+//# Method: hideElement(pID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function hideElement_EProof__SID__(pID) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:hideElement()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1295,7 +1295,7 @@ function hideElement_EProof__SID__(pID) {
 	//var vNode = this.aUsedDOM;
 	var vNode = this.getElementById(pID);
 	if (vNode) {
-		//alert(vNode.style.display) 
+		//alert(vNode.style.display)
 		vNode.style.visibility = "hidden";
 	} else {
 		alert("hideElement()-Call pID="+pID+" was undefined");
@@ -1303,18 +1303,18 @@ function hideElement_EProof__SID__(pID) {
 };
 //----End of Method hide() Definition
 //#################################################################
-//# Method: hideElement(pNode)  
+//# Method: hideElement(pNode)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function hideElementNode_EProof__SID__(pNode) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:hideElementNode()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1324,18 +1324,18 @@ function hideElementNode_EProof__SID__(pNode) {
 };
 //----End of Method hide() Definition
 //#################################################################
-//# Method: init(pRootNode,pNodeDOM)  
+//# Method: init(pRootNode,pNodeDOM)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Use innerHTML to erase all sub nodes in DOM                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Use innerHTML to erase all sub nodes in DOM
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function init_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:init()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1351,7 +1351,7 @@ function init_EProof__SID__() {
 	this.aScoreStep       = new Array(); //Array4Steps
 	this.aID2Solutions    = new Array(); //Hash for Proof Step ID
 	this.aID4StepType     = new Array(); //Hash of Arrays for PRECONDITION, PROOFSTEP, CONCLUSION, JUSTIFICATION with ID-Arrays
-	this.aStepType4ID     = new Array(); //Hash maps ID to StepType PRECONDITION, PROOFSTEP, CONCLUSION, JUSTIFICATION 
+	this.aStepType4ID     = new Array(); //Hash maps ID to StepType PRECONDITION, PROOFSTEP, CONCLUSION, JUSTIFICATION
 	this.aSolUsedID  	  = new Array();
 	this.aOriginalID  	  = new Array();
 	this.aSolution        = new Array(); //Array with all Solution Steps
@@ -1365,23 +1365,23 @@ function init_EProof__SID__() {
 	//this.aUsedDOM = pNodeDOM;
 	//this.vConnection2Node = this.getElementsByClassName("tplCONNECTION"+this.aQID);
 	//alert("this.vConnection2Node.length="+this.vConnection2Node.length);
-	
+
 };
 //----End of Method init() Definition
 
 //#################################################################
-//# Method: initRootNodeById(pRootID,pNodeID)  
+//# Method: initRootNodeById(pRootID,pNodeID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Set Root and DOM Object by ID                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Set Root and DOM Object by ID
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function initRootNodeById_EProof__SID__(pRootID) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:initRootNodeById(pRootID,pNodeID)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1397,20 +1397,20 @@ function initRootNodeById_EProof__SID__(pRootID) {
 };
 //----End of Method initRootNodeById() Definition
 //#################################################################
-//# Method: initIMathQN()  
+//# Method: initIMathQN()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Init Question Number for the IMathAS-Forms                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Init Question Number for the IMathAS-Forms
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function initIMathQN_EProof__SID__() {
 	//this.aIMathArray = new Array("DISPLAYOPTION","STEPCOUNT","STUDENTANSWER","PRECONDITION","CONCLUSION","JUSTIFICATION","SOLUTION","ENCRYPTED");
-	//this.aIMATH = new Array(); //init Hash by method init() 
+	//this.aIMATH = new Array(); //init Hash by method init()
 	var i=0;
-	var iID = ""; 
+	var iID = "";
 	while (i != this.aIMathArray.length) {
 		iID = this.aIMathArray[i];
 		this.aIMATH[iID] = "imath"+iID;
@@ -1433,19 +1433,19 @@ function initIMathQN_EProof__SID__() {
 // 	}
 };
 //----End of Method initIMathQN() Definition
-	
+
 //#################################################################
-//# Method: init_settings()  
+//# Method: init_settings()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: set the default settings if no settings can be loaded                     
 //#
-//# created               24.6.2015             
-//# last modifications    24.6.2015             
+//# Comment: set the default settings if no settings can be loaded
+//#
+//# created               24.6.2015
+//# last modifications    24.6.2015
 //#################################################################
 function init_settings_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:init_settings(pNodeDOM)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1457,18 +1457,18 @@ function init_settings_EProof__SID__() {
 };
 //----End of Method init_settings() Definition
 //#################################################################
-//# Method: init_default_settings()  
+//# Method: init_default_settings()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: set the default settings if no settings can be loaded                     
 //#
-//# created               24.6.2015             
-//# last modifications    24.6.2015             
+//# Comment: set the default settings if no settings can be loaded
+//#
+//# created               24.6.2015
+//# last modifications    24.6.2015
 //#################################################################
 function init_default_settings_EProof__SID__() {
 	//this.aSettings["show_feedback_score"] = this.aSettings["show_assessment"]; //depricated replace in iMathAS-settings
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:init_settings(pNodeDOM)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1509,13 +1509,13 @@ function init_default_settings_EProof__SID__() {
 };
 //----End of Method default_settings() Definition
 //#################################################################
-//# Method: init_undef_setting(pSetID,pValue)  
+//# Method: init_undef_setting(pSetID,pValue)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: set the default settings if no settings can be loaded                     
 //#
-//# created               24.6.2015             
-//# last modifications    24.6.2015             
+//# Comment: set the default settings if no settings can be loaded
+//#
+//# created               24.6.2015
+//# last modifications    24.6.2015
 //#################################################################
 function init_undef_setting_EProof__SID__(pID,pValue) {
 	if (!this.aSettings[pID]) {
@@ -1529,18 +1529,18 @@ function init_undef_setting_EProof__SID__(pID,pValue) {
 //----End of Method init_undef_setting() Definition
 
 //#################################################################
-//# Method: init_template(pDOMtemplate)  
+//# Method: init_template(pDOMtemplate)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function init_template_EProof__SID__(pTemplateDOM) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:init_template()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1555,18 +1555,18 @@ function init_template_EProof__SID__(pTemplateDOM) {
 //----End of Method init_template() Definition
 
 //#################################################################
-//# Method: init_template_ID(pTemplateID)  
+//# Method: init_template_ID(pTemplateID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Provide an Object ID of a DOM template that will be cloned                       
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Provide an Object ID of a DOM template that will be cloned
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function init_template_ID_EProof__SID__(pTemplateID) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:template()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1577,18 +1577,18 @@ function init_template_ID_EProof__SID__(pTemplateID) {
 //----End of Method init_template_ID(pTemplateID) Definition
 
 //#################################################################
-//# Method: load(pInArray)  
+//# Method: load(pInArray)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Loads a NEW e-Proof into Environment                       
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Loads a NEW e-Proof into Environment
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function load_EProof__SID__(pQID,pThisQ,pRootDOM,pRootID,pMode) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:load(pInArray)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1601,7 +1601,7 @@ function load_EProof__SID__(pQID,pThisQ,pRootDOM,pRootID,pMode) {
 	if (pMode) {
 		this.aMode = pMode;
 		if (this.aMode == "AUTHORING") {
-			this.aShowControl = "1"; 
+			this.aShowControl = "1";
 		} else if (this.aMode == "DEBUG") {
 			this.aDebug = "1";
 		};
@@ -1611,7 +1611,7 @@ function load_EProof__SID__(pQID,pThisQ,pRootDOM,pRootID,pMode) {
 	//-------------------------------------------------------
 	if (this.aDebug == "1") {
 		this.showDebug();
-		this.aShowControl = "1"; 
+		this.aShowControl = "1";
 	};
 	//this.aSettings["alertDOM"] = "1";
 	//-------------------------------------------------------
@@ -1660,7 +1660,7 @@ function load_EProof__SID__(pQID,pThisQ,pRootDOM,pRootID,pMode) {
 		this.parseSettings();
 		//alert("load(1.2)");
 		this.load_IMathAS();
-	} else { 
+	} else {
 		if (this.iMathForm_loaded()) {
 			//alert("Load IMathAS from Form");
 			this.load_IMathAS();
@@ -1674,13 +1674,13 @@ function load_EProof__SID__(pQID,pThisQ,pRootDOM,pRootID,pMode) {
 //----End of Method load() Defloadion
 
 //#################################################################
-//# Method: load_Form_LocalStorage()  
+//# Method: load_Form_LocalStorage()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 
 function load_Form_LocalStorage_EProof__SID__() {
@@ -1699,7 +1699,7 @@ function load_Form_LocalStorage_EProof__SID__() {
 		var vMax = vArr.length;
 		if (this.greater(vMax,this.aIMathArray.length)) vMax=this.aIMathArray.length;
 		while (i != vMax) {
-			//this.aIMathArray = new Array("DISPLAYOPTION","STEPCOUNT","STUDENTANSWER","PRECONDITION","CONCLUSION","JUSTIFICATION","PROOFSTEP","SOLUTION","ENCRYPTED","SETTINGS");	
+			//this.aIMathArray = new Array("DISPLAYOPTION","STEPCOUNT","STUDENTANSWER","PRECONDITION","CONCLUSION","JUSTIFICATION","PROOFSTEP","SOLUTION","ENCRYPTED","SETTINGS");
 			vArr[i] = this.replaceString(vArr[i],this.aNewLine,this.CR);
 			vDOM = this.getIMathById(this.aIMathArray[i]);
 			if (vDOM) {
@@ -1716,18 +1716,18 @@ function load_Form_LocalStorage_EProof__SID__() {
 	}
 };
 //#################################################################
-//# Method: load_IMathAS  
+//# Method: load_IMathAS
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Loads Data from IMATHAS Form Elements                       
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Loads Data from IMATHAS Form Elements
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function load_IMathAS_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:load_IMathAS()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1764,7 +1764,7 @@ function load_IMathAS_EProof__SID__() {
 	this.showHideBoolean("PROOFCONTROL"+this.aQID,this.aSettings["show_Load_Save_Control"]);
 	this.showHideBoolean("MAINCONTROL"+this.aQID,this.aSettings["show_Main_Control"]);
 	//this.show("MAINCONTROL"+this.aQID);
-	//alert("this.aSettings[randomize_proofstep_IDs]='"+this.aSettings["randomize_proofstep_IDs"]+"'");	
+	//alert("this.aSettings[randomize_proofstep_IDs]='"+this.aSettings["randomize_proofstep_IDs"]+"'");
 	if (this.aSettings["randomize_proofstep_IDs"] == "1") {
 		if (this.aSettings["randomize_done"] != "1") {
 			//alert("shuffle ProofSteps");
@@ -1805,7 +1805,7 @@ function load_IMathAS_EProof__SID__() {
 	//alert("load_IMathAS(1.5)");
 	this.load_StudentAnswer();
 	//alert("load_IMathAS(1.6)");
-	this.aStudentAnswerList = this.getAllSteps("SCAN"); 
+	this.aStudentAnswerList = this.getAllSteps("SCAN");
 	//alert("load_IMathAS(1.7)");
 	this.aCount = this.aStudentAnswerList.length;
 	//alert("Load IMath finished - Start postProcess() with setTimeout");
@@ -1816,18 +1816,18 @@ function load_IMathAS_EProof__SID__() {
 };
 //----End of Method load_IMathAS Definition
 //#################################################################
-//# Method: load_StudentAnswer  
+//# Method: load_StudentAnswer
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 
 function load_StudentAnswer_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof__qid__.js:load_StudentAnswer()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1865,24 +1865,24 @@ function load_StudentAnswer_EProof__SID__() {
 //#################################################################
 //# Method: load_StudentAnswerLine (pLine,pStep)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 
 function load_StudentAnswerLine_EProof__SID__(pLine,pStep,pHash) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert(pLine+this.CR+"eproofmeth.js:load_StudentAnswerLine()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
 	//    vMyInstance.load_StudentAnswerLine(pLine,pStep,pHash);
 	//-------------------------------------------------------
-	// 0:PrevID 1:Con=TYP  2:ID=MY  
+	// 0:PrevID 1:Con=TYP  2:ID=MY
 	// 3:Just=CK,DU,P1 4:OptJust
-	// 5:ManScore=0.9 6:SugUsed  7:AssUsed  
+	// 5:ManScore=0.9 6:SugUsed  7:AssUsed
 	// 8:Con-Select 9:ID-Select=S2,S3,S7  10:Just-Select=J1,J2,J6
 	//alert("pStep="+pStep+" load_StudentAnswerLine():1607");
 	var vAnswerHash = new Array();
@@ -1911,7 +1911,7 @@ function load_StudentAnswerLine_EProof__SID__(pLine,pStep,pHash) {
 		//----(2)-ID---------------
 		vAnswerHash["sSTEPID"]  = vID;
 		vAnswerHash["inSTEPID"] = vID;
-		//alert("load_StudentAnswerLine(1.6)");	
+		//alert("load_StudentAnswerLine(1.6)");
 		//----(3,4)-Justifications-------
 		var vJustArray = vSplitAnswer[3].split(this.aComma);
 		var vMappedIDs = this.array2mapped(vJustArray);
@@ -1941,7 +1941,7 @@ function load_StudentAnswerLine_EProof__SID__(pLine,pStep,pHash) {
 		vAnswerHash["selectJUSTIFICATION"] = this.form2list(vEditJustList);
 		//------------------
 		//---APPEND Template--------------
-		//alert("load_StudentAnswerLine(1.7)");	
+		//alert("load_StudentAnswerLine(1.7)");
 		this.append_template(vAnswerHash,vInnerHash,pStep);
 	} else {
 		if (vID != "") {
@@ -1950,18 +1950,18 @@ function load_StudentAnswerLine_EProof__SID__(pLine,pStep,pHash) {
 	}
 };
 //#################################################################
-//# Method: load_XML_IMathAS  
+//# Method: load_XML_IMathAS
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Loads Data from IMATHAS Form Elements                       
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Loads Data from IMATHAS Form Elements
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function load_XML_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:load_XML()-Call:4053");
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -1970,7 +1970,7 @@ function load_XML_EProof__SID__() {
 	var vLoadDOM = this.getElementById("tLOAD"+this.aQID);
 	var vXMLstring = vLoadDOM.value || "";
 	if (this.greater(vXMLstring.indexOf("EPROOF"),0)) {
-		//alert("EPROOF loaded");	
+		//alert("EPROOF loaded");
 	} else {
 		var vFileXML = this.getElementById("COPYTOLOAD"+this.aQID).value;
 		vXMLstring = this.getElementById(vFileXML).value;
@@ -1987,13 +1987,13 @@ function load_XML_EProof__SID__() {
 	this.load_IMathAS();
 };
 //#################################################################
-//# Method: load_Settings()  
+//# Method: load_Settings()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Use innerHTML to erase all sub nodes in DOM                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Use innerHTML to erase all sub nodes in DOM
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function load_Settings_EProof__SID__() {
@@ -2053,16 +2053,16 @@ function moveStepID_EProof__SID__(pSelectDOM,pID) {
 //#################################################################
 function moveStep_EProof__SID__(pOldPos,pNewPos) {
 	//-----LIST and COUNT------
-	var vListNode     = this.getAllSteps(); //this.aStudentAnswerList; 
+	var vListNode     = this.getAllSteps(); //this.aStudentAnswerList;
 	//alert("vListNode.length="+vListNode.length);
-	var vOldPos		  =  pOldPos; 
-	var vNewPos		  =  pNewPos; 
+	var vOldPos		  =  pOldPos;
+	var vNewPos		  =  pNewPos;
 	//-------------------------
 	//alert("MOVE vOldPos=" + vOldPos + " TO vNewPos="+vNewPos+" BEFORE Pos Correction");
 	var vUnusedNodes = this.getUnusedSteps();
 	var vUsedNodes = this.getUsedSteps();
 	if (this.lower(pNewPos,vUsedNodes.length+1)) {
-		// This is a pos correction, which is necessary, 
+		// This is a pos correction, which is necessary,
 		// if pNewPos is NOT coming from Unused Nodes
 		if (this.lower(pOldPos,pNewPos)) {
 			//alert(pOldPos+"=pOldPos < pNewPos="+pNewPos)
@@ -2079,13 +2079,13 @@ function moveStep_EProof__SID__(pOldPos,pNewPos) {
     	//alert("No Move-Operation vOldPos="+vOldPos+"=vNewPos");
     } else {
     	//alert("moveStep("+pOldPos+","+pNewPos+") vNewPos="+vNewPos+" vUsedNodes.length="+vUsedNodes.length);
-    	var vOldNode = vListNode[vOldPos-1]; 
+    	var vOldNode = vListNode[vOldPos-1];
  		var vOldParentNode = vOldNode.parentNode;
  		//alert("vOldNode.id="+vOldNode.id+" vOldPos="+vOldPos+": vOldParentNode.id="+vOldParentNode.id);
 		var vRemovedChild = vOldParentNode.removeChild(vOldNode);
 		if (pNewPos == 0) {
 	    	this.aUsedDOM.appendChild(vRemovedChild);
-	    	//alert("PROOF: Append Child at Pos="+vUsedNodes.length);	    	
+	    	//alert("PROOF: Append Child at Pos="+vUsedNodes.length);
 	    } else if (this.lower(pNewPos , vUsedNodes.length)) {
 	    	//alert("PROOF: Insert USED Child"+vOldPos+" before "+vNewPos+" vUsedNodes.length="+vUsedNodes.length);
 	    	this.aUsedDOM.insertBefore(vRemovedChild,vListNode[vNewPos-1]);
@@ -2102,13 +2102,13 @@ function moveStep_EProof__SID__(pOldPos,pNewPos) {
 	};
 };
 //#################################################################
-//# Method: preAllSteps  
+//# Method: preAllSteps
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function preAllSteps_EProof__SID__() {
@@ -2116,27 +2116,27 @@ function preAllSteps_EProof__SID__() {
 	var vListID = this.aIMathID;
 	//new Array("PRECONDITION","CONCLUSION","JUSTIFICATION","PROOFSTEP");
 	var i=0;
-	var vStepRoot = this.getElementById("SOURCESTEPS"+this.aQID);	
+	var vStepRoot = this.getElementById("SOURCESTEPS"+this.aQID);
 	while (i != vListID.length) {
 		this.getListIMathAS(vStepRoot,vListID[i],vListID[i]+"LIST"+this.aQID);
 		i++;
 	};
 	this.createAllID2Node();
 	//this.createAllStudentAnswers(); length of AllID is here still 0
-};			
+};
 //#################################################################
-//# Method: preProcess  
+//# Method: preProcess
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function preProcess_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:preProcess()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2157,17 +2157,17 @@ function preProcess_EProof__SID__() {
 	//alert("aUsedDOM.id="+this.aUsedDOM.id+" in preProcess():2089");
 	this.vConnection2Node = this.getElementsByClassName("tplCONNECTION"+this.aQID);
 	//alert("(1.1) this.aSettings[\"show_Main_Control\"]="+this.aSettings["show_Main_Control"]);
-	
+
 };
 //----End of Method preProcess Definition
 //#################################################################
-//# Method: preProcess4Language  
+//# Method: preProcess4Language
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function preProcess4Lanugage_EProof__SID__() {
@@ -2191,7 +2191,7 @@ function preProcess4Lanugage_EProof__SID__() {
 	vHash["btSaveII"] = vLanguage["Save"];
 	vHash["bJustifications"] = vLanguage["Justifications"];
 	vHash["btToggleUnused"] = "+ "+vLanguage["Deleted_ProofSteps"].bold();
-	vHash["btAssessment"] = ((vLanguage["Assessment"]+" "+vLanguage["Proof"]).fontcolor("red")); 
+	vHash["btAssessment"] = ((vLanguage["Assessment"]+" "+vLanguage["Proof"]).fontcolor("red"));
 	vHash["btSolution"] = (vLanguage["Solution"].fontcolor("green"));
 	vHash["btProofStep"] = vLanguage["ProofSteps"];
 	vHash["btJustification"] = vLanguage["Justifications"];
@@ -2211,7 +2211,7 @@ function preProcess4Lanugage_EProof__SID__() {
 	vHash["bSuggestionFirst"] = vHash["bSuggestion"];
 	//vHash["bSelectSuggestion"] = vLanguage["Suggestion"]+vLanguage["select"];
 	var vTitle = vLanguage["Suggestion"];
-	vHash["bSelectSuggestion"] = vTitle; 
+	vHash["bSelectSuggestion"] = vTitle;
 	//---For Suggestion 0---
 	this.writeParentInnerHTML(this.aRootDOM,"bSelectSuggestion"+this.aQID+"0",vTitle);
 	var vButTitle = vLanguage["ProofStep"] + " " + vLanguage["select"];
@@ -2223,23 +2223,23 @@ function preProcess4Lanugage_EProof__SID__() {
 	vHash["outMYSTEPASSESSTITLE"] = vLanguage["manual"] + " " +  vLanguage["Assessment"];
 	vHash["outMYSTEPASSESSTEXT"] = vLanguage["Self_Defined"];
 	vHash["bReset"] = vLanguage["Delete_Proof"];
-	this.writeHash2InnerHTML(this.aRootDOM,vHash,"");	
+	this.writeHash2InnerHTML(this.aRootDOM,vHash,"");
 };
 //----End of Method preProcessLanguage Definition
 
 //#################################################################
-//# Method: preProcess4JS_only  
+//# Method: preProcess4JS_only
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function preProcess4JS_only_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:preProcess4JS_only()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2247,24 +2247,24 @@ function preProcess4JS_only_EProof__SID__() {
 	//-------------------------------------------------------
 	//var vOut = this.createSelectConnection4JS();
 	//this.writeInnerHTML("tplCONNECTIONLIST"+this.aQID,vOut);
-	
-	
+
+
 };
 //----End of Method preProcess4JS_only Definition
 
 //#################################################################
-//# Method: preProcessHeader 
+//# Method: preProcessHeader
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function preProcessHeader_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:preProcessHeader()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2283,7 +2283,7 @@ function preProcessHeader_EProof__SID__() {
 			vHeader = "Error: No Steps for "+vID+" defined in e-Proof!"
 		} else if (vCount == 1) {
 			vHeader = vLanguage[vArrayID[i]+"_Single"];
-		} else {	
+		} else {
 			vHeader = vLanguage[vArrayID[i]+"_Multi"];
 		};
 		this.aListHeader[vID] = vHeader;
@@ -2293,18 +2293,18 @@ function preProcessHeader_EProof__SID__() {
 	this.aListHeader["PROOFSTEP"] = this.LT+"h2"+this.GT+""+vLanguage["ProofSteps"]+":"+this.LT+"/h2"+this.GT;
 };
 //#################################################################
-//# Method: preProcessCounter 
+//# Method: preProcessCounter
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function preProcessCounter_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:preProcessCounter()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2345,20 +2345,20 @@ function preProcessCounter_EProof__SID__() {
 };
 //----End of Method preProcessCounter Definition
 
-						
+
 //#################################################################
-//# Method: postProcess  
+//# Method: postProcess
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function postProcess_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:postProcess()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2391,12 +2391,12 @@ function postProcess_EProof__SID__() {
 	vHash["PROOFLABEL"] = vLanguage["Proof"]+":";
 	vHash["THEOREMLABEL"] = this.aSettings["Theorem_Label"];
 	vHash["THEOREMTITLE"] = this.aSettings["Theorem_Title"];
-	vHash["HELPTITLE"] = vLanguage["HelpPage"];	
+	vHash["HELPTITLE"] = vLanguage["HelpPage"];
 	vHash["SETTINGTHEOREMTITLE"] =  this.aSettings["Theorem_Label"]+": "+this.aSettings["Theorem_Title"];
-	this.writeHash2InnerHTML(this.aRootDOM,vHash,"");	
+	this.writeHash2InnerHTML(this.aRootDOM,vHash,"");
 	this.getElementById("editTHEOREMLABEL"+this.aQID).value = this.aSettings["Theorem_Label"];
 	this.getElementById("editTHEOREMTITLE"+this.aQID).value = this.aSettings["Theorem_Title"];
-	//alert("postProcess(6.0)");	
+	//alert("postProcess(6.0)");
 	this.postProcessSolution();
 	this.setConnectionSize();
 	//alert("postProcess(7.0)");
@@ -2415,18 +2415,18 @@ function postProcess_EProof__SID__() {
 };
 //----End of Method postProcess Definition
 //#################################################################
-//# Method: postProcessSolution  
+//# Method: postProcessSolution
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function postProcessSolution_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:preProcessSolution()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2440,13 +2440,13 @@ function postProcessSolution_EProof__SID__() {
 //----End of Method preProcessSolution Definition
 
 //#################################################################
-//# Method: replaceString()  
+//# Method: replaceString()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Use innerHTML to erase all sub nodes in DOM                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Use innerHTML to erase all sub nodes in DOM
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function replaceString_EProof__SID__(pString,pSearch,pReplace)
@@ -2476,18 +2476,18 @@ function replaceString_EProof__SID__(pString,pSearch,pReplace)
 };
 
 //#################################################################
-//# Method: removeAllChildren()  
+//# Method: removeAllChildren()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Use innerHTML to erase all sub nodes in DOM                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Use innerHTML to erase all sub nodes in DOM
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function removeAllChildren_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:removeAllChildren()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2498,24 +2498,24 @@ function removeAllChildren_EProof__SID__() {
 //----End of Method removeAllChildren() Definition
 
 //#################################################################
-//# Method: reloadProof()  
+//# Method: reloadProof()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Use innerHTML to erase all sub nodes in DOM                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Use innerHTML to erase all sub nodes in DOM
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function reloadProof_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:reloadProof()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
 	//    vMyInstance.hide();
 	//-------------------------------------------------------
-	//alert("reloadProof() call init()"); 
+	//alert("reloadProof() call init()");
 	this.init();
 	this.preProcess();
 	//alert("reloadProof(1)");
@@ -2526,18 +2526,18 @@ function reloadProof_EProof__SID__() {
 
 
 //#################################################################
-//# Method: save(pNodeDOM)  
+//# Method: save(pNodeDOM)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Saves the e-Proof                       
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Saves the e-Proof
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function save_EProof__SID__(pButtonDOM) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:save(pNodeDOM)-Call pButtonDOM.id="+pButtonDOM.id);
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2549,13 +2549,13 @@ function save_EProof__SID__(pButtonDOM) {
 };
 //----End of Method save() Defsaveion
 //#################################################################
-//# Method: saveEProof2Form()  
+//# Method: saveEProof2Form()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Saves the e-Proof                       
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Saves the e-Proof
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function saveEProof2Form_EProof__SID__() {
@@ -2565,7 +2565,7 @@ function saveEProof2Form_EProof__SID__() {
 	var vArr= this.aIMathArray;
 	var vValue = "";
 	while (i != vArr.length) {
-		//this.aIMathArray = new Array("DISPLAYOPTION","STEPCOUNT","STUDENTANSWER","PRECONDITION","CONCLUSION","JUSTIFICATION","PROOFSTEP","SOLUTION","ENCRYPTED","SETTINGS");	
+		//this.aIMathArray = new Array("DISPLAYOPTION","STEPCOUNT","STUDENTANSWER","PRECONDITION","CONCLUSION","JUSTIFICATION","PROOFSTEP","SOLUTION","ENCRYPTED","SETTINGS");
 		vValue = this.getIMathById(vArr[i]).value || " ";
 		vOut += vSI + this.replaceString(vValue,this.CR,this.aNewLine);
 		vSI = this.aSepInput;
@@ -2578,18 +2578,18 @@ function saveEProof2Form_EProof__SID__() {
 	return vOut;
 };
 //#################################################################
-//# Method: save_Form_LocalStorage(pForm,pOut)  
+//# Method: save_Form_LocalStorage(pForm,pOut)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:  Saves Data to IMATHAS Form Elements                       
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:  Saves Data to IMATHAS Form Elements
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function save_Form_LocalStorage_EProof__SID__(pForm,pOut) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:save_Form_LocalStorage()-Call"+this.CR+pOut);
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2601,7 +2601,7 @@ function save_Form_LocalStorage_EProof__SID__(pForm,pOut) {
 			//--- Store to Variable "lastname" with Value "Smith"
 			// localStorage.setItem("lastname", "Smith");
 			//--- Retrieve Data from Local Storage---
-			// document.getElementById("result").innerHTML = localStorage.getItem("lastname"); 
+			// document.getElementById("result").innerHTML = localStorage.getItem("lastname");
 			alert(vLanguage["Save"] + " e-Proof OK - Local Storage");
 			localStorage.setItem("imathEPROOF", pOut);
 		} else {
@@ -2618,11 +2618,11 @@ function save_Form_LocalStorage_EProof__SID__(pForm,pOut) {
 //#################################################################
 //# Method: saveOnChange()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    __DATE__
 //#################################################################
 function saveOnChange_EProof__SID__() {
 	//var vCrypt = this.getElementById("SELECTSAVETYPE"+this.aQID).value;
@@ -2651,24 +2651,24 @@ function saveOnChange_EProof__SID__() {
 //#################################################################
 //# Method: saveOfflineHTML()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    __DATE__
 //#################################################################
 function saveOfflineHTML_EProof__SID__() {
 	var vOut = this.getEProofHTML();
-	this.getElementById("tSAVEXML"+this.aQID).value = vOut;	
+	this.getElementById("tSAVEXML"+this.aQID).value = vOut;
 };
 //#################################################################
 //# Method: saveXML()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    __DATE__
 //#################################################################
 function saveXML_EProof__SID__() {
 	//var vCrypt = this.getElementById("SELECTSAVETYPE"+this.aQID).value;
@@ -2684,7 +2684,7 @@ function saveXML_EProof__SID__() {
 	} else {
 		//vOut += this.createStepsXML("PROOFSTEP",2);
 		//vOut += this.createProofStepsXML("PROOFSTEP",5);
-		// createSolutionXML includes exports PROOFSTEPS 2 
+		// createSolutionXML includes exports PROOFSTEPS 2
 		//vOut += this.createSolutionXML("SOLUTION",2,5);
 		vOut += this.createSolutionXML("PROOFSTEP",2,5);
 	};
@@ -2698,11 +2698,11 @@ function saveXML_EProof__SID__() {
 //#################################################################
 //# Method: saveIMathAS()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: export IMathAS Version of the e-Proof                       
 //#
-//# created               3.3.2015             
-//# last modifications    __DATE__             
+//# Comment: export IMathAS Version of the e-Proof
+//#
+//# created               3.3.2015
+//# last modifications    __DATE__
 //#################################################################
 function saveIMathAS_EProof__SID__() {
 	alert("Save IMathAS");
@@ -2738,7 +2738,7 @@ function saveIMathAS_EProof__SID__() {
 	vPre  = "// includeqtextfrom(";
 	vJoin = ")"+this.CR+vPre;
 	vRet = this.saveArr2IMathAS(vArr.slice(1),vPre,vJoin,vPost);
-	vRet = "// "+this.LT +"SCRIPT type='text/javascript'"+this.GT + this.CR +vRet; 
+	vRet = "// "+this.LT +"SCRIPT type='text/javascript'"+this.GT + this.CR +vRet;
 	vRet += "// "+this.LT +"/SCRIPT"+this.GT + this.CR;
 	vRet += vPre + vArr[0] + ")";
 	vOut = this.replaceString(vOut,"___INCLUDEQTEXT___",vRet);
@@ -2749,17 +2749,17 @@ function saveIMathAS_EProof__SID__() {
 //#################################################################
 //# Method: saveArr2IMathAS(pArr,pPre,pJoin,pPost)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:  Save Content to IMathAS in Online Mode integrated in IMathAS                      
 //#
-//# created               3.3.2015             
-//# last modifications    __DATE__             
+//# Comment:  Save Content to IMathAS in Online Mode integrated in IMathAS
+//#
+//# created               3.3.2015
+//# last modifications    __DATE__
 //#################################################################
 function saveArr2IMathAS_EProof__SID__(pArr,pPre,pJoin,pPost) {
 	var vRet = "";
 	if (pArr) {
 		if (pArr.length != 0) {
-			vRet = pPre +pArr.join(pJoin)+pPost;	
+			vRet = pPre +pArr.join(pJoin)+pPost;
 		};
 	};
 	return vRet;
@@ -2768,23 +2768,23 @@ function saveArr2IMathAS_EProof__SID__(pArr,pPre,pJoin,pPost) {
 //#################################################################
 //# Method: saveSol2StudAns()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    __DATE__
 //#################################################################
 function saveSol2IMathAS_EProof__SID__() {
 	this.getIMathById("SOLUTION").value = this.createSol2IMathAS();
 };
 //#################################################################
-//# Method: setAttribute4List 
+//# Method: setAttribute4List
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function setAttribute4List_EProof__SID__(pRootNode,pListID,pAttribName,pValue) {
@@ -2807,19 +2807,19 @@ function setAttribute4List_EProof__SID__(pRootNode,pListID,pAttribName,pValue) {
 //----End of Method setAttribute4List Definition
 
 //#################################################################
-//# Method: setClassName4Step 
+//# Method: setClassName4Step
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: set ClassName and ID for Step, optional add a prefix e.g. "imath"                      
-//#          
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//#
+//# Comment: set ClassName and ID for Step, optional add a prefix e.g. "imath"
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function setClassName4Step_EProof__SID__(pParentDOM,pPrefix,pStep) {
 	//if (pStep=="0") alert("setClassName4Step(pStep="+pStep+")");
 	//alert("setClassName4Step(pStep="+pStep+")")
-	var vParent = null; 
+	var vParent = null;
 	var vName = "";
 	var vNode = null;
 	if (pParentDOM) {
@@ -2853,13 +2853,13 @@ function setClassName4Step_EProof__SID__(pParentDOM,pPrefix,pStep) {
 
 
 //#################################################################
-//# Method: setStep4List 
+//# Method: setStep4List
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function setStep4List_EProof__SID__(pRootNode,pListID,pStep) {
@@ -2879,20 +2879,20 @@ function setStep4List_EProof__SID__(pRootNode,pListID,pStep) {
 	//alert("pRootNode.innerHTML=\n"+pRootNode.innerHTML);
 };
 //----End of Method setStep4List Definition
-						
+
 //#################################################################
-//# Method: set_values(pHashArray)  
+//# Method: set_values(pHashArray)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Use Hash to Set Values in DOM. Hash IDs are ID names of DOM                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Use Hash to Set Values in DOM. Hash IDs are ID names of DOM
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function set_values_EProof__SID__(pStep,pHashArray) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:set_values(pStep,pHashArray)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2912,18 +2912,18 @@ function set_values_EProof__SID__(pStep,pHashArray) {
 //----End of Method set_values() Definition
 
 //#################################################################
-//# Method: toggleAllJustifications(pStep) 
+//# Method: toggleAllJustifications(pStep)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 
 function showAllJustifications_EProof__SID__(pButtonDOM) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
     //alert("showAllJustifications()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2940,7 +2940,7 @@ function showAllJustifications_EProof__SID__(pButtonDOM) {
 		var vID = this.getChildById(vSA,"inSTEPID"+st).value;
 		var vOutNode = this.getChildById(vSA,"editJUSTIFICATIONS"+st);
 		var vIDhash = this.getCheckedJustifications(pButtonDOM);
-		var vAppJust = this.getChildById(vSA,"appendJUSTIFICATION"+st).value;	
+		var vAppJust = this.getChildById(vSA,"appendJUSTIFICATION"+st).value;
 		//alert("showAllJustifications()-Call for vOrgIDs="+vIDhash["OrgIDs"]);
 		var vSelJust = this.getAllJustIDs();
 		//alert("vSelJust="+vSelJust+"\nshowAllJustifications():5265");
@@ -2951,18 +2951,18 @@ function showAllJustifications_EProof__SID__(pButtonDOM) {
 //----End of Method toggleJustifications Definition
 
 //#################################################################
-//# Method: show(pID)  
+//# Method: show(pID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function show_EProof__SID__(pID,pDisplay) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:show()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2974,18 +2974,18 @@ function show_EProof__SID__(pID,pDisplay) {
 };
 //----End of Method show() Definition
 //#################################################################
-//# Method: showSA(pSA,pID,pDisplay)  
+//# Method: showSA(pSA,pID,pDisplay)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function showSA_EProof__SID__(pSA,pID,pDisplay) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:show()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -2996,18 +2996,18 @@ function showSA_EProof__SID__(pSA,pID,pDisplay) {
 };
 //----End of Method show() Definition
 //#################################################################
-//# Method: showDebug(pID)  
+//# Method: showDebug(pID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function showDebug_EProof__SID__(pBoolean,pDisplay) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:showDebug()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3023,18 +3023,18 @@ function showDebug_EProof__SID__(pBoolean,pDisplay) {
 };
 //----End of Method showDebug() Definition
 //#################################################################
-//# Method: showHideBoolean(pID,pBoolean)  
+//# Method: showHideBoolean(pID,pBoolean)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function showHideBoolean_EProof__SID__(pID,pBoolean,pDisplay) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:show()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3052,18 +3052,18 @@ function showHideBoolean_EProof__SID__(pID,pBoolean,pDisplay) {
 };
 //----End of Method showHideBoolean() Definition
 //#################################################################
-//# Method: showHideNodeBoolean(pID,pBoolean)  
+//# Method: showHideNodeBoolean(pID,pBoolean)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function showHideNodeBoolean_EProof__SID__(pNode,pBoolean,pDisplay) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:show()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3079,18 +3079,18 @@ function showHideNodeBoolean_EProof__SID__(pNode,pBoolean,pDisplay) {
 };
 //----End of Method showHideNodeBoolean() Definition
 //#################################################################
-//# Method: showHideArray(pArray,pBoolean)  
+//# Method: showHideArray(pArray,pBoolean)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function showHideArray_EProof__SID__(pArray,pBoolean,pDisplay) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:show()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3111,13 +3111,13 @@ function showHideArray_EProof__SID__(pArray,pBoolean,pDisplay) {
 };
 //----End of Method showHideNodeBoolean() Definition
 //#################################################################
-//# Method: showHelpLanguage()  
+//# Method: showHelpLanguage()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 function showHelpLanguage_EProof__SID__ () {
 	var vLang = this.aSettings["LANGUAGE"];
@@ -3137,20 +3137,20 @@ function showHelpLanguage_EProof__SID__ () {
 	};
 	this.show("HELP_"+vLang+this.aQID);
 };
-	
+
 //#################################################################
-//# Method: showNode(pNode)  
+//# Method: showNode(pNode)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function showNode_EProof__SID__(pNode,pDisplay) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:show()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3166,24 +3166,24 @@ function showNode_EProof__SID__(pNode,pDisplay) {
 //----End of Method showNode() Definition
 
 //#################################################################
-//# Method: shuffleSteps(pStepType)  
+//# Method: shuffleSteps(pStepType)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function shuffleSteps_EProof__SID__(pStepType) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:show()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
 	//    vMyInstance.shuffleSteps(pStepType);
 	//-------------------------------------------------------
-	//load IMathAS ProofStep Content and split into Array 
+	//load IMathAS ProofStep Content and split into Array
 	//alert("shuffleSteps('"+pStepType+"')");
 	var vNode = this.getIMathById(pStepType);
 	var vArr = (vNode.value).split(this.CR);
@@ -3194,18 +3194,18 @@ function shuffleSteps_EProof__SID__(pStepType) {
 };
 //----End of Method shuffleSteps() Definition
 //#################################################################
-//# Method: toggle(pID)  
+//# Method: toggle(pID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function toggle_EProof__SID__(pID,pDisplay) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:toggle()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3221,18 +3221,18 @@ function toggle_EProof__SID__(pID,pDisplay) {
 };
 //----End of Method toggle() Definition
 //#################################################################
-//# Method: toggle(pID)  
+//# Method: toggle(pID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function toggleSA_EProof__SID__(pSA,pID,pDisplay) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:toggle()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3249,18 +3249,18 @@ function toggleSA_EProof__SID__(pSA,pID,pDisplay) {
 //----End of Method toggleSA() Definition
 
 //#################################################################
-//# Method: toggleNode(pID)  
+//# Method: toggleNode(pID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function toggleNode_EProof__SID__(pNode,pDisplay) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:toggleNode()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3286,17 +3286,17 @@ function toggleNode_EProof__SID__(pNode,pDisplay) {
 //----End of Method toggleNode() Definition
 
 //#################################################################
-//# Method: toggleAuthoringMode(pMode,pNoVis4Proof) 
+//# Method: toggleAuthoringMode(pMode,pNoVis4Proof)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: pMode = "1" or "0"   pNoVis4Proof="1" or null                  
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment: pMode = "1" or "0"   pNoVis4Proof="1" or null
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 function toggleAuthoringMode_EProof__SID__(pMode,pNoVis4Proof) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
     //alert("Call toggleAuthoringMode('"+pMode+"')-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3320,7 +3320,7 @@ function toggleAuthoringMode_EProof__SID__(pMode,pNoVis4Proof) {
 			vNode = this.getChildById(vSA[i],vPerClass[k]+this.aQID+vStep);
 			this.showHideNodeBoolean(vNode,vBool);
 			k++;
-		};	
+		};
 		i++
 	};
 	//-------------------------------------------------------
@@ -3329,7 +3329,7 @@ function toggleAuthoringMode_EProof__SID__(pMode,pNoVis4Proof) {
 	var k=0;
 	//alert("SHOW-HIDE EDIT-"+this.aQID+"-ID vArr.length="+vArr.length);
 	while (k != vArr.length) {
-		vNode = this.getChildById(this.aRootDOM,"EDIT-"+this.aQID+"-"+vArr[k]);			
+		vNode = this.getChildById(this.aRootDOM,"EDIT-"+this.aQID+"-"+vArr[k]);
 		this.showHideNodeBoolean(vNode,vBool);
 		k++;
 	};
@@ -3342,19 +3342,19 @@ function toggleAuthoringMode_EProof__SID__(pMode,pNoVis4Proof) {
 		k++;
 	};
 	//-------------------------------------------------------
-	vNode = this.getChildById(this.aRootDOM,"editTITLE"+this.aQID);	
+	vNode = this.getChildById(this.aRootDOM,"editTITLE"+this.aQID);
 	this.showHideNodeBoolean(vNode,vBool);
 	//-------------------------------------------------------
 };
 //----End of Method toggleAuthoringMode() Definition
 //#################################################################
-//# Method: toggleManualAssessment(pMode,pNoVis4Proof) 
+//# Method: toggleManualAssessment(pMode,pNoVis4Proof)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:      pMode = "1" or "0"                  
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:      pMode = "1" or "0"
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 function toggleManualAssessment_EProof__SID__(pMode,pNoVis4Proof) {
 	// toggleButtonMode(pSettingID,pInfoONOFF,pAlertText,pToogleID,pMode,pDisplay,pNoVis4Proof);
@@ -3362,13 +3362,13 @@ function toggleManualAssessment_EProof__SID__(pMode,pNoVis4Proof) {
 };
 //----End of Method toggleManualAsessment() Definition
 //#################################################################
-//# Method: toggleAssessmentButton(pMode,pNoVis4Proof) 
+//# Method: toggleAssessmentButton(pMode,pNoVis4Proof)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:  pMode = "1" or "0"   pNoVis4Proof="1" or null                     
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:  pMode = "1" or "0"   pNoVis4Proof="1" or null
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 function toggleAssessmentButton_EProof__SID__(pMode,pNoVis4Proof) {
 	// toggleButtonMode(pSettingID,pInfoONOFF,pAlertText,pToogleID,pMode,pDisplay,pNoVis4Proof)
@@ -3377,13 +3377,13 @@ function toggleAssessmentButton_EProof__SID__(pMode,pNoVis4Proof) {
 };
 //----End of Method toggleAssessmentButton() Definition
 //#################################################################
-//# Method: toggleSuggestionButton(pMode,pNoVis4Proof) 
+//# Method: toggleSuggestionButton(pMode,pNoVis4Proof)
 //#    used in Class: EProof__SID__
-//#                
+//#
 //# Comment:  pMode = "1" or "0"   pNoVis4Proof="1" or null
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 function toggleSuggestionButton_EProof__SID__(pMode,pNoVis4Proof) {
 	// toggleButtonMode(pSettingID,pInfoONOFF,pAlertText,pToogleID,pMode,pDisplay,pNoVis4Proof)
@@ -3393,13 +3393,13 @@ function toggleSuggestionButton_EProof__SID__(pMode,pNoVis4Proof) {
 };
 //----End of Method toggleSuggestionButton() Definition
 //#################################################################
-//# Method: toggleSolutionButton(pMode,pNoVis4Proof) 
+//# Method: toggleSolutionButton(pMode,pNoVis4Proof)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:    pMode = "1" or "0"   pNoVis4Proof="1" or null                      
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:    pMode = "1" or "0"   pNoVis4Proof="1" or null
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 function toggleSolutionButton_EProof__SID__(pMode,pNoVis4Proof) {
 	// toggleButtonMode(pSettingID,pInfoONOFF,pAlertText,pToogleID,pMode,pDisplay,pNoVis4Proof)
@@ -3408,13 +3408,13 @@ function toggleSolutionButton_EProof__SID__(pMode,pNoVis4Proof) {
 };
 //----End of Method toggleSolutionButton() Definition
 //#################################################################
-//# Method: toggleButton(pButtonID,pSetID) 
+//# Method: toggleButton(pButtonID,pSetID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 function toggleButton_EProof__SID__(pButtonID,pSetID) {
 	if (this.aSettings[pSetID] == "1") {
@@ -3424,17 +3424,17 @@ function toggleButton_EProof__SID__(pButtonID,pSetID) {
 	};
 };
 //#################################################################
-//# Method: toggleButtonMode(pSettingID,pInfoONOFF,pAlert,pToogleID,pMode,pDisplay,pNoVis4Proof) 
+//# Method: toggleButtonMode(pSettingID,pInfoONOFF,pAlert,pToogleID,pMode,pDisplay,pNoVis4Proof)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 function toggleButtonMode_EProof__SID__(pSettingID,pInfoONOFF,pAlert,pToogleID,pMode,pDisplay,pNoVis4Proof) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
     // alert("vEProof__SID___.toggleManualAsessment()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3475,7 +3475,7 @@ function toggleButtonMode_EProof__SID__(pSettingID,pInfoONOFF,pAlert,pToogleID,p
 				i++;
 			}
 		};
-	};		
+	};
 	if (!pNoVis4Proof) {
 		this.setVisibility4Proof();
 	}
@@ -3483,18 +3483,18 @@ function toggleButtonMode_EProof__SID__(pSettingID,pInfoONOFF,pAlert,pToogleID,p
 };
 //----End of Method toggleButtonMode() Definition
 //#################################################################
-//# Method: toggleList(pButtonDOM) 
+//# Method: toggleList(pButtonDOM)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 
 function toggleList_EProof__SID__(pList1,pMode1,pList2,pMode2) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
     // alert("vEProof__SID___.toggleList()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3502,20 +3502,20 @@ function toggleList_EProof__SID__(pList1,pMode1,pList2,pMode2) {
 	//-------------------------------------------------------
 	if ((pMode1 == "0") && (pMode2 == "0")) {
 		this.hideElement('btXPJ'+this.aQID);
-	} else {	
+	} else {
 		this.visible('btXPJ'+this.aQID);
 	};
 	this.toggleSteps(pList1,pMode1);
 	this.toggleSteps(pList2,pMode2);
 };
 //#################################################################
-//# Method: toggleSteps(pList,pMode) 
+//# Method: toggleSteps(pList,pMode)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 
 function toggleSteps_EProof__SID__(pList,pMode) {
@@ -3525,7 +3525,7 @@ function toggleSteps_EProof__SID__(pList,pMode) {
 		this.show(vL);
 	} else if (pMode == "T") {
 		this.toggle(vL);
-	} else {	
+	} else {
 		this.hide(vL);
 	};
 	var b = "bAddStep"+pList+this.aQID;
@@ -3534,7 +3534,7 @@ function toggleSteps_EProof__SID__(pList,pMode) {
 			this.show(b);
 		} else if (pMode == "T") {
 			this.toggle(b);
-		} else {	
+		} else {
 			this.hide(b);
 		};
 	} else {
@@ -3542,18 +3542,18 @@ function toggleSteps_EProof__SID__(pList,pMode) {
 	};
 }
 //#################################################################
-//# Method: toggleJustifications(pButtonDOM) 
+//# Method: toggleJustifications(pButtonDOM)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 
 function toggleJustifications_EProof__SID__(pButtonDOM) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
     // alert("vEProof__SID___.toggleJustifications()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3564,11 +3564,11 @@ function toggleJustifications_EProof__SID__(pButtonDOM) {
 	} else {
 		var vSA = this.getParentStudentAnswer(pButtonDOM);
 		var vStepIDList = this.getChildrenByClassName(vSA,"sSTEPID"+this.aQID);
-		var vStep = vStepIDList[0].getAttribute("step");	
+		var vStep = vStepIDList[0].getAttribute("step");
 		// "true" means update the Checkboxes: this.updateJustifications(pButtonDOM,true);
 		var vName = "JUSTIFICATIONS"+this.aQID+vStep;
 		var vNode = this.getChildById(vSA,"edit"+vName);
-		if (vNode.style.display=="none") { 
+		if (vNode.style.display=="none") {
 			vNode.innerHTML = this.createEditJustificationsStep(vStep);
 		} else {
 			var vReadCheckboxes = true;
@@ -3589,18 +3589,18 @@ function toggleJustifications_EProof__SID__(pButtonDOM) {
 };
 //----End of Method toggleJustifications Definition
 //#################################################################
-//# Method: toggleSuggestionAppend(pButtonDOM) 
+//# Method: toggleSuggestionAppend(pButtonDOM)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               3.3.2015             
-//# last modifications    3.3.2015             
+//# Comment:
+//#
+//# created               3.3.2015
+//# last modifications    3.3.2015
 //#################################################################
 
 function toggleSuggestionAppend_EProof__SID__(pButtonDOM) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
     // alert("vEProof__SID___.toggleJustifications()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3624,18 +3624,18 @@ function toggleSuggestionAppend_EProof__SID__(pButtonDOM) {
 //----End of Method toggleSuggestionAppend Definition
 
 //#################################################################
-//# Method: toggleSuggestion(pButtonDOM)  
+//# Method: toggleSuggestion(pButtonDOM)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function toggleSuggestion_EProof__SID__(pButtonDOM) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:toggleSuggestion()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3647,25 +3647,25 @@ function toggleSuggestion_EProof__SID__(pButtonDOM) {
 };
 //----End of Method toggleSuggestion() Definition
 //#################################################################
-//# Method: toggleSuggestionStep(pStep)  
+//# Method: toggleSuggestionStep(pStep)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function toggleSuggestionStep_EProof__SID__(pStep) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:toggleSuggestion()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
 	//    vMyInstance.toggleSuggestionStep(pStep);
 	//-------------------------------------------------------
 	var vNode = this.getElementById("SUGGESTIONS"+this.aQID+pStep);
-	if (vNode.style.display=="none") { 
+	if (vNode.style.display=="none") {
 		if (this.aSettings["AssessmentMode"] != "1") {
 			this.getElementById("inSUGGESTIONSUSED"+this.aQID+pStep).value++;
 			this.updateIMathById("STUDENTANSWER");
@@ -3679,18 +3679,18 @@ function toggleSuggestionStep_EProof__SID__(pStep) {
 //----End of Method toggleSuggestion() Definition
 
 //#################################################################
-//# Method: update(pInArray)  
+//# Method: update(pInArray)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Use innerHTML to erase all sub nodes in DOM                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Use innerHTML to erase all sub nodes in DOM
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function update_EProof__SID__(pInArray) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:update(pInArray)-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3712,18 +3712,18 @@ function update_EProof__SID__(pInArray) {
 //----End of Method update() Defupdateion
 
 //#################################################################
-//# Method: updateInput()  
+//# Method: updateInput()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Updates all Proof Steps                      
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Updates all Proof Steps
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function updateInput_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:updateInput()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3732,30 +3732,30 @@ function updateInput_EProof__SID__() {
 	//this.updateUsedIDs();
 	var vUsedNodes   = this.getUsedSteps();
 	this.setStepCount(vUsedNodes.length);
-	//alert("updateInput() - 1.0");		
+	//alert("updateInput() - 1.0");
 	this.updateIMathById("STEPCOUNT");
-	//alert("updateInput() - 2.0");		
-	this.updateIMathById("STUDENTANSWER");	
-	//alert("updateInput() - 3.0");		
+	//alert("updateInput() - 2.0");
+	this.updateIMathById("STUDENTANSWER");
+	//alert("updateInput() - 3.0");
 	var vOut = this.saveEProof2Form();
-    //alert("updateInput() - 4.0");		
+    //alert("updateInput() - 4.0");
 	this.append_PreviousStep_Justification();
-	//alert("updateInput() - 5.0");			
+	//alert("updateInput() - 5.0");
 };
 //----End of Method updateInput() Defupdateion
 //#################################################################
-//# Method: updateProof2IMath()  
+//# Method: updateProof2IMath()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Updates all Proof Steps                      
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Updates all Proof Steps
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function updateProof2IMath_EProof__SID__() {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproofmeth.js:2842 - updateProof2IMath()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -3764,21 +3764,21 @@ function updateProof2IMath_EProof__SID__() {
 	//this.aIMathArray = new Array("DISPLAYOPTION","STEPCOUNT","STUDENTANSWER","PRECONDITION","CONCLUSION","JUSTIFICATION","PROOFSTEP","SOLUTION","ENCRYPTED");
 	var i = 0;
 	while (i != this.aIMathArray.length) {
-		this.updateIMathById(this.aIMathArray[i]);  
+		this.updateIMathById(this.aIMathArray[i]);
 		i++;
 	};
 	this.calcAssessment(0); //Add 0 to Used Counter of Assessment
 };
 //----End of Method updateInput() Defupdateion
 //#################################################################
-//# Method: updateIMathByI(pFormID)  
+//# Method: updateIMathByI(pFormID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Is called from Checkboxes to update the Justifications 
+//#
+//# Comment: Is called from Checkboxes to update the Justifications
 //#          for a single Proof Step. pChildSA ist the Button-Object.
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
  function updateIMathById_EProof__SID__ (pFormID) {
 	var vOutNode = this.getIMathById(pFormID);
@@ -3806,7 +3806,7 @@ function updateProof2IMath_EProof__SID__() {
 				var vCR = "";
 				while (i != vArrID.length) {
 					if (this.aAllID2RAW[vArrID[i]]) {
-						vValue += vCR + vArrID[i] + this.aSeparator + this.encodeValue(this.aAllID2RAW[vArrID[i]]); 
+						vValue += vCR + vArrID[i] + this.aSeparator + this.encodeValue(this.aAllID2RAW[vArrID[i]]);
 						vCR = this.CR;
 					};
 					i++;
@@ -3819,14 +3819,14 @@ function updateProof2IMath_EProof__SID__() {
 	}
 };
 //#################################################################
-//# Method: updateAllJustifications()  
+//# Method: updateAllJustifications()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Is called from Checkboxes to update the Justifications 
+//#
+//# Comment: Is called from Checkboxes to update the Justifications
 //#          for a single Proof Step. pChildSA is the Button-Object.
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 // pChildSA is a Child of StudentAnswer
 function updateAllJustifications_EProof__SID__() {
@@ -3838,19 +3838,19 @@ function updateAllJustifications_EProof__SID__() {
 		vChildSA = this.getElementById("displayJUSTIFICATIONS"+this.aQID+vStep);
 		var vButton = this.getElementById("bJustifications"+this.aQID+vStep);
 		this.toggleJustifications(vButton);
-		if (vChildSA.style.display=="none") { 
+		if (vChildSA.style.display=="none") {
 			this.toggleJustifications(vButton);
 		};
 	}
 };
 //#################################################################
-//# Method: updateSettingValue(pInputDOM)  
+//# Method: updateSettingValue(pInputDOM)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Updates all Proof Steps                      
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Updates all Proof Steps
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function updateSettingValue_EProof__SID__ (pInputDOM) {
@@ -3859,13 +3859,13 @@ function updateSettingValue_EProof__SID__ (pInputDOM) {
 	this.aSettings[vName] = this.encodeValue(pInputDOM.value);
 };
 //#################################################################
-//# Method: updateSettings2Form()  
+//# Method: updateSettings2Form()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Updates all Proof Steps                      
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Updates all Proof Steps
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function updateSettings2Form_EProof__SID__ () {
@@ -3882,14 +3882,14 @@ function updateSettings2Form_EProof__SID__ () {
 	};
 };
 //#################################################################
-//# Method: updateJustifications(pChildSA)  
+//# Method: updateJustifications(pChildSA)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Is called from Checkboxes to update the Justifications 
+//#
+//# Comment: Is called from Checkboxes to update the Justifications
 //#          for a single Proof Step. pChildSA ist the Button-Object.
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 // pChildSA is a Child of StudentAnswer
 function updateJustifications_EProof__SID__(pChildSA,pUpdateEdit) {
@@ -3922,16 +3922,16 @@ function updateJustifications_EProof__SID__(pChildSA,pUpdateEdit) {
 			vOutputEdit.innerHTML = this.createJustifications(vIDhash["OrgIDs"],vSelectFromIDs.value,vAppendJustIDs.value,true,this.aMappedID[vID]);
 		};
 		//this.processMathNode(vOutputList[0]);
-	}	
+	}
 };
 //#################################################################
-//# Method: updateStep(pStep)  
+//# Method: updateStep(pStep)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: update Connection and Justifications from                         
-//#          sCONNECTION and inJUSTIFICATION 
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//#
+//# Comment: update Connection and Justifications from
+//#          sCONNECTION and inJUSTIFICATION
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function updateStep_EProof__SID__(pStep) {
@@ -3945,13 +3945,13 @@ function updateStep_EProof__SID__(pStep) {
 	this.updateJustifications(vConSA,vUpdateEdit);
 };
 //#################################################################
-//# Method: updateTextArea(pChildSA)  
+//# Method: updateTextArea(pChildSA)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: Use innerHTML to erase all sub nodes in DOM                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: Use innerHTML to erase all sub nodes in DOM
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 function updateTextarea_EProof__SID__(pChildSA) {
   var vStep = pChildSA.getAttribute("step");
@@ -3968,16 +3968,16 @@ function updateTextarea_EProof__SID__(pChildSA) {
   //alert(decodeURI("vValue%20=%20vValue.replace(/%5Cn/g,%22__n__%22);"));
   vNodeStepDef.value = vValue;
   this.processMathNode(vOutNode);
-  //this.updateStepEdit(pStep);  
+  //this.updateStepEdit(pStep);
 };
 //#################################################################
-//# Method: updateTitle()  
+//# Method: updateTitle()
 //#    used in Class: EProof__SID__
-//#                
-//# Comment: updates the Title and Label of the Title                       
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment: updates the Title and Label of the Title
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 function updateTitle_EProof__SID__() {
 	var vLabel = this.getElementById("THEOREMLABEL"+this.aQID);
@@ -3993,18 +3993,18 @@ function updateTitle_EProof__SID__() {
 	vSettingTitle.innerHTML = vLabel.innerHTML+": "+vTitle.innerHTML;
 };
 //#################################################################
-//# Method: visible(pID)  
+//# Method: visible(pID)
 //#    used in Class: EProof__SID__
-//#                
-//# Comment:                        
 //#
-//# created               24.2.2015             
-//# last modifications    __DATE__             
+//# Comment:
+//#
+//# created               24.2.2015
+//# last modifications    __DATE__
 //#################################################################
 
 function visible_EProof__SID__(pID) {
 	//----Debugging------------------------------------------
-	// The following alert-Command is useful for debugging 
+	// The following alert-Command is useful for debugging
 	//alert("eproof.js:visible()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
@@ -4015,4 +4015,3 @@ function visible_EProof__SID__(pID) {
 	vNode.style.visibility = "visible";
 };
 //----End of Method visible() Definition
-
