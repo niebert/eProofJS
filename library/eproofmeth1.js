@@ -25,7 +25,7 @@ function appendMethods_EProof__SID__ () {
 		};
 		return vJustString;
     };
-    //#################################################################
+  //#################################################################
 	//# Nested: getAllIDs4Type(pType) read form DOM
 	//#################################################################
     this.getAllIDs4Type = function (pType) {
@@ -69,7 +69,7 @@ function appendMethods_EProof__SID__ () {
 		};
 		return this.aAllSteps;
 	};
-    //#################################################################
+  //#################################################################
 	//# Nested: getDateString()
 	//#################################################################
 	this.getDateString = function () {
@@ -126,7 +126,7 @@ function appendMethods_EProof__SID__ () {
 		var vLibPath  = pLibPath || "library/";
 		var vMathJaxPath = pMathJaxPath || "../MathJax/";
 		//var vMathJaxPath = pMathJaxPath || "../MathJax/";
-		//var vOut = this.getWeeblyEProof(pLibPath,pMathJaxPath,pMathJaxConfig);
+		var vOut = this.getWeeblyEProof(pLibPath,pMathJaxPath,pMathJaxConfig);
 		return this.getWrappedHTML(vOut);
 	};
 	//#################################################################
@@ -141,7 +141,7 @@ function appendMethods_EProof__SID__ () {
 		cln  = this.getIMathEProofClearSteps(cln);
 		return this.getIMathEProofInnerHTML(cln,vQID,this.DO+"thisq",vSID);
 	};
-	//#################################################################
+  //#################################################################
 	//# Nested: getExportTemplate(pTPLname)
 	//#################################################################
 	this.getExportTemplate = function (pTPLname) {
@@ -149,7 +149,7 @@ function appendMethods_EProof__SID__ () {
 		vTPL = this.replaceString(vTPL,"__do__",this.DO);
 		return vTPL
 	};
-	//#################################################################
+  //#################################################################
 	//# Nested: getIMathById(pFormID)
 	//#################################################################
 	this.getIMathById = function (pFormID) {
@@ -334,11 +334,93 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	//# Nested: getStepCount()
 	//#################################################################
-     this.getStepCount = function () {
+  this.getStepCount = function () {
 		var vStepCount = this.getElementById("sSTEPCOUNT"+this.aQID);
 		//var vStepCount = this.getElementById("imathSTEPCOUNT");
 		return parseInt(vStepCount.value+"");
 	};
+  //#################################################################
+	//# Nested: getHeaderHTML()
+	//#################################################################
+  this.getHeaderHTML = function(pPathJS,pMathJaxPath,pMathJaxConfig,pPathCSS) {
+    console.log("getHeaderHTML() pPathJS='"+pPathJS+"'");
+    var vHeader = this.getValueDOM("TPLHTMLHEADER"+this.aQID);
+  	var vJS = this.getJavascriptLibs(pPathJS);
+  	var vCSS = this.getStylesCSS(pPathCSS);
+    vHeader = this.replaceString(vHeader,"___CSS_FILES___",vCSS);
+    vHeader = this.replaceString(vHeader,"___MATHJAX_PATH___",pMathJaxPath);
+    vHeader = this.replaceString(vHeader,"___MATHJAX_CONFIG___",pMathJaxConfig);
+  	vHeader = this.replaceString(vHeader,"___JAVASCRIPT_LIBRARIES___",vJS);
+    return vHeader;
+  }
+  //#################################################################
+	//# Nested: this.getStylesCSS()
+	//#################################################################
+  this.getStylesCSS = function(pPathCSS) {
+     var vPathCSS = pPathCSS || "./css/";
+     var vOut =  this.getValueDOM("TPLCSSFILES"+this.aQID);
+     vOut = this.replaceString(vOut,"___CSS_PATH___",vPathCSS);
+     return vOut;
+  };
+
+  //#################################################################
+	//# Nested: getJavascriptLibs()
+	//#################################################################
+  this.getJavascriptLibs = function(pPathJS) {
+     var vOut = this.getValueDOM("TPLJSLIBS"+this.aQID);
+     vOut = this.replaceString(vOut,"___LIB_PATH___",pPathJS);
+     return vOut;
+  };
+  //#################################################################
+	//# Nested: getTailHTML()
+	//#################################################################
+  this.getTailHTML = function() {
+    return this.getValueDOM("TPLHTMLTAIL"+this.aQID);
+  };
+  //#################################################################
+	//# Nested: getIMathASProof()
+	//#################################################################
+  this.getIMathASProof = function () {
+    //alert("Save IMathAS");
+    var vOut = "";
+    var vHash = new Array();
+    vOut = this.createSettingIMathAS();
+    vOut = this.createStepsIMathAS("Precondition",vOut);
+    vOut = this.createStepsIMathAS("Conclusion",vOut);
+    vOut = this.createStepsIMathAS("Justification",vOut);
+    vOut = this.createStepsIMathAS("ProofStep",vOut);
+    if (this.aCrypt) {
+      vOut = this.createSolutionIMathAS("CryptSolution",vOut);
+    //} else {
+    };
+    vOut = this.createSolutionIMathAS("SolutionStep",vOut);
+    var vRet = "//--- Student Answers not defined/exported ---"+this.CR;
+    var vFormSA = this.createStudentAnswer2IMathAS();
+    var vArr = vFormSA.split(this.CR);
+    var vPre  = this.DO+"StudentAnswer=\"";
+    var vJoin = "\""+this.CR+this.DO+"StudentAnswer.=\"";
+    var vPost = "\""+this.CR;
+    if (this.aSAexport) {
+      vRet = this.saveArr2IMathAS(vArr,vPre,vJoin,vPost);
+    }
+    vOut = this.replaceString(vOut,"___STUDENTANSWERS___",vRet);
+    vArr = (this.aSettings["COMMONCONTROL"]).split(/,|__[coCO]+__/);
+    vPre  = "includecodefrom(";
+    vJoin = ")"+this.CR+vPre;
+    vPost = ")"+this.CR;
+    vRet = this.saveArr2IMathAS(vArr,vPre,vJoin,vPost);
+    vOut = this.replaceString(vOut,"___INCLUDECODE___",vRet);
+    vArr = (this.aSettings["QUESTIONTEXT"]).split(/,|__[coCO]+__/);
+    vPre  = "// includeqtextfrom(";
+    vJoin = ")"+this.CR+vPre;
+    vRet = this.saveArr2IMathAS(vArr.slice(1),vPre,vJoin,vPost);
+    vRet = "// "+this.LT +"SCRIPT type='text/javascript'"+this.GT + this.CR +vRet;
+    vRet += "// "+this.LT +"/SCRIPT"+this.GT + this.CR;
+    vRet += vPre + vArr[0] + ")";
+    vOut = this.replaceString(vOut,"___INCLUDEQTEXT___",vRet);
+
+    return vOut;
+  }
 	//#################################################################
 	//# Nested: getIndex4ID(pID)
 	//#################################################################
@@ -710,14 +792,36 @@ function appendMethods_EProof__SID__ () {
 		var vCount = parseInt(vNode.value);
 		return vCount;
 	};
+  //#################################################################
+	//# Nested: getValueDOM()
 	//#################################################################
+  this.getValueDOM = function (pID) {
+    var vNode = document.getElementById(pID);
+    var vReturn = null;
+    if (vNode) {
+      if (vNode.value) {
+        vReturn = vNode.value;
+      } else {
+        console.log("["+pID+"] Node has no 'value' attribute!\nthis.getValueDOM()-Call");
+      };
+    } else {
+      console.log("["+pID+"] Node is not defined\nthis.getValueDOM()-Call");
+    };
+    return vReturn;
+  };
+  //#################################################################
 	//# Nested: getWeeblyEProof()
 	//#################################################################
-	this.getWeeblyEProof = function(pLibPath,pMathJaxPath,pMathJaxConfig,pQID,pThisQ,pSID,pAuthoring,pRootID) {
-		var vInsertLibs = true;
+	this.getWeeblyEProof = function(pLibPath,pMathJaxPath,pMathJaxConfig,pQID,pThisQ,pSID,pAuthoring,pRootID,pPathCSS) {
+    //console.log("getWeeblyEProof() pLibPath='"+pLibPath+"'");
+    console.log("getWeeblyEProof() pRootID='"+pRootID+"'");
+    var vInsertLibs = false;
 		if (pRootID) {
-			vInsertLibs = false;
+      if (pRootID == "WEEBLY") {
+        vInsertLibs = true;
+      };
 		};
+    var vRootID = "EMULATIONiMathAS";
 		var vQID = pQID || "__QID__";
 		var vThisQ = pThisQ || "__THISQ__";
 		var vSID = pSID || "__SID__";
@@ -725,11 +829,11 @@ function appendMethods_EProof__SID__ () {
 		var vLoadXML = this.getChildById(this.aRootDOM,"tLOAD"+this.aQID);
 		//var vLibPath  = pLibPath || "http://math.uni-landau.de/javascript/eProofJS/library/";
 		// In Weebly local theme files are referenced
-		//<script type="text/javascript" src="/files/theme/plugin.js" ></script>
-		//<script type="text/javascript" src="/files/theme/mobile.js" ></script>
-		//<script type="text/javascript" src="/files/theme/custom.js" ></script>
 		var vLibPath  = pLibPath || "/files/theme/";
+    console.log("getWeeblyEProof() vLibPath='"+vLibPath+"'");
+    var vPathCSS  = pPathCSS || "./css/"
 		var vMathJaxPath = pMathJaxPath || "http://cdn.mathjax.org/mathjax/latest/";
+    console.log("getWeeblyEProof() vMathJaxPath='"+vMathJaxPath+"'");
 		var vMathJaxConfig = pMathJaxConfig || "AM_HTMLorMML";
 		if (pMathJaxConfig.toUpperCase() == "LATEX") {
 			// LaTeX-Config: TeX-AMS-MML_HTMLorMML
@@ -738,11 +842,16 @@ function appendMethods_EProof__SID__ () {
 			// ASCII-Math Config: AM_HTMLorMML
 			vMathJaxConfig = "AM_HTMLorMML";
 		};
-		var cln = this.getIMathEProofClone(vLoadXML.value,pRootID);
+    var cln = this.getIMathEProofClone(vLoadXML.value,vRootID);
 		//this.getIMathEProofAnswerBox(cln);
 		cln = this.getIMathEProofClearSteps(cln);
 		var vReturn = "";
-		if (vInsertLibs) {
+    if (pRootID == "HTMLROOT") {
+      //vReturn += this.LT + "html id='HTMLROOT'"+ this.GT;
+      console.log("getHeaderHTML()-Call");
+      vReturn += this.getHeaderHTML(vLibPath,vMathJaxPath,vMathJaxConfig,vPathCSS);
+    };
+    if (vInsertLibs) {
 			var vStartJS = this.LT+"script type=\"text/javascript\" src=\"";
 			var vEndJS = "\""+this.GT+this.LT+"/script"+this.GT+this.CR;
 			vReturn += vStartJS + vLibPath +"language.js" + vEndJS;
@@ -753,12 +862,12 @@ function appendMethods_EProof__SID__ () {
 			vReturn += vStartJS + vMathJaxPath + "MathJax.js?config=" + vMathJaxConfig + vEndJS;
 			//vReturn += this.LT+"script src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML\""+this.GT+""+this.LT+"/script"+this.GT+this.CR;
 			//vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","_SID");
-		} else {
-			vReturn += this.LT + "html id='HTMLROOT'"+ this.GT;
 		};
 		vReturn += this.getIMathEProofInnerHTML(cln,vQID,vThisQ,vSID,vAuthoring);
-		if (!vInsertLibs) {
-			vReturn += this.LT + "/html"+ this.GT;
+    if (pRootID == "HTMLROOT") {
+      //vReturn += this.LT + "/html"+ this.GT;
+      console.log("getTailHTML()-Call");
+      vReturn += this.getTailHTML();
 		};
 		return vReturn;
 	};
@@ -811,9 +920,14 @@ function appendMethods_EProof__SID__ () {
     this.init();
     this.initIMathForm();
     //this.clear_LocalStorage();
-
 	};
   //#################################################################
+	//# Nested: initElectron()
+	//#################################################################
+	this.initElectron = function () {
+    console.log("initElectron() performs tasks in Electron environment ONLY!");
+  }
+	//#################################################################
 	//# Nested: initIMathForm()
 	//#################################################################
 	this.initIMathForm = function () {
@@ -852,21 +966,6 @@ function appendMethods_EProof__SID__ () {
 		var vRet = false;
     	if (this.aOffline == "0") {
     		vRet = true;
-		};
-		return vRet;
-	};
-	//#################################################################
-	//# Nested: iMathForm_loaded()
-	//#################################################################
-	this.X_iMathForm_loaded = function () {
-		var vRet = false;
-    	var vPreconNode = this.getChildById(this.aRootDOM,"imathPRECONDITION");
-    	if (vPreconNode) {
-    		var vPreconIMathAS = vPreconNode.value;
-			vPreconIMathAS = vPreconIMathAS.replace(/\s/g,"");
-			if (this.greater(vPreconIMathAS.lastIndexOf(this.aSeparator),0)) {
-				vRet = true;
-			};
 		};
 		return vRet;
 	};
@@ -930,7 +1029,10 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	this.loadSettingsVar = function (pName,pValue) {
 		pName = pName.toUpperCase();
-		if (pName == "TITLE") pName = "THEOREM_TITLE";
+		if (pName == "TITLE")  {
+      pName = "THEOREM_TITLE";
+      console.log("TITLE found replaced by THEOREM_TITLE: "+pValue);
+    }
 		for (var iName in this.aSettings) {
 			if (iName.toUpperCase() == pName) {
 				this.aSettings[iName] = pValue;
@@ -973,7 +1075,44 @@ function appendMethods_EProof__SID__ () {
 		};
 		return vReturn
 	};
+  //#################################################################
+	//# Nested: loadMathJaxPath()
 	//#################################################################
+	this.loadMathJaxPath = function () {
+    var vID = "MATHJAX_PATH";
+    if(typeof(Storage) !== "undefined") {
+			var vPath = localStorage.getItem(vID);
+      if (vPath) {
+        this.write2Value(vID + this.aQID,vPath);
+        console.log("Local Storage ["+vID+"] loaded with '"+vPath+"'");
+      } else {
+        this.write2Value(vID + this.aQID,"./MathJax/");
+        console.log("Local Storage ["+vID+"] was undefined - use default path");
+      }
+    } else {
+      console.log("localStorage is undefined - no access to ["+vID+"]");
+    }
+  }
+  //#################################################################
+	//# Nested: setMathJaxPath()
+	//#################################################################
+	this.setMathJaxPath = function () {
+    alert("function setMathJaxPath() can be used in Electron Environment ONLY!")
+  }
+  //#################################################################
+	//# Nested: loadMathJaxPath()
+	//#################################################################
+	this.saveMathJaxPath = function () {
+    var vID = "MATHJAX_PATH";
+    var vPath = this.getValueDOM(vID + this.aQID);
+    if(typeof(Storage) !== "undefined") {
+			localStorage.setItem(vID, vPath);
+      console.log("Local Storage ["+vID+"] saved with '"+vPath+"'");
+    } else {
+      console.log("localStorage is undefined - no access to ["+vID+"]");
+    }
+  }
+//#################################################################
 	//# Nested: newCharCounter(pChar)
 	//#################################################################
 	this.newCharCounter = function (pChar) {
@@ -984,6 +1123,12 @@ function appendMethods_EProof__SID__ () {
 		};
 		return this.aCharCounter[pChar];
 	};
+  //#################################################################
+	//# Nested: renameCharCounter1()
+	//#################################################################
+	this.openIMathAScode = function () {
+    window.open("./code/index.html");
+  }
 	//#################################################################
 	//# Nested: renameCharCounter1()
 	//#################################################################
@@ -1132,7 +1277,7 @@ function appendMethods_EProof__SID__ () {
 	//#    used in Class: XMLparser
 	//#
 	//# Comment: if this.aTAG="BODY" then this.aText contains the block
-	//#          between <BODY> and </BODY>. Parsing append all
+	//#          between open-BODY and close-BODY-Tag. Parsing append all
 	//#          Children to this.aChilden. aTAG="" means block is
 	//#          a string without XML-Tags.
 	//# created               22.10.2014
@@ -1343,6 +1488,12 @@ function appendMethods_EProof__SID__ () {
 		//alert("Decoded="+this.rot(s.join(''),-pCharShift));
 		return s.join('');
 	};
+  //#################################################################
+	//# Nested: saveEProof2Filesystem()
+	//#################################################################
+	this.saveEProof2Filesystem = function() {
+    alert("Copy content of text area into editor (e.g. Proton, Textwrangler, Geany, Kate, ...) and save file to your file system.\nOnly Electron Application have DIRECT access to File System for Saving Files");
+  }
 	//#################################################################
 	//# Nested: saveEProofIMath2Form()
 	//#################################################################
@@ -1723,6 +1874,24 @@ function appendMethods_EProof__SID__ () {
 		//this.setStepAssValue(pStep,pAssRoot,"out"+pNodeID,vText,vValue);
 		return new Array(vText,vValue);
 	};
+  //#################################################################
+	//# Nested: setStepAssValue (pStep,pAssRoot,pNodeID,pText,pValue)
+	//#################################################################
+	this.setSaveSettings = function (pSelectValue) {
+    this.setSaveSettingsDisplay("HTML",pSelectValue);
+    this.setSaveSettingsDisplay("XML",pSelectValue);
+    this.setSaveSettingsDisplay("IMathAS",pSelectValue);
+  };
+  //#################################################################
+	//# Nested: setStepAssValue (pStep,pAssRoot,pNodeID,pText,pValue)
+	//#################################################################
+	this.setSaveSettingsDisplay = function (pValue,pSelectValue) {
+    if (pSelectValue == pValue) {
+      this.show("setting"+pValue);
+    } else {
+      this.hide("setting"+pValue);
+    }
+  };
 	//#################################################################
 	//# Nested: setStepAssValue (pStep,pAssRoot,pNodeID,pText,pValue)
 	//#################################################################
@@ -2420,7 +2589,7 @@ function appendMethods_EProof__SID__ () {
 	this.write2InnerHTML = function (pID,pValue) {
     var vOutNode = document.getElementById(pID);
     if (vOutNode) {
-      vOutNode.innerHTML = pContent;
+      vOutNode.innerHTML = pValue;
     } else {
       console.log("ID="+pID+" in write2Value() not defined");
     }
@@ -2431,7 +2600,7 @@ function appendMethods_EProof__SID__ () {
 this.write2Value = function (pID,pValue) {
   var vOutNode = document.getElementById(pID);
   if (vOutNode) {
-    vOutNode.value = pContent;
+    vOutNode.value = pValue;
   } else {
     console.log("ID="+pID+" in write2Value() not defined");
   }

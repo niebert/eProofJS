@@ -16,8 +16,11 @@
 <title>
 	e-Proof Code Generator
 </title></head>
-	<body id="packer">
-		<form name="aspnetForm" method="post" action="iMathAScompressor.html" id="aspnetForm">
+<body id="packer">
+	<table border="0" cellpadding="10">
+		<tr>
+			<td>
+				<form name="aspnetForm" method="post" action="iMathAScompressor.html" id="aspnetForm">
 <div>
 </div>
 
@@ -28,6 +31,8 @@
 
 <div class="content">
 <h1>Online e-Proof Background Code</h1>
+<button onclick="window.close()"> Close Window</button>
+
 The <a href="includecode.html" target="_blank">e-Proof Include Code Generator</a> uses the question numbers
 of these background codes to include the source code of the e-Proof environment from these stored questions.
 So it is necessary to know the 4 question numbers in iMathAS, where you stored the IMathAS backgroundcode.
@@ -225,7 +230,9 @@ hideAllParts();
 //alert("Hide all Parts");
 //show("divControlButtons");
 hide("divControlButtons");
-setTimeout("loadAll()",1000);
+setTimeout("loadAll()",3000);
 </script>
-
+			</td>
+		</tr>
+	</table>
 </body></html>

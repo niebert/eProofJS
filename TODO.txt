@@ -2,10 +2,16 @@ TODO:
 [X] "Load XML" and "Load XML please Wait" double ALERT
 [X] "Save" and "Save IMath please Wait"  double ALERT
 [X] Suggestion for first Step does not work
+[] Encrypt IMathAS Solution does not refer to encrypted HTML Solution??? Check
+[] settingXML is necessary to add to eProofElectron.html
+[] Export of IMathAS contains a line "$=undefined" Solution do not export setting with ID=""
 [] Search for unused Steps in the Solution and store as List in Element id="USEDIDS__QID__"
+[] IMathAS Button should refer to code/ generator
+[] Logical Error: Path for eProofs/library does not exist but path and lib exist.
+[] Export LaTeX ASCIIMath Select in Preferences
 [X] Authoring ON is not applied on Justifications
 [] Randomize Steps creates Error for Suggestions does not work
-[] ExportID Does not work 
+[] ExportID Does not work
 [] Delete Steps in Authoring Mode with [X] does not work.
 [] AuthoringMode > Insert Solution 4 StudentAnswer > generate the Solution for StudentAnswer
 FINAL:
@@ -33,5 +39,3 @@ AUTO-GENERATED eProofJS Body for IMathAS
 ----------------------------------------
 PROOFCONTROL DIV must be set to    style="display:none"
 MAINCONTROL  DIV must be set to    style="display:none"
-
-  

@@ -17,6 +17,11 @@
 # created with JavaScript generator_exporter.html
 #################################################################
 
+MathJaxPath: ___MATHJAX_PATH___
+eProof XML:   EPROOF_SOURCE_XML
+Libraries JS: JAVASCRIPT_LIBRARIES
+Style Sheets: CSS_FILES
+
   UsedC = sSTEPCOUNT Selector for number of Steps <br>
   PRE/POST -%Logical-Link-Error ` LLE = t * text(DefaultError)+ (1-t) * 1.0` with  `t = (UsedC)/(text(ProofC))`  <br>
   DefaultError=10% defined in Settings<BR>
@@ -32,17 +37,21 @@
 //---LaTeX-------
 <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 <script type="text/javascript" src="../MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/javascript" src="MathJax/MathJax.js?config=AM_HTMLorMML&delayStartupUntil=configured"></script>
 -->
   <meta http-equiv="content-type" content="text/html; charset=UTF8" >
-  <script type="text/javascript" src="./MathJax/MathJax.js?config=AM_HTMLorMML&delayStartupUntil=configured"></script>
+<script type="text/javascript" src="___MATHJAX_PATH___/MathJax.js?config=AM_HTMLorMML"></script>
+
+___JAVASCRIPT_LIBRARIES___
+
+___CSS_FILES___
+<!--
 <script type="text/javascript" src="library/language.js"></script>
 <script type="text/javascript" src="library/eproofmain.js"></script>
 <script type="text/javascript" src="library/eproofmeth1.js"></script>
 <script type="text/javascript" src="library/eproofmeth2.js"></script>
-<script type="text/javascript" src="library/js2electron.js"></script>
 
 <link rel="stylesheet" href="./css/imathas.css" type="text/css">
+-->
 
 </head>
 <body>
@@ -57,73 +66,7 @@
 			 <BR>
 			<INPUT  class="COPYTOLOAD__QID__" id="COPYTOLOAD__QID__" value="tXMLFILE__QID__1" type="text" ><BR>
 			<TEXTAREA class="tXMLFILE__QID__" id="tXMLFILE__QID__1" cols="100" rows="13" wrap="off">
-<EPROOF>
-  <VARIABLE NAME='Theorem_Title' VALUE='Binomial Law' />
-  <VARIABLE NAME='Theorem_Label' VALUE='Theorem' />
-  <VARIABLE NAME='Author' VALUE='Engelbert Niehaus' />
-  <VARIABLE NAME='eMail' VALUE='niehaus@uni-landau.de' />
-  <VARIABLE NAME='LANGUAGE' VALUE='EN' />
-  <VARIABLE NAME='Theorem_Appendix' VALUE='See __lt__a  href__eq____qu__https://en.wikipedia.org/wiki/Binomial_theorem__qu__ target__eq____qu__blank__qu____gt__Binomial Theorem__lt__/a__gt__ for a more details.' />
-  <VARIABLE NAME='Per_Error_Minus_Percent' VALUE='10' />
-  <VARIABLE NAME='Assessment_Minus_Percent' VALUE='2' />
-  <VARIABLE NAME='Suggestion_Minus_Percent' VALUE='17' />
-  <VARIABLE NAME='unnecessary_connections' VALUE='3' />
-  <VARIABLE NAME='unnecessary_proofsteps' VALUE='3' />
-  <VARIABLE NAME='unnecessary_justifications' VALUE='3' />
-  <VARIABLE NAME='selectbox_proofsteps' VALUE='1' />
-  <VARIABLE NAME='allow_own_proofsteps' VALUE='1' />
-  <VARIABLE NAME='remap_proofstep_IDs' VALUE='1' />
-  <VARIABLE NAME='randomize_proofstep_IDs' VALUE='1' />
-  <VARIABLE NAME='cryptkey' VALUE='ACBSD' />
-  <VARIABLE NAME='show_Load_Save_Control' VALUE='0' />
-  <VARIABLE NAME='show_Main_Control' VALUE='0' />
-  <VARIABLE NAME='show_links' VALUE='1' />
-  <VARIABLE NAME='show_assessment' VALUE='1' />
-  <VARIABLE NAME='show_suggestions' VALUE='1' />
-  <VARIABLE NAME='show_proof_solution' VALUE='1' />
-  <VARIABLE NAME='AuthoringMode' VALUE='0' />
-  <VARIABLE NAME='AssessmentMode' VALUE='0' />
-  <VARIABLE NAME='CODE_ID_I' VALUE='4001' />
-  <VARIABLE NAME='CODE_ID_II' VALUE='4002' />
-  <VARIABLE NAME='CODE_ID_III' VALUE='4200' />
-  <VARIABLE NAME='vQID' VALUE='Q78234X' />
-  <VARIABLE NAME='Offline' VALUE='1' />
-  <VARIABLE NAME='alertDOM' VALUE='1' />
-  <VARLIST NAME='PRECONDITION_OPTIONS'>
-    <STEPDEF SIZE='2' ID='P1' VALUE='Let __math__ a__CO__b in RR __math__ ' />
-  </VARLIST>
-  <VARLIST NAME='CONCLUSION_OPTIONS'>
-    <STEPDEF SIZE='2' ID='C1' VALUE='__math__ ( a+b )^2 __eq__a^2 + 2ab + b^2__math__' />
-  </VARLIST>
-  <VARLIST NAME='JUSTIFICATION_OPTIONS'>
-    <STEPDEF SIZE='2' ID='CLA' VALUE=' __math__AA_(x__CO__y in RR) : x + y __eq__ y + x __math__' />
-    <STEPDEF SIZE='2' ID='CLM' VALUE=' __math__AA_(x__CO__y in RR) : x * y __eq__ y *x __math__' />
-    <STEPDEF SIZE='2' ID='DL' VALUE=' __math__AA_(x__CO__y__CO__z in M) : x * (y + z) __eq__ x * y + x * z __math__ ' />
-    <STEPDEF SIZE='2' ID='ALA' VALUE=' __math__AA_(x__CO__y__CO__z in M) : (x + y) + z __eq__ x + (y + z)__math__ ' />
-    <STEPDEF SIZE='2' ID='SQ' VALUE=' __math__AA_(x in RR) : x^2 __eq__ x * x __math__' />
-  </VARLIST>
-  <VARLIST NAME='PROOFSTEP_OPTIONS'>
-    <STEPDEF SIZE='2' ID='P1' VALUE='' />
-    <STEPDEF SIZE='2' ID='S1' VALUE='__math__(a+b)^2 __eq__ (a+b)*(a+b)__math__ ' />
-    <STEPDEF SIZE='2' ID='S3_F1' VALUE='__math__(a+b)*(a+b)*2__math__ with __math__x:__eq__a+b in RR__math__' />
-    <STEPDEF SIZE='2' ID='S3' VALUE='__math__(a+b)*a+(a+b)*b__math__ with __math__x:__eq__a+b in RR__math__' />
-    <STEPDEF SIZE='2' ID='S4' VALUE='__math__(a*a+b*a)+(a*b+b*b)__math__' />
-    <STEPDEF SIZE='2' ID='S5' VALUE='__math__(a^2+b*a)+(a*b+b^2)__math__' />
-    <STEPDEF SIZE='2' ID='S6' VALUE='__math__a^2+(a*b+a*b)+b^2__math__' />
-    <STEPDEF SIZE='2' ID='S7' VALUE='__math__a^2+2*a*b+b^2__math__' />
-    <STEPDEF SIZE='2' ID='S1_F1' VALUE='__math__(a+b)+(a+b)__math__' />
-    <STEPDEF SIZE='2' ID='S1_F2' VALUE='__math__a^2+b^2__math__' />
-    <STEPDEF SIZE='2' ID='MY1' VALUE='__math__2*a+2*b__math__' />
-    <STEPDEF SIZE='5' ID='P1' CONNECTION=' ' JUST='' OPTJUST='' VALUE='' />
-    <STEPDEF SIZE='5' ID='S1' CONNECTION='__eq____gt__' JUST='' OPTJUST='SQ' VALUE='__math__ (a+b)^2 __eq__ (a+b)*(a+b)__math__ ' />
-    <STEPDEF SIZE='5' ID='S3' CONNECTION='__eq__' JUST='DL' OPTJUST='' VALUE='__math__(a+b)*a+(a+b)*b__math__ with __math__x:__eq__a+b in RR__math__' />
-    <STEPDEF SIZE='5' ID='S4' CONNECTION='__eq__' JUST='DL' OPTJUST='' VALUE='__math__(a*a+b*a)+(a*b+b*b)__math__' />
-    <STEPDEF SIZE='5' ID='S5' CONNECTION='__eq__' JUST='SQ' OPTJUST='' VALUE='__math__(a^2+b*a)+(a*b+b^2)__math__' />
-    <STEPDEF SIZE='5' ID='S6' CONNECTION='__eq__' JUST='ALA,CLM' OPTJUST='' VALUE='__math__a^2+(a*b+a*b)+b^2__math__' />
-    <STEPDEF SIZE='5' ID='S7' CONNECTION='__eq__' JUST='DL' OPTJUST='' VALUE='__math__a^2+2*a*b+b^2__math__' />
-    <STEPDEF SIZE='5' ID='C1' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='' />
-  </VARLIST>
-</EPROOF>
+___EPROOF_SOURCE_XML___
 			</TEXTAREA>
 			<HR>
 			<SELECT class="tplDISPLAYSELECT__QID__" id="tplDISPLAYSELECT__QID__">
@@ -393,7 +336,7 @@
 								<table border=0 align="center" cellspacing="10px"  width="96%" >
                   <col width="10%">
                   <col width="20%">
-                  <col width="70%">
+                  <col width="60%">
                   <TR>
 										<TD colspan="3">
 											<B>(<OUTTEXT class="outNEXTNR__QID__" step="0" id="outNEXTNR__QID__">
@@ -415,7 +358,7 @@
 										</TD>
 										<TD  class='IDSUGGESTION__QID__' step='0'  id='IDSUGGESTION__QID__'>
 												<INPUT type="radio" class='rIDSUGGESTION__QID__' name="rIDSUGGESTION__QID__" id='rIDNUGGESTION__QID__' />
-												<OUTTEXT class='outIDSUGGESTION__QID__' step='0'  id='outIDSUGGESTION__QID__'>Proof Step Definition for Long ProofSteps</OUTTEXT>
+												<OUTTEXT class='outIDSUGGESTION__QID__' step='0'  id='outIDSUGGESTION__QID__'>Proof Step Def</OUTTEXT>
 										</TD>
 									</TR>
 								</table>
@@ -426,23 +369,23 @@
 			</DIV>
 			<HR>
 			<div class="tplCONNECTIONLIST__QID__" id="tplCONNECTIONLIST__QID__">
-			ConnectionList Updated:
-				<ul id="ulCONNECTIONLIST__QID__" class="DefaultList">
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-0" source="__math__???__math__">`???`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-1" source=""></EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-2" source="__math____eq____gt____math__">`=>`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-3" source="__math____eq____math__">`=`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-4" source="__math____lt____eq____math__">`<=`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-5" source="__math____lt____math__">`<`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-6" source="__math____gt____eq____math__">`>=`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-7" source="__math____gt____math__">`>`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-8" source="__math__subseteq__math__">`subseteq`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-9" source="__math__DEF__math__">`DEF`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-10" source="__math__TEXT__math__">`TEXT`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-11" source="__math__TYP__math__">`TYP`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-12" source="__math__q.e.d.__math__">`q.e.d.`</EPROOFCONNECTION></li>
-					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-13" source="__math__LINK-NODE__math__">`LINK-NODE`</EPROOFCONNECTION></li>
-				</ul>
+			ConnectionList:
+				<ul id="ulCONNECTIONLIST__QID__">
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-0" source="__math__???__math__">`???`</EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-1" source=""></EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-2" source="__math____eq____gt____math__">`=>`</EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-3" source="__math____eq____math__">`=`</EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-4" source="__math____lt____eq____math__">`<=`</EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-5" source="__math____lt____math__">`<`</EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-6" source="__math____gt____eq____math__">`>=`</EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-7" source="__math____gt____math__">`>`</EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-8" source="__math__subseteq__math__">`subseteq`</EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-9" source="__math__DEF__math__">`DEF`</EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-10" source="__math__TEXT__math__">`TEXT`</EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-11" source="__math__TYP__math__">`TYP`</EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-12" source="__math__q.e.d.__math__">`q.e.d.`</EPROOFCONNECTION></li>
+          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-13" source="__math__LINK-NODE__math__">`LINK-NODE`</EPROOFCONNECTION></li>
+      	</ul>
 			</div>
 			<HR>
 			<b>Source Step:</b><BR>
@@ -493,12 +436,12 @@
 		<!-- =======IMATH TABLE=================================================== -->
 		<DIV class="PROOFCONTROL__QID__" id="PROOFCONTROL__QID__" border="0" bgcolor="#ddf" align="center" style="display:none">
 			<center>
-				<TABLE border="1" bgcolor="#ddf"  align="center"  cellpadding="10">
+				<TABLE border="0" bgcolor="#ddf"  align="center" >
 					<TR class="CONTROLBUTTONS__QID__" id="CONTROLBUTTONS__QID__">
 						<TD align="left">
 							<BUTTON type='button' class='bLOADCONTROL__QID__'   id='bLOADCONTROL__QID__'  onclick="vEProof__QID__.clickLoad()" style="color:blue">Load</BUTTON>
 							<BUTTON type='button' class='bSAVEXMLCONTROL__QID__'   id='bSAVEXMLCONTROL__QID__'  onclick="vEProof__QID__.clickSaveXML()" style="color:blue">Save</BUTTON>
-							<BUTTON type='button' class='bSAVEIMATHCONTROL__QID__'   id='bSAVEIMATHCONTROL__QID__'  onclick="vEProof__QID__.openIMathAScode()" style="color:blue">IMathAS</BUTTON>
+							<BUTTON type='button' class='bSAVEIMATHCONTROL__QID__'   id='bSAVEIMATHCONTROL__QID__'  onclick="vEProof__QID__.clickSaveIMathAS()" style="color:blue">IMathAS</BUTTON>
 							<BUTTON type='button' class='bPREFERENCES__QID__'   id='bPREFERENCES__QID__'  onclick="vEProof__QID__.clickPreferences()" style="color:blue">Preferences</BUTTON>
 							&nbsp; - &nbsp;
 							<BUTTON type='button' class='bACKNOWLEDGEMENT__QID__'  id='bACKNOWLEDGEMENT__QID__'  onclick="document.location.href='http://eproof.weebly.com/acknowledgements.html'" style="display:none">Acknowledgements</BUTTON>
@@ -518,108 +461,28 @@
 						</TD>
 					</TR>
 					<TR class="SAVEXMLAREA__QID__" id="SAVEXMLAREA__QID__" style="display:none" >
-            <TD align="center">
+						<TD align="center">
 							<h2>SAVE File</h2>
-              File Format:
-							<SELECT class="sFILEFORMAT__QID__" id="sFILEFORMAT__QID__" onchange="vEProof__QID__.setSaveSettings(this.value);vEProof__QID__.saveOnChange()" >
+							<INPUT type="checkbox" class="checkUSESOLUTION__QID__" id="checkUSESOLUTION__QID__" onchange="vEProof__QID__.saveOnChange()" style="display:none"> <!-- Use Solution -->
+							<INPUT type="checkbox" class="checkSTUDANSWERSOLUTION__QID__" id="checkSTUDANSWERSOLUTION__QID__" checked onchange="vEProof__QID__.saveOnChange()" > Student Answer to Solution
+							<INPUT type="checkbox" class="checkENCRYPT__QID__" id="checkENCRYPT__QID__" onchange="vEProof__QID__.saveOnChange()" > Encrypt IMathAS-Solution
+							<INPUT type="checkbox" class="checkSTUDANSWEREXPORT__QID__" id="checkSTUDANSWEREXPORT__QID__" onchange="vEProof__QID__.saveOnChange()" > Export Student Answer
+							<BR>
+							File Format:
+							<SELECT class="sFILEFORMAT__QID__" id="sFILEFORMAT__QID__" onchange="vEProof__QID__.saveOnChange()" >
 								<OPTION value="XML">XML File</OPTION>
-                <OPTION value="IMathAS">iMathAS</OPTION>
-                <OPTION value="HTML">HTML File</OPTION>
-          		</SELECT>
+								<OPTION value="IMathAS">iMathAS</OPTION>
+							</SELECT>
 							<BUTTON type='button' class='bEXPORT__QID__' step='0'  id='bEXPORT__QID__'  onclick="vEProof__QID__.saveEProof2Filesystem()" style="color:blue">Save</BUTTON>
 							<BUTTON type='button' class='bEXPORTCLOSE__QID__' step='0'  id='bEXPORTCLOSE__QID__'  onclick="vEProof__QID__.clickCloseControl()" style="color:red">Cancel</BUTTON>
 							<BR>
-							<INPUT type="checkbox" class="checkUSESOLUTION__QID__" id="checkUSESOLUTION__QID__" onchange="vEProof__QID__.saveOnChange()" style="display:none"> <!-- Use Solution -->
-							<INPUT type="checkbox" class="checkSTUDANSWERSOLUTION__QID__" id="checkSTUDANSWERSOLUTION__QID__" checked onchange="vEProof__QID__.saveOnChange()" > Student Answer to Solution
-							<INPUT type="checkbox" class="checkENCRYPT__QID__" id="checkENCRYPT__QID__" onchange="vEProof__QID__.saveOnChange()" > Encrypt Solution
-							<INPUT type="checkbox" class="checkSTUDANSWEREXPORT__QID__" id="checkSTUDANSWEREXPORT__QID__" onchange="vEProof__QID__.saveOnChange()" > Export Student Answer
-              <BR>
-              <table border="0" id="settingMAINSAVE">
-                <tr>
-                  <td>
-                    <button type="button" id="MAINPATH__QID__" onclick="vEProof__QID__.setPath(this.id);vEProof__QID__.saveOnChange()">eProof Path</button>
-                  </td>
-                  <td>
-                    <INPUT type="text" size="80" class="MAINPATH__QID__" id="tMAINPATH__QID__" value="">
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    Subdirectory:
-                  </td>
-                  <td>
-                    <INPUT type="text" size="40" class="SUBDIRECTORY__QID__" id="tSUBDIRECTORY__QID__" value="Algebra" onchange="this.value=this.value.replace(/\s/g,'_')">
-                    <button type="button" id="SUBDIRECTORY__QID__" onclick="vEProof__QID__.setPath(this.id)"> OK </button>
-                  </td>
-                </tr>
-              </table>
-              <table border="0" id="settingHTML" style="display:none">
-                <tr>
-                  <td>
-                    <INPUT type="checkbox" class="checkLIBPATH__QID__" id="checkLIBPATH__QID__" onchange="vEProof__QID__.saveOnChange()" > Use
-                    Local Libs:
-                  </td>
-                  <td>
-                    <button type="button" id="LIBPATH__QID__" onclick="vEProof__QID__.setPath(this.id);vEProof__QID__.saveOnChange()">Library Path</button>
-                  </td>
-                  <td>
-                    <INPUT type="text" size="45" class="LIBPATH__QID__" id="tLIBPATH__QID__" value="">
-                    <INPUT type="text" size="45" class="CSSPATH__QID__" id="tCSSPATH__QID__" value="" style="display:none">
-                    </td>
-                  <td>
-                    <button type="button" onclick=";vEProof__QID__.setLibraryPath();vEProof__QID__.saveOnChange()"> OK </button>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <INPUT type="checkbox" class="checkMATHJAX_LOCAL__QID__" id="checkMATHJAX_LOCAL__QID__" onchange="vEProof__QID__.saveOnChange()" > Use
-                    Local MathJax:
-                  </td>
-                  <td>
-                    <button type="button" onclick="vEProof__QID__.setMathJaxPath();vEProof__QID__.saveOnChange()">MathJax Path</button>
-                  </td>
-                  <td>
-                    <input type=text class="MATHJAX_PATH__QID__" id="MATHJAX_PATH__QID__" value="./MathJax/" size="45" >
-                  </td>
-                  <td>
-                    <button type="button" onclick="vEProof__QID__.saveOnChange();vEProof__QID__.saveMathJaxPath()"> OK </button>
-                  </td>
-                </tr>
-              </table>
-              <table border="0" id="settingXML">
-                <tr>
-                  <td>
-                    <b>XML-Preferences:</b>
-                  </td>
-                  <td>
-                    Change settings of the e-Proof
-                  </td>
-                  <td>
-                    <button type="button" onclick="vEProof__QID__.clickPreferences()"> Preferences </button>
-                  </td>
-                </tr>
-              </table>
-              <table border="0" id="settingIMathAS"  style="display:none">
-                <tr>
-                  <td>
-                    <b>IMathAS-Preferences:</b>
-                  </td>
-                  <td>
-                    Change settings of the e-Proof
-                  </td>
-                  <td>
-                    <button type="button" onclick="vEProof__QID__.clickPreferences()"> Preferences </button>
-                  </td>
-                </tr>
-              </table>
-              <BR>
-              <TEXTAREA name="tSAVEXML__QID__" class="tSAVEXML__QID__" id="tSAVEXML__QID__" cols="100" rows="13" wrap="off">
+							<TEXTAREA name="tSAVEXML__QID__" class="tSAVEXML__QID__" id="tSAVEXML__QID__" cols="100" rows="13" wrap="off">
 							</TEXTAREA>
 						</TD>
 					</TR>
 					<TR class="SAVEIMATHAREA__QID__" id="SAVEIMATHAREA__QID__" style="display:none"  wrap="off">
 						<TD align="center">
-							<h2>SAVE Weebly, Offline and iMathAS-File</h2>
+							<h2>SAVE iMathAS-File</h2>
 							 Software-ID (SID):<input type="text" class="tSID__QID__" size='6' id="tSID__QID__" name="tSID__QID__" value="_SID"  onchange="vEProof__QID__.saveEProofIMath2Form()" >
 							 Question-ID (QID):<input type="text" class="tQID__QID__" size='6' id="tQID__QID__" name="tQID__QID__" value="$vQID" onchange="vEProof__QID__.saveEProofIMath2Form()" >
 							<BUTTON type='button' class='bIMPORTCANCEL__QID__' id='bIMPORTCONTROL__QID__'  onclick="vEProof__QID__.clickCloseControl()" style="color:red">Cancel</BUTTON></br>
@@ -697,31 +560,7 @@
 										   <b>Language-Code:</b>
 										</td>
 										<td valign="top">
-										  <!-- input type=text  class="SETTING__QID__" id="SET_LANGUAGE"  value="DE" size="3"  onchange="vEProof__QID__.updateSettingValue(this)"> 'DE' or 'EN' -->
-                      <select class="SETTING__QID__" id="SET_LANGUAGE"  onchange="vEProof__QID__.updateSettingValue(this)">
-                        <option value="DE">
-                          Deutsch
-                        </option>
-                        <option value="EN">
-                          English
-                        </option>
-                      </select>
-										</td>
-									</tr>
-                  <tr>
-										<td valign="top">
-										   <b>MathJax Format:</b>
-										</td>
-										<td valign="top">
-										  <!-- input type=text  class="SETTING__QID__" id="SET_MathFormat" value="20" size="20" onchange="vEProof__QID__.updateSettingValue(this)"> -->
-                      <select class="SETTING__QID__" id="SET_MathFormat"  onchange="vEProof__QID__.updateSettingValue(this)">
-                        <option value="AM_HTMLorMML">
-                          ASCII-Math
-                        </option>
-                        <option value="TeX-AMS-MML_HTMLorMML">
-                          LaTeX
-                        </option>
-                      </select>
+										  <input type=text  class="SETTING__QID__" id="SET_LANGUAGE"  value="DE" size="3"  onchange="vEProof__QID__.updateSettingValue(this)"> 'DE' or 'EN'
 										</td>
 									</tr>
 									<tr  valign="top">
@@ -802,6 +641,14 @@
 										</td>
 										<td valign="top">
 										  <input type=text  class="SETTING__QID__" id="SET_show_links"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>MathJax Format:</b>
+										</td>
+										<td valign="top">
+										  <input type=text  class="SETTING__QID__" id="SET_MathFormat" value="20" size="20" onchange="vEProof__QID__.updateSettingValue(this)">
 										</td>
 									</tr>
 									<tr>
@@ -891,59 +738,8 @@
 					</TR>
 					<TR class="TEMPLATEAREA__QID__" id="TEMPLATEAREA__QID__" style="display:none">
 						<TD align="center">
-              <HR><b>tTPL HTML HEADER</b><BR>
-							<TEXTAREA class="tTPLHTMLHEADER__QID__" id="TPLHTMLHEADER__QID__" cols="125" rows="8">
-<html id="HTMLROOT">
-  <head>
-    <TITLE>e-Proof-Creator for iMathAS</TITLE>
-    &lt;!--
-    #################################################################
-    #         Exporter: iMathAS Creator for e-Proofs
-    #     for Software: e-Proof-Creator
-    #         Filename: iMathAScreator.html
-    #     Used Library: library/ASCIIMathML.js
-    #                   Version 2.0.1 Sept 27, 2007, by Peter Jipsen
-    #                   library/xmlparser.js
-    #
-    # Author/Editor:      Engelbert Niehaus
-    # email:              niehaus@uni-landau.de
-    # created             13.10.2014
-    # last modifications  21.09.2016
-    # URL: http://e-proof.weebly.com
-    # GNU Public License - OpenSource
-    # created with JavaScript generator_exporter.html
-    #################################################################
-    --&gt;
-    <meta http-equiv="content-type" content="text/html; charset=UTF8" >
-    <script type="text/javascript" src="___MATHJAX_PATH___MathJax.js?config=AM_HTMLorMML&delayStartupUntil=configured"></script>
-___JAVASCRIPT_LIBRARIES___
-___CSS_FILES___
-
-</head>
-<body>
-              </TEXTAREA>
-              <HR><b>tTPL JAVASCRIPT LIBRARIES</b><BR>
-							<TEXTAREA class="tTPLJSLIBS__QID__" id="TPLJSLIBS__QID__" cols="125" rows="8">
-    <script type="text/javascript" src="___LIB_PATH___language.js"></script>
-    <script type="text/javascript" src="___LIB_PATH___eproofmain.js"></script>
-    <script type="text/javascript" src="___LIB_PATH___eproofmeth1.js"></script>
-    <script type="text/javascript" src="___LIB_PATH___eproofmeth2.js"></script>
-              </TEXTAREA>
-              <HR><b>tTPL JAVASCRIPT LIBRARIES</b><BR>
-							<TEXTAREA class="tTPLCSSFILES__QID__" id="TPLCSSFILES__QID__" cols="125" rows="8">
-
-  <link rel="stylesheet" href="___CSS_PATH___imathas.css" type="text/css">
-            </TEXTAREA>
-            <HR><b>tTPL HTML TAIL</b><BR>
-							<TEXTAREA class="tTPLHTMLTAIL__QID__" id="TPLHTMLTAIL__QID__" cols="125" rows="8">
-<center>
-   <font size=-2>e-ProofJS  Version: 2016/10/17</font>
-</center>
-</body>
-</html>
-              </TEXTAREA>
-              <HR><b>tTPL1 Preconditions</b><BR>
-  						<TEXTAREA class="tTPLIMATHAS" id="tTPLIMATHAS" cols="125" rows="8">
+							<HR><b>tTPL1 Preconditions</b><BR>
+							<TEXTAREA class="tTPLIMATHAS" id="tTPLIMATHAS" cols="125" rows="8">
 //--------------------------------------------------------------------------------------
 //-----e-PROOF (___THEOREM_LABEL___): ___THEOREM_TITLE___
 //--------------------------------------------------------------------------------------
@@ -1107,7 +903,7 @@ __do__so+=1
  									<!-- =======THEOREM====================== -->
 									<DIV id="THEOREM">
 										<h3>
-											<OUTTEXT class="THEOREMLABEL__QID__" id="THEOREMLABEL__QID__" ><img src='spinner.gif'> Theorem</OUTTEXT>:
+											<OUTTEXT class="THEOREMLABEL__QID__" id="THEOREMLABEL__QID__" >Theorem</OUTTEXT>:
 											<OUTTEXT class="THEOREMTITLE__QID__" id="THEOREMTITLE__QID__" >My Title</OUTTEXT>
 										</h3>
 										<div class="editTITLE__QID__" id="editTITLE__QID__" style="display:none">
@@ -1248,18 +1044,15 @@ __do__so+=1
                               <col width="20%">
                               <col width="70%">
 															<TR>
-																<TD> <!--  colspan="3" -->
+																<TD colspan="3">
 																	<B>(<OUTTEXT class="outNEXTNR__QID__" step="0" id="outNEXTNR__QID__">
 																		1
 																	</OUTTEXT>)
-                                </TD>
-                                <TD>
-																	<OUTTEXT class='bSelectSuggestion__QID__' step='0'  id='bSelectSuggestion__QID__0'  >Suggestion</OUTTEXT></B>
-                                </TD>
-                                <TD>
+																	<OUTTEXT class='bSelectSuggestion__QID__' step='0'  id='bSelectSuggestion__QID__0'  >Select Suggestion</OUTTEXT></B>
 																	<BUTTON type='button' class='bSelectSuggestionOK__QID__' step='0'  id='bSelectSuggestionOK__QID__0'  onclick="vEProof__QID__.selectSuggestion(this.getAttribute('step'))">  OK   </BUTTON>
-                                	<INPUT type="text" class='inCONSUGGESTION__QID__'  id='inCONSUGGESTION__QID__0' value=""  style="display:none" />
+																	<INPUT type="text" class='inCONSUGGESTION__QID__'  id='inCONSUGGESTION__QID__0' value=""  style="display:none" />
 																	<INPUT type="text" class='inIDSUGGESTION__QID__'  id='inIDSUGGESTION__QID__0' value="" style="display:none" />
+
 																</TD>
 															</TR>
 															<TR class='SUGGESTIONTR__QID__' step='0'  id='SUGGESTIONTR__QID__0'>
@@ -1267,12 +1060,12 @@ __do__so+=1
 																	[ID]
 																</TD>
 																<TD  class='CONSUGGESTION__QID__' step='0'  id='CONSUGGESTION__QID__0'>
-																		<INPUT type="radio" class='rCONSUGGESTION__QID__' value="0" name="rCONSUGGESTION__QID__0" id='rCONSUGGESTION__QID__0' /> Select Connection
+																		<INPUT type="radio" class='rCONSUGGESTION__QID__' value="0" name="rCONSUGGESTION__QID__0" id='rCONSUGGESTION__QID__0' />
 																		<OUTTEXT class='outCONSUGGESTION__QID__' step='0'  id='outCONSUGGESTION__QID__'>???</OUTTEXT>
 																</TD>
 																<TD class='IDSUGGESTION__QID__' step='0'  id='IDSUGGESTION__QID__0'>
 																		<INPUT type="radio" class='rIDSUGGESTION__QID__' name="rIDSUGGESTION__QID__0" id='rIDSUGGESTION__QID__0' />
-																		<OUTTEXT class='outIDSUGGESTION__QID__' step='0'  id='outIDSUGGESTION__QID__0'>StepDefinition for Long ProofSteps</OUTTEXT>
+																		<OUTTEXT class='outIDSUGGESTION__QID__' step='0'  id='outIDSUGGESTION__QID__0'>StepDef</OUTTEXT>
 																</TD>
 															</TR>
 														</table>
@@ -1344,19 +1137,18 @@ __do__so+=1
 		//-----Proof Pre-Processing------
 		//__SID__ is the extension of the Class and
 		var vEProof__QID__ = new EProof__SID__();
-    var vRootID = "EPROOF___QID___";
+		var vRootID = "EPROOF___QID___";
 		vRootID = "EPROOF__QID__";
 		var vRootDOM = document.getElementById(vRootID);
-		vEProof__QID__.load('__QID__','__THISQ__',vRootDOM,vRootID,'ELECTRON');
+		vEProof__QID__.load('__QID__','__THISQ__',vRootDOM,vRootID,'DEFAULT');
 		//alert("Root.id="+r.id);
 		//window.setTimeout("vEProof__QID__.load('__QID__','__THISQ__',vRootDOM,vRootID)",400);
 		//---------------------------
-    MathJax.Hub.Configured();
 	</script>
 	<!-- =====END DIV EPROOF===================================================== -->
 
 </FORM> <!-- END: FORM -->
 <center>
-<font size=-2>eproof.  Version: 2016/07/17</font>
+<font size=-2>Version: 2016/07/23</font>
 </center>
 </body></html>

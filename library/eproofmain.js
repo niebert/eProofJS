@@ -16,9 +16,6 @@
 // - Title aus XML-File wird nicht geladen
 // - Title wird aus XML nicht korrekt gelesen.
 //---------------------------------------------------------------------
-//---Import this Class in HTML-File with
-// <SCRIPT LANGUAGE="JavaScript" SRC="myclass.js"> </SCRIPT>
-//---------------------------------------------------------------------
 //---Constructor of Class EProof__SID__()
 // Call the constructor for creating an instance of class EProof__SID__
 // by the following command in HTML-file that imports this class
@@ -37,6 +34,7 @@ function EProof__SID__ () {
 	this.aDebug = "0";
 	//---------------
 	this.aUseMathJax = "1";
+	this.aMathJaxPath = "./MathJax/";
 	this.aQID = "__QID__";
 	this.aThisQ = "__THISQ__";
 	this.aRootID = "EPROOF" + this.aQID;
@@ -1260,9 +1258,10 @@ function EProof__SID__ () {
 		this.saveEProofIMath2Form();
 		this.getElementById("tIMATHCOMMONCONTROL_I"+this.aQID).value = this.createSettingsForm();
 		// getWeebly(pLibPath,pMathJaxPath,pMathJaxConfig,pQID,pThisQ,pSID,pAuthoring)
-		this.getElementById("tWEEBLYEXPORT"+this.aQID).value = this.getWeeblyEProof("/files/theme/",null,"LaTeX","_WEB","_TQ","_SID","DEFAULT");
-		this.getElementById("tEPROOFJSEXPORT"+this.aQID).value = this.getWeeblyEProof("library/","../MathJax/","ASCIIMath","__QID__","__THISQ__","__SID__","DEFAULT","HTMLROOT");
-		this.getElementById("tAUTHORINGEXPORT"+this.aQID).value = this.getWeeblyEProof("library/","../MathJax/","ASCIIMath","__QID__","__THISQ__","__SID__","AUTHORING","HTMLROOT");
+		// pMathJaxConfig = "ASCIIMath" or "LaTeX"
+		this.getElementById("tWEEBLYEXPORT"+this.aQID).value = this.getWeeblyEProof("/files/theme/",null,"ASCIIMath","_WEB","_TQ","_SID","DEFAULT","WEEBLY");
+		this.getElementById("tEPROOFJSEXPORT"+this.aQID).value = this.getWeeblyEProof("library/","./MathJax/","ASCIIMath","__QID__","__THISQ__","__SID__","DEFAULT","HTMLROOT");
+		this.getElementById("tAUTHORINGEXPORT"+this.aQID).value = this.getWeeblyEProof("library/","./MathJax/","ASCIIMath","__QID__","__THISQ__","__SID__","AUTHORING","HTMLROOT");
 		//this.showHideBoolean("PROOFCONTROL"+this.aQID,this.aSettings["show_Load_Save_Control"]);
 		//this.showHideBoolean("MAINCONTROL"+this.aQID,this.aSettings["show_Main_Control"]);
 
@@ -2210,6 +2209,32 @@ function EProof__SID__ () {
 		vOut += "VALUE='"+pValue+"' /"+this.GT+this.CR;
 		return vOut;
 	};
+	//#################################################################
+	//# Nested: createSolArrayString(pArr)
+	//#################################################################
+	this.createFileXML = function () {
+		var vOut = this.LT+"EPROOF"+this.GT+this.CR;
+		vOut += this.createSettingXML();
+		vOut += this.createStepsXML("PRECONDITION",2);
+		vOut += this.createStepsXML("CONCLUSION",2);
+		vOut += this.createStepsXML("JUSTIFICATION",2);
+		if (this.aCrypt) {
+			vOut += this.createStepsXML("PROOFSTEP",2);
+			vOut += this.createCryptSol("CRYPTSOL");
+		} else {
+			//vOut += this.createStepsXML("PROOFSTEP",2);
+			//vOut += this.createProofStepsXML("PROOFSTEP",5);
+			// createSolutionXML includes exports PROOFSTEPS 2
+			//vOut += this.createSolutionXML("SOLUTION",2,5);
+			vOut += this.createSolutionXML("PROOFSTEP",2,5);
+		};
+		if (this.aSAexport) {
+			vOut += this.createStudentAnswer2XML("STUDENTANSWER",10);
+		}
+		vOut += this.LT+"/EPROOF"+this.GT+this.CR;
+		return vOut;
+	};
+
 	//#################################################################
 	//# Nested: createSolArrayString(pArr)
 	//#################################################################

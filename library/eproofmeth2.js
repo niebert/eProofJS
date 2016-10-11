@@ -535,8 +535,12 @@ function createSuggestionStep_EProof__SID__(pStep) {
 					vHTML = this.LT+"i"+this.GT+"START"+this.LT+"/i"+this.GT;
 				} else {
 					//vHTML = this.vConnection2Node[vValue].innerHTML;
-					var vSource = this.vConnection2Node[vValue].getAttribute("source");
-					vHTML = this.decodeValue(vSource);
+					console.log("Connection Value='"+vValue+"'");
+					//var vConID = "CON-"+this.aQID+"-"+vValue;
+					//var vSource = this.getElementById(vConID).getAttribute("source");
+					//var vSource = this.vConnection2Node[vValue].getAttribute("source");
+					//vHTML = this.decodeValue(vSource);
+					vHTML = "`"+this.vConnectionArray[vValue]+"`";
 				};
 				vOutCon += vCR+this.LT+"INPUT type='radio' class=\""+vClass+"\" value=\""+vValue+"\" step=\""+pStep+"\" name=\""+vClass+"\" id=\""+vClass+"CON"+k+"\" onclick=\"vEProof"+this.aQID+".writeSelectionClick('"+pStep+"','inCON"+vBase+"','"+vValue+"')\" /"+this.GT;
 				vOutCon += vHTML;
@@ -620,7 +624,7 @@ function createSelectPosition_EProof__SID__() {
 //----End of Method createSelectPosition Definition
 
 //#################################################################
-//# Method: createSelectConnection4JS
+//# Method: createSelectConnection
 //#    used in Class: EProof__SID__
 //#
 //# Comment:
@@ -632,10 +636,10 @@ function createSelectPosition_EProof__SID__() {
 function createSelectConnection_EProof__SID__() {
 	//----Debugging------------------------------------------
 	// The following alert-Command is useful for debugging
-	//alert("eproof.js:createSelectConnection4JS()-Call")
+	//alert("eproof.js:createSelectConnection()-Call")
 	//----Create Object/Instance of EProof__SID__----
 	//    var vMyInstance = new EProof__SID__();
-	//    vMyInstance.createSelectConnection4JS();
+	//    vMyInstance.createSelectConnection();
 	//-------------------------------------------------------
 	var vContent    = "";
 	var i=0;
@@ -664,10 +668,11 @@ function createSelectConnection4JS_EProof__SID__() {
 	//    var vMyInstance = new EProof__SID__();
 	//    vMyInstance.createSelectConnection4JS();
 	//-------------------------------------------------------
+	console.log("createSelectConnection4JS()-Call");
 	var vContent    = "";
 	var i=0;
 	var vConID = "";
-	vContent    = this.LT+"ul id=\"ulCONNECTIONLIST\""+this.GT+this.CR;
+	//vContent    = this.LT+"ul id=\"ulCONNECTIONLIST\""+this.GT+this.CR;
 	while (i!=this.vConnectionName.length) {
 		vConID = "CON-"+this.aQID+"-"+i;
 		//vConID = "CON-"+i;
@@ -676,9 +681,9 @@ function createSelectConnection4JS_EProof__SID__() {
 		vContent +="`"+this.vConnectionArray[i]+"`"+this.LT+"/EPROOFCONNECTION"+this.GT+this.LT+"/li"+this.GT+this.CR;
 		i++;
 	};
-	vContent +=this.LT+"/ul"+this.GT;
-	//alert(vContent);
+	//vContent +=this.LT+"/ul"+this.GT;
 	//this.writeInnerHTML("tplCONNECTIONLIST"+this.aQID,vContent);
+	//console.log(vContent);
 	return vContent;
 };
 //----End of Method createSelectConnection4JS Definition
@@ -1350,6 +1355,7 @@ function init_EProof__SID__() {
 	//    var vMyInstance = new EProof__SID__();
 	//    vMyInstance.init();
 	//-------------------------------------------------------
+	console.log("Init E-Proof Environment with init().");
 	this.aListHeader      = new Array(); //Hash for PRECONDITION, PROOFSTEP, CONCLUSION, JUSTIFICATION
 	this.aAllID           = new Array(); //Array with ID
 	this.aAllID2Node      = new Array(); //Hash for Proof Step ID
@@ -1383,6 +1389,7 @@ function init_EProof__SID__() {
 	//this.aUsedDOM = pNodeDOM;
 	//this.vConnection2Node = this.getElementsByClassName("tplCONNECTION"+this.aQID);
 	//alert("this.vConnection2Node.length="+this.vConnection2Node.length);
+	this.initElectron();
 
 };
 //----End of Method init() Definition
@@ -2435,6 +2442,7 @@ function postProcess_EProof__SID__() {
 	//alert("postProcess(8.0)");
 	this.setVisibility4Proof("EDITComplete");
 	this.visibleManualAssess();
+	this.loadMathJaxPath();
 	//alert("postProcess(9.0)");
 	//if (this.onLoadAMprocess) this.rerenderMath();
 	//this.aStudentAnswerList = this.getAllSteps("SCAN");
@@ -2658,6 +2666,12 @@ function saveOnChange_EProof__SID__() {
 	this.aExportSA  = this.getElementById("checkSTUDANSWERSOLUTION"+this.aQID).checked;
 	this.aSAexport  = this.getElementById("checkSTUDANSWEREXPORT"+this.aQID).checked;
 	this.aExportSol = this.getElementById("checkUSESOLUTION"+this.aQID).checked;
+	var vCheck_MathJax_Local = this.getElementById("checkMATHJAX_LOCAL"+this.aQID).checked;
+	if (vCheck_MathJax_Local) {
+		this.aMathJaxPath = this.getElementById("MATHJAX_PATH"+this.aQID).value;
+	} else {
+		this.aMathJaxPath = "http://cdn.mathjax.org/mathjax/latest/";
+	}
 	//this.aExportSol = true;  //will be set by CheckBox "checkUSESOLUTION"
 	if (vFileFormat == "XML") {
 		//alert("SAVE XML - saveOnChange()-Call:2063 eproofmeth.js");
@@ -2671,6 +2685,7 @@ function saveOnChange_EProof__SID__() {
 	} else {
 		alert("Error: Export Format '"+vFileFormat+"' is undefined!");
 	};
+
 };
 //----End of Method saveOnChange() Definition
 
@@ -2683,8 +2698,19 @@ function saveOnChange_EProof__SID__() {
 //# created               3.3.2015
 //# last modifications    __DATE__
 //#################################################################
-function saveOfflineHTML_EProof__SID__() {
-	var vOut = this.getEProofHTML();
+function saveOfflineHTML_EProof__SID__(pEProofPath) {
+	// pEProofPath not used in default Method
+	//var vOut = this.getWeeblyEProof("library/","../MathJax/","ASCIIMath","__QID__","__THISQ__","__SID__","DEFAULT","HTMLROOT");
+	var vXMLcontent = this.createFileXML();
+	var vID = "tXMLFILE"+this.aQID+"1";
+	var vXML = this.getElementById(vID);
+	if (vXML) {
+		vXML.value = vXMLcontent;
+		vXML.innerHTML = vXMLcontent;
+	} else {
+		console.log("["+vID+"] not defined in saveOfflineHTML():2704 - eproofmeth2.js");
+	};
+	var vOut = this.getWeeblyEProof("library/",null,"ASCIIMath","_WEB","_TQ","_SID","HTMLROOT");
 	this.getElementById("tSAVEXML"+this.aQID).value = vOut;
 };
 //#################################################################
@@ -2699,26 +2725,7 @@ function saveOfflineHTML_EProof__SID__() {
 function saveXML_EProof__SID__() {
 	//var vCrypt = this.getElementById("SELECTSAVETYPE"+this.aQID).value;
 	//checkENCRYPT
-	var vOut = this.LT+"EPROOF"+this.GT+this.CR;
-	vOut += this.createSettingXML();
-	vOut += this.createStepsXML("PRECONDITION",2);
-	vOut += this.createStepsXML("CONCLUSION",2);
-	vOut += this.createStepsXML("JUSTIFICATION",2);
-	if (this.aCrypt) {
-		vOut += this.createStepsXML("PROOFSTEP",2);
-		vOut += this.createCryptSol("CRYPTSOL");
-	} else {
-		//vOut += this.createStepsXML("PROOFSTEP",2);
-		//vOut += this.createProofStepsXML("PROOFSTEP",5);
-		// createSolutionXML includes exports PROOFSTEPS 2
-		//vOut += this.createSolutionXML("SOLUTION",2,5);
-		vOut += this.createSolutionXML("PROOFSTEP",2,5);
-	};
-	if (this.aSAexport) {
-		vOut += this.createStudentAnswer2XML("STUDENTANSWER",10);
-	}
-	vOut += this.LT+"/EPROOF"+this.GT+this.CR;
-	this.getElementById("tSAVEXML"+this.aQID).value = vOut;
+	this.getElementById("tSAVEXML"+this.aQID).value = this.createFileXML();
 };
 //----End of Method saveXML() Definition
 //#################################################################
@@ -2731,43 +2738,7 @@ function saveXML_EProof__SID__() {
 //# last modifications    __DATE__
 //#################################################################
 function saveIMathAS_EProof__SID__() {
-	alert("Save IMathAS");
-	var vOut = "";
-	var vHash = new Array();
-	vOut = this.createSettingIMathAS();
-	vOut = this.createStepsIMathAS("Precondition",vOut);
-	vOut = this.createStepsIMathAS("Conclusion",vOut);
-	vOut = this.createStepsIMathAS("Justification",vOut);
-	vOut = this.createStepsIMathAS("ProofStep",vOut);
-	if (this.aCrypt) {
-		vOut = this.createSolutionIMathAS("CryptSolution",vOut);
-	//} else {
-	};
-	vOut = this.createSolutionIMathAS("SolutionStep",vOut);
-	var vRet = "//--- Student Answers not defined/exported ---"+this.CR;
-	var vFormSA = this.createStudentAnswer2IMathAS();
-	var vArr = vFormSA.split(this.CR);
-	var vPre  = this.DO+"StudentAnswer=\"";
-	var vJoin = "\""+this.CR+this.DO+"StudentAnswer.=\"";
-	var vPost = "\""+this.CR;
-	if (this.aSAexport) {
-		vRet = this.saveArr2IMathAS(vArr,vPre,vJoin,vPost);
-	}
-	vOut = this.replaceString(vOut,"___STUDENTANSWERS___",vRet);
-	vArr = (this.aSettings["COMMONCONTROL"]).split(/,|__[coCO]+__/);
-	vPre  = "includecodefrom(";
-	vJoin = ")"+this.CR+vPre;
-	vPost = ")"+this.CR;
-	vRet = this.saveArr2IMathAS(vArr,vPre,vJoin,vPost);
-	vOut = this.replaceString(vOut,"___INCLUDECODE___",vRet);
-	vArr = (this.aSettings["QUESTIONTEXT"]).split(/,|__[coCO]+__/);
-	vPre  = "// includeqtextfrom(";
-	vJoin = ")"+this.CR+vPre;
-	vRet = this.saveArr2IMathAS(vArr.slice(1),vPre,vJoin,vPost);
-	vRet = "// "+this.LT +"SCRIPT type='text/javascript'"+this.GT + this.CR +vRet;
-	vRet += "// "+this.LT +"/SCRIPT"+this.GT + this.CR;
-	vRet += vPre + vArr[0] + ")";
-	vOut = this.replaceString(vOut,"___INCLUDEQTEXT___",vRet);
+	var vOut = this.getIMathASProof();
 	this.getElementById("tSAVEXML"+this.aQID).value = vOut;
 };
 //----End of Method saveIMathAS() Definition
