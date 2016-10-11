@@ -347,6 +347,8 @@ function appendMethods_EProof__SID__ () {
     var vHeader = this.getValueDOM("TPLHTMLHEADER"+this.aQID);
   	var vJS = this.getJavascriptLibs(pPathJS);
   	var vCSS = this.getStylesCSS(pPathCSS);
+    var vTitle = this.aSettings["Theorem_Label"]+" - "+this.aSettings["Theorem_Title"];
+    vHeader = this.replaceString(vHeader,"___EPROOF_TITLE___",vTitle);
     vHeader = this.replaceString(vHeader,"___CSS_FILES___",vCSS);
     vHeader = this.replaceString(vHeader,"___MATHJAX_PATH___",pMathJaxPath);
     vHeader = this.replaceString(vHeader,"___MATHJAX_CONFIG___",pMathJaxConfig);
@@ -2140,7 +2142,27 @@ function appendMethods_EProof__SID__ () {
 			alert("Error: toggleEdit()-Call - STEPEDITOR for Step="+vStep+" is undefined!");
 		}
 	};
+  //#################################################################
+	//# Nested: toggleStudentView()
 	//#################################################################
+	this.toggleStudentView = function (pButtonEDIT) {
+    //this.AUTHORINGMODE
+    this.clickCloseControl();
+    var vMode = this.aSettings["AuthoringMode"];
+    if (vMode == "1") {
+      vMode = "0";
+      this.hide("CONTROLBUTTONS"+this.aQID);
+      this.hide("MAINCONTROL"+this.aQID);
+    } else {
+      vMode = "1";
+      this.show("CONTROLBUTTONS"+this.aQID);
+      this.show("MAINCONTROL"+this.aQID);
+    };
+    this.aSettings["AuthoringMode"] = vMode;
+    var vNoCallVis4Proof= "1";
+    this.toggleAuthoringMode(vMode,vNoCallVis4Proof);
+  };
+  //#################################################################
 	//# Nested: setminusarrays
 	//#################################################################
 	this.setminusarrays = function (x, y) {

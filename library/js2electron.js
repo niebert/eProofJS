@@ -10,13 +10,15 @@
 //# created with JavaScript Class Generator by Engelbert Niehaus
 //#################################################################
      const fs    = require('fs');
-     const exec = require('child_process').exec;
-     const spawn = require('child_process').spawn;
-     const child = require('child_process').execFile;
-     const shell = require('electron').shell;
+     const child_process = require('child_process');
+     const exec = child_process.exec;
+     const spawn = child_process.spawn;
+     const child = child_process.execFile;
+     const electron = require('electron');
+     const shell = electron.shell;
      const path  = require('path');
      //const remote  = require('remote');
-     const remote = require('electron').remote;
+     const remote = electron.remote;
      var app    = remote.app;
      var dialog = remote.dialog;
      var vPathSeparator = "/";
@@ -292,6 +294,7 @@ function appendElectronMethods_EProof__SID__ () {
         console.log("Save File ["+vType+"]: "+vPath +vFilename);
         saveFile(vPath + vFilename,vContent);
         alert("File '"+vFilename+"' saved!");
+        //electron.shell.openExternal(vPath +vFilename);
        };
   };
   //#################################################################

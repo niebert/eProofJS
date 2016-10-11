@@ -49,7 +49,7 @@ let template = [{
   }, {
     type: 'separator'
   }, {
-    label: 'Save',
+    label: 'Save XML',
     accelerator: 'CmdOrCtrl+S',
     click() {
       console.log("MENU CALL: Show save e-Proof page");
@@ -57,11 +57,13 @@ let template = [{
       mainWindow.webContents.send('menucall', 'vEProof__QID__.clickSaveXML()');
     }
   }, {
-    label: 'Save As ...',
-    accelerator: 'Shift+CmdOrCtrl+S',
+    label: 'Save e-Proof',
+    //accelerator: 'Shift+CmdOrCtrl+S',
+    accelerator: 'CmdOrCtrl+E',
     click() {
-      console.log("MENU CALL: Save As Dialog e-Proof");
-      mainWindow.webContents.send('menucall', 'vEProof__QID__.saveAsOpenDialog()');
+      console.log("MENU CALL: Save e-Proof HTML");
+      //mainWindow.webContents.send('menucall', 'vEProof__QID__.saveAsOpenDialog()');
+      mainWindow.webContents.send('menucall', 'vEProof__QID__.clickSaveHTML()');
     }
   }, {
     label: 'Preferences',
@@ -156,10 +158,22 @@ let template = [{
   }, {
     type: 'separator'
   }, {
+    label: 'Toggle Student View',
+    click() {
+      console.log("MENU CALL: Toggle Student View e-Proof");
+      mainWindow.webContents.send('menucall', "vEProof__QID__.toggleStudentView()");
+    }
+  }, {
+    label: 'Toggle Load/Save',
+    click() {
+      console.log("MENU CALL: Toggle Load/Save e-Proof");
+      mainWindow.webContents.send('menucall', "vEProof__QID__.toggle('CONTROLBUTTONS__QID__')");
+    }
+  }, {
     label: 'Toggle Control',
     click() {
-      console.log("MENU CALL: Save As Dialog e-Proof");
-      mainWindow.webContents.send('menucall', 'vEProof__QID__.toggleMAINCONTROL()');
+      console.log("MENU CALL: Toggle Main Control e-Proof");
+      mainWindow.webContents.send('menucall', "vEProof__QID__.toggle('MAINCONTROL__QID__')");
     }
   }]
 }, {
@@ -188,9 +202,14 @@ let template = [{
   label: 'Help',
   role: 'help',
   submenu: [{
-      label: 'Learn More',
-      click: function () {
-        electron.shell.openExternal('http://electron.atom.io')
+        label: 'Help eProofJS',
+        click: function () {
+          electron.shell.openExternal('http://e-proof.weebly.com')
+      },
+      {
+        label: 'Learn about Electron',
+        click: function () {
+          electron.shell.openExternal('http://electron.atom.io')
       }
   }]
 }]

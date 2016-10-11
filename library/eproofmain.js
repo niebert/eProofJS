@@ -476,7 +476,14 @@ function EProof__SID__ () {
 	//#################################################################
 	this.appendStep = function (pButtonDOM) {
 		var vStep = pButtonDOM.getAttribute("step");
+		this.appendStepParam(vStep)
+	};
+	//#################################################################
+	//# Nested: appendStepParam(pButtonDOM)
+	//#################################################################
+	this.appendStepParam = function (pStep) {
 		//var vOldPos = this.getElementById("oldPOSITION"+this.aQID+vStep).value;
+		var vStep = pStep || 1;
 		var vOldPos = this.aStep2Index[vStep]+1;
 		//alert("appendStep(): vStep=" + vStep + " vOldPos =" +vOldPos+ " TO pNewPos=0");
 		this.moveStep(vOldPos,0);
@@ -1193,13 +1200,7 @@ function EProof__SID__ () {
 	//#################################################################
 	this.clickLoad = function () {
 		//alert("clickLoad()-Call");
-		this.show("LOADAREA"+this.aQID);
-		this.hide("PROOFTABLE"+this.aQID);
-		this.hide("MAINCONTROL"+this.aQID);
-		this.hide("SAVEXMLAREA"+this.aQID);
-		this.hide("SAVEIMATHAREA"+this.aQID);
-		this.hide("PREFERENCESAREA"+this.aQID);
-		this.hide("CONTROLBUTTONS"+this.aQID);
+		this.clickControlHide("LOADAREA");
 		var vFileXML = this.getChildById(this.aRootDOM,"COPYTOLOAD"+this.aQID).value;
 		//alert("vFileXML="+vFileXML);
 		var vLoadForm = this.getChildById(this.aRootDOM,"tLOAD"+this.aQID);
@@ -1214,13 +1215,7 @@ function EProof__SID__ () {
 	//#################################################################
 	this.clickPreferences = function () {
 		//alert("clickPreferences()-Call");
-		this.show("PREFERENCESAREA"+this.aQID);
-		this.hide("PROOFTABLE"+this.aQID);
-		this.hide("MAINCONTROL"+this.aQID);
-		this.hide("LOADAREA"+this.aQID);
-		this.hide("SAVEXMLAREA"+this.aQID);
-		this.hide("SAVEIMATHAREA"+this.aQID);
-		this.hide("CONTROLBUTTONS"+this.aQID);
+		this.clickControlHide("PREFERENCESAREA");
 		this.aSettings["vQID"] = this.getStringQID("");
 		this.init_default_settings();
 		this.updateSettings2Form();
@@ -1228,15 +1223,24 @@ function EProof__SID__ () {
 	//#################################################################
 	//# Nested: clickSaveXML()
 	//#################################################################
+	this.clickControlHide = function (pID) {
+		var vArray = ["SAVEXMLAREA","PROOFTABLE","MAINCONTROL","LOADAREA","SAVEIMATHAREA","PREFERENCESAREA","CONTROLBUTTONS"];
+		var k=0;
+		while (k != vArray.length) {
+			if (vArray[k] == pID) {
+				this.show(vArray[k]+this.aQID);
+			} else {
+				this.hide(vArray[k]+this.aQID);
+			};
+			k++;
+		}
+	};
+	//#################################################################
+	//# Nested: clickSaveXML()
+	//#################################################################
 	this.clickSaveXML = function () {
-		//alert("clickSaveXML()-Call");
-		this.show("SAVEXMLAREA"+this.aQID);
-		this.hide("PROOFTABLE"+this.aQID);
-		this.hide("MAINCONTROL"+this.aQID);
-		this.hide("LOADAREA"+this.aQID);
-		this.hide("SAVEIMATHAREA"+this.aQID);
-		this.hide("PREFERENCESAREA"+this.aQID);
-		this.hide("CONTROLBUTTONS"+this.aQID);
+			//alert("clickSaveXML()-Call");
+		this.clickControlHide("SAVEXMLAREA");
 		this.aSettings["vQID"] = this.getStringQID("");
 		this.saveXML();
 	};
@@ -1245,13 +1249,7 @@ function EProof__SID__ () {
 	//#################################################################
 	this.clickSaveIMathAS = function () {
 		//alert("clickSaveIMathAS()-Call");
-		this.hide("PROOFTABLE"+this.aQID);
-		this.hide("MAINCONTROL"+this.aQID);
-		this.show("SAVEIMATHAREA"+this.aQID);
-		this.hide("LOADAREA"+this.aQID);
-		this.hide("SAVEXMLAREA"+this.aQID);
-		this.hide("PREFERENCESAREA"+this.aQID);
-		this.hide("CONTROLBUTTONS"+this.aQID);
+		this.clickControlHide("SAVEIMATHAREA");
 		this.aSettings["vQID"] = this.getStringQID("");
 		//this.hide("PROOFCONTROL"+this.aQID);
 		//this.hide("MAINCONTROL"+this.aQID);
@@ -1262,10 +1260,19 @@ function EProof__SID__ () {
 		this.getElementById("tWEEBLYEXPORT"+this.aQID).value = this.getWeeblyEProof("/files/theme/",null,"ASCIIMath","_WEB","_TQ","_SID","DEFAULT","WEEBLY");
 		this.getElementById("tEPROOFJSEXPORT"+this.aQID).value = this.getWeeblyEProof("library/","./MathJax/","ASCIIMath","__QID__","__THISQ__","__SID__","DEFAULT","HTMLROOT");
 		this.getElementById("tAUTHORINGEXPORT"+this.aQID).value = this.getWeeblyEProof("library/","./MathJax/","ASCIIMath","__QID__","__THISQ__","__SID__","AUTHORING","HTMLROOT");
-		//this.showHideBoolean("PROOFCONTROL"+this.aQID,this.aSettings["show_Load_Save_Control"]);
-		//this.showHideBoolean("MAINCONTROL"+this.aQID,this.aSettings["show_Main_Control"]);
-
 	};
+	//#################################################################
+	//# Nested: clickSaveHTML()
+	//#################################################################
+	this.clickSaveHTML = function () {
+		alert("Create standalone HTML File for e-Proof - please wait ...");
+		this.getElementById("sFILEFORMAT"+this.aQID).value = "HTML";
+		this.setSaveSettings("HTML");
+		this.getElementById("tSAVEXML"+this.aQID).value = "Please wait ...";
+		this.clickSaveXML();
+		top.setTimeout('vEProof'+this.aQID+'.saveOnChange("HTML");alert("File generated. Press Save-Button")',1000);
+	};
+
 	//#################################################################
 	//# Nested: compareCon(a,b)
 	//#################################################################
@@ -1410,6 +1417,8 @@ function EProof__SID__ () {
 	//#################################################################
 	this.createAllStudentAnswers = function() {
 		//alert("createAllStudentAnswers() "+this.aAllID.length);
+		//var vUnusedNodes = this.getUnusedSteps();
+		this.aUnusedDOM = this.getElementById("UNUSEDSTEPS"+this.aQID);
 		var vTplDOM = this.getTemplateDOM();
 		if (!vTplDOM) {
 			console.log("createAllStudentAnswers() uses undefined Template");

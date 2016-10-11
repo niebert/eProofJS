@@ -65,7 +65,27 @@ function addStepDefinition_EProof__SID__ (pButton) {
 	vInNode.value += this.CR +vID+ this.aSeparator +"Definition "+vLanguage["for"]+" "+vStepType;
 	//alert("StepType="+vStepType+ " vChar="+vChar+" new ID=["+vID+"]");
 	alert(vLanguage["New"]+" "+vLanguage["Step"]+" "+vLanguage["with"]+" ID=["+vID+"]"+this.CR+"["+vStepType+"]");
+	var vMathJaxRender = "0";
+	this.reloadProof(vMathJaxRender);
+	if ((vChar=="C") || (vChar == "S")) {
+		var vIndex = this.aID2Index[vID];
+		var vStep = this.aIndex2Step[vIndex];
+		console.log("Append ["+vID+"] to StudentAnswer Step="+vStep);
+	};
 	this.reloadProof();
+	this.appendStepParam(vStep);
+	if (vChar=="C") {
+		//Append Conclusion to Solution
+		var vPrevID = " ";
+		var i = this.aID2Index[vID];
+		this.checkSolStep(vID);
+		this.aID2Solutions[vID]["ASSESS"].push(i);
+		this.aID2Solutions[vID]["PREV"].push(vPrevID);
+		this.aID2Solutions[vID]["PREV_REC"].push(i);
+		this.aID2Solutions[vPrevID]["NEXT"].push(vID);
+		this.aID2Solutions[vPrevID]["NEXT_REC"].push(i);
+	}
+
 };
 //#################################################################
 //# Method: append_template(pAnswerHash,pInnerHash,pStep)
@@ -2541,7 +2561,7 @@ function removeAllChildren_EProof__SID__() {
 //# last modifications    __DATE__
 //#################################################################
 
-function reloadProof_EProof__SID__() {
+function reloadProof_EProof__SID__(pMathJaxRender) {
 	//----Debugging------------------------------------------
 	// The following alert-Command is useful for debugging
 	//alert("eproof.js:reloadProof()-Call")
@@ -2550,11 +2570,15 @@ function reloadProof_EProof__SID__() {
 	//    vMyInstance.hide();
 	//-------------------------------------------------------
 	//alert("reloadProof() call init()");
+	var vMathJaxRender = pMathJaxRender || "1";
 	this.init();
 	this.preProcess();
 	//alert("reloadProof(1)");
 	this.onLoadAMprocess = true; //ASCII Math Processing of Source Steps switch on
 	this.load_IMathAS();
+	if (vMathJaxRender == "1") {
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
+	};
 };
 //----End of Method reloadProof() Definition
 
@@ -2658,10 +2682,11 @@ function save_Form_LocalStorage_EProof__SID__(pForm,pOut) {
 //# created               3.3.2015
 //# last modifications    __DATE__
 //#################################################################
-function saveOnChange_EProof__SID__() {
+function saveOnChange_EProof__SID__(pFileFormat) {
 	//var vCrypt = this.getElementById("SELECTSAVETYPE"+this.aQID).value;
 	//checkENCRYPT
-	var vFileFormat = this.getElementById("sFILEFORMAT"+this.aQID).value;
+	var vFileFormat = pFileFormat || this.getElementById("sFILEFORMAT"+this.aQID).value;
+	console.log("saveOnChange('"+vFileFormat+"')");
 	this.aCrypt     = this.getElementById("checkENCRYPT"+this.aQID).checked;
 	this.aExportSA  = this.getElementById("checkSTUDANSWERSOLUTION"+this.aQID).checked;
 	this.aSAexport  = this.getElementById("checkSTUDANSWEREXPORT"+this.aQID).checked;
