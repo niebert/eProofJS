@@ -77,7 +77,7 @@ let template = [{
   }, {
     label: 'Quit',
     accelerator: 'CmdOrCtrl+Q',
-    role: 'selectall'
+    role: 'quit'
   }]
 }, {
   label: 'Edit',
@@ -202,14 +202,14 @@ let template = [{
   label: 'Help',
   role: 'help',
   submenu: [{
-        label: 'Help eProofJS',
-        click: function () {
-          electron.shell.openExternal('http://e-proof.weebly.com')
-      },
-      {
-        label: 'Learn about Electron',
-        click: function () {
-          electron.shell.openExternal('http://electron.atom.io')
+      label: 'Learn about e-ProofJS',
+      click: function () {
+        electron.shell.openExternal('http://e-proof.weebly.com')
+      }
+  }, {
+      label: 'Learn about Electron',
+      click: function () {
+        electron.shell.openExternal('http://electron.atom.io')
       }
   }]
 }]

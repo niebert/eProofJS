@@ -16,7 +16,7 @@
      const child = child_process.execFile;
      const electron = require('electron');
      const shell = electron.shell;
-     const path  = require('path');
+     //const path  = require('path');
      //const remote  = require('remote');
      const remote = electron.remote;
      var app    = remote.app;
@@ -244,11 +244,12 @@ function appendElectronMethods_EProof__SID__ () {
   };
 
   //#################################################################
-  //## openIMathAScode()
+  //# Nested: renameCharCounter1()
   //#################################################################
-  this.X_openIMathAScode = function () {
-    const {shell} = require('electron');
-    shell.openExternal("./code/index.html");
+  this.openWindow = function (pURL) {
+    //window.open(pURL);
+    console.log("openWindow('"+pURL+"')");
+    shell.openExternal(pURL);
   }
 
   //#################################################################

@@ -2225,10 +2225,9 @@ function preProcess_EProof__SID__() {
 function preProcess4Lanugage_EProof__SID__() {
 	this.setConnection2Index();
 	this.createDisplayOptions();
-	this.getElementById("LINKINFO1"+this.aQID).setAttribute("href",this.vLink_Tutorial);
-	this.getElementById("LINKINFO2"+this.aQID).setAttribute("href",this.vLink_Screencast);
-	this.getElementById("LINKINFO3"+this.aQID).setAttribute("href",this.vLink_ASCIIMath);
-	//this.getElementById("LINKINFO4"+this.aQID).setAttribute("href",this.vLink_ASCIIMath);
+	this.openWindowSetURL("LINKINFO1",this.vLink_Tutorial);
+	this.openWindowSetURL("LINKINFO2",this.vLink_Screencast);
+	this.openWindowSetURL("LINKINFO3",this.vLink_ASCIIMath);
 	if (this.aSettings["show_links"] == "0") {
 		this.getElementById("LINKHEADERURL1"+this.aQID).innerHTML = this.LT+"b"+this.GT+"Information"+this.LT+"/b"+this.GT;
 		this.getElementById("LINKHEADERURL2"+this.aQID).innerHTML = "";

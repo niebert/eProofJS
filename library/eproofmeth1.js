@@ -1126,10 +1126,24 @@ function appendMethods_EProof__SID__ () {
 		return this.aCharCounter[pChar];
 	};
   //#################################################################
-	//# Nested: renameCharCounter1()
+	//# Nested: openIMathAScode()
 	//#################################################################
 	this.openIMathAScode = function () {
-    window.open("./code/index.html");
+    this.openWindow("./code/index.html");
+  };
+  //#################################################################
+	//# Nested: openWindowSetURL(pID, pURL)
+	//#################################################################
+	this.openWindowSetURL = function(pID, pURL) {
+  	this.getElementById(pID+this.aQID).setAttribute("href","javascript:vEProof"+this.aQID+".openWindow('"+pURL+"')");
+  };
+
+  //#################################################################
+  //# Nested: renameCharCounter1()
+  //#################################################################
+  this.openWindow = function (pURL) {
+      console.log("openWindow('"+pURL+"') Javascript");
+      window.open(pURL);
   }
 	//#################################################################
 	//# Nested: renameCharCounter1()
