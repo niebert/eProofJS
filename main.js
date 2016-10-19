@@ -37,7 +37,8 @@ let template = [{
     label: 'New',
     click() {
       console.log("MENU CALL: NEW XML e-Proof");
-      mainWindow.webContents.send('menucall', 'readFile("xmlproof/new.xml","tLOAD"+vEProof__QID__.aQID,vEProof__QID__)');
+      //mainWindow.webContents.send('menucall', 'readFile("xmlproof/new.xml","tLOAD"+vEProof__QID__.aQID,vEProof__QID__)');
+      mainWindow.webContents.send('menucall', 'newFile()');
     }
   }, {
     label: 'Open',

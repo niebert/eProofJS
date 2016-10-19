@@ -28,12 +28,28 @@
      //};
      //var vPandocDocs = app.getPath('documents')+vPathSeparator+"PanDoc";
 
+
+
 //----IPC Electron triggered from main.JS-e-Proof
 require('electron').ipcRenderer.on('menucall', function(event, pMenuCall) {
      console.log("MENU CALL:" + pMenuCall);  // Prints "whoooooooh!"
      //alert("CALL: "+pMenuCall);
      eval(pMenuCall);
    });
+
+//#################################################################
+//## MENU CALL: newFile()
+//#################################################################
+function newFile() {
+	var vSep = getPathSeparator(); // is on Linux/Mac "/" on Windows "Backslash"
+	if (vSep == "\\") {
+    	// alert("Windows setDefaultValues()");
+  	};
+  	var vPathMain = app.getPath('documents')+vSep+"PanDoc"+vSep+"tpl"+vSep+"DEFAULT"+vSep+"eproofxml"+vSep;
+  
+	readFile(vPathMain+"new.xml","tLOAD"+vEProof__QID__.aQID,vEProof__QID__)
+};
+
 
 function appendElectronMethods_EProof__SID__ () {
   //alert("appendElectronMethods()-Call");
@@ -302,8 +318,9 @@ function appendElectronMethods_EProof__SID__ () {
         var vFilename = this.getFilename4Type(vType);
         makedirpath(vPath);
         console.log("Save File ["+vType+"]: "+vPath +vFilename);
-        saveFile(vPath + vFilename,vContent);
         alert("File '"+vFilename+"' saved!");
+        saveFile(vPath + vFilename,vContent);
+        //alert("File '"+vFilename+"' saved!");
         //electron.shell.openExternal(vPath +vFilename);
        };
   };
@@ -330,6 +347,7 @@ function appendElectronMethods_EProof__SID__ () {
     switch (pID) {
       case "SUBDIRECTORY"+this.aQID:
         localStorage.setItem("t"+pID, vValue);
+        vDefaultPath = this.checkEProofDir(vValue);
         alert("Subdirectory '"+vValue+"' saved in Local Storage!")
         break;
       case "MAINPATH"+this.aQID:
@@ -389,12 +407,15 @@ function appendElectronMethods_EProof__SID__ () {
   //#################################################################
   //# checkEProofDir()
   //#################################################################
-  this.checkEProofDir = function () {
+  this.checkEProofDir = function (pSubDir) {
     var vSep = getPathSeparator();
     var vPath = app.getPath('documents')+vSep+"eProofs";
     vPath = this.getLocalStorage("tMAINPATH"+this.aQID,vPath);
+    if (pSubDir) {
+    	vPath += vSep + pSubDir;
+    };
     if (checkPathExists(vPath)) {
-      console.log("eProofs Folder exists");
+      console.log("eProofs '"+vPath+"' Folder exists");
     } else {
       makedirpath(vPath);
     };

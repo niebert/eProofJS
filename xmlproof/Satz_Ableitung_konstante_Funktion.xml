@@ -1,0 +1,71 @@
+<EPROOF>
+  <VARIABLE NAME='TITLE' VALUE='Konstante Funktion und Ableitung' />
+  <VARIABLE NAME='THEOREM_APPENDIX' VALUE='__lt__b__gt__Hinweis:__lt__/b__gt__ Der Beweis gliedert sich in zwei Teile die jeweils mit [AS..] bzw. [BS..] gekennzeichnet wurden' />
+  <VARIABLE NAME='AUTHORINGMODE' VALUE='0' />
+  <VARIABLE NAME='SHOW_FEEDBACK_SCORE' VALUE='1' />
+  <VARIABLE NAME='SHOW_PROOF_SOLUTION' VALUE='1' />
+  <VARIABLE NAME='SELECTBOX_PROOFSTEPS' VALUE='1' />
+  <VARIABLE NAME='ALLOW_OWN_PROOFSTEPS' VALUE='1' />
+  <VARIABLE NAME='PER_ERROR_MINUS_PERCENT' VALUE='20' />
+  <VARIABLE NAME='UNNECESSARY_PRECONDITIONS' VALUE='3' />
+  <VARIABLE NAME='UNNECESSARY_PROOFSTEPS' VALUE='3' />
+  <VARIABLE NAME='UNNECESSARY_CONNECTIONS' VALUE='3' />
+  <VARIABLE NAME='RANDOMIZE_PROOFSTEP_IDS' VALUE='1' />
+  <VARIABLE NAME='REMAP_PROOFSTEP_IDS' VALUE='1' />
+  <VARIABLE NAME='CODE_ID_I' VALUE='4001' />
+  <VARIABLE NAME='CODE_ID_II' VALUE='4002' />
+  <VARIABLE NAME='CODE_ID_III' VALUE='4200' />
+  <VARLIST NAME='PRECONDITION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='P-1' VALUE='Sei `G subseteq CC` ein Gebiet in `CC`' />
+    <STEPDEF SIZE='2' ID='P-2' VALUE='Sei `f: G -__gt__ CC` ein holomorphe Funktion' />
+  </VARLIST>
+  <VARLIST NAME='CONCLUSION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='C-1' VALUE='`f` konstant `__lt____eq____gt__` `AA_{z in G} \ f^{/}(z) __eq__0`' />
+  </VARLIST>
+  <VARLIST NAME='JUSTIFICATION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='DU' VALUE=' `AA_(a,b in CC) : |a + b| __lt____eq__ |a| + |b| `' />
+    <STEPDEF SIZE='2' ID='DG' VALUE=' `AA_(a,b,c in M) : a * (b + c) __eq__ a * b + a * c` ' />
+    <STEPDEF SIZE='2' ID='AG' VALUE=' `AA_(a,b,c in M) : (a + b) + c __eq__ a + (b + c)` ' />
+    <STEPDEF SIZE='2' ID='DIF' VALUE='Definition der komplexen Ableitung' />
+    <STEPDEF SIZE='2' ID='ST' VALUE='Satz: Besitzt `f:G-__gt__ CC` eine Stammfunktion `F` auf `G`, dann lässt sich für einen glatten Weg `gamma:[a,b]-__gt__ G` das Wegintegral durch `int_{gamma} f(z)\ dz __eq__ F(gamma(b)) - F(gamma(a))` berechnen.' />
+    <STEPDEF SIZE='2' ID='WE' VALUE='Definition (Weg): Sei `U subseteq CC` eine Teilmenge und `a,b in RR` mit `a __lt__ b`. Ein Weg `gamma` in `U` ist eine stetige Abbildung `gamma : [a,b] -__gt__ CC` mit `gamma(U) subseteq U`.' />
+    <STEPDEF SIZE='2' ID='SPU' VALUE='Definition (Spur): Sei `gamma: [a,b] -__gt__ CC` ein Weg. Die Spur von `gamma` ist definiert als:  `__qu__Spur__qu__(gamma):__eq__ { gamma(t) in CC | t in [a,b] }`. ' />
+    <STEPDEF SIZE='2' ID='WZ' VALUE='Definition (wegzusammenhängend): Sei `U subseteq CC` eine Teilmenge. `U` heißt wegzusammenhängend,  wenn es zu beliebigen Punkt `z_1, z_2 in U` einen Weg `gamma:[a,b] -__gt__ CC` gibt, mit `gamma(a)__eq__z_1`,`gamma(b)__eq__z_2` und `__qu__Spur__qu__(gamma) subseteq U`. ' />
+    <STEPDEF SIZE='2' ID='GE' VALUE='Definition (Gebiet): Eine Teilmenge `G subseteq CC` heißt Gebiet, wenn (1) `G` offen, (2) `G !__eq__ emptyset` und (3) `G` wegzusammenhängend ist.' />
+    <STEPDEF SIZE='2' ID='WG1' VALUE='Definition (Weg glatt): Ein Weg `gamma: [a,b] -__gt__ CC` heißt glatt, wenn dieser stetig differenzierbar ist.' />
+    <STEPDEF SIZE='2' ID='UT' VALUE='Definition (Unterteilung): Sei `[a,b]` ein Intervall, `n in NN` und `a__eq__u_0__lt__ ...__lt__ u_n __eq__ b`. `(u_0, ..., u_{n}) in RR^{n+1}` heißt dann Unterteilung von `[a,b]`.' />
+    <STEPDEF SIZE='2' ID='WG2' VALUE='Definition (Wegunterteilung): Sei `gamma: [a,b] -__gt__ CC` ein Weg in `U subseteq CC`, `n in NN`, `(u_0, ..., u_{n})` eine Unterteilung von `[a,b]`, `gamma_k : [u_{k-1} , u_k] -__gt__ CC` für alle `k in {1, ... ,n}` ein Weg in `U`. `(gamma_{1}, ..., gamma_{n})` heißt Wegunterteilung von `gamma`, wenn gilt `gamma_n(b) __eq__ gamma(b)` und  `AA_{k in {1,...,n} } AA_{t in [u_{k-1} , u_k )} : gamma_k(t) __eq__ gamma(t)`.' />
+    <STEPDEF SIZE='2' ID='WG3' VALUE='Definition (Weg stückweise glatt): Ein Weg `gamma: [a,b] -__gt__ CC` heißt stückweise glatt, wenn eine Wegunterteilung `(gamma_1 ,... gamma_n)` aus glatten Wegen `gamma_k` für alle `k in {1, ... , n}` existiert.' />
+    <STEPDEF SIZE='2' ID='WG4' VALUE='Definition (Wegintegral): Sei `f: U -__gt__ CC` eine stetige Funktion und `gamma: [a,b]` ein glatter Weg, dann ist das Wegintegral wie folgt definiert: `int_{gamma} f :__eq__ int_{gamma} f(xi) d xi :__eq__ int_{a}^{b} f(gamma(t)) * gamma^{/}(t) dt`. Ist `gamma` stückweise glatt bzgl. einer Wegunterteilung `(gamma_{1}, ..., gamma_{n})`, dann definiert man `int_{gamma} f(xi) d xi :__eq__ sum_{k__eq__1}^{n} int_{gamma_{k}} f(xi) d xi`.' />
+  </VARLIST>
+  <VARLIST NAME='PROOFSTEP_OPTIONS'>
+    <STEPDEF SIZE='5' ID='S18' CONNECTION='TYP' JUST='' OPTJUST='' VALUE='Für den Beweis wird die Äquivalenzaussage in zwei Implikationen zerlegt. ' />
+    <STEPDEF SIZE='5' ID='AS13' CONNECTION=' ' JUST='' OPTJUST='' VALUE='__lt__B__gt__Beweisrichtung __qu__`Rightarrow`__qu__:__lt__/B__gt__ zu zeigen ist `AA_{z in G}  f^{/}(z) __eq__ 0` ' />
+    <STEPDEF SIZE='5' ID='AS-2' CONNECTION=' ' JUST='' OPTJUST='' VALUE='Setze voraus, dass `f` konstant ist.' />
+    <STEPDEF SIZE='5' ID='AS12' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='`f (x) __eq__ f (y)` für `AA_{x, y ∈ G}` gilt.' />
+    <STEPDEF SIZE='5' ID='AS-8' CONNECTION='__eq____gt__' JUST='DIF' OPTJUST='' VALUE='Für `z,z_0 in G` gilt `f^{/}(z_o) :__eq__ lim_{z -__gt__ z_0}  (f (z) - f (z_o))/(z-z_o)`' />
+    <STEPDEF SIZE='5' ID='AS16' CONNECTION='__eq__' JUST='AS12' OPTJUST='' VALUE='`lim_{z -__gt__ z_0}  (f (z_o) - f (z_o))/(z-z_o)`' />
+    <STEPDEF SIZE='5' ID='AS-5' CONNECTION='__eq__' JUST='AS12' OPTJUST='' VALUE='`lim_{z -__gt__ z_0}  0/(z-z_o) __eq__ 0`' />
+    <STEPDEF SIZE='5' ID='AS-6' CONNECTION='__eq____gt__' JUST='' OPTJUST='AS-8,AS16' VALUE='`f^{/}(z_o)__eq__0` für `AA_{z_o in G}`' />
+    <STEPDEF SIZE='5' ID='ASA???exists???' CONNECTION='__eq____gt__' JUST='' OPTJUST='AS-8,AS16,AS-5' VALUE='Search for ID undefined' />
+    <STEPDEF SIZE='5' ID='AS-6' CONNECTION='_LINK_NODE_' JUST='' OPTJUST='' VALUE='' />
+    <STEPDEF SIZE='5' ID='BS-9' CONNECTION=' ' JUST='' OPTJUST='' VALUE='__lt__B__gt__Beweisrichtung __qu__`Leftarrow`__qu__:__lt__/B__gt__ zu zeigen ist, dass  `f` konstant ist' />
+    <STEPDEF SIZE='5' ID='BS10' CONNECTION=' ' JUST='' OPTJUST='' VALUE='Setze voraus, dass `f^{/}(z)__eq__0` für `AA_{z in G}` gilt.' />
+    <STEPDEF SIZE='5' ID='BS19' CONNECTION=' ' JUST='' OPTJUST='' VALUE='Seien `x, y in G` beliebig gewählt' />
+    <STEPDEF SIZE='5' ID='BS11' CONNECTION='__eq____gt__' JUST='WZ,GE' OPTJUST='WG1' VALUE='Es existiert ein glatter Weg `gamma: [a,b] -__gt__ G` mit `gamma(a)__eq__x` und `gamma(b)__eq__y`' />
+    <STEPDEF SIZE='5' ID='BS-7' CONNECTION='TEXT' JUST='' OPTJUST='' VALUE='Wir berechnen nun `int_{gamma} f^{/}(z) dz` auf zwei Arten.' />
+    <STEPDEF SIZE='5' ID='BS15' CONNECTION=' ' JUST='ST' OPTJUST='WG???exists???' VALUE='Berechnung 1: `int_{gamma} f^{/}(z) dz __eq__ f(gamma(b)) - f(gamma(a))` ' />
+    <STEPDEF SIZE='5' ID='BS14' CONNECTION='__eq__' JUST='BS11' OPTJUST='' VALUE='`f(y) - f(x)` ' />
+    <STEPDEF SIZE='5' ID='BS20' CONNECTION=' ' JUST='' OPTJUST='' VALUE='Berechnung 2: `int_{gamma} f^{/}(z) dz` ' />
+    <STEPDEF SIZE='5' ID='BS-3' CONNECTION='__eq__' JUST='BS10' OPTJUST='' VALUE='`int_{gamma} 0  dz` ' />
+    <STEPDEF SIZE='5' ID='BS17' CONNECTION='__eq__' JUST='WG4' OPTJUST='' VALUE='`int_a^b 0 * gamma^{/}(t)  dt __eq__ int_a^b 0  dt __eq__ 0` ' />
+    <STEPDEF SIZE='5' ID='BS21' CONNECTION='__eq____gt__' JUST='BSA-4' OPTJUST='BS14,BS-3,BS20' VALUE=' `0__eq__f(y)-f(x)` (Gleichsetzen der beiden Berechnungen) ' />
+    <STEPDEF SIZE='5' ID='BS-1' CONNECTION='__eq____gt__' JUST='BS19' OPTJUST='' VALUE='Dies bedeutet, dass `f (x) __eq__ f (y)` für `AA_{x, y ∈ G}` gilt. ' />
+    <STEPDEF SIZE='5' ID='C-1' CONNECTION='__eq____gt__' JUST='AS-6' OPTJUST='' VALUE='`f` konstant `__lt____eq____gt__` `AA_{z in G} \ f^{/}(z) __eq__0`' />
+    <STEPDEF SIZE='5' ID=' ' CONNECTION='_LINK_NODE_' JUST='' OPTJUST='' VALUE='' />
+    <STEPDEF SIZE='5' ID='P-1' CONNECTION=' ' JUST='' OPTJUST='' VALUE='Sei `G subseteq CC` ein Gebiet in `CC`' />
+    <STEPDEF SIZE='5' ID=' ' CONNECTION='_LINK_NODE_' JUST='' OPTJUST='' VALUE='' />
+    <STEPDEF SIZE='5' ID='P-2' CONNECTION=' ' JUST='' OPTJUST='' VALUE='Sei `f: G -__gt__ CC` ein holomorphe Funktion' />
+    <STEPDEF SIZE='5' ID='BSA-4' CONNECTION='TEXT' JUST='' OPTJUST='' STATUS='UNUSED' VALUE='`int_{gamma} f^{/}(z) dz __eq__ f(y) - f(x)` ' />
+  </VARLIST>
+</EPROOF>
