@@ -1671,7 +1671,9 @@ function EProof__SID__ () {
 			};
 			if (vTPL.indexOf(vSearch) == -1) {
 				if (this.isSettingExportID(iID)) {
-					vSettings  += ""+this.DO+iID+"='"+vValue+"'"+this.CR;
+					if (iID && (iID.length>2)) {
+						vSettings  += ""+this.DO+iID+"='"+vValue+"'"+this.CR;
+					}
 				};
 			} else {
 				vTPL = this.replaceString(vTPL,vSearch,this.aSettings[iID]);
