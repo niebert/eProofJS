@@ -124,8 +124,8 @@
     <STEPDEF SIZE='2' ID='BIJ' VALUE='Definition Bijektivit__ae__t' />
     <STEPDEF SIZE='2' ID='INJ' VALUE='Definition Injektivit__ae__t' />
     <STEPDEF SIZE='2' ID='SURJ' VALUE='Definition Surjektivit__ae__t' />
-    <STEPDEF SIZE='2' ID='LOG' VALUE='Da der Funktionswert von __math__f(x_1)__math__ dann positiv ist und der Funktionswert von __math__f(x_2)__math__ nicht positiv ist (oder umgekehrt)__co__ ist __math__f(x_1) ne f(x_2)__math____co__ d.h. __math__|f(x_1) __eq__ f(x_2)|__eq__f__math__.' />
-    <STEPDEF SIZE='2' ID='J1' VALUE='Die Aussage wird immer falsch__co__ folglich wird die Subjunktion immer wahr.' />
+    <STEPDEF SIZE='2' ID='LOG1' VALUE='Da der Funktionswert von __math__f(x_1)__math__ dann positiv ist und der Funktionswert von __math__f(x_2)__math__ nicht positiv ist (oder umgekehrt)__co__ ist __math__f(x_1) ne f(x_2)__math____co__ d.h. __math__|f(x_1) __eq__ f(x_2)|__eq__f__math__.' />
+    <STEPDEF SIZE='2' ID='LOG2' VALUE='Die Aussage wird immer falsch__co__ folglich wird die Subjunktion immer wahr.' />
   </VARLIST>
   <VARLIST NAME='PROOFSTEP_OPTIONS'>
     <STEPDEF SIZE='2' ID='S1' VALUE='z.z.: Die Abbildung __math__f: NN -__gt__ ZZ__math__ mit __math__f(x)__eq__1/2 x__math____co__ falls x gerade und __math__f(x)__eq__-1/2 (x-1)__math____co__ falls x ungerade__co__ ist bijektiv.' />
@@ -139,13 +139,13 @@
     <STEPDEF SIZE='2' ID='S10' VALUE='Fall: __math__x_1__math__ gerade und  __math__x_2__math__ ungerade oder umgekehrt. ' />
     <STEPDEF SIZE='2' ID='S11' VALUE='__math__x_1 __eq__ x_2__math__' />
     <STEPDEF SIZE='2' ID='S12' VALUE='Surjektivit__ae__t: (z.z.: __math__forall y in ZZ exists x in NN: f(x)__eq__y__math__).' />
-    <STEPDEF SIZE='2' ID='S13' VALUE='Fall: __math__x__math__ gerade (also: __math__y__gt__0__math__). Sei __math__y in ZZ^+__math__ beliebig. W__ae__hle __math__x__eq__2y in 2 NN__math__.  ' />
+    <STEPDEF SIZE='2' ID='S13' VALUE='Fall: __math__x__math__ gerade (also: __math__y__gt__0__math__). Sei __math__y in ZZ^+__math__ beliebig. W__ae__hle __math__x__eq__2y in 2 NN__math__.' />
     <STEPDEF SIZE='2' ID='S14' VALUE='__math__f(x)__eq__1/2x__eq__1/2 cdot 2y__eq__y__math__' />
-    <STEPDEF SIZE='2' ID='S15' VALUE='Fall: __math__x__math__ ungerade (also: __math__y__lt____eq__0__math__). Sei __math__y in ZZ^{-} cup {0}__math__ beliebig. W__ae__hle __math__x__eq__2(-y)+1 in 2 NN-1__math__.  ' />
+    <STEPDEF SIZE='2' ID='S15' VALUE='Fall: __math__x__math__ ungerade (also: __math__y__lt____eq__0__math__). Sei __math__y in ZZ^{-} cup {0}__math__ beliebig. W__ae__hle __math__x__eq__2(-y)+1 in 2 NN-1__math__.' />
     <STEPDEF SIZE='2' ID='S16' VALUE='__math__f(x)__eq__-1/2(x-1)__eq__-1/2((2(-y)+1)-1)__eq__-1/2(2(-y))__eq__y__math__' />
     <STEPDEF SIZE='2' ID='S17' VALUE='__math__ZZ__math__ ist gleichm__ae__chtig zu __math__NN__math__' />
-    <STEPDEF SIZE='2' ID='S18' VALUE='Die Menge __math__ZZ__math__ ist nicht abz__ae__hlbar__co__ weil die unendlich ist.' />
-    <STEPDEF SIZE='2' ID='S19' VALUE='Die Menge __math__ZZ__math__ ist nicht abz__ae__hlbar__co__ weil sie nicht gleich m__ae__chtig zu __math__NN__math__ ist__co__ weil keine bisjektive Abbildung zwischen __math__ZZ__math__ und __math__NN__math__ existiert.' />
+    <STEPDEF SIZE='2' ID='S18' VALUE='Die Menge __math__ZZ__math__ ist nicht abz__ae__hlbar__co__ weil sie unendlich ist.' />
+    <STEPDEF SIZE='2' ID='S19' VALUE='Die Menge __math__ZZ__math__ ist nicht abz__ae__hlbar__co__ weil sie nicht gleichm__ae__chtig zu __math__NN__math__ ist__co__ weil keine bisjektive Abbildung zwischen __math__ZZ__math__ und __math__NN__math__ existiert.' />
     <STEPDEF SIZE='2' ID='S20' VALUE='Es ist m__oe__glich jedes Element von __math__ZZ__math__ in die Menge __math__2NN__math__ und __math__2NN-1__math__ einzusetzen__co__ aber die Mengen werden dadurch niemals abz__ae__hlbar.' />
     <STEPDEF SIZE='2' ID='S21' VALUE='__math__ZZ__math__ ist abz__ae__hlbar__co__ weil es eine endliche Menge ist.' />
     <STEPDEF SIZE='2' ID='S22' VALUE='z.z.: Die Abbildung __math__f: NN -__gt__ ZZ__math__ mit __math__f(x)__eq__1/2 x__math____co__ falls x  und __math__f(x)__eq__-1/2 (x-1)__math____co__ falls x ungerade__co__ ist bijektiv.' />
@@ -153,6 +153,24 @@
     <STEPDEF SIZE='2' ID='S24' VALUE='Fall: __math__x__math__ gerade (also: __math__y__gt__0__math__). Sei __math__y in ZZ^+__math__ beliebig. W__ae__hle __math__x__eq__2y__math__.' />
     <STEPDEF SIZE='2' ID='S25' VALUE='Fall: __math__x__math__ ungerade (also: __math__y__lt____eq__0__math__). Sei __math__y in ZZ^{-} cup {0}__math__ beliebig. W__ae__hle __math__x__eq__2(-y)+1__math__.' />
     <STEPDEF SIZE='2' ID='S26' VALUE='z.z.: __math__ZZ__math__ ist bijektiv.' />
+    <STEPDEF SIZE='2' ID='MY1' VALUE='__math__ZZ__math__' />
+    <STEPDEF SIZE='5' ID='P1' CONNECTION=' ' JUST='' OPTJUST='' VALUE='' />
+    <STEPDEF SIZE='5' ID='S1' CONNECTION='__eq____gt__' JUST='COU,EQU' OPTJUST='' VALUE='z.z.: Die Abbildung __math__f: NN -__gt__ ZZ__math__ mit __math__f(x)__eq__1/2 x__math____co__ falls x gerade und __math__f(x)__eq__-1/2 (x-1)__math____co__ falls x ungerade__co__ ist bijektiv.' />
+    <STEPDEF SIZE='5' ID='S3' CONNECTION='TEXT' JUST='BIJ,INJ' OPTJUST='' VALUE='Injektivit__ae__t: (z.z.: __math__forall x_1__co__x_2 in NN: f(x_1)__eq__f(x_2) -__gt__ x_1__eq__x_2__math__).' />
+    <STEPDEF SIZE='5' ID='S4' CONNECTION='TEXT' JUST='' OPTJUST='' VALUE='Fall: __math__x_1__co__x_2__math__ gerade. Seien __math__x_1__co__ x_2 in 2NN__math__ beliebig und es gelte die Voraussetzung __math__f(x_1)__eq__f(x_2)__math__.' />
+    <STEPDEF SIZE='5' ID='S5' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__1/2 x_1 __eq__ 1/2 x_2__math__' />
+    <STEPDEF SIZE='5' ID='S6' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__x_1 __eq__ x_2__math__' />
+    <STEPDEF SIZE='5' ID='S7' CONNECTION='TEXT' JUST='' OPTJUST='' VALUE='Fall: __math__x_1__co__x_2__math__ ungerade. Seien __math__x_1__co__ x_2 in 2NN-1__math__ beliebig und es gelte die Voraussetzung __math__f(x_1)__eq__f(x_2)__math__.' />
+    <STEPDEF SIZE='5' ID='S8' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__-1/2(x_1-1) __eq__ -1/2 (x_2-1)__math__' />
+    <STEPDEF SIZE='5' ID='S9' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__x_1 __eq__ x_2__math__' />
+    <STEPDEF SIZE='5' ID='S10' CONNECTION='TEXT' JUST='' OPTJUST='' VALUE='Fall: __math__x_1__math__ gerade und  __math__x_2__math__ ungerade oder umgekehrt.' />
+    <STEPDEF SIZE='5' ID='S11' CONNECTION='__eq____gt__' JUST='LOG' OPTJUST='' VALUE='__math__x_1 __eq__ x_2__math__' />
+    <STEPDEF SIZE='5' ID='S12' CONNECTION='TEXT' JUST='SURJ,BIJ' OPTJUST='' VALUE='Surjektivit__ae__t: (z.z.: __math__forall y in ZZ exists x in NN: f(x)__eq__y__math__).' />
+    <STEPDEF SIZE='5' ID='S13' CONNECTION='TEXT' JUST='' OPTJUST='' VALUE='Fall: __math__x__math__ gerade (also: __math__y__gt__0__math__). Sei __math__y in ZZ^+__math__ beliebig. W__ae__hle __math__x__eq__2y in 2 NN__math__.' />
+    <STEPDEF SIZE='5' ID='S15' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='Fall: __math__x__math__ ungerade (also: __math__y__lt____eq__0__math__). Sei __math__y in ZZ^{-} cup {0}__math__ beliebig. W__ae__hle __math__x__eq__2(-y)+1 in 2 NN-1__math__.' />
+    <STEPDEF SIZE='5' ID='S16' CONNECTION='TEXT' JUST='' OPTJUST='' VALUE='__math__f(x)__eq__-1/2(x-1)__eq__-1/2((2(-y)+1)-1)__eq__-1/2(2(-y))__eq__y__math__' />
+    <STEPDEF SIZE='5' ID='S17' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__ZZ__math__ ist gleichm__ae__chtig zu __math__NN__math__' />
+    <STEPDEF SIZE='5' ID='C1' CONNECTION='__eq____gt__' JUST='COU' OPTJUST='' VALUE='__math__ZZ__math__ ist abz__ae__hlbar.' />
   </VARLIST>
 </EPROOF>			
 
