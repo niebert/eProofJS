@@ -1,0 +1,1346 @@
+<html id="HTMLROOT"><head>
+   <title>e-Proof-Creator for iMathAS</title>
+<!--
+#################################################################
+#         Exporter: iMathAS Creator for e-Proofs
+#     for Software: e-Proof-Creator
+#         Filename: iMathAScreator.html
+#     Used Library: library/ASCIIMathML.js
+#                   Version 2.0.1 Sept 27, 2007, by Peter Jipsen
+#                   library/xmlparser.js
+#
+# Author/Editor:      Melanie Platz
+# email:              platz@uni-landau.de
+# created             13.10.2014
+# last modifications  21.11.2014
+# GNU Public License - OpenSource
+# created with JavaScript generator_exporter.html
+#################################################################
+
+  UsedC = sSTEPCOUNT Selector for number of Steps <br>
+  PRE/POST -%Logical-Link-Error ' LLE = t * text(DefaultError)+ (1-t) * 1.0' with  't = (UsedC)/(text(ProofC))'  <br>
+  DefaultError=10% defined in Settings<BR>
+  Few Steps = Strong Impact on %-Reduction per Step and logical error<br>
+  Total Score is average of all Step Scores
+
+<script type="text/javascript" src="../library/xmlparser.js"></script>
+<script type="text/javascript" src="library/ASCIIMathML.js"></script>
+<script type="text/javascript" src="library/progressbar.js"></script>
+//---ASCIIMath---
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script>
+<script type="text/javascript" src="../MathJax/MathJax.js?config=AM_HTMLorMML"></script>
+//---LaTeX-------
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="../MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+ <VARIABLE NAME="AUTHOR" VALUE="Melanie Platz"/>
+ <VARIABLE NAME="EMAIL" VALUE="platz@uni-landau.de"/>
+ <VARIABLE NAME="DATE" VALUE="21.11.2014"/>
+ <VARIABLE NAME="TITLE" VALUE="Equipotent Sets"/>
+ <VARIABLE NAME="THEOREM_APPENDIX" VALUE="Comment or Link Wikipedia"/>
+ <VARIABLE NAME="AUTHORINGMODE" VALUE="0"/>
+ <VARIABLE NAME="SHOW_FEEDBACK_SCORE" VALUE="1"/>
+ <VARIABLE NAME="SHOW_PROOF_SOLUTION" VALUE="1"/>
+ <VARIABLE NAME="SELECTBOX_PROOFSTEPS" VALUE="1"/>
+ <VARIABLE NAME="ALLOW_OWN_PROOFSTEPS" VALUE="1"/>
+ <VARIABLE NAME="PER_ERROR_MINUS_PERCENT" VALUE="10"/>
+ <VARIABLE NAME="UNNECESSARY_PRECONDITIONS" VALUE="3"/>
+ <VARIABLE NAME="UNNECESSARY_PROOFSTEPS" VALUE="3"/>
+ <VARIABLE NAME="UNNECESSARY_CONNECTIONS" VALUE="3"/>
+ <VARIABLE NAME="RANDOMIZE_PROOFSTEP_IDS" VALUE="0"/>
+ <VARIABLE NAME="REMAP_PROOFSTEP_IDS" VALUE="0"/>
+ <VARIABLE NAME="CODE_ID_I" VALUE="4001"/>
+ <VARIABLE NAME="CODE_ID_II" VALUE="4002"/>
+ <VARIABLE NAME="CODE_ID_III" VALUE="4200"/>
+
+-->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"></script>
+  <script type="text/javascript" src="library/language.js"></script>
+  <script type="text/javascript" src="library/eproofmain.js"></script>
+  <script type="text/javascript" src="library/eproofmeth1.js"></script>
+  <script type="text/javascript" src="library/eproofmeth2.js"></script>
+
+  <link rel="stylesheet" href="./css/imathas.css" type="text/css">
+
+</head>
+<body>
+<form name="EMULATIONiMathAS" id="EMULATIONiMathAS">
+	<div class="EPROOF" id="EPROOF__QID__">
+		<div class="IMATHASINOUT__QID__" id="iMathASINOUT__QID__" style="display:none">
+			style="display:none"
+			style='visibility:hidden'
+		    <hr>
+			<font color="red">$ErrorHTML</font>
+			<hr>
+			 <br>
+			<input class="COPYTOLOAD__QID__" id="COPYTOLOAD__QID__" value="tXMLFILE__QID__1" type="text"><br>
+			<textarea class="tXMLFILE__QID__" id="tXMLFILE__QID__1" cols="100" rows="13" wrap="off">
+			
+			
+<EPROOF>
+  <VARIABLE NAME='Theorem_Title' VALUE='Equipotent Sets' />
+  <VARIABLE NAME='Theorem_Label' VALUE='Theorem' />
+  <VARIABLE NAME='Author' VALUE='Melanie Platz' />
+  <VARIABLE NAME='eMail' VALUE='platz@uni-landau.de' />
+  <VARIABLE NAME='LANGUAGE' VALUE='EN' />
+  <VARIABLE NAME='Theorem_Appendix' VALUE='See __lt__a  href__eq____qu__https://en.wikipedia.org/wiki/Countable_set__qu__ target__eq____qu__blank__qu____gt__Countable Set__lt__/a__gt__ for more details.' />
+  <VARIABLE NAME='Per_Error_Minus_Percent' VALUE='10' />
+  <VARIABLE NAME='Assessment_Minus_Percent' VALUE='2' />
+  <VARIABLE NAME='Suggestion_Minus_Percent' VALUE='17' />
+  <VARIABLE NAME='unnecessary_connections' VALUE='3' />
+  <VARIABLE NAME='unnecessary_proofsteps' VALUE='3' />
+  <VARIABLE NAME='unnecessary_justifications' VALUE='3' />
+  <VARIABLE NAME='selectbox_proofsteps' VALUE='1' />
+  <VARIABLE NAME='allow_own_proofsteps' VALUE='1' />
+  <VARIABLE NAME='remap_proofstep_IDs' VALUE='1' />
+  <VARIABLE NAME='randomize_proofstep_IDs' VALUE='1' />
+  <VARIABLE NAME='cryptkey' VALUE='ACBSD' />
+  <VARIABLE NAME='show_Load_Save_Control' VALUE='0' />
+  <VARIABLE NAME='show_Main_Control' VALUE='0' />
+  <VARIABLE NAME='show_links' VALUE='1' />
+  <VARIABLE NAME='show_assessment' VALUE='1' />
+  <VARIABLE NAME='show_suggestions' VALUE='1' />
+  <VARIABLE NAME='show_proof_solution' VALUE='0' />
+  <VARIABLE NAME='AuthoringMode' VALUE='0' />
+  <VARIABLE NAME='AssessmentMode' VALUE='0' />
+  <VARIABLE NAME='MathFormat' VALUE='AM_HTMLorMML' />
+  <VARIABLE NAME='COMMONCONTROL' VALUE='4980__co__4981__co__4982__co__4983' />
+  <VARIABLE NAME='QUESTIONTEXT' VALUE='4980__co__4981__co__4982__co__4983' />
+  <VARIABLE NAME='vQID' VALUE='QKKTFF' />
+  <VARIABLE NAME='alertDOM' VALUE='0' />
+  <VARIABLE NAME='CODE_ID_I' VALUE='4001' />
+  <VARIABLE NAME='CODE_ID_II' VALUE='4002' />
+  <VARIABLE NAME='CODE_ID_III' VALUE='4200' />
+  <VARIABLE NAME='Offline' VALUE='1' />
+  <VARIABLE NAME='Date' VALUE='10.11.2016' />
+  <VARIABLE NAME='' VALUE='undefined' />
+  <VARLIST NAME='PRECONDITION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='P1' VALUE='__math__ZZ__math__ is the set of integers.' />
+    <STEPDEF SIZE='2' ID='P2' VALUE='Let __math__2NN__math__ be the set __math__{x in NN | exists k in NN: x__eq__ 2k}__math__ and let __math__2NN-1__math__ be the set __math__{x in NN | exists k in NN: x__eq__ 2k-1}__math__. ' />
+  </VARLIST>
+  <VARLIST NAME='CONCLUSION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='C1' VALUE='__math__ZZ__math__ is countable.' />
+  </VARLIST>
+  <VARLIST NAME='JUSTIFICATION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='COU' VALUE='Definition Countable' />
+    <STEPDEF SIZE='2' ID='EQU' VALUE='Definition Equipotent' />
+    <STEPDEF SIZE='2' ID='BIJ' VALUE='Definition Bijectivity' />
+    <STEPDEF SIZE='2' ID='INJ' VALUE='Definition Injectivity' />
+    <STEPDEF SIZE='2' ID='SURJ' VALUE='Definition Surjectivity' />
+    <STEPDEF SIZE='2' ID='LOG' VALUE='As the functional value of __math__f(x_1)__math__ will be positive and the functional value of __math__f(x_2)__math__ will not be positive (or vice versa)__co__ it is __math__f(x_1) ne f(x_2)__math____co__ that is __math__|f(x_1) __eq__ f(x_2)|__eq__f__math__. ' />
+  </VARLIST>
+  <VARLIST NAME='PROOFSTEP_OPTIONS'>
+    <STEPDEF SIZE='2' ID='S1' VALUE='To show: The mapping __math__f: NN -__gt__ ZZ__math__with __math__f(x)__eq__1/2 x__math____co__ if x even and __math__f(x)__eq__-1/2 (x-1)__math____co__ if x odd__co__ is bijective.' />
+    <STEPDEF SIZE='2' ID='S3' VALUE='Injectivity: (To show: __math__forall x_1__co__x_2 in NN: f(x_1)__eq__f(x_2) -__gt__ x_1__eq__x_2__math__).' />
+    <STEPDEF SIZE='2' ID='S4' VALUE='Case: __math__x_1__co__x_2__math__ even. Let __math__x_1__co__ x_2 in 2NN__math__ be arbitrary and the precondition __math__f(x_1)__eq__f(x_2)__math__ is valid.' />
+    <STEPDEF SIZE='2' ID='S5' VALUE='__math__1/2 x_1 __eq__ 1/2 x_2__math__' />
+    <STEPDEF SIZE='2' ID='S6' VALUE='__math__x_1 __eq__ x_2__math__' />
+    <STEPDEF SIZE='2' ID='S7' VALUE='Case: __math__x_1__co__x_2__math__ odd. Let __math__x_1__co__ x_2 in 2NN-1__math__ be arbitrary and the precondition __math__f(x_1)__eq__f(x_2)__math__ is valid.' />
+    <STEPDEF SIZE='2' ID='S8' VALUE='__math__-1/2(x_1-1) __eq__ -1/2 (x_2-1)__math__' />
+    <STEPDEF SIZE='2' ID='S9' VALUE='__math__x_1 __eq__ x_2__math__' />
+    <STEPDEF SIZE='2' ID='S10' VALUE='Case: __math__x_1__math__ even and  __math__x_2__math__ odd or vice versa. ' />
+    <STEPDEF SIZE='2' ID='S11' VALUE='__math__x_1 __eq__ x_2__math__' />
+    <STEPDEF SIZE='2' ID='S12' VALUE='Surjectivity: (To show: __math__forall y in ZZ exists x in NN: f(x)__eq__y__math__).' />
+    <STEPDEF SIZE='2' ID='S13' VALUE='Case: __math__x__math__ even (and consequently __math__y__gt__0__math__). Let __math__y in ZZ^+__math__ be arbitrary. Choose __math__x__eq__2y in 2 NN__math__.  ' />
+    <STEPDEF SIZE='2' ID='S14' VALUE='__math__f(x)__eq__1/2x__eq__1/2 cdot 2y__eq__y__math__' />
+    <STEPDEF SIZE='2' ID='S15' VALUE='Case: __math__x__math__ odd (and consequently __math__y__lt____eq__0__math__). Let __math__y in ZZ^{-} cup {0}__math__ be arbitrary. Choose __math__x__eq__2(-y)+1 in 2 NN-1__math__.  ' />
+    <STEPDEF SIZE='2' ID='S16' VALUE='__math__f(x)__eq__-1/2(x-1)__eq__-1/2((2(-y)+1)-1)__eq__-1/2(2(-y))__eq__y__math__' />
+    <STEPDEF SIZE='2' ID='S17' VALUE='__math__ZZ__math__ is equipotent to __math__NN__math__' />
+    <STEPDEF SIZE='5' ID='P1' CONNECTION=' ' JUST='' OPTJUST='' VALUE='' />
+    <STEPDEF SIZE='5' ID='S1' CONNECTION='__eq____gt__' JUST='COU,EQU' OPTJUST='' VALUE='To show: The mapping __math__f: NN -__gt__ ZZ__math__with __math__f(x)__eq__1/2 x__math____co__ if x even and __math__f(x)__eq__-1/2 (x-1)__math____co__ if x odd__co__ is bijective.' />
+    <STEPDEF SIZE='5' ID='S3' CONNECTION='TEXT' JUST='BIJ,INJ' OPTJUST='' VALUE='Injectivity: (To show: __math__forall x_1__co__x_2 in NN: f(x_1)__eq__f(x_2) -__gt__ x_1__eq__x_2__math__).' />
+    <STEPDEF SIZE='5' ID='S4' CONNECTION='TEXT' JUST='' OPTJUST='' VALUE='Case: __math__x_1__co__x_2__math__ even. Let __math__x_1__co__ x_2 in 2NN__math__ be arbitrary and the precondition __math__f(x_1)__eq__f(x_2)__math__ is valid.' />
+    <STEPDEF SIZE='5' ID='S5' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__1/2 x_1 __eq__ 1/2 x_2__math__' />
+    <STEPDEF SIZE='5' ID='S6' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__x_1 __eq__ x_2__math__' />
+    <STEPDEF SIZE='5' ID='S7' CONNECTION='TEXT' JUST='' OPTJUST='' VALUE='Case: __math__x_1__co__x_2__math__ odd. Let __math__x_1__co__ x_2 in 2NN-1__math__ be arbitrary and the precondition __math__f(x_1)__eq__f(x_2)__math__ is valid.' />
+    <STEPDEF SIZE='5' ID='S8' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__-1/2(x_1-1) __eq__ -1/2 (x_2-1)__math__' />
+    <STEPDEF SIZE='5' ID='S9' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__x_1 __eq__ x_2__math__' />
+    <STEPDEF SIZE='5' ID='S10' CONNECTION='TEXT' JUST='' OPTJUST='' VALUE='Case: __math__x_1__math__ even and  __math__x_2__math__ odd or vice versa. ' />
+    <STEPDEF SIZE='5' ID='S11' CONNECTION='__eq____gt__' JUST='LOG' OPTJUST='' VALUE='__math__x_1 __eq__ x_2__math__' />
+    <STEPDEF SIZE='5' ID='S12' CONNECTION='TEXT' JUST='SURJ,BIJ' OPTJUST='' VALUE='Surjectivity: (To show: __math__forall y in ZZ exists x in NN: f(x)__eq__y__math__).' />
+    <STEPDEF SIZE='5' ID='S13' CONNECTION='TEXT' JUST='' OPTJUST='' VALUE='Case: __math__x__math__ even (and consequently __math__y__gt__0__math__). Let __math__y in ZZ^+__math__ be arbitrary. Choose __math__x__eq__2y in 2 NN__math__.  ' />
+    <STEPDEF SIZE='5' ID='S15' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='Case: __math__x__math__ odd (and consequently __math__y__lt____eq__0__math__). Let __math__y in ZZ^{-} cup {0}__math__ be arbitrary. Choose __math__x__eq__2(-y)+1 in 2 NN-1__math__.  ' />
+    <STEPDEF SIZE='5' ID='S16' CONNECTION='TEXT' JUST='' OPTJUST='' VALUE='__math__f(x)__eq__-1/2(x-1)__eq__-1/2((2(-y)+1)-1)__eq__-1/2(2(-y))__eq__y__math__' />
+    <STEPDEF SIZE='5' ID='S17' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__ZZ__math__ is equipotent to __math__NN__math__' />
+    <STEPDEF SIZE='5' ID='C1' CONNECTION='__eq____gt__' JUST='COU' OPTJUST='' VALUE='' />
+  </VARLIST>
+</EPROOF>			
+
+  
+
+			</textarea>
+			<hr>
+			<select class="tplDISPLAYSELECT__QID__" id="tplDISPLAYSELECT__QID__">
+				<option selected="selected" class="optDISPLAYOPTION__QID__" id="EDITComplete__QID__" value="EDITComplete">EDIT: Complete</option>
+     			<option class="optDISPLAYOPTION__QID__" id="EDITShort__QID__" value="EDITShort">EDIT: Short</option>
+	 			<option class="optDISPLAYOPTION__QID__" id="Complete__QID__" value="Complete">Complete</option>
+     			<option class="optDISPLAYOPTION__QID__" id="Short__QID__" value="Short">Short</option>
+			</select>
+			<div class="displaySOLUTIONSTEP__QID__" id="displaySOLUTIONSTEP__QID__">
+				<table border="0" width="95%">
+					<tbody><tr>
+						<td class="solSTEPNR__QID__" step="0" id="solSTEPNR__QID__" align="center" valign="top" width="35px">
+						(0)
+						</td>
+						<td class="solCONNECTION__QID__" step="0" id="solCONNECTION__QID__" align="center" valign="top" width="35px">
+						???
+						</td>
+						<td class="solSTEPID__QID__" step="0" id="solSTEPID__QID__" align="center" valign="top" width="55px">
+						[ID]
+						</td>
+						<td class="solSTEPDEF__QID__" step="0" id="solSTEPDEF__QID__" valign="top">
+						Step Definition
+						</td>
+					</tr>
+				</tbody></table>
+				<div class="solJUSTIFICATIONS__QID__" id="solJUSTIFICATIONS__QID__" style="margin-left: 3em;">
+				</div>
+			</div>
+			<hr>
+			<div class="STUDENTANSWER__QID__" id="tplSTUDENTANSWER__QID__">
+				<hr align="left" width="55%">
+				<div class="editSTUDENTANSWER__QID__" id="editSTUDENTANSWER__QID__">
+					<select class="sPOSITION__QID__" id="sPOSITION__QID__" step="0" onchange="vEProof__QID__.moveStepOrder(this,this.value)">
+					</select>
+					<input size="2" class="PREVIOUSLINK__QID__" step="0" id="PREVIOUSLINK__QID__" style="display:none" type="text">
+					<input size="2" class="mapPREVIOUSLINK__QID__" step="0" id="mapPREVIOUSLINK__QID__" onchange="vEProof__QID__.updatePreviousLink(this)" style="display:none" type="text">
+					<button type="button" class="bUseStep__QID__" step="0" id="bUseStep__QID__" onclick="vEProof__QID__.appendStep(this)" style="display:none"> Append Step </button>
+					<select class="sCONNECTION__QID__" id="sCONNECTION__QID__" step="0" onchange="vEProof__QID__.updateConnection(this)">
+					</select>
+					<select class="sSTEPID__QID__" id="sSTEPID__QID__" step="0" onchange="vEProof__QID__.moveStepID(this,this.value)">
+					</select>
+					<button type="button" class="bDelete__QID__" step="0" id="bDelete__QID__" onclick="vEProof__QID__.deleteProofStep(this)" style="color:red">X</button>
+					<button type="button" class="bEdit__QID__" step="0" id="bEdit__QID__" onclick="vEProof__QID__.toggleEdit(this)">EDIT</button>
+					<nobr class="nobrJUSTIFICATION" step="0" id="nobrJUSTIFICATION">
+						<button type="button" class="bJustifications__QID__" step="0" id="bJustifications__QID__" onclick="vEProof__QID__.toggleJustifications(this)">Justifications</button>
+						<outtext class="outJUSTIFICATIONID__QID__" step="0" id="outJUSTIFICATIONID__QID__">[]</outtext>
+						<outtext class="labelOPTJUSTIFICATION__QID__" step="0" id="labelOPTJUSTIFICATION__QID__"> - optional:</outtext>
+						<input size="15" class="optJUSTIFICATION__QID__" step="0" id="optJUSTIFICATION__QID__" onchange="vEProof__QID__.checkOptJustifications(this)" type="text">
+						<input size="15" class="orgOPTJUSTIFICATION__QID__" step="0" id="orgOPTJUSTIFICATION__QID__" style="display:none" type="text">
+					</nobr>
+				</div>
+				<div class="SELECTFROM__QID__" id="SELECTFROM__QID__" style="display:none">
+					oldPos:<input size="2" class="oldPOSITION__QID__" step="0" id="oldPOSITION__QID__" value="0" type="text">
+					Previous:<input size="2" class="PREVIOUS__QID__" step="0" id="PREVIOUS__QID__" value="PID" type="text">
+					Next:<input size="2" class="NEXT__QID__" step="0" id="NEXT__QID__" value="NID" type="text">
+					NextCon:<input size="2" class="NEXTCON__QID__" step="0" id="NEXTCON__QID__" value="TYP" type="text">
+					Step:<input size="2" class="STEPNR__QID__" step="0" id="STEPNR__QID__" value="0" type="text">
+					ID:<input size="3" class="inSTEPID__QID__" step="0" id="inSTEPID__QID__" value="ID" onchange="alert('Edit Step ID of Step'+this.getAttribute('step'))" type="text"><br>
+					Sel4Con:<input size="15" class="selectCONNECTION__QID__" step="0" id="selectCONNECTION__QID__" type="text">
+					Sel4ID:<input size="15" class="selectSTEPID__QID__" step="0" id="selectSTEPID__QID__" type="text">
+					Sel4Just:<input size="15" class="selectJUSTIFICATION__QID__" step="0" id="selectJUSTIFICATION__QID__" type="text">
+					Append4Just:<input size="15" class="appendJUSTIFICATION__QID__" step="0" id="appendJUSTIFICATION__QID__" type="text">
+					Just:<input size="15" class="inJUSTIFICATION__QID__" step="0" id="inJUSTIFICATION__QID__" onchange="vEProof__QID__.updateJustifications(this)" type="text"><br>
+					SugUsed:<input step="0" size="2" class="inSUGGESTIONSUSED__QID__" id="inSUGGESTIONSUSED__QID__" value="0" type="text">
+					SugStep:<input step="0" size="2" class="stepSUGGESTION__QID__" id="stepSUGGESTION__QID__" value="0" type="text">
+					AssUsed:<input step="0" size="2" class="inASSESSMENTUSED__QID__" id="inASSESSMENTUSED__QID__" value="0" type="text">
+					<br>
+					MaxScore:<input step="0" size="2" class="maxSCORESTEP__QID__" id="maxSCORESTEP__QID__" value="0.0" type="text">
+					PreLinkSteps:<input step="0" size="2" class="preLINKSTEPS__QID__" id="preLINKSTEPS__QID__" value="0" type="text">
+					PostLinkSteps:<input step="0" size="2" class="postLINKSTEPS__QID__" id="postLINKSTEPS__QID__" value="0" type="text">
+					assCon:<input step="0" size="2" class="assCONNECTION__QID__" id="assCONNECTION__QID__" value="0" type="text">
+					Errors:<input step="0" size="2" class="assERRORS__QID__" id="assERRORS__QID__" value="0" type="text">
+					JustCor:<input step="0" size="6" class="assJUSTCORRECT__QID__" id="assJUSTCORRECT__QID__" type="text">
+					JustMiss:<input step="0" size="6" class="assJUSTMISSING__QID__" id="assJUSTMISSING__QID__" type="text">
+					JustUnnec:<input step="0" size="6" class="assJUSTUNNECESSARY__QID__" id="assJUSTJUNNECESSARY__QID__" type="text">
+				</div>
+				<div class="STEPEDITOR__QID__" id="STEPEDITOR__QID__" style="display:none">
+					<table border="0" width="95%">
+						<tbody><tr>
+							<td valign="top" width="90px">
+								<button type="button" class="bSaveEditor__QID__" step="0" id="bSaveEditor__QID__" onclick="vEProof__QID__.saveStep(this)">SAVE</button>
+							</td>
+							<td class="inSTEPEDITOR__QID__" id="inSTEPEDITOR__QID__" valign="top">
+								<textarea rows="9" class="taSTEPEDITOR__QID__" step="0" id="taSTEPEDITOR__QID__" style="width:98%;" onkeyup="vEProof__QID__.updateTextarea(this)"></textarea>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="displaySTUDENTANSWER__QID__" id="displaySTUDENTANSWER__QID__">
+					<table border="0" width="95%">
+						<tbody><tr>
+							<td class="outSTEPNR__QID__" step="0" id="outSTEPNR__QID__" align="center" valign="top" width="35px">
+							(0)
+							</td>
+							<td class="outCONNECTION__QID__" step="0" id="outCONNECTION__QID__" align="center" valign="top" width="35px">
+							???
+							</td>
+							<td class="outSTEPID__QID__" step="0" id="outSTEPID__QID__" align="center" valign="top" width="55px">
+							[ID]
+							</td>
+							<td class="outSTEPDEF__QID__" step="0" id="outSTEPDEF__QID__" valign="top">
+							Step Definition<br>
+							Step Definition next Line
+							</td>
+						</tr>
+					</tbody></table>
+					<div class="divJUSTIFICATIONS__QID__" id="divJUSTIFICATIONS__QID__" style="margin-left: 3em;">
+						<div class="displayJUSTIFICATIONS__QID__" id="displayJUSTIFICATIONS__QID__">
+							<u>Justifications:</u>
+							<ul>
+								<li> Undefined Justications </li>
+							</ul>
+						</div>
+					</div>
+					<div class="divEDITJUSTIFICATIONS__QID__" id="divJUSTIFICATIONS__QID__">
+						<div class="editJUSTIFICATIONS__QID__" id="editJUSTIFICATIONS__QID__" style="display:none">
+							<b>Checkbox Justifications:</b>
+							<ul>
+								<li> Check Box Justications </li>
+							</ul>
+						</div>
+						<table class="SUGASSESSMAN__QID__" id="SUGASSESSMAN__QID__" style="margin-left:3.3em" border="0">
+							<tbody><tr>
+								<td>
+									<button type="button" class="bSuggestion__QID__" step="0" id="bSuggestion__QID__" onclick="vEProof__QID__.toggleSuggestionStep(this.getAttribute('step'))" style="display:none;color:green">Suggestion</button>
+								</td>
+								<td>
+									<button type="button" class="bAssessStep__QID__" step="0" id="bAssessStep__QID__" onclick="vEProof__QID__.assessStep(this)" style="display:none;color:red">Assess Step</button>
+								</td>
+								<td>
+									<outstep class="outMYSTEPASSESS__QID__" id="outMYSTEPASSESS__QID__" step="0" style="display:none">
+										<b valign="top" class="outMYSTEPASSESSTITLE__QID__" id="outMYSTEPASSESSTITLE__QID__">
+										Manual Assessment:
+										</b>
+										<tt valign="top" class="outMYSTEPASSESSTEXT__QID__" id="outMYSTEPASSESSTEXT__QID__" style="display:none">
+										Assess Self-defined Steps
+										</tt>
+										<b valign="top" class="outMYSTEPASSESSSCORE__QID__" id="outMYSTEPASSESSSCORE__QID__" align="right">
+										<input size="3" class="inMYSTEPASSESSSCORE__QID__" id="inMYSTEPASSESSSCORE__QID__" onchange="vEProof__QID__.assessStepDisplay(this)" type="text">%
+										</b>
+									</outstep>
+								</td>
+							</tr>
+						</tbody></table>
+					</div>
+				</div>
+				<div class="assessSTUDENTANSWER__QID__" id="assessSTUDENTANSWER__QID__" style="display:none">
+					<table align="center" bgcolor="#EAEAEA" border="1" width="70%">
+						<tbody><tr>
+							<td>
+								<table class="ASSESSTABLE__QID__" id="ASSESSTABLE__QID__" align="center" border="0" cellspacing="10px">
+									<tbody><tr style="font-size:120%">
+										<td colspan="3" id="outSTEPSCORETITLE__QID__" align="center">
+											<b class="outSTEPNR__QID__" id="outSTEPNR_ASSESSMENTTITLE__QID__">(0)</b>
+											<b class="outASSESSMENTTITLE__QID__" id="outASSESSMENTTITLE__QID__">Assessment of Student Answer</b>
+											<b class="outSTEPID_ASSESSMENT__QID__" id="outSTEPID_ASSESSMENT__QID__">[ID]</b>
+										</td>
+									</tr>
+									<tr class="outASSESSCONNECTION__QID__" id="outASSESSCONNECTION__QID__" style="color:red">
+										<td class="outASSESSCONNECTIONTITLE__QID__" id="outASSESSCONNECTIONTITLE__QID__" valign="top">
+										Connection
+										</td>
+										<td class="outASSESSCONNECTIONTEXT__QID__" id="outASSESSCONNECTIONTEXT__QID__" valign="top">
+										(f)
+										</td>
+										<td class="outASSESSCONNECTIONSCORE__QID__" id="outASSESSCONNECTIONSCORE__QID__" align="right" valign="top">
+										-30.00%
+										</td>
+									</tr>
+									<tr class="outpreLINKSTEPS__QID__" id="outpreLINKSTEPS__QID__" style="color:red">
+										<td class="outpreLINKSTEPSTITLE__QID__" id="outpreLINKSTEPSTITLE__QID__" valign="top">
+										Previous Step
+										</td>
+										<td class="outpreLINKSTEPSTEXT__QID__" id="outpreLINKSTEPSTEXT__QID__" valign="top">
+										2 Missing Steps to previous Step or No Link to next step
+										</td>
+										<td class="outpreLINKSTEPSSCORE__QID__" id="outpreLINKSTEPSSCORE__QID__" align="right" valign="top">
+										-20.0%
+										</td>
+									</tr>
+									<tr class="outpostLINKSTEPS__QID__" id="outpostLINKSTEPS__QID__" style="color:red">
+										<td class="outpostLINKSTEPSTITLE__QID__" id="outpostLINKSTEPSTITLE__QID__" valign="top">
+										Next Step
+										</td>
+										<td class="outpostLINKSTEPSTEXT__QID__" id="outpostLINKSTEPSTEXT__QID__" valign="top">
+										5 Missing Steps to next Step or No Link to next step
+										</td>
+										<td class="outpostLINKSTEPSSCORE__QID__" id="outpostLINKSTEPSSCORE__QID__" align="right" valign="top">
+										-50.0%
+										</td>
+									</tr>
+									<tr class="outJUSTCORRECT__QID__" id="outJUSTCORRECT__QID__" style="color:green">
+										<td class="outJUSTCORRECTTITLE__QID__" id="outJUSTCORRECTTITLE__QID__" valign="top">
+										Correct Justifications
+										</td>
+										<td class="outJUSTCORRECTTEXT__QID__" id="outJUSTCORRECTTEXT__QID__" valign="top">
+										[]
+										</td>
+										<td class="outJUSTCORRECTSCORE__QID__" id="outJUSTCORRECTSCORE__QID__" align="right" valign="top">
+										(r)
+										</td>
+									</tr>
+									<tr class="outJUSTMISSING__QID__" id="outJUSTMISSING__QID__" style="color:red">
+										<td class="outJUSTMISSINGTITLE__QID__" id="outJUSTMISSINGTITLE__QID__" valign="top">
+										Missing Justifications
+										</td>
+										<td class="outJUSTMISSINGTEXT__QID__" id="outJUSTMISSINGTEXT__QID__" valign="top">
+										[]
+										</td>
+										<td class="outJUSTMISSINGSCORE__QID__" id="outJUSTMISSINGSCORE__QID__" align="right" valign="top">
+										-0%
+										</td>
+									</tr>
+									<tr class="outJUSTUNNECESSARY__QID__" id="outJUSTUNNECESSARY__QID__" style="color:red">
+										<td class="outJUSTUNNECESSARYTITLE__QID__" id="outJUSTUNNECESSARYTITLE__QID__" valign="top">
+										Unnecessary Justification
+										</td>
+										<td class="outJUSTUNNECESSARYTEXT__QID__" id="outJUSTUNNECESSARYTEXT__QID__" valign="top">
+										[]
+										</td>
+										<td class="outJUSTUNNECESSARYSCORE__QID__" id="outJUSTUNNECESSARYSCORE__QID__" align="right" valign="top">
+										-20%
+										</td>
+									</tr>
+									<tr class="outSUGUSED__QID__" id="outSUGUSED__QID__">
+										<td class="outSUGUSEDTITLE__QID__" id="outSUGUSEDTITLE__QID__" valign="top">
+										Suggestion:
+										</td>
+										<td class="outSUGUSEDTEXT__QID__" id="outSUGUSEDTEXT__QID__" valign="top">
+										Used for this Step
+										</td>
+										<td class="outSUGUSEDSCORE__QID__" id="outSUGUSEDSCORE__QID__" align="right" valign="top">
+										-0.0%
+										</td>
+									</tr>
+									<tr class="outASSESSUSED__QID__" id="outASSESSUSED__QID__">
+										<td class="outASSESSUSEDTITLE__QID__" id="outASSESSUSEDTITLE__QID__" valign="top">
+										Assessments:
+										</td>
+										<td class="outASSESSUSEDTEXT__QID__" id="outASSESSUSEDTEXT__QID__" valign="top">
+										Used for this Step
+										</td>
+										<td class="outASSESSUSEDSCORE__QID__" id="outASSESSUSEDSCORE__QID__" align="right" valign="top">
+										-0.0%
+										</td>
+									</tr>
+									<tr class="outSCORESTEP__QID__" id="outSCORESTEP__QID__" colspan="3">
+										<td class="outSCORESTEPTITLE__QID__" id="outSCORESTEPTITLE__QID__" valign="top">
+										Score:
+										</td>
+										<td class="outSCORESTEPTEXT__QID__" id="outSCORESTEPTEXT__QID__" valign="top">
+										TOTAL
+										</td>
+										<td class="outSCORESTEPSCORE__QID__" id="outSCORESTEPSCORE__QID__" align="right" valign="top">
+										0.0%
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="SUGGESTIONS__QID__" id="SUGGESTIONS__QID__" style="display:none">
+					<table align="center" bgcolor="#EAEAEA" border="1" width="96%">
+						<tbody><tr>
+							<td>
+								<table align="center" border="0" cellspacing="10px" width="96%">
+									<tbody><tr>
+										<td colspan="3">
+											<b>(<outtext class="outNEXTNR__QID__" step="0" id="outNEXTNR__QID__">
+												0
+											</outtext>)
+											<outtext class="bSelectSuggestion__QID__" step="0" id="bSelectSuggestion__QID__">Select Suggestion</outtext></b>
+											<button type="button" class="bSelectSuggestionOK__QID__" step="0" id="bSelectSuggestionOK__QID__" onclick="vEProof__QID__.selectSuggestion(this.getAttribute('step'))">  OK   </button>
+											<input class="inCONSUGGESTION__QID__" id="inCONSUGGESTION__QID__" style="display:none" type="text">
+											<input class="inIDSUGGESTION__QID__" id="inIDSUGGESTION__QID__" style="display:none" type="text">
+										</td>
+									</tr>
+									<tr class="SUGGESTIONTR__QID__" step="0" id="SUGGESTIONTR__QID__">
+										<td class="sugSTEPID__QID__" step="0" id="sugSTEPID__QID__">
+											[ID]
+										</td>
+										<td class="CONSUGGESTION__QID__" step="0" id="CONSUGGESTION__QID__">
+												<input class="rCONSUGGESTION__QID__" name="rCONSUGGESTION__QID__" id="rCONNUGGESTION__QID__" type="radio">
+												<outtext class="outCONSUGGESTION__QID__" step="0" id="outCONSUGGESTION__QID__">???</outtext>
+										</td>
+										<td class="IDSUGGESTION__QID__" step="0" id="IDSUGGESTION__QID__">
+												<input class="rIDSUGGESTION__QID__" name="rIDSUGGESTION__QID__" id="rIDNUGGESTION__QID__" type="radio">
+												<outtext class="outIDSUGGESTION__QID__" step="0" id="outIDSUGGESTION__QID__">Proof Step Def</outtext>
+										</td>
+									</tr>
+								</tbody></table>
+							</td>
+						</tr>
+					</tbody></table>
+				</div>
+			</div>
+			<hr>
+			<div class="tplCONNECTIONLIST__QID__" id="tplCONNECTIONLIST__QID__">
+			ConnectionList:
+				<ul id="ulCONNECTIONLIST__QID__">
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-0">'???'</eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-1"></eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-2">'=&gt;'</eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-3">'='</eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-4">'&lt;='</eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-5">'&lt;'</eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-6">'&gt;='</eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-7">'&gt;'</eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-8">'subseteq'</eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-9">'DEF'</eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-10">'TEXT'</eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-11">'TYP'</eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-12">'q.e.d.'</eproofconnection></li>
+					<li><eproofconnection class="tplCONNECTION__QID__" id="CON-__QID__-13">'LINK-NODE'</eproofconnection></li>
+				</ul>
+			</div>
+			<hr>
+			<b>Source Step:</b><br>
+			<div class="SOURCESTEPS__QID__" id="SOURCESTEPS__QID__">$SOURCESTEPS</div>
+			<hr>
+			<b>Student Answers:</b><br>
+
+//0:PrevID//1:Con=TYP//2:ID=MY1//3:Just=CK,DU,P1//4:OptJust//5:ManScore=0.9//6:SugUsed//7:AssUsed//8:SelCon//9:SelID//10:SelJUST//11:StepNr
+
+			<br>
+			<textarea class="imathSTUDENTANSWER" name="imathSTUDENTANSWER" id="imathSTUDENTANSWER" rows="10" cols="125" wrap="off"></textarea>
+			<hr>
+			<div class="imathSTORAGE" id="imathSTORAGE">
+				<b>IMathAS Storage (qn1000):</b><br>
+				<textarea type="text" id="qn1000" name="qn1000" rows="4" cols="125" wrap="off">				</textarea>
+			</div>
+			<div class="imathDISPLAYOPTIONandSTEPCOUNT" id="imathDISPLAYOPTIONandSTEPCOUNT">
+				<b>imathDISPLAYOPTION:</b> <input id="imathDISPLAYOPTION" name="imathDISPLAYOPTION" value="EDITcomplete" type="text">
+				<hr>
+				<b>imathSTEPCOUNT:</b> <input id="imathSTEPCOUNT" name="imathSTEPCOUNT" value="0" type="text">
+				<hr>
+			</div>
+			<b>Settings:</b><br>
+			<textarea class="imathSETTINGS" name="imathSETTINGS" id="imathSETTINGS" rows="4" cols="125" wrap="off"></textarea>
+			<hr>
+			<b>Preconditions:</b><br>
+			<textarea class="imathPRECONDITION" name="imathPRECONDITION" id="imathPRECONDITION" rows="4" cols="125" wrap="off"></textarea>
+			<hr>
+			<b>Conclusions:</b><br>
+			<textarea class="imathCONCLUSION" name="imathCONCLUSION" id="imathCONCLUSION" rows="4" cols="125" wrap="off"></textarea>
+			<hr>
+			<b>Justifications:</b><br>
+			<textarea class="imathJUSTIFICATION" name="imathJUSTIFICATION" id="imathJUSTIFICATION" rows="4" cols="125" wrap="off"></textarea>
+			<hr>
+			<b>Proof Steps:</b><br>
+			<textarea class="imathPROOFSTEP" name="imathPROOFSTEP" id="imathPROOFSTEP" rows="4" cols="125" wrap="off"></textarea>
+			<hr>
+			<b>Solutions:</b>
+			<button type="button" class="bEncode__QID__" id="bEncode__QID__" onclick="vEProof__QID__.encodeSol()">Encode Sol</button>
+			<br>
+			<textarea class="imathSOLUTION" name="imathSOLUTION" id="imathSOLUTION" rows="4" cols="125" wrap="off"></textarea>
+			<hr>
+			<b>Solutions encrypted:</b>
+			<button type="button" class="bDecode__QID__" id="bDecode__QID__" onclick="vEProof__QID__.decodeSol()">Decode Sol</button>
+			<br>
+			<textarea class="imathENCRYPTED" name="imathENCRYPTED" id="imathENCRYPTED" rows="4" cols="125" wrap="off"></textarea>
+			<hr>
+		</div> <!-- END: DIV id=iMathASINOUT -->
+		<!-- =======IMATH TABLE=================================================== -->
+		<div class="PROOFCONTROL__QID__" id="PROOFCONTROL__QID__" border="0" bgcolor="#ddf" style="display:none" align="center">
+			<center>
+				<table align="center" bgcolor="#ddf" border="0" width="96%">
+					<tbody><tr class="CONTROLBUTTONS__QID__" id="CONTROLBUTTONS__QID__">
+						<td align="left">
+							<button type="button" class="bLOADCONTROL__QID__" id="bLOADCONTROL__QID__" onclick="vEProof__QID__.clickLoad()" style="color:blue">Load</button>
+							<button type="button" class="bSAVEXMLCONTROL__QID__" id="bSAVEXMLCONTROL__QID__" onclick="vEProof__QID__.clickSaveXML()" style="color:blue">Save</button>
+							<button type="button" class="bSAVEIMATHCONTROL__QID__" id="bSAVEIMATHCONTROL__QID__" onclick="vEProof__QID__.clickSaveIMathAS()" style="color:blue">IMathAS</button>
+							<button type="button" class="bPREFERENCES__QID__" id="bPREFERENCES__QID__" onclick="vEProof__QID__.clickPreferences()" style="color:blue">Preferences</button>
+							&nbsp; - &nbsp;
+							<button type="button" class="bACKNOWLEDGEMENT__QID__" id="bACKNOWLEDGEMENT__QID__" onclick="document.location.href='http://eproof.weebly.com/acknowledgements.html'" style="display:none">Acknowledgements</button>
+							<a target="_blank" href="http://eproof.weebly.com/acknowledgements.html">Acknowledgements</a>
+							&nbsp; - &nbsp;
+							<a href="http://e-proof.weebly.com/tutorial/e-proof-emulation.html" target="_blanK">Tutorial e-Proof Emulation</a>
+						</td>
+					</tr>
+					<tr class="LOADAREA__QID__" id="LOADAREA__QID__" style="display:none">
+						<td align="center">
+							<h2>Load XML-File</h2>
+							<button type="button" class="bIMPORTCONTROL__QID__" id="bIMPORTCONTROL__QID__" onclick="vEProof__QID__.clickLoadXML()" style="color:blue">Load XML</button>
+							<button type="button" class="bIMPORTCANCEL__QID__" id="bIMPORTCONTROL__QID__" onclick="vEProof__QID__.clickCloseControl()" style="color:red">Cancel</button><br>
+							Copy the XML-code for an e-Proof into Textbox and press button [Import e-Proof] to load the new e-Proof.
+							<br>
+							<textarea name="tLOAD__QID__" class="tLOAD__QID__" id="tLOAD__QID__" cols="100" rows="13" wrap="off"></textarea>
+						</td>
+					</tr>
+					<tr class="SAVEXMLAREA__QID__" id="SAVEXMLAREA__QID__" style="display:none">
+						<td align="center">
+							<h2>SAVE File</h2>
+							<input class="checkUSESOLUTION__QID__" id="checkUSESOLUTION__QID__" onchange="vEProof__QID__.saveOnChange()" style="display:none" type="checkbox"> <!-- Use Solution -->
+							<input class="checkSTUDANSWERSOLUTION__QID__" id="checkSTUDANSWERSOLUTION__QID__" checked="checked" onchange="vEProof__QID__.saveOnChange()" type="checkbox"> Student Answer to Solution
+							<input class="checkENCRYPT__QID__" id="checkENCRYPT__QID__" onchange="vEProof__QID__.saveOnChange()" type="checkbox"> Encrypt IMathAS-Solution
+							<input class="checkSTUDANSWEREXPORT__QID__" id="checkSTUDANSWEREXPORT__QID__" onchange="vEProof__QID__.saveOnChange()" type="checkbox"> Export Student Answer
+							<br>
+							File Format:
+							<select class="sFILEFORMAT__QID__" id="sFILEFORMAT__QID__" onchange="vEProof__QID__.saveOnChange()">
+								<option selected="selected" value="XML">XML File</option>
+								<option value="IMathAS">iMathAS</option>
+							</select>
+							<button type="button" class="bEXPORT__QID__" step="0" id="bEXPORT__QID__" onclick="vEProof__QID__.saveOnChange()" style="color:blue">Save</button>
+							<button type="button" class="bEXPORTCLOSE__QID__" step="0" id="bEXPORTCLOSE__QID__" onclick="vEProof__QID__.clickCloseControl()" style="color:red">Cancel</button>
+							<br>
+							<textarea name="tSAVEXML__QID__" class="tSAVEXML__QID__" id="tSAVEXML__QID__" cols="100" rows="13" wrap="off">							</textarea>
+						</td>
+					</tr>
+					<tr class="SAVEIMATHAREA__QID__" id="SAVEIMATHAREA__QID__" style="display:none" wrap="off">
+						<td align="center">
+							<h2>SAVE iMathAS-File</h2>
+							 Software-ID (SID):<input class="tSID__QID__" size="6" id="tSID__QID__" name="tSID__QID__" value="_SID" onchange="vEProof__QID__.saveEProofIMath2Form()" type="text">
+							 Question-ID (QID):<input class="tQID__QID__" size="6" id="tQID__QID__" name="tQID__QID__" value="$vQID" onchange="vEProof__QID__.saveEProofIMath2Form()" type="text">
+							<button type="button" class="bIMPORTCANCEL__QID__" id="bIMPORTCONTROL__QID__" onclick="vEProof__QID__.clickCloseControl()" style="color:red">Cancel</button><br>
+							<hr>Background Question Text 1:<br>
+							<textarea name="tSAVEIMATH__QID__" class="tSAVEIMATH__QID__" id="tSAVEIMATH__QID__" cols="100" rows="6" wrap="off">							</textarea>
+							<hr><tt>eProofJS.html</tt> Export:<br>
+							<textarea name="tEPROOFJSEXPORT__QID__" class="tEPROOFJSEXPORT__QID__" id="tEPROOFJSEXPORT__QID__" cols="100" rows="6" wrap="off">							</textarea>
+							<hr><tt>eProofJSauthoring.html</tt> Export:<br>
+							<textarea name="tAUTHORINGEXPORT__QID__" class="tAUTHORINGEXPORT__QID__" id="tAUTHORINGEXPORT__QID__" cols="100" rows="6" wrap="off">							</textarea>
+							<hr>Weebly Export:<br>
+							<textarea name="tWEEBLYEXPORT__QID__" class="tWEEBLYEXPORT__QID__" id="tWEEBLYEXPORT__QID__" cols="100" rows="6" wrap="off">							</textarea>
+							<div id="exportSETTINGSEXTRA" style="display:none">
+								<hr>iMathAS - Common Control for Settings:<br>
+								<textarea name="tIMATHCOMMONCONTROL_I__QID__" class="tIMATHCOMMONCONTROL_I__QID__" id="tIMATHCOMMONCONTROL_I__QID__" cols="100" rows="6" wrap="off">								</textarea>
+							</div>
+						</td>
+					</tr>
+					<tr class="PREFERENCESAREA__QID__" id="PREFERENCESAREA__QID__" style="display:none">
+						<td align="center">
+							<h2>Preferences</h2>
+							<b class="SETTINGTHEOREMTITLE__QID__" id="SETTINGTHEOREMTITLE__QID__">Setting Theorem Title</b><br>
+							<button type="button" class="bUPDATESETTINGS__QID__" step="0" id="bUPDATESETTINGS__QID__" onclick="vEProof__QID__.clickSaveXML()" style="color:blue">Save</button>
+							<button type="button" class="bSETTINGCLOSE__QID__" step="0" id="bSETTINGCLOSE__QID__" onclick="vEProof__QID__.clickCloseControl()" style="color:red">Cancel</button>
+							<input class="SETTING__QID__" id="SET_Theorem_Label" value="" type="hidden">
+							<input class="SETTING__QID__" id="SET_Theorem_Title" value="" type="hidden">
+							<input class="SETTING__QID__" id="SET_ThisQ" value="" type="hidden">
+							<input class="SETTING__QID__" id="SET_selectbox_proofsteps" value="" type="hidden">
+							<input class="SETTING__QID__" id="SET_allow_own_proofsteps" value="" type="hidden">
+							<input class="SETTING__QID__" id="SET_alertDOM" value="" type="hidden">
+							<input class="SETTING__QID__" id="SET_Offline" value="" type="hidden">
+							<br>
+							<div class="PREFERENCESTABLE__QID__" id="PREFERENCESTABLE__QID__">
+								<table align="center" border="0" width="100%">
+									<tbody><tr>
+										<td valign="top">
+										   <b>Author:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_Author" value="Engelbert Niehaus" size="45" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>e-Mail:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_eMail" value="niehaus@uni-landau.de" size="25" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Date:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_Date" value="23.10.2014" size="12" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Comment/Theorem:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_Theorem_Appendix" value="----Init By load Settings---" size="65" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										  <!--- Due to quotation problems with \" in value, the init value  will be -->
+										  <!--  set via javascript at the very end of this HTML-file -->
+										</td>
+									</tr>
+									<tr valign="top">
+										<td valign="top">
+										   <b>Language-Code:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_LANGUAGE" value="EN" size="3" onchange="vEProof__QID__.updateSettingValue(this)" type="text"> 'DE' or 'EN'
+										</td>
+									</tr>
+									<tr valign="top">
+										<td valign="top">
+										   <b>Authoring Mode:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_AuthoringMode" value="0" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Manual Assessment:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_AssessmentMode" value="0" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Show Assessment-Button:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_show_assessment" value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Point Reduction per Assessment:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_Assessment_Minus_Percent" value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Suggestions for Proof Steps:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_show_suggestions" value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Point Reduction for Suggestions:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_Suggestion_Minus_Percent" value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Show Solution of Proof:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_show_proof_solution" value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Show Load-Save-Control:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_show_Load_Save_Control" value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Show Main Control:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_show_Main_Control" value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Show External Links:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_show_links" value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>MathJax Format:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_MathFormat" value="20" size="20" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Percent Point Reduction per Error:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_Per_Error_Minus_Percent" value="10" size="3" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Unnecessary Proof Steps:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_unnecessary_proofsteps" value="3" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Unnecessary Connections:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_unnecessary_connections" value="3" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Unnecessary Justifications:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_unnecessary_justifications" value="3" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Randomize Proof-Step:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_randomize_proofstep_IDs" value="0" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										  <!-- For option=1 it is necessary to include the Background Code 3.<BR>Check if setting of Question <tt>New version on reattempt?</tt> is set to <tt>'No - Same Version on reattempt'</tt>-->
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Remap Step IDs:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_remap_proofstep_IDs" value="0" size="2" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Crypt Key for Solution:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_cryptkey" value="ASFGHZS" size="10" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Question-ID Common Control:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_COMMONCONTROL" value="4200,4001,4002" size="25" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Question-ID Question Text:</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_QUESTIONTEXT" value="4001,4002" size="25" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>QID for e-Proof (unique):</b>
+										</td>
+										<td valign="top">
+										  <input class="SETTING__QID__" id="SET_vQID" value="123456" size="17" onchange="vEProof__QID__.updateSettingValue(this)" type="text">
+										</td>
+									</tr>
+								</tbody></table>
+							</div>
+						</td>
+					</tr>
+					<tr class="TEMPLATEAREA__QID__" id="TEMPLATEAREA__QID__" style="display:none">
+						<td align="center">
+							<hr><b>tTPL1 Preconditions</b><br>
+							<textarea class="tTPLIMATHAS" id="tTPLIMATHAS" cols="125" rows="8">//--------------------------------------------------------------------------------------
+//-----e-PROOF
+ (___THEOREM_LABEL___): ___THEOREM_TITLE___
+//--------------------------------------------------------------------------------------
+//-----Author:
+  ___AUTHOR___
+//-----e-Mail:  ___EMAIL___
+//-----created: ___DATE___
+//--------------------------------------------------------------------------------------
+//
+//--------------------------------------------------------------------------------------
+//-------1-COMMON
+ CONTROL: Settings and Definition of Theorem and Proof-----------------
+//--------------------------------------------------------------------------------------
+//
+ Documentation: see http://e-proof.weebly.com
+// e-Proof-Creator: http://e-proof.weebly.com/download--tools.html
+//--------------------------------------------------------------------------------------
+__do__Theorem_Label
+ = "___THEOREM_LABEL___"
+__do__Theorem_Title = "___THEOREM_TITLE___"
+//--------------------------------------------------------------------------------------
+__do__Theorem_Appendix
+ = "___THEOREM_APPENDIX___"
+//--------------------------------------------------------------------------------------
+//---Point
+ Reduction per Error or per Used Support Features----
+__do__Per_Error_Minus_Percent  = ___PER_ERROR_MINUS_PERCENT___  // means
+ ___PER_ERROR_MINUS_PERCENT___%  less Points per Error per Step (default
+ 10%)
+__do__Assessment_Minus_Percent = ___ASSESSMENT_MINUS_PERCENT___ // means
+ ___ASSESSMENT_MINUS_PERCENT___% less Points per Use of Assessment for
+Step (default 100%)
+__do__Suggestion_Minus_Percent = ___SUGGESTION_MINUS_PERCENT___ // means
+ ___SUGGESTION_MINUS_PERCENT___% less Points per Use of Suggestions for
+Step (default 20%)
+//--------------------------------------------------------------------------------------
+//-----unnecessary
+ options make the proof step more difficult---------------------------
+//--- ... = 0 means very simple
+__do__unnecessary_proofsteps     = ___UNNECESSARY_PROOFSTEPS___
+__do__unnecessary_connections    = ___UNNECESSARY_CONNECTIONS___
+__do__unnecessary_justifications = ___UNNECESSARY_JUSTIFICATIONS___
+//--------------------------------------------------------------------------------------
+//------Use
+ Values 1 or 0
+--------------------------------------------------------------
+//--------------------------------------------------------------------------------------
+__do__selectbox_proofsteps
+    = ___SELECTBOX_PROOFSTEPS___
+__do__allow_own_proofsteps    = ___ALLOW_OWN_PROOFSTEPS___
+__do__remap_proofstep_IDs     = ___REMAP_PROOFSTEP_IDS___
+__do__randomize_proofstep_IDs = ___RANDOMIZE_PROOFSTEP_IDS___
+//-----for Novices Users----------------
+__do__show_suggestions    = "___SHOW_SUGGESTIONS___"
+__do__show_assessment     = "___SHOW_ASSESSMENT___"
+__do__show_proof_solution = "___SHOW_PROOF_SOLUTION___"
+//---For AUTHORS/TUTORS-----------------
+__do__AuthoringMode  = ___AUTHORINGMODE___
+__do__AssessmentMode = ___ASSESSMENTMODE___
+//---Miscellaneous Settings-------------
+___SETTINGS___
+//--------------------------------------------------------------------------------------
+//
+//
+//--------------------------------------------------------------
+//--------------PRECONDITIONS-----------------------------------
+//--------------------------------------------------------------
+__do__pi
+ = 0
+___PRECONDITIONS___
+//--------------------------------------------------------------
+//--------------CONCLUSIONS-------------------------------------
+//--------------------------------------------------------------
+__do__pi = 0
+___CONCLUSIONS___
+//--------------------------------------------------------------
+//--------------JUSTIFICATIONS----------------------------------
+//--------------------------------------------------------------
+__do__pi = 0
+___JUSTIFICATIONS___
+//
+//--------------------------------------------------------------
+//--------------PROOFSTEPS--------------------------------------
+//--------------------------------------------------------------
+__do__pi = 0
+___PROOFSTEPS___
+//--------------------------------------------------------------
+//--------------STUDENT ANSWERS---------------------------------
+//--------------------------------------------------------------
+___STUDENTANSWERS___
+//--------------------------------------------------------------
+//--------------SOLUTION DEFINITION-----------------------------
+//--------------------------------------------------------------
+//
+//-[0]Previous_Step---[1]StepID---[2]Connection---[3]necessary_Justification---[4]optional_Just.
+__do__so=0
+___SOLUTION___
+__do__MinimalProofSteps
+ = __do__so
+//
+//--------------------------------------
+//------INCLUDE LIBRARIES---------------
+//--------------------------------------
+// includecodefrom(___CODE_ID_III___)  //QID for Background Code 0 -
+Remapping and Rondomize
+// includecodefrom(___CODE_ID_I___)  //QID of Background Code 1 -
+Language-Def, Assessment and Postprocessing
+// includecodefrom(___CODE_ID_II___)  //QID of Background Code 2 -
+Scoring and Code Generation
+___INCLUDECODE___
+//----------------------------------------------------------
+//----insert in following include command Question Text-----
+//----uncomment the following lines by removing '//'--------
+___INCLUDEQTEXT___
+//----------------------------------------------------------
+</textarea>
+<hr><b>tLOOP1 Preconditions</b><br>
+<!---------------------------------------------------------------------------->
+<textarea class="tTPLSTEPSIMATHAS" id="tTPLSTEPSIMATHAS" cols="125" rows="3">__do_____STEPTYPE___[__do__pi]   = "___STEP_DEF___"
+__do_____STEPTYPE___ID[__do__pi] = "___ID___"
+__do__pi += 1
+</textarea>
+<!---------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------->
+<hr><b>tLOOP5 Solution</b><br>
+<!---------------------------------------------------------------------------->
+<textarea id="tTPLSOLUTIONSTEP" cols="125" rows="3">__do__SolutionStep[__do__so]=array("___PREVIOUS___","___ID___","___CONNECTION___",array(___JUSTSOL___),array(___OPTJUSTSOL___))
+__do__so+=1
+</textarea>
+
+						</td>
+					</tr>
+				</tbody></table>
+			</center>
+			<br>
+		</div>
+		<div class="MAINCONTROL__QID__" id="MAINCONTROL__QID__" border="1" bgcolor="#ddf" style="display:none" align="center">
+			<center>
+				<table align="center" bgcolor="#ddf" border="0" width="96%">
+					<tbody><tr class="trASSESSAUTHORCONTROL__QID__" id="trASSESSAUTHORCONTROL__QID__" bgcolor="#ddf">
+						<td align="center">
+							<button type="button" class="bSUGGESTBUTTON__QID__" id="bSUGGESTBUTTON__QID__" onclick="vEProof__QID__.toggleSuggestionButton()" style="color:green">Suggestion Button</button>
+							<outtext class="infoSUGGESTBUTTON__QID__" id="infoSUGGESTBUTTON__QID__">(OFF)</outtext>
+						</td>
+						<td align="center">
+							<button type="button" class="bASSESSBUTTON__QID__" id="bMANASESS__QID__" onclick="vEProof__QID__.toggleAssessmentButton()" style="color:red">Assessment Button</button>
+							<outtext class="infoASSESSBUTTON__QID__" id="infoASSESSBUTTON__QID__">(OFF)</outtext>
+						</td>
+						<td align="center">
+							<button type="button" class="bMANASSESS__QID__" id="bMANASSESS__QID__" onclick="vEProof__QID__.toggleManualAssessment()" style="color:red">Manual Assessment</button>
+							<outtext class="infoMANASSESS__QID__" id="infoMANASSESS__QID__">(OFF)</outtext>
+						</td>
+					</tr>
+					<tr>
+						<td align="center">
+							<button type="button" class="bSOLUTIONBUTTON__QID__" id="bSOLUTIONBUTTON__QID__" onclick="vEProof__QID__.toggleSolutionButton()" style="color:green">Solution Button</button>
+							<outtext class="infoSOLUTIONBUTTON__QID__" id="infoSOLUTIONBUTTON__QID__">(OFF)</outtext>
+						</td>
+						<td align="center">
+							<button type="button" class="bAUTHORMODE__QID__" id="bAUTHORMODE__QID__" onclick="vEProof__QID__.toggleAuthoringMode()" style="color:red">Authoring Mode</button>
+							<outtext class="infoAUTHORMODE__QID__" id="infoAUTHORMODE__QID__">(OFF)</outtext>
+						</td>
+						<td align="center">
+							<button type="button" class="bCLEARLOCALSTORAGE__QID__" id="bCLEARLOCALSTORAGE__QID__" onclick="vEProof__QID__.clear_LocalStorage()" style="color:red">Clear Local Storage</button>
+						</td>
+
+					</tr>
+				</tbody></table>
+			</center>
+			<br>
+		</div>
+		<div class="PROOFTABLE__QID__" id="PROOFTABLE__QID__">
+			<table align="center" bgcolor="#ddf" border="1" width="96%">
+				<tbody><tr>
+					<td>
+						<table align="center" bgcolor="#ddf" border="0" width="100%">
+							<tbody><tr>
+								<td>&nbsp;</td>
+								<td>
+ 									<!-- =======THEOREM====================== -->
+									<div id="THEOREM">
+										<h3>
+											<outtext class="THEOREMLABEL__QID__" id="THEOREMLABEL__QID__">Theorem</outtext>:
+											<outtext class="THEOREMTITLE__QID__" id="THEOREMTITLE__QID__">My Title</outtext>
+										</h3>
+										<div class="editTITLE__QID__" id="editTITLE__QID__" style="display:none">
+											<input size="10" class="editTHEOREMLABEL__QID__" id="editTHEOREMLABEL__QID__" value="Label" onchange="vEProof__QID__.updateTitle()" type="text">
+											<input size="70" class="editTHEOREMTITLE__QID__" id="editTHEOREMTITLE__QID__" value="Title" onchange="vEProof__QID__.updateTitle()" type="text">
+										</div>
+										<div class="PRECONDITIONLIST__QID__" id="PRECONDITIONLIST__QID__"></div>
+										<button type="button" class="bAddStepID__QID__" steptype="PRECONDITION" id="bAddStepPRECONDITION__QID__" onclick="vEProof__QID__.addStepDefinition(this)" style="color:green;display:none">+Step PRECONDITION</button>
+										<div class="CONCLUSIONLIST__QID__" id="CONCLUSIONLIST__QID__"></div>
+										<button type="button" class="bAddStepID__QID__" steptype="CONCLUSION" id="bAddStepCONCLUSION__QID__" onclick="vEProof__QID__.addStepDefinition(this)" style="color:green;display:none">+Step CONCLUSION</button>
+										<div class="THEOREMAPPENDIX__QID__" id="THEOREMAPPENDIX__QID__"></div>
+									</div>
+									<!-- =======HELP PAGE =============================================== -->
+									<div class="HELP__QID__" id="HELP__QID__" style="display:none">
+										<hr>
+										<table border="0">
+											<tbody><tr>
+												<td valign="top">
+													<input name="bHELP__QID__" value=" X " onclick="vEProof__QID__.toggle('HELP__QID__')" type="button">
+												</td>
+												<td valign="center">
+													<h3 id="HELPTITLE__QID__">Help:</h3>
+												</td>
+											</tr>
+										</tbody></table>
+										<div class="HELP_EN__QID__" id="HELP_EN__QID__" style="display:none">
+											<ul>
+											  <li><b>Move Proof Steps:</b> You can move the steps of the
+proof by changing the number in the select box. The justifications and
+all other settings associated with the proof step are moved as well,
+because they are treated as a unit.</li>
+											  <li><b>3 Question Marks:</b> 3 question marks '???'
+indicate to the user, that a connection to the previous proof step must
+be defined or the step should be marked as START of a sequence of proof
+steps.so ist noch kein Bezug zum vorherigen Beweisschritt gesetzt
+worden. An Implication (among others) is the most commom link between
+two proof steps.</li>
+											  <li><b>Identificators for Beweisfragmente:</b> All proof
+step and justifications have an unique identificator (e.g.
+[S1],[J1],...). These unique identificators are used to select steps in
+the e-proof system.</li>
+											  <li><b>Justifications:</b> All proof steps may have
+additional justifications. These justification show whether the truth of
+ a current step is based solely on the truth of the premises or previous
+ steps. If you want to select justification for the proof step just
+select the Button [Justifications:] for the proof step. Use the checkbox
+ to select applicable justifications. The [OK] button close the
+selection box.</li>
+											  <li><b>Display Options:</b> In the stanard view of the
+e-proof you will see the Edit buttons for changing the settings of the
+resp. proof step. For a print out of you current work, you can change
+the display option of the proof with a select box or even hide the user
+input completely, e.g. if you print the solution of the proof only
+without the user input. </li>
+											  <li><b><font color="red">[X]</font>-Button:</b> With the <font color="red">[X]</font>-Button
+ you can the delete the proof from the proof, e.g. if the proof step
+contains mathematical errors or if the step is not necessary for the
+logical chain of steps in the proof. Deleted proof steps are stored in
+the section [Unused Proof Steps] and you can append deleted steps to the
+ proof later on. If you want to append deleted proof steps press on
+button [Unused Proof Steps] and use the [Append] to append the selected
+step. Alternatively you place the deleted step with the order select box
+ at a certain position in the proof.</li>
+											  <li><b><font color="green">[Suggestion]</font>-Button:</b> By application of the <font color="green">[Suggestion]</font>-Button
+ you can display suggestions for the next proof steps. The suggestions
+contain false suggestions in some cases all suggestions might be wrong
+(e.g. if the proof step itself is false). If you press the  <font color="green">[Suggestion]</font>-Button,
+ it could lead to a deduction of points for the proof step, if is
+defined in the setting of the proof. A selection of a proof steps
+replaces the next proof step with the selected one or appends the
+selected proof step to the e-proof.</li>
+											  <li><b>Unused Proof Steps:</b> An e-proof could contain
+proof steps that are not necessary for the proof or that contains
+mathematical errors. Deleted or unused steps are stored the section for
+the unused proof steps. [Append Step] or selecting the new position
+places the steps back to the e-proof.</li>
+											  <li><b>Edit Proof Steps [EDIT]:</b> If an identificator is
+starting with [MY..], then the step can be edited according to the
+requirements. If you want to change the proof step click [EDIT]-button.
+The option is available, if the option of self-defined proof steps is
+set.</li>
+											  <li><b>Hide Help Page:</b> You can hide the help page, if you press the Help-Button again or press the [X]-Button.</li>
+											</ul>
+										</div>
+										<div class="HELP_DE__QID__" id="HELP_DE__QID__" style="display:none">
+											<ul>
+											  <li><b>Beweisfragmente verschieben:</b> Die Beweisfragmente
+ können mit der Positionsnummer an eine andere Stelle im Beweis
+verschoben werden. Die zugehörigen Begründungen und Bezüge bilden ein
+Einheit mit dem Beweisfragment und werden daher ebenfalls verschoben.</li>
+											  <li><b>3 Fragezeichen:</b> Wenn in dem Beweisfragement
+links noch 3 Fragezeichen stehen "???", so ist noch kein Bezug zum
+vorherigen Beweisschritt gesetzt worden. Diesen sollte man angeben oder
+wenn es keinen Bezug zum vorherigen Beweisschritt gibt, sollte man den
+Bezug auf "START" einer neuen Beweissequenz setzen.</li>
+											  <li><b>Identifikatoren für Beweisfragmente:</b> Jedes
+Beweisfragment und jede Begründung hat einen Identifikator (z.B.
+[S1],[J1],...). Dieser ist eindeutig in einem Beweis gewählt.</li>
+											  <li><b>Begründungen:</b> Jeder Beweisschritt kann
+Begründungen enthalten, wenn Sie diese auswählen wollen, drücken Sie
+einfach auf [Begründungen:]. Danach erscheint eine Liste aller
+verfügbaren Begründungen, aus denen Sie die relevanten Begründungen
+auswählen können. Nach der Auswahl auf [OK] drücken und die Ihre Auswahl
+ der Begründungen wird zu dem jeweilgen Schritt angezeigt.</li>
+											  <li><b>Editiermöglichkeiten ausblenden:</b> Für jeden
+Schritt sind die Editiermöglichkeiten eingeblendet. Für die
+abschließende Korrektur kann man diese Editiermöglichkeiten ausblenden.
+Dies ist oben bei Darstellung des Beweise möglich. </li>
+											  <li><b><font color="red">[X]</font>-Button:</b> Mit dem <font color="red">[X]</font>-Knopf
+ in dem jeweilgen Beweisschritt kann man das Beweisfragment aus Ihrem
+Beweis entfernen. Dieser ist dann aber nicht unwiederbringlich gelöscht,
+ sondern kann unten bei [Nicht verwendete Beweisschritte] mit [+] wieder
+ eingeblendet werden.</li>
+											  <li><b><font color="green">[Vorschlag]</font>-Button:</b> Mit dem <font color="green">[Vorschlag]</font>-Knopf kann man Vorschläge anzeigen lassen. Die Vorschläge werden für den nachfolgenden Beweisschritt angezeigt. Wenn der <font color="green">[Vorschlag]</font>-Knopf
+ gefrückt wurde, kann es zu Punktabzü,gen kommen, wenn das im e-Beweis
+so eingestellt wurde. Eine Vorschlagsauswahl ersetzt dann den
+Beweisschritt nachfolgenden Beweisschritt entsprechend. Der
+Vorschlagsknopf am Ende des Beweis hängt einen neuen Beweisschritt an
+den Beweis an.</li>
+											  <li><b>Nicht verwendete Beweisschritte:</b> In einem Beweis
+ können auch Beweisschritte enthalten, die nicht für den Beweis
+notwendig sind. Diese landen hinter dem Beweis unten auf der Seite in
+einem Container der <i>"nicht verwendeten Beweisschritte"</i>. Auch
+gelöschte Beweisfragemente finden sich hier. Mit dem [+] oder der Angabe
+ der Position im Beweis kann man diese wieder an einer bestimmten Stelle
+ in Ihren Beweis integrieren.</li>
+											  <li><b>Editierbare Beweisschritte [EDIT]:</b> Wenn ein
+Beweisfragement den Identifikator [MY..] besitzt, kann dieser auch
+verändert werden. Um den Beweisschritt zu verändern, klicken Sie auf den
+ [EDIT]-Knopf, der aber nur angezeigt wird, wenn die Einstellungen des
+e-Beweises dieses vorsehen. </li>
+											  <li><b>Ausblenden der Hilfe:</b> Diese Hilfe kann wieder ausgeblendet werden, wenn Sie unten erneut auf den Hilfe-Knopf oder oben neben der Überschrift <b>Hilfe</b> auf [X] drücken.</li>
+											</ul>
+										</div>
+									</div> <!-- END: HelpPage -->
+									<!-- =======STUDENT ANSWER HEADER===================================== -->
+									<div id="STUDENTANSWERHEADER__QID__">
+										<hr>
+										<table align="center">
+											<tbody>
+												<tr>
+													<td class="EPROOFLINKS__QID__" id="LINKHEADERURL1__QID__">
+														<b>Information:</b> &nbsp;&nbsp; <a id="LINKINFO1__QID__" href="file:///Users/niehausbert/DownloadsMail/link-defined-in-eproofmain.js" target="_blank">Tutorial</a>
+													</td>
+													<td class="EPROOFLINKS__QID__" id="LINKHEADERURL2__QID__">
+														<a id="LINKINFO2__QID__" href="file:///Users/niehausbert/DownloadsMail/link-defined-in-eproofmain.js" target="_blank">Video/Screencast</a>
+													</td>
+													<td id="buttonHEADERLINETR1__QID__">
+													<a id="LINKINFO3__QID__" href="file:///Users/niehausbert/DownloadsMail/link-defined-in-eproofmain.js" target="_blank">ASCII-Math</a>
+													</td>
+												</tr>
+												<tr>
+													<td id="HEADERLINETR1__QID__">
+													</td>
+													<td id="editHEADERLINETR1__QID__">
+														<select class="sSTEPCOUNT__QID__" id="sSTEPCOUNT__QID__" onchange="vEProof__QID__.updateStepCount(this.value)">
+														</select>
+													</td>
+													<td class="EPROOFLINKS__QID__" id="LINKHEADERLINETR0__QID__">
+														<button type="button" class="btHelp__QID__" id="btHelp__QID__" onclick="vEProof__QID__.toggle('HELP__QID__')"> Help </button>
+													</td>
+												</tr>
+												<tr>
+													<td id="HEADERLINETR2__QID__">
+													</td>
+													<td id="editHEADERLINETR2__QID__">
+														<select class="sDISPLAYOPTION__QID__" id="sDISPLAYOPTION__QID__" onchange="vEProof__QID__.setVisibility4Proof(this.value)">
+														</select>
+													</td>
+													<td id="buttonHEADERLINETR2__QID__">
+														<button type="button" class="btSave__QID__" id="btSave__QID__" onclick="vEProof__QID__.save(this)"> Save </button>
+													</td>
+												</tr><tr>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- ========STUDENT ANSWER================================================== -->
+									<div class="STUDENTANSWERLIST__QID__" id="STUDENTANSWERLIST__QID__">
+										<hr>
+										<h3 class="PROOFLABEL__QID__" id="PROOFLABEL__QID__">Proof:</h3>
+
+										<div class="SELECTFROM__QID__" id="SELECTFROM__QID__0" style="display:none">
+											Do not add 0 after ID because it will be appended by setClassName4Step()
+											<button type="button" class="bUpSug__QID__" step="0" id="bUpSug__QID__" onclick="vEProof__QID__.setAllSuggestions()" style="color:blue">Update Suggestions</button>
+											<button type="button" class="bLoadSA__QID__" step="0" id="bLoadSA__QID__" onclick="vEProof__QID__.load_StudentAnswer()" style="color:blue">Load Student Answer</button>
+												ID:<input size="3" class="inSTEPID__QID__" step="0" id="inSTEPID__QID__0" value=" " onchange="alert('Edit Step ID of Step'+this.getAttribute('step'))" type="text">
+												oldPos:<input size="2" class="oldPOSITION__QID__" step="0" id="oldPOSITION__QID__0" value="0" type="text"><br>
+												Step:<input size="2" class="STEPNR__QID__" step="0" id="STEPNR__QID__" value="0" type="text">
+												Previous:<input size="2" class="PREVIOUS__QID__" step="0" id="PREVIOUS__QID__0" value="0" type="text">
+												Next:<input size="2" class="NEXT__QID__" step="0" id="NEXT__QID__0" value="NoID" type="text">
+												NextCon:<input size="2" class="NEXTCON__QID__" step="0" id="NEXTCON__QID__0" type="text">
+												Sel4Con:<input size="15" class="selectCONNECTION__QID__" step="0" id="selectCONNECTION__QID__0" value=" " type="text">
+												Sel4ID:<input size="15" class="selectSTEPID__QID__" step="0" id="selectSTEPID__QID__0" type="text">
+												Sel4Just:<input size="15" class="selectJUSTIFICATION__QID__" step="0" id="selectJUSTIFICATION__QID__0" type="text"><br>
+												Append4Just:<input size="15" class="appendJUSTIFICATION__QID__" step="0" id="appendJUSTIFICATION__QID__0" type="text">
+												SugUsed:<input step="0" size="2" class="inSUGGESTIONSUSED__QID__" value="0" id="inSUGGESTIONSUSED__QID__0" type="text"><br>
+												UsedIDs4Sol:<input step="0" size="12" class="USEDIDS__QID__" value="X1,X2,X3" id="USEDIDS__QID__" type="text">
+												ProofIDs:<input step="0" size="12" class="PROOFIDS__QID__" value="Y1,Y2,Y3" id="PROOFIDS__QID__" type="text">
+												ProofC:<input step="0" size="2" class="PROOFCOUNT__QID__" value="0" id="PROOFCOUNT__QID__" type="text">
+												LLE:<input step="0" size="4" class="LLE__QID__" value="0" id="LLE__QID__" type="text">
+												Total Score:<input step="0" size="4" class="TOTALSCORE__QID__" value="0.0" id="TOTALSCORE__QID__" type="text">
+										</div>
+										<div class="FIRSTSSUGGESTION__QID__" id="FIRSTSSUGGESTION__QID__">
+											<select class="sPOSSPACE__QID__" id="sPOSSPACE__QID__" style="visibility:hidden">
+												<option selected="selected" value="99">16</option>
+											</select>
+											<button type="button" class="bSuggestionFirst__QID__" step="0" id="bSuggestionFirst__QID__" onclick="vEProof__QID__.toggleSuggestionStep('0')" style="color:green">Suggestion</button>
+											<button type="button" class="bReset__QID__" step="0" id="bReset__QID__" onclick="vEProof__QID__.resetProof(this)" style="color:red">Delete Proof</button>
+											<button type="button" class="bManAssess__QID__" manassvisible="0" id="bManAssess__QID__" onclick="vEProof__QID__.toggleManualAssessment(this)" style="display:none">Manual Asessment</button>
+											<button type="button" class="bAuthoringMode__QID__" authoringvisible="0" id="bAuthoringMode__QID__" onclick="vEProof__QID__.toggleAuthoringMode(this)" style="display:none">Authoring Mode</button>
+										</div>
+										<div class="SUGGESTIONS__QID__" id="SUGGESTIONS__QID__0" style="display:none">
+											<table align="center" bgcolor="#EAEAEA" border="1" width="96%">
+												<tbody><tr>
+													<td>
+														<table align="center" border="0" cellspacing="10px" width="96%">
+															<tbody><tr>
+																<td colspan="2">
+																	<b>(<outtext class="outNEXTNR__QID__" step="0" id="outNEXTNR__QID__">
+																		1
+																	</outtext>)
+																	<outtext class="bSelectSuggestion__QID__" step="0" id="bSelectSuggestion__QID__0">Select Suggestion</outtext></b>
+																	<button type="button" class="bSelectSuggestionOK__QID__" step="0" id="bSelectSuggestionOK__QID__0" onclick="vEProof__QID__.selectSuggestion(this.getAttribute('step'))">  OK   </button>
+																	<input class="inCONSUGGESTION__QID__" id="inCONSUGGESTION__QID__0" style="display:none" type="text">
+																	<input class="inIDSUGGESTION__QID__" id="inIDSUGGESTION__QID__0" style="display:none" type="text">
+
+																</td>
+															</tr>
+															<tr class="SUGGESTIONTR__QID__" step="0" id="SUGGESTIONTR__QID__0">
+																<td class="sugSTEPID__QID__" step="0" id="sugSTEPID__QID__0">
+																	[ID]
+																</td>
+																<td class="CONSUGGESTION__QID__" step="0" id="CONSUGGESTION__QID__0">
+																		<input class="rCONSUGGESTION__QID__" value="0" name="rCONSUGGESTION__QID__0" id="rCONSUGGESTION__QID__0" type="radio">
+																		<outtext class="outCONSUGGESTION__QID__" step="0" id="outCONSUGGESTION__QID__">???</outtext>
+																</td>
+																<td class="IDSUGGESTION__QID__" step="0" id="IDSUGGESTION__QID__0">
+																		<input class="rIDSUGGESTION__QID__" name="rIDSUGGESTION__QID__0" id="rIDSUGGESTION__QID__0" type="radio">
+																		<outtext class="outIDSUGGESTION__QID__" step="0" id="outIDSUGGESTION__QID__0">StepDef</outtext>
+																</td>
+															</tr>
+														</tbody></table>
+													</td>
+												</tr>
+											</tbody></table>
+										</div>
+										<div class="assessSTUDENTANSWER__QID__" id="assessSTUDENTANSWER__QID__0" style="display:none"></div>
+										<!-- ====USED STEPS============================================= -->
+										<div class="USEDSTEPS__QID__" id="USEDSTEPS__QID__">
+										</div> <!-- END: editSTUDENTANSWERLIST -->
+										<div class="APPENDSTEPS__QID__" id="APPENDSTEPS__QID__">
+											<select class="sPOSSPACE__QID__" id="sPOSSPACE__QID__" style="visibility:hidden">
+												<option selected="selected" value="99">16</option>
+											</select>
+											<button type="button" class="bShowSuggestionAppend__QID__" step="0" id="bShowSuggestionAppend__QID__" onclick="vEProof__QID__.toggleSuggestionAppend(this)" style="display:none"><font color="green">Append Suggestion</font></button>
+										</div>
+										<!-- ====UNUSED STEPS=========================================== -->
+										<button type="button" class="btSave__QID__" id="btSaveII__QID__" onclick="vEProof__QID__.save(this)"> Save </button>
+										<div class="UNUSED__QID__" id="UNUSED__QID__" style="display:none">
+											<hr>
+											<table align="center" bgcolor="#EAEAEA" border="0" width="98%">
+												<tbody><tr>
+													<td>
+														&nbsp;&nbsp;
+													</td>
+													<td>
+														<button type="button" class="btToggleUnused__QID__" id="btToggleUnused__QID__" onclick="vEProof__QID__.toggle('UNUSEDSTEPS__QID__')"> Deleted Proofsteps </button>
+														<div class="UNUSEDSTEPS__QID__" id="UNUSEDSTEPS__QID__" style="display:none"></div>
+													</td>
+													<td>
+														&nbsp;&nbsp;
+													</td>
+												</tr>
+											</tbody></table>
+										</div>
+									</div> <!-- END: STUDENTANSWER -->
+									<!-- ========ASSESSMENT and SOLUTION ======================================== -->
+									<div class="ASSESSMENTandSOLUTION" id="ASSESSMENTandSOLUTION__QID__"><!-- style="display:none" -->
+										<hr>
+										<button type="button" class="btXAS__QID__" id="btXAS__QID__" onclick="vEProof__QID__.hide('SOLUTION__QID__');vEProof__QID__.hide('ASSESSMENT__QID__')" style="visibility:hidden"> X </button>
+										<button type="button" class="btSolution__QID__" id="btSolution__QID__" onclick="vEProof__QID__.clickSolution()" style="display:none"> Solution </button>
+										<button type="button" class="btAssessment__QID__" id="btAssessment__QID__" onclick="vEProof__QID__.clickAssessment()" style="display:none"> Assessment </button>
+										<div id="ASSESSMENT__QID__" style="display:none"></div>
+										<div class="SOLUTION__QID__" id="SOLUTION__QID__" style="display:none"></div>
+									</div> <!-- END: ASSESSMENTandSOLUTION -->
+									<!-- ========================================================== -->
+									<div class="PROOFSTEPandJUSTIFICATION" id="PROOFSTEPandJUSTIFICATION__QID__"><!-- style="display:none" -->
+										<hr>
+										<button type="button" class="btXPJ__QID__" id="btXPJ__QID__" onclick="vEProof__QID__.toggleList('JUSTIFICATION','0','PROOFSTEP','0')" style="visibility:hidden"> X </button>
+										<button type="button" class="btProofStep__QID__" id="btProofStep__QID__" onclick="vEProof__QID__.toggleList('JUSTIFICATION','0','PROOFSTEP','1')"> Proof Steps  </button>
+										<button type="button" class="btJustification__QID__" id="btJustification__QID__" onclick="vEProof__QID__.toggleList('JUSTIFICATION','1','PROOFSTEP','0')">  Justifications </button>
+										<div class="PROOFSTEPLIST__QID__" id="PROOFSTEPLIST__QID__" style="display:none"></div>
+										<button type="button" class="bAddStepID__QID__" steptype="PROOFSTEP" id="bAddStepPROOFSTEP__QID__" onclick="vEProof__QID__.addStepDefinition(this)" style="color:green;display:none">+Step PROOFSTEP</button>
+										<div class="JUSTIFICATIONLIST__QID__" id="JUSTIFICATIONLIST__QID__" style="display:none"></div>
+										<button type="button" class="bAddStepID__QID__" steptype="JUSTIFICATION" id="bAddStepJUSTIFICATION__QID__" onclick="vEProof__QID__.addStepDefinition(this)" style="color:green;display:none">+Step JUSTIFICATION</button>
+									</div> <!-- END: PROOFSTEPandJUSTIFICATION -->
+									<!-- ========================================================== -->
+									<hr>
+								</td>
+							</tr>
+						</tbody></table>
+					</td>
+				</tr>
+			</tbody></table>
+		</div>
+    </div> <!-- DIV EPROOF -->
+	<script type="text/javascript">
+		//-----Proof Pre-Processing------
+		//__SID__ is the extension of the Class and
+		var vEProof__QID__ = new EProof__SID__();
+		var vRootID = "EPROOF___QID___";
+		vRootID = "EPROOF__QID__";
+		var vRootDOM = document.getElementById(vRootID);
+		vEProof__QID__.load('__QID__','__THISQ__',vRootDOM,vRootID,'DEFAULT');
+		//alert("Root.id="+r.id);
+		//window.setTimeout("vEProof__QID__.load('__QID__','__THISQ__',vRootDOM,vRootID)",400);
+		//---------------------------
+	</script>
+	<!-- =====END DIV EPROOF===================================================== -->
+
+</form> <!-- END: FORM -->
+<center>
+<font size="-2">Version: 2015/10/07</font>
+</center>
+
+</body></html>
