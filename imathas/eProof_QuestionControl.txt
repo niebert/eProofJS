@@ -1,0 +1,151 @@
+//--------------------------------------------------------------------------------------
+//-----e-PROOF: Absolute Konvergenz und Konvergenz eine Reihe
+//--------------------------------------------------------------------------------------
+//-----Author:  Engelbert Niehaus
+//-----e-Mail:  niehaus@uni-landau.de
+//.....created: 13.11.2014
+//--------------------------------------------------------------------------------------
+
+// Unique QID
+$vQID='ABSKONV'
+
+//--------------------------------------------------------------------------------------
+//-------1-COMMON CONTROL: Settings and Definition of Theorem and Proof-----------------
+//--------------------------------------------------------------------------------------
+// Documentation: see http://e-proof.weebly.com 
+
+//--------------------------------------------------------------------------------------
+  $Theorem_Title = "Absolute Konvergenz und Konvergenz eine Reihe"
+//--------------------------------------------------------------------------------------
+  $Theorem_Appendix = "Siehe Definition <a href='http://de.wikipedia.org/wiki/Absolute_Konvergenz' target='blank'>Wiki:Absolute Konvergenz</a>"
+//--------------------------------------------------------------------------------------
+
+
+$selectbox_proofsteps    = 1
+$allow_own_proofsteps    = 1
+$remap_proofstep_IDs     = 1
+$randomize_proofstep_IDs = 1
+//-----for Novices Users----------------
+$show_suggestions    = "1"
+$show_solutions    = "1"
+$show_assessment     = "1"
+$show_proof_solution = "1"
+//---For AUTHORS/TUTORS-----------------
+$AuthoringMode  = 0
+$AssessmentMode = 0
+//---Miscellaneous Settings-------------
+$cryptkey='ACBSD'
+$show_Load_Save_Control=$AuthoringMode
+$show_Main_Control=$AuthoringMode
+$show_links='1'
+$MathFormat='AM_HTMLorMML'
+$COMMONCONTROL='4980__co__4981__co__4982__co__4983'
+$QUESTIONTEXT='4980__co__4981__co__4982__co__4983'
+$alertDOM='0'
+
+
+//--------------------------------------------------------------
+//--------------PRECONDITION------------------------------------
+//--------------------------------------------------------------
+$pi = 0
+$Precondition[$pi]   = "`(a_(n))_(n in NN) in CC^{NN}` ist eine Folge in `CC`"
+$PreconditionID[$pi] = "P1"
+$pi += 1
+$Precondition[$pi]   = "`sum_(n=0)^(oo) a_n` ist absolute konvergent"
+$PreconditionID[$pi] = "P2"
+$pi += 1
+
+//--------------------------------------------------------------
+//--------------CONCLUSION--------------------------------------
+//--------------------------------------------------------------
+$pi = 0
+$Conclusion[$pi]   = "`sum_(n=0)^(oo) a_n` ist konvergent"
+$ConclusionID[$pi] = "C1"
+$pi += 1
+
+
+//--------------------------------------------------------------
+//--------------JUSTIFICATIONS----------------------------
+//--------------------------------------------------------------
+$pi = 0
+$SelectedPrecondition[$pi]   = "Nach Cauchy-Kriterium f&uuml;r konvergente Reihen `sum_(k=0)^(oo) z_k` gilt `AA_(epsilon>0) EE_(n_epsilon in NN) AA_(n>m>= n_epsilon) |sum_(k=m+1)^(n) z_k| < epsilon` . "
+$SelectedPreconditionID[$pi] = "CK"
+$pi += 1
+
+$SelectedPrecondition[$pi]   = "Dreiecksungleichung `AA_(v,w in CC):  |v+w|<=|v|+|w|` ."
+$SelectedPreconditionID[$pi] = "DU"
+$pi += 1
+
+$SelectedPrecondition[$pi]   = "Definition der absoluten Konvergenz"
+$SelectedPreconditionID[$pi] = "AK"
+$pi += 1
+
+
+
+//--------------------------------------------------------------
+//--------------PROOFSTEP---------------------------------------
+//--------------------------------------------------------------
+$pi = 0
+$ProofStep[$pi]    = "Gegeben sei die absolut konvergente Reihe `sum_(n=0)^(oo) a_n ` "
+$ProofStepID[$pi]  = "S1"
+$pi += 1
+
+$ProofStep[$pi]    = "`AA_(epsilon > 0) EE_(n_epsilon in NN) AA_(n>m>= n_epsilon) |  sum_(k=0)^(n) {:|a_k|:} - sum_(k=0)^(m) {:|a_k|:} | = |sum_(k=m)^(n) {:|a_k|:} | < epsilon ` ."
+$ProofStepID[$pi]  = "S2_F1"
+$pi += 1
+
+$ProofStep[$pi]    = "`AA_(epsilon > 0) EE_(n_epsilon in NN) AA_(n>m>= n_epsilon) |  sum_(k=0)^(n) {:|a_k|:} - sum_(k=0)^(m) {:|a_k|:} | = |sum_(k=m+1)^(n) {:|a_k|:} | < epsilon ` ."
+$ProofStepID[$pi]  = "S2"
+$pi += 1
+
+$ProofStep[$pi]    = " `AA_(epsilon > 0) EE_(n_epsilon in NN) AA_(n>m>= n_epsilon) | sum_(k=m+1)^(n) {:|a_k|:} | = sum_(k=m+1)^(n) |a_k| < epsilon `.  "
+$ProofStepID[$pi]  = "S3"
+$pi += 1
+
+$ProofStep[$pi]    = " `AA_(epsilon > 0) EE_(n_epsilon in NN) AA_(n>m>= n_epsilon) | sum_(k=m+1)^(n) {:|a_k|:} | < sum_(k=m+1)^(n) |a_k| < epsilon `. "
+$ProofStepID[$pi]  = "S3_F1"
+$pi += 1
+
+$ProofStep[$pi]    = " `AA_(epsilon > 0) EE_(n_epsilon in NN) AA_(n>m>= n_epsilon) |sum_(k=m+1)^(n) a_k|` `<= sum_(k=m+1)^(n) |a_k| < epsilon `.  "
+$ProofStepID[$pi]  = "S4" 
+$pi += 1
+
+//--------------------------------------------------------------
+//--------------SOLUTION DEFINITION-----------------------------
+//--------------------------------------------------------------
+
+//-[0]Previous_Step---[1]StepID---[2]Connection---[3]necessary_Justification---[4]optional_Just.
+$so=0
+$SolutionStep[$so]=array(" ","S1"," ",array(),array("P1"))
+$so+=1
+
+$SolutionStep[$so]=array("S1","S2","=>",array("AK","CK"),array("P2"))
+$so+=1
+
+$SolutionStep[$so]=array("S2","S3","=>",array(),array())
+$so+=1
+
+$SolutionStep[$so]=array("S3","S4","=>",array("DU"),array())
+$so+=1
+
+$SolutionStep[$so]=array("S4","C1","=>",array("CK"),array())
+$so+=1
+
+$MinimalProofSteps = $so
+
+//--------------------------------------
+//------INCLUDE LIBRARIES---------------
+//--------------------------------------
+//includecodefrom(4001)
+//includecodefrom(4002)
+
+
+includecodefrom(4980)
+includecodefrom(4981)
+includecodefrom(4982)
+includecodefrom(4983)
+
+//--------------------------------------
+//----insert in question control--------
+// includeqtextfrom(4001)
+//--------------------------------------
