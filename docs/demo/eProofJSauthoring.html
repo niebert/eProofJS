@@ -4,16 +4,16 @@
 #################################################################
 #         Exporter: iMathAS Creator for e-Proofs
 #     for Software: e-Proof-Creator
-#         Filename: iMathAScreator.html
-#     Used Library: library/ASCIIMathML.js
+#         Filename: iMathAScreator.html 
+#     Used Library: library/ASCIIMathML.js 
 #                   Version 2.0.1 Sept 27, 2007, by Peter Jipsen
-#                   library/xmlparser.js
+#                   library/xmlparser.js 
 #                   MathJax
-#
-# Author/Editor:      Engelbert Niehaus
-# email:              niehaus@uni-landau.de
-# created             13.10.2014
-# last modifications  21.11.2014
+#                
+# Author/Editor:      Engelbert Niehaus                    
+# email:              niehaus@uni-landau.de                 
+# created             13.10.2014             
+# last modifications  21.11.2014             
 # GNU Public License - OpenSource
 # created with JavaScript generator_exporter.html
 #################################################################
@@ -27,12 +27,8 @@
 <script type="text/javascript" src="../library/xmlparser.js"></script>
 <script type="text/javascript" src="library/ASCIIMathML.js"></script>
 <script type="text/javascript" src="library/progressbar.js"></script>
-//---ASCIIMath---
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=AM_HTMLorMML"></script>
-<script type="text/javascript" src="../MathJax/MathJax.js?config=AM_HTMLorMML"></script>
-//---LaTeX-------
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script type="text/javascript" src="../MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=AM_HTMLorMML"></script>
 -->
   <meta http-equiv="content-type" content="text/html; charset=UTF8" >
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=AM_HTMLorMML"></script>
@@ -44,12 +40,12 @@
 <link rel="stylesheet" href="./css/imathas.css" type="text/css">
 
 </head>
-<body>
+<body> 
 <FORM name="EMULATIONiMathAS" id="EMULATIONiMathAS">
 	<div  class="EPROOF" id="EPROOF__QID__" >
 		<div class="IMATHASINOUT__QID__" id="iMathASINOUT__QID__" style="display:none" >
 			style="display:none"
-			style='visibility:hidden'
+			style='visibility:hidden' 
 		    <HR>
 			<font color="red">$ErrorHTML</font>
 			<HR>
@@ -158,7 +154,7 @@
 					<SELECT class='sPOSITION__QID__' id='sPOSITION__QID__'  step='0' onchange="vEProof__QID__.moveStepOrder(this,this.value)">
 					</SELECT>
 					<INPUT type='text' size='2'  class='PREVIOUSLINK__QID__' step='0' id='PREVIOUSLINK__QID__' value='' style="display:none"/>
-					<INPUT type='text' size='2'  class='mapPREVIOUSLINK__QID__' step='0' id='mapPREVIOUSLINK__QID__' value='' onchange="vEProof__QID__.updatePreviousLink(this)" style="display:none"/>
+					<INPUT type='text' size='2'  class='mapPREVIOUSLINK__QID__' step='0' id='mapPREVIOUSLINK__QID__' value='' onchange="vEProof__QID__.updatePreviousLink(this)" style="display:none"/>  
 					<BUTTON type='button' class='bUseStep__QID__' step='0' id='bUseStep__QID__' onclick="vEProof__QID__.appendStep(this)" style="display:none"> Append Step </BUTTON>
 					<SELECT class="sCONNECTION__QID__" id="sCONNECTION__QID__" step="0"  onchange="vEProof__QID__.updateConnection(this)">
 					</SELECT>
@@ -174,7 +170,7 @@
 						<INPUT type='text' size='15' class='orgOPTJUSTIFICATION__QID__' step='0' id='orgOPTJUSTIFICATION__QID__' value=''  style="display:none"/>
 					</nobr>
 				</DIV>
-				<DIV class="SELECTFROM__QID__" id="SELECTFROM__QID__"  style="display:none" >
+				<DIV class="SELECTFROM__QID__" id="SELECTFROM__QID__"  style="display:none" > 
 					oldPos:<INPUT type='text' size='2'  class='oldPOSITION__QID__' step='0' id='oldPOSITION__QID__' value='0' />
 					Previous:<INPUT type='text' size='2'  class='PREVIOUS__QID__' step='0' id='PREVIOUS__QID__' value='PID' />
 					Next:<INPUT type='text' size='2'  class='NEXT__QID__' step='0' id='NEXT__QID__' value='NID' />
@@ -186,18 +182,18 @@
 					Sel4Just:<INPUT type='text' size='15' class='selectJUSTIFICATION__QID__' step='0' id='selectJUSTIFICATION__QID__' value='' />
 					Append4Just:<INPUT type='text' size='15' class='appendJUSTIFICATION__QID__' step='0' id='appendJUSTIFICATION__QID__' value='' />
 					Just:<INPUT type='text' size='15' class='inJUSTIFICATION__QID__' step='0' id='inJUSTIFICATION__QID__' value='' onchange="vEProof__QID__.updateJustifications(this)"/><BR>
-					SugUsed:<INPUT type="text" step="0" size="2" class="inSUGGESTIONSUSED__QID__" id="inSUGGESTIONSUSED__QID__" value="0"/>
-					SugStep:<INPUT type="text" step="0" size="2" class="stepSUGGESTION__QID__" id="stepSUGGESTION__QID__"  value="0"/>
-					AssUsed:<INPUT type="text" step="0" size="2" class="inASSESSMENTUSED__QID__" id="inASSESSMENTUSED__QID__"  value="0"/>
+					SugUsed:<INPUT type="text" step="0" size="2" class="inSUGGESTIONSUSED__QID__" id="inSUGGESTIONSUSED__QID__" value="0"/> 
+					SugStep:<INPUT type="text" step="0" size="2" class="stepSUGGESTION__QID__" id="stepSUGGESTION__QID__"  value="0"/> 
+					AssUsed:<INPUT type="text" step="0" size="2" class="inASSESSMENTUSED__QID__" id="inASSESSMENTUSED__QID__"  value="0"/> 
 					<br>
-					MaxScore:<INPUT type="text" step="0" size="2" class="maxSCORESTEP__QID__" id="maxSCORESTEP__QID__" value="0.0"/>
-					PreLinkSteps:<INPUT type="text" step="0" size="2" class="preLINKSTEPS__QID__" id="preLINKSTEPS__QID__" value="0" />
-					PostLinkSteps:<INPUT type="text" step="0" size="2" class="postLINKSTEPS__QID__" id="postLINKSTEPS__QID__" value="0" />
-					assCon:<INPUT type="text" step="0" size="2" class="assCONNECTION__QID__" id="assCONNECTION__QID__" value="0" />
-					Errors:<INPUT type="text" step="0" size="2" class="assERRORS__QID__" id="assERRORS__QID__" value="0" />
-					JustCor:<INPUT type="text" step="0" size="6" class="assJUSTCORRECT__QID__" id="assJUSTCORRECT__QID__" value="" />
-					JustMiss:<INPUT type="text" step="0" size="6" class="assJUSTMISSING__QID__" id="assJUSTMISSING__QID__" value="" />
-					JustUnnec:<INPUT type="text" step="0" size="6" class="assJUSTUNNECESSARY__QID__" id="assJUSTJUNNECESSARY__QID__" value="" />
+					MaxScore:<INPUT type="text" step="0" size="2" class="maxSCORESTEP__QID__" id="maxSCORESTEP__QID__" value="0.0"/> 
+					PreLinkSteps:<INPUT type="text" step="0" size="2" class="preLINKSTEPS__QID__" id="preLINKSTEPS__QID__" value="0" /> 
+					PostLinkSteps:<INPUT type="text" step="0" size="2" class="postLINKSTEPS__QID__" id="postLINKSTEPS__QID__" value="0" /> 
+					assCon:<INPUT type="text" step="0" size="2" class="assCONNECTION__QID__" id="assCONNECTION__QID__" value="0" /> 
+					Errors:<INPUT type="text" step="0" size="2" class="assERRORS__QID__" id="assERRORS__QID__" value="0" /> 
+					JustCor:<INPUT type="text" step="0" size="6" class="assJUSTCORRECT__QID__" id="assJUSTCORRECT__QID__" value="" /> 
+					JustMiss:<INPUT type="text" step="0" size="6" class="assJUSTMISSING__QID__" id="assJUSTMISSING__QID__" value="" /> 
+					JustUnnec:<INPUT type="text" step="0" size="6" class="assJUSTUNNECESSARY__QID__" id="assJUSTJUNNECESSARY__QID__" value="" /> 
 				</DIV>
 				<DIV class='STEPEDITOR__QID__' id='STEPEDITOR__QID__' style="display:none">
 					<table width='95%' border='0'>
@@ -244,10 +240,10 @@
 								<li> Check Box Justications </li>
 							</ul>
 						</DIV>
-						<TABLE border="0" class="SUGASSESSMAN__QID__" id="SUGASSESSMAN__QID__" style="margin-left:3.3em">
+						<TABLE border="0" class="SUGASSESSMAN__QID__" id="SUGASSESSMAN__QID__" style="margin-left:3.3em"> 
 							<TR>
 								<TD>
-									<BUTTON type='button' class='bSuggestion__QID__' step='0'  id='bSuggestion__QID__' onclick="vEProof__QID__.toggleSuggestionStep(this.getAttribute('step'))" style="display:none;color:green">Suggestion</BUTTON>
+									<BUTTON type='button' class='bSuggestion__QID__' step='0'  id='bSuggestion__QID__' onclick="vEProof__QID__.toggleSuggestionStep(this.getAttribute('step'))" style="display:none;color:green">Suggestion</BUTTON>									
 								</TD>
 								<TD>
 									<BUTTON type='button' class='bAssessStep__QID__' step='0'  id='bAssessStep__QID__' onclick="vEProof__QID__.assessStep(this)" style="display:none;color:red">Assess Step</BUTTON>
@@ -278,7 +274,7 @@
 										<td align="center" colspan="3" id="outSTEPSCORETITLE__QID__">
 											<b class="outSTEPNR__QID__" id="outSTEPNR_ASSESSMENTTITLE__QID__">(0)</b>
 											<b class="outASSESSMENTTITLE__QID__" id="outASSESSMENTTITLE__QID__">Assessment of Student Answer</b>
-											<b class="outSTEPID_ASSESSMENT__QID__" id="outSTEPID_ASSESSMENT__QID__">[ID]</b>
+											<b class="outSTEPID_ASSESSMENT__QID__" id="outSTEPID_ASSESSMENT__QID__">[ID]</b> 
 										</td>
 									</tr>
 									<tr class="outASSESSCONNECTION__QID__" id="outASSESSCONNECTION__QID__"  style="color:red">
@@ -394,7 +390,7 @@
 										<TD colspan="3">
 											<B>(<OUTTEXT class="outNEXTNR__QID__" step="0" id="outNEXTNR__QID__">
 												0
-											</OUTTEXT>)
+											</OUTTEXT>)		 	
 											<OUTTEXT class='bSelectSuggestion__QID__' step='0'  id='bSelectSuggestion__QID__'  >Select Suggestion</OUTTEXT></B>
 											<BUTTON type='button' class='bSelectSuggestionOK__QID__' step='0'  id='bSelectSuggestionOK__QID__'  onclick="vEProof__QID__.selectSuggestion(this.getAttribute('step'))">  OK   </BUTTON>
 											<INPUT type="text" class='inCONSUGGESTION__QID__'  id='inCONSUGGESTION__QID__' value="" style="display:none"/>
@@ -404,7 +400,7 @@
 									<TR  class='SUGGESTIONTR__QID__' step='0'  id='SUGGESTIONTR__QID__'>
 										<TD class="sugSTEPID__QID__" step='0' id="sugSTEPID__QID__">
 											[ID]
-										</TD>
+										</TD> 	
 										<TD  class='CONSUGGESTION__QID__' step='0'  id='CONSUGGESTION__QID__'>
 												<INPUT type="radio" class='rCONSUGGESTION__QID__' name="rCONSUGGESTION__QID__" id='rCONNUGGESTION__QID__' />
 												<OUTTEXT class='outCONSUGGESTION__QID__' step='0'  id='outCONSUGGESTION__QID__'>???</OUTTEXT>
@@ -424,21 +420,21 @@
 			<div class="tplCONNECTIONLIST__QID__" id="tplCONNECTIONLIST__QID__">
 			ConnectionList:
 				<ul id="ulCONNECTIONLIST__QID__">
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-0" source="__math__???__math__">`???`</EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-1" source=""></EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-2" source="__math____eq____gt____math__">`=>`</EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-3" source="__math____eq____math__">`=`</EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-4" source="__math____lt____eq____math__">`<=`</EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-5" source="__math____lt____math__">`<`</EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-6" source="__math____gt____eq____math__">`>=`</EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-7" source="__math____gt____math__">`>`</EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-8" source="__math__subseteq__math__">`subseteq`</EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-9" source="__math__DEF__math__">`DEF`</EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-10" source="__math__TEXT__math__">`TEXT`</EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-11" source="__math__TYP__math__">`TYP`</EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-12" source="__math__q.e.d.__math__">`q.e.d.`</EPROOFCONNECTION></li>
-          <li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-13" source="__math__LINK-NODE__math__">`LINK-NODE`</EPROOFCONNECTION></li>
-	      </ul>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-0" >`???`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-1" ></EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-2" >`=>`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-3" >`=`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-4" >`<=`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-5" >`<`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-6" >`>=`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-7" >`>`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-8" >`subseteq`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-9" >`DEF`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-10" >`TEXT`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-11" >`TYP`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-12" >`q.e.d.`</EPROOFCONNECTION></li>
+					<li><EPROOFCONNECTION class="tplCONNECTION__QID__" id="CON-__QID__-13" >`LINK-NODE`</EPROOFCONNECTION></li>
+				</ul>
 			</div>
 			<HR>
 			<b>Source Step:</b><BR>
@@ -489,13 +485,13 @@
 		<!-- =======IMATH TABLE=================================================== -->
 		<DIV class="PROOFCONTROL__QID__" id="PROOFCONTROL__QID__" border="0" bgcolor="#ddf" align="center" style="display:none">
 			<center>
-				<TABLE border="0" bgcolor="#ddf"  align="center" >
+				<TABLE border="0" bgcolor="#ddf"  align="center"  width="96%" >
 					<TR class="CONTROLBUTTONS__QID__" id="CONTROLBUTTONS__QID__">
 						<TD align="left">
-							<BUTTON type='button' class='bLOADCONTROL__QID__'   id='bLOADCONTROL__QID__'  onclick="vEProof__QID__.clickLoad()" style="color:blue">Load</BUTTON>
+							<BUTTON type='button' class='bLOADCONTROL__QID__'   id='bLOADCONTROL__QID__'  onclick="vEProof__QID__.clickLoad()" style="color:blue">Load</BUTTON>		
 							<BUTTON type='button' class='bSAVEXMLCONTROL__QID__'   id='bSAVEXMLCONTROL__QID__'  onclick="vEProof__QID__.clickSaveXML()" style="color:blue">Save</BUTTON>
 							<BUTTON type='button' class='bSAVEIMATHCONTROL__QID__'   id='bSAVEIMATHCONTROL__QID__'  onclick="vEProof__QID__.clickSaveIMathAS()" style="color:blue">IMathAS</BUTTON>
-							<BUTTON type='button' class='bPREFERENCES__QID__'   id='bPREFERENCES__QID__'  onclick="vEProof__QID__.clickPreferences()" style="color:blue">Preferences</BUTTON>
+							<BUTTON type='button' class='bPREFERENCES__QID__'   id='bPREFERENCES__QID__'  onclick="vEProof__QID__.clickPreferences()" style="color:blue">Preferences</BUTTON>				
 							&nbsp; - &nbsp;
 							<BUTTON type='button' class='bACKNOWLEDGEMENT__QID__'  id='bACKNOWLEDGEMENT__QID__'  onclick="document.location.href='http://eproof.weebly.com/acknowledgements.html'" style="display:none">Acknowledgements</BUTTON>
 							<a target="_blank" href='http://eproof.weebly.com/acknowledgements.html'>Acknowledgements</a>
@@ -506,10 +502,10 @@
 					<TR  class="LOADAREA__QID__" id="LOADAREA__QID__" style="display:none">
 						<TD align="center">
 							<h2>Load XML-File</h2>
-							<BUTTON type='button' class='bIMPORTCONTROL__QID__'   id='bIMPORTCONTROL__QID__'  onclick="vEProof__QID__.clickLoadXML()" style="color:blue">Load XML</BUTTON>
+							<BUTTON type='button' class='bIMPORTCONTROL__QID__'   id='bIMPORTCONTROL__QID__'  onclick="vEProof__QID__.clickLoadXML()" style="color:blue">Load XML</BUTTON>	
 							<BUTTON type='button' class='bIMPORTCANCEL__QID__' id='bIMPORTCONTROL__QID__'  onclick="vEProof__QID__.clickCloseControl()" style="color:red">Cancel</BUTTON></br>
 							Copy the XML-code for an e-Proof into Textbox and press button [Import e-Proof] to load the new e-Proof.
-							<BR>
+							<BR>		
 							<TEXTAREA name="tLOAD__QID__" class="tLOAD__QID__" id="tLOAD__QID__" cols="100" rows="13" wrap="off"></TEXTAREA>
 						</TD>
 					</TR>
@@ -518,15 +514,15 @@
 							<h2>SAVE File</h2>
 							<INPUT type="checkbox" class="checkUSESOLUTION__QID__" id="checkUSESOLUTION__QID__" onchange="vEProof__QID__.saveOnChange()" style="display:none"> <!-- Use Solution -->
 							<INPUT type="checkbox" class="checkSTUDANSWERSOLUTION__QID__" id="checkSTUDANSWERSOLUTION__QID__" checked onchange="vEProof__QID__.saveOnChange()" > Student Answer to Solution
-							<INPUT type="checkbox" class="checkENCRYPT__QID__" id="checkENCRYPT__QID__" onchange="vEProof__QID__.saveOnChange()" > Encrypt IMathAS-Solution
+							<INPUT type="checkbox" class="checkENCRYPT__QID__" id="checkENCRYPT__QID__" onchange="vEProof__QID__.saveOnChange()" > Encrypt IMathAS-Solution 
 							<INPUT type="checkbox" class="checkSTUDANSWEREXPORT__QID__" id="checkSTUDANSWEREXPORT__QID__" onchange="vEProof__QID__.saveOnChange()" > Export Student Answer
 							<BR>
 							File Format:
 							<SELECT class="sFILEFORMAT__QID__" id="sFILEFORMAT__QID__" onchange="vEProof__QID__.saveOnChange()" >
-								<OPTION value="XML">XML File</OPTION>
+								<OPTION value="XML">XML File</OPTION> 
 								<OPTION value="IMathAS">iMathAS</OPTION>
 							</SELECT>
-							<BUTTON type='button' class='bEXPORT__QID__' step='0'  id='bEXPORT__QID__'  onclick="vEProof__QID__.saveEProof2Filesystem()" style="color:blue">Save</BUTTON>
+							<BUTTON type='button' class='bEXPORT__QID__' step='0'  id='bEXPORT__QID__'  onclick="vEProof__QID__.saveOnChange()" style="color:blue">Save</BUTTON>
 							<BUTTON type='button' class='bEXPORTCLOSE__QID__' step='0'  id='bEXPORTCLOSE__QID__'  onclick="vEProof__QID__.clickCloseControl()" style="color:red">Cancel</BUTTON>
 							<BR>
 							<TEXTAREA name="tSAVEXML__QID__" class="tSAVEXML__QID__" id="tSAVEXML__QID__" cols="100" rows="13" wrap="off">
@@ -576,41 +572,41 @@
 								<table border="0" width="100%" align="center">
 									<tr>
 										<td valign="top">
-										   <b>Author:</b>
+										   <b>Author:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text class="SETTING__QID__" id="SET_Author" value="Engelbert Niehaus" size="45" onchange="vEProof__QID__.updateSettingValue(this)">
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">
-										   <b>e-Mail:</b>
-										</td>
-										<td valign="top">
-										  <input type=text class="SETTING__QID__" id="SET_eMail" value="niehaus@uni-landau.de" size="25" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text class="SETTING__QID__" id="SET_Author" value="Engelbert Niehaus" size="45" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>Date:</b>
+										   <b>e-Mail:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_Date" value="23.10.2014" size="12" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text class="SETTING__QID__" id="SET_eMail" value="niehaus@uni-landau.de" size="25" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>Comment/Theorem:</b>
+										   <b>Date:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text class="SETTING__QID__" id="SET_Theorem_Appendix" value="----Init By load Settings---" size="65" onchange="vEProof__QID__.updateSettingValue(this)">
-										  <!--- Due to quotation problems with \" in value, the init value  will be -->
+										  <input type=text  class="SETTING__QID__" id="SET_Date" value="23.10.2014" size="12" onchange="vEProof__QID__.updateSettingValue(this)"> 
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Comment/Theorem:</b> 
+										</td>
+										<td valign="top">
+										  <input type=text class="SETTING__QID__" id="SET_Theorem_Appendix" value="----Init By load Settings---" size="65" onchange="vEProof__QID__.updateSettingValue(this)"> 
+										  <!--- Due to quotation problems with \" in value, the init value  will be --> 
 										  <!--  set via javascript at the very end of this HTML-file -->
 										</td>
 									</tr>
 									<tr  valign="top">
 										<td valign="top">
-										   <b>Language-Code:</b>
+										   <b>Language-Code:</b> 
 										</td>
 										<td valign="top">
 										  <input type=text  class="SETTING__QID__" id="SET_LANGUAGE"  value="DE" size="3"  onchange="vEProof__QID__.updateSettingValue(this)"> 'DE' or 'EN'
@@ -618,171 +614,171 @@
 									</tr>
 									<tr  valign="top">
 										<td valign="top">
-										   <b>Authoring Mode:</b>
+										   <b>Authoring Mode:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_AuthoringMode"  value="0" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">
-										   <b>Manual Assessment:</b>
-										</td>
-										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_AssessmentMode"  value="0" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text  class="SETTING__QID__" id="SET_AuthoringMode"  value="0" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>Show Assessment-Button:</b>
+										   <b>Manual Assessment:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_show_assessment"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">
-										   <b>Point Reduction per Assessment:</b>
-										</td>
-										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_Assessment_Minus_Percent"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text  class="SETTING__QID__" id="SET_AssessmentMode"  value="0" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>Suggestions for Proof Steps:</b>
+										   <b>Show Assessment-Button:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_show_suggestions"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">
-										   <b>Point Reduction for Suggestions:</b>
-										</td>
-										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_Suggestion_Minus_Percent"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text  class="SETTING__QID__" id="SET_show_assessment"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>Show Solution of Proof:</b>
+										   <b>Point Reduction per Assessment:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_show_proof_solution"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">
-										   <b>Show Load-Save-Control:</b>
-										</td>
-										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_show_Load_Save_Control"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text  class="SETTING__QID__" id="SET_Assessment_Minus_Percent"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>Show Main Control:</b>
+										   <b>Suggestions for Proof Steps:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_show_Main_Control"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">
-										   <b>Show External Links:</b>
-										</td>
-										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_show_links"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text  class="SETTING__QID__" id="SET_show_suggestions"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>MathJax Format:</b>
+										   <b>Point Reduction for Suggestions:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_MathFormat" value="20" size="20" onchange="vEProof__QID__.updateSettingValue(this)">
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">
-										   <b>Percent Point Reduction per Error:</b>
-										</td>
-										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_Per_Error_Minus_Percent" value="10" size="3" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text  class="SETTING__QID__" id="SET_Suggestion_Minus_Percent"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>Unnecessary Proof Steps:</b>
+										   <b>Show Solution of Proof:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_unnecessary_proofsteps"  value="3" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">
-										   <b>Unnecessary Connections:</b>
-										</td>
-										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_unnecessary_connections"  value="3" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text  class="SETTING__QID__" id="SET_show_proof_solution"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>Unnecessary Justifications:</b>
+										   <b>Show Load-Save-Control:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_unnecessary_justifications"  value="3" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text  class="SETTING__QID__" id="SET_show_Load_Save_Control"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>Randomize Proof-Step:</b>
+										   <b>Show Main Control:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_randomize_proofstep_IDs"  value="0" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text  class="SETTING__QID__" id="SET_show_Main_Control"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Show External Links:</b> 
+										</td>
+										<td valign="top">
+										  <input type=text  class="SETTING__QID__" id="SET_show_links"  value="1" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>MathJax Format:</b> 
+										</td>
+										<td valign="top">
+										  <input type=text  class="SETTING__QID__" id="SET_MathFormat" value="20" size="20" onchange="vEProof__QID__.updateSettingValue(this)"> 
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Percent Point Reduction per Error:</b> 
+										</td>
+										<td valign="top">
+										  <input type=text  class="SETTING__QID__" id="SET_Per_Error_Minus_Percent" value="10" size="3" onchange="vEProof__QID__.updateSettingValue(this)"> 
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Unnecessary Proof Steps:</b> 
+										</td>
+										<td valign="top">
+										  <input type=text  class="SETTING__QID__" id="SET_unnecessary_proofsteps"  value="3" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Unnecessary Connections:</b> 
+										</td>
+										<td valign="top">
+										  <input type=text  class="SETTING__QID__" id="SET_unnecessary_connections"  value="3" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Unnecessary Justifications:</b> 
+										</td>
+										<td valign="top">
+										  <input type=text  class="SETTING__QID__" id="SET_unnecessary_justifications"  value="3" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Randomize Proof-Step:</b> 
+										</td>
+										<td valign="top">
+										  <input type=text  class="SETTING__QID__" id="SET_randomize_proofstep_IDs"  value="0" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										  <!-- For option=1 it is necessary to include the Background Code 3.<BR>Check if setting of Question <tt>New version on reattempt?</tt> is set to <tt>'No - Same Version on reattempt'</tt>-->
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>Remap Step IDs:</b>
+										   <b>Remap Step IDs:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_remap_proofstep_IDs"  value="0" size="2" onchange="vEProof__QID__.updateSettingValue(this)">
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">
-										   <b>Crypt Key for Solution:</b>
-										</td>
-										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_cryptkey"  value="ASFGHZS" size="10" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text  class="SETTING__QID__" id="SET_remap_proofstep_IDs"  value="0" size="2" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>Question-ID Common Control:</b>
+										   <b>Crypt Key for Solution:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_COMMONCONTROL"  value="4200,4001,4002" size="25" onchange="vEProof__QID__.updateSettingValue(this)">
-										</td>
-									</tr>
-									<tr>
-										<td valign="top">
-										   <b>Question-ID Question Text:</b>
-										</td>
-										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_QUESTIONTEXT"  value="4001,4002" size="25" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text  class="SETTING__QID__" id="SET_cryptkey"  value="ASFGHZS" size="10" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 									<tr>
 										<td valign="top">
-										   <b>QID for e-Proof (unique):</b>
+										   <b>Question-ID Common Control:</b> 
 										</td>
 										<td valign="top">
-										  <input type=text  class="SETTING__QID__" id="SET_vQID"  value="123456" size="17" onchange="vEProof__QID__.updateSettingValue(this)">
+										  <input type=text  class="SETTING__QID__" id="SET_COMMONCONTROL"  value="4200,4001,4002" size="25" onchange="vEProof__QID__.updateSettingValue(this)"> 
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>Question-ID Question Text:</b> 
+										</td>
+										<td valign="top">
+										  <input type=text  class="SETTING__QID__" id="SET_QUESTIONTEXT"  value="4001,4002" size="25" onchange="vEProof__QID__.updateSettingValue(this)"> 
+										</td>
+									</tr>
+									<tr>
+										<td valign="top">
+										   <b>QID for e-Proof (unique):</b> 
+										</td>
+										<td valign="top">
+										  <input type=text  class="SETTING__QID__" id="SET_vQID"  value="123456" size="17" onchange="vEProof__QID__.updateSettingValue(this)"> 
 										</td>
 									</tr>
 								</table>
@@ -804,7 +800,7 @@
 //--------------------------------------------------------------------------------------
 //-------1-COMMON CONTROL: Settings and Definition of Theorem and Proof-----------------
 //--------------------------------------------------------------------------------------
-// Documentation: see http://e-proof.weebly.com
+// Documentation: see http://e-proof.weebly.com 
 // e-Proof-Creator: http://e-proof.weebly.com/download--tools.html
 //--------------------------------------------------------------------------------------
 __do__Theorem_Label = "___THEOREM_LABEL___"
@@ -915,36 +911,36 @@ __do__so+=1
 				<TABLE border="0" bgcolor="#ddf"  align="center"  width="96%" >
 					<TR class="trASSESSAUTHORCONTROL__QID__" id="trASSESSAUTHORCONTROL__QID__"  bgcolor="#ddf" >
 						<TD align="center">
-							<BUTTON type='button' class='bSUGGESTBUTTON__QID__'   id='bSUGGESTBUTTON__QID__'  onclick="vEProof__QID__.toggleSuggestionButton()" style="color:green">Suggestion Button</BUTTON>
+							<BUTTON type='button' class='bSUGGESTBUTTON__QID__'   id='bSUGGESTBUTTON__QID__'  onclick="vEProof__QID__.toggleSuggestionButton()" style="color:green">Suggestion Button</BUTTON>	
 							<OUTTEXT class='infoSUGGESTBUTTON__QID__' id='infoSUGGESTBUTTON__QID__'>(OFF)</OUTTEXT>
 						</TD>
 						<TD align="center">
-							<BUTTON type='button' class='bASSESSBUTTON__QID__'   id='bMANASESS__QID__'  onclick="vEProof__QID__.toggleAssessmentButton()" style="color:red">Assessment Button</BUTTON>
+							<BUTTON type='button' class='bASSESSBUTTON__QID__'   id='bMANASESS__QID__'  onclick="vEProof__QID__.toggleAssessmentButton()" style="color:red">Assessment Button</BUTTON>	
 							<OUTTEXT class='infoASSESSBUTTON__QID__' id='infoASSESSBUTTON__QID__'>(OFF)</OUTTEXT>
 						</TD>
 						<TD align="center">
-							<BUTTON type='button' class='bMANASSESS__QID__'   id='bMANASSESS__QID__'  onclick="vEProof__QID__.toggleManualAssessment()" style="color:red">Manual Assessment</BUTTON>
+							<BUTTON type='button' class='bMANASSESS__QID__'   id='bMANASSESS__QID__'  onclick="vEProof__QID__.toggleManualAssessment()" style="color:red">Manual Assessment</BUTTON>	
 							<OUTTEXT class='infoMANASSESS__QID__' id='infoMANASSESS__QID__'>(OFF)</OUTTEXT>
 						</TD>
 					</TR>
 					<TR>
 						<TD align="center">
-							<BUTTON type='button' class='bSOLUTIONBUTTON__QID__'   id='bSOLUTIONBUTTON__QID__'  onclick="vEProof__QID__.toggleSolutionButton()" style="color:green">Solution Button</BUTTON>
+							<BUTTON type='button' class='bSOLUTIONBUTTON__QID__'   id='bSOLUTIONBUTTON__QID__'  onclick="vEProof__QID__.toggleSolutionButton()" style="color:green">Solution Button</BUTTON>	
 							<OUTTEXT class='infoSOLUTIONBUTTON__QID__' id='infoSOLUTIONBUTTON__QID__'>(OFF)</OUTTEXT>
 						</TD>
 						<TD align="center">
-							<BUTTON type='button' class='bAUTHORMODE__QID__'   id='bAUTHORMODE__QID__'  onclick="vEProof__QID__.toggleAuthoringMode()" style="color:red">Authoring Mode</BUTTON>
+							<BUTTON type='button' class='bAUTHORMODE__QID__'   id='bAUTHORMODE__QID__'  onclick="vEProof__QID__.toggleAuthoringMode()" style="color:red">Authoring Mode</BUTTON>											
 							<OUTTEXT class='infoAUTHORMODE__QID__' id='infoAUTHORMODE__QID__'>(OFF)</OUTTEXT>
 						</TD>
 						<TD align="center">
-							<BUTTON type='button' class='bCLEARLOCALSTORAGE__QID__'   id='bCLEARLOCALSTORAGE__QID__'  onclick="vEProof__QID__.clear_LocalStorage()" style="color:red">Clear Local Storage</BUTTON>
+							<BUTTON type='button' class='bCLEARLOCALSTORAGE__QID__'   id='bCLEARLOCALSTORAGE__QID__'  onclick="vEProof__QID__.clear_LocalStorage()" style="color:red">Clear Local Storage</BUTTON>											
 						</TD>
-
+						
 					</TR>
 				</TABLE>
 			</CENTER>
 			<BR>
-		</DIV>
+		</DIV>	
 		<DIV class="PROOFTABLE__QID__" id="PROOFTABLE__QID__">
 			<TABLE  border=1 bgcolor="#ddf" width="96%" align="center">
 				<TR>
@@ -961,10 +957,10 @@ __do__so+=1
 										</h3>
 										<div class="editTITLE__QID__" id="editTITLE__QID__" style="display:none">
 											<INPUT type='text' size='10'  class="editTHEOREMLABEL__QID__" id="editTHEOREMLABEL__QID__" value='Label' onchange="vEProof__QID__.updateTitle()" />
-											<INPUT type='text' size='70'  class="editTHEOREMTITLE__QID__" id="editTHEOREMTITLE__QID__" value='Title'  onchange="vEProof__QID__.updateTitle()" />
+											<INPUT type='text' size='70'  class="editTHEOREMTITLE__QID__" id="editTHEOREMTITLE__QID__" value='Title'  onchange="vEProof__QID__.updateTitle()" />	
 										</div>
 										<div class="PRECONDITIONLIST__QID__" id="PRECONDITIONLIST__QID__" ></div>
-										<BUTTON type='button' class='bAddStepID__QID__' steptype='PRECONDITION'  id='bAddStepPRECONDITION__QID__' onclick="vEProof__QID__.addStepDefinition(this)" style='color:green;display:none' >+Step PRECONDITION</BUTTON>
+										<BUTTON type='button' class='bAddStepID__QID__' steptype='PRECONDITION'  id='bAddStepPRECONDITION__QID__' onclick="vEProof__QID__.addStepDefinition(this)" style='color:green;display:none' >+Step PRECONDITION</BUTTON>	
 										<div class="CONCLUSIONLIST__QID__" id="CONCLUSIONLIST__QID__"></div>
 										<BUTTON type='button' class='bAddStepID__QID__' steptype='CONCLUSION'  id='bAddStepCONCLUSION__QID__' onclick="vEProof__QID__.addStepDefinition(this)" style='color:green;display:none' >+Step CONCLUSION</BUTTON>
 										<div class="THEOREMAPPENDIX__QID__" id="THEOREMAPPENDIX__QID__"></div>
@@ -983,7 +979,7 @@ __do__so+=1
 											</tr>
 										</table>
 										<DIV class="HELP_EN__QID__" id="HELP_EN__QID__"  style="display:none">
-											<ul>
+											<ul> 
 											  <li><b>Move Proof Steps:</b> You can move the steps of the proof by changing the number in the select box. The justifications and all other settings associated with the proof step are moved as well, because they are treated as a unit.</li>
 											  <li><b>3 Question Marks:</b> 3 question marks '???' indicate to the user, that a connection to the previous proof step must be defined or the step should be marked as START of a sequence of proof steps.so ist noch kein Bezug zum vorherigen Beweisschritt gesetzt worden. An Implication (among others) is the most commom link between two proof steps.</li>
 											  <li><b>Identificators for Beweisfragmente:</b> All proof step and justifications have an unique identificator (e.g. [S1],[J1],...). These unique identificators are used to select steps in the e-proof system.</li>
@@ -1035,7 +1031,7 @@ __do__so+=1
 														</SELECT>
 													</td>
 													<td class="EPROOFLINKS__QID__" id="LINKHEADERLINETR0__QID__">
-														<BUTTON type='button' class='btHelp__QID__' id='btHelp__QID__' onclick="vEProof__QID__.toggle('HELP__QID__')" > Help </BUTTON>
+														<BUTTON type='button' class='btHelp__QID__' id='btHelp__QID__' onclick="vEProof__QID__.toggle('HELP__QID__')" > Help </BUTTON>		
 													</td>
 												</tr>
 												<tr>
@@ -1046,7 +1042,7 @@ __do__so+=1
 														</SELECT>
 													</td>
 													<td id="buttonHEADERLINETR2__QID__">
-														<BUTTON type='button' class='btSave__QID__' id='btSave__QID__' onclick="vEProof__QID__.save(this)" > Save </BUTTON>
+														<BUTTON type='button' class='btSave__QID__' id='btSave__QID__' onclick="vEProof__QID__.save(this)" > Save </BUTTON>		
 													</td>
 												<tr>
 												</tr>
@@ -1056,12 +1052,12 @@ __do__so+=1
 									<!-- ========STUDENT ANSWER================================================== -->
 									<DIV class="STUDENTANSWERLIST__QID__" id="STUDENTANSWERLIST__QID__">
 										<HR>
-										<h3  class="PROOFLABEL__QID__" id="PROOFLABEL__QID__">Proof:</h3>
-
-										<DIV class="SELECTFROM__QID__" id="SELECTFROM__QID__0"  style="display:none">
+										<h3  class="PROOFLABEL__QID__" id="PROOFLABEL__QID__">Proof:</h3>	
+										
+										<DIV class="SELECTFROM__QID__" id="SELECTFROM__QID__0"  style="display:none"> 
 											Do not add 0 after ID because it will be appended by setClassName4Step()
-											<BUTTON type='button' class='bUpSug__QID__' step='0'  id='bUpSug__QID__'  onclick="vEProof__QID__.setAllSuggestions()" style="color:blue">Update Suggestions</BUTTON>
-											<BUTTON type='button' class='bLoadSA__QID__' step='0'  id='bLoadSA__QID__'  onclick="vEProof__QID__.load_StudentAnswer()" style="color:blue">Load Student Answer</BUTTON>
+											<BUTTON type='button' class='bUpSug__QID__' step='0'  id='bUpSug__QID__'  onclick="vEProof__QID__.setAllSuggestions()" style="color:blue">Update Suggestions</BUTTON>		
+											<BUTTON type='button' class='bLoadSA__QID__' step='0'  id='bLoadSA__QID__'  onclick="vEProof__QID__.load_StudentAnswer()" style="color:blue">Load Student Answer</BUTTON>		
 												ID:<INPUT type='text' size='3'  class='inSTEPID__QID__' step='0' id='inSTEPID__QID__0' value=' '  onchange="alert('Edit Step ID of Step'+this.getAttribute('step'))" />
 												oldPos:<INPUT type='text' size='2'  class='oldPOSITION__QID__' step='0' id='oldPOSITION__QID__0' value='0' /><BR>
 												Step:<INPUT type='text' size='2'  class='STEPNR__QID__' step='0' id='STEPNR__QID__' value='0' />
@@ -1072,22 +1068,22 @@ __do__so+=1
 												Sel4ID:<INPUT type='text' size='15' class='selectSTEPID__QID__' step='0' id='selectSTEPID__QID__0' value='' />
 												Sel4Just:<INPUT type='text' size='15' class='selectJUSTIFICATION__QID__' step='0' id='selectJUSTIFICATION__QID__0' value='' /><BR>
 												Append4Just:<INPUT type='text' size='15' class='appendJUSTIFICATION__QID__' step='0' id='appendJUSTIFICATION__QID__0' value='' />
-												SugUsed:<INPUT type="text" step="0" size="2" class="inSUGGESTIONSUSED__QID__" value="0" id="inSUGGESTIONSUSED__QID__0" /><BR>
-												UsedIDs4Sol:<INPUT type="text" step="0" size="12" class="USEDIDS__QID__" value="X1,X2,X3" id="USEDIDS__QID__" />
-												ProofIDs:<INPUT type="text" step="0" size="12" class="PROOFIDS__QID__" value="Y1,Y2,Y3" id="PROOFIDS__QID__" />
-												ProofC:<INPUT type="text" step="0" size="2" class="PROOFCOUNT__QID__" value="0" id="PROOFCOUNT__QID__" />
-												LLE:<INPUT type="text" step="0" size="4" class="LLE__QID__" value="0" id="LLE__QID__" />
-												Total Score:<INPUT type="text" step="0" size="4" class="TOTALSCORE__QID__" value="0.0" id="TOTALSCORE__QID__" />
+												SugUsed:<INPUT type="text" step="0" size="2" class="inSUGGESTIONSUSED__QID__" value="0" id="inSUGGESTIONSUSED__QID__0" /><BR> 
+												UsedIDs4Sol:<INPUT type="text" step="0" size="12" class="USEDIDS__QID__" value="X1,X2,X3" id="USEDIDS__QID__" /> 
+												ProofIDs:<INPUT type="text" step="0" size="12" class="PROOFIDS__QID__" value="Y1,Y2,Y3" id="PROOFIDS__QID__" /> 
+												ProofC:<INPUT type="text" step="0" size="2" class="PROOFCOUNT__QID__" value="0" id="PROOFCOUNT__QID__" /> 
+												LLE:<INPUT type="text" step="0" size="4" class="LLE__QID__" value="0" id="LLE__QID__" /> 
+												Total Score:<INPUT type="text" step="0" size="4" class="TOTALSCORE__QID__" value="0.0" id="TOTALSCORE__QID__" /> 
 										</DIV>
 										<DIV class="FIRSTSSUGGESTION__QID__" id="FIRSTSSUGGESTION__QID__" >
 											<SELECT class='sPOSSPACE__QID__' id='sPOSSPACE__QID__'  style="visibility:hidden">
 												<OPTION value="99">16</OPTION>
-											</SELECT>
-											<BUTTON type='button' class='bSuggestionFirst__QID__' step='0'  id='bSuggestionFirst__QID__'  onclick="vEProof__QID__.toggleSuggestionStep('0')" style="color:green">Suggestion</BUTTON>
-											<BUTTON type='button' class='bReset__QID__' step='0'  id='bReset__QID__'  onclick="vEProof__QID__.resetProof(this)" style="color:red">Delete Proof</BUTTON>
-											<BUTTON type='button' class='bManAssess__QID__' ManAssVisible='0'  id='bManAssess__QID__'  onclick="vEProof__QID__.toggleManualAssessment(this)" style="display:none">Manual Asessment</BUTTON>
-											<BUTTON type='button' class='bAuthoringMode__QID__' AuthoringVisible='0'  id='bAuthoringMode__QID__'  onclick="vEProof__QID__.toggleAuthoringMode(this)"  style="display:none">Authoring Mode</BUTTON>
-										</DIV>
+											</SELECT>				
+											<BUTTON type='button' class='bSuggestionFirst__QID__' step='0'  id='bSuggestionFirst__QID__'  onclick="vEProof__QID__.toggleSuggestionStep('0')" style="color:green">Suggestion</BUTTON>		
+											<BUTTON type='button' class='bReset__QID__' step='0'  id='bReset__QID__'  onclick="vEProof__QID__.resetProof(this)" style="color:red">Delete Proof</BUTTON>		
+											<BUTTON type='button' class='bManAssess__QID__' ManAssVisible='0'  id='bManAssess__QID__'  onclick="vEProof__QID__.toggleManualAssessment(this)" style="display:none">Manual Asessment</BUTTON>		
+											<BUTTON type='button' class='bAuthoringMode__QID__' AuthoringVisible='0'  id='bAuthoringMode__QID__'  onclick="vEProof__QID__.toggleAuthoringMode(this)"  style="display:none">Authoring Mode</BUTTON>		
+										</DIV>						
 										<DIV class="SUGGESTIONS__QID__" id="SUGGESTIONS__QID__0" style="display:none">
 											<table  border=1 align="center" bgcolor="#EAEAEA"  width="96%" >
 												<TR>
@@ -1097,18 +1093,18 @@ __do__so+=1
 																<TD colspan="2">
 																	<B>(<OUTTEXT class="outNEXTNR__QID__" step="0" id="outNEXTNR__QID__">
 																		1
-																	</OUTTEXT>)
+																	</OUTTEXT>)		 	
 																	<OUTTEXT class='bSelectSuggestion__QID__' step='0'  id='bSelectSuggestion__QID__0'  >Select Suggestion</OUTTEXT></B>
 																	<BUTTON type='button' class='bSelectSuggestionOK__QID__' step='0'  id='bSelectSuggestionOK__QID__0'  onclick="vEProof__QID__.selectSuggestion(this.getAttribute('step'))">  OK   </BUTTON>
 																	<INPUT type="text" class='inCONSUGGESTION__QID__'  id='inCONSUGGESTION__QID__0' value=""  style="display:none" />
 																	<INPUT type="text" class='inIDSUGGESTION__QID__'  id='inIDSUGGESTION__QID__0' value="" style="display:none" />
-
+		
 																</TD>
 															</TR>
 															<TR class='SUGGESTIONTR__QID__' step='0'  id='SUGGESTIONTR__QID__0'>
 																<TD class="sugSTEPID__QID__" step='0' id="sugSTEPID__QID__0">
 																	[ID]
-																</TD>
+																</TD> 	
 																<TD  class='CONSUGGESTION__QID__' step='0'  id='CONSUGGESTION__QID__0'>
 																		<INPUT type="radio" class='rCONSUGGESTION__QID__' value="0" name="rCONSUGGESTION__QID__0" id='rCONSUGGESTION__QID__0' />
 																		<OUTTEXT class='outCONSUGGESTION__QID__' step='0'  id='outCONSUGGESTION__QID__'>???</OUTTEXT>
@@ -1130,25 +1126,25 @@ __do__so+=1
 										<DIV class="APPENDSTEPS__QID__" id="APPENDSTEPS__QID__" >
 											<SELECT class='sPOSSPACE__QID__' id='sPOSSPACE__QID__'  style="visibility:hidden">
 												<OPTION value="99">16</OPTION>
-											</SELECT>
-											<BUTTON type='button' class='bShowSuggestionAppend__QID__' step='0'  id='bShowSuggestionAppend__QID__'  onclick="vEProof__QID__.toggleSuggestionAppend(this)" style="display:none"><font color="green" >Append Suggestion</font></BUTTON>
+											</SELECT>				
+											<BUTTON type='button' class='bShowSuggestionAppend__QID__' step='0'  id='bShowSuggestionAppend__QID__'  onclick="vEProof__QID__.toggleSuggestionAppend(this)" style="display:none"><font color="green" >Append Suggestion</font></BUTTON>		
 										</DIV>
 										<!-- ====UNUSED STEPS=========================================== -->
-										<BUTTON type='button' class='btSave__QID__' id='btSaveII__QID__' onclick="vEProof__QID__.save(this)" > Save </BUTTON>
+										<BUTTON type='button' class='btSave__QID__' id='btSaveII__QID__' onclick="vEProof__QID__.save(this)" > Save </BUTTON>		
 										<DIV class="UNUSED__QID__" id="UNUSED__QID__" style="display:none">
 											<HR>
 											<table border=0 align="center" bgcolor="#EAEAEA"  width="98%" >
 												<tr>
 													<td >
 														&nbsp;&nbsp;
-													</td>
-													<td>
+													</td> 
+													<td> 
 														<BUTTON type='button' class='btToggleUnused__QID__' id='btToggleUnused__QID__' onclick="vEProof__QID__.toggle('UNUSEDSTEPS__QID__')" > Deleted Proofsteps </BUTTON>
 														<DIV class="UNUSEDSTEPS__QID__" id="UNUSEDSTEPS__QID__" style="display:none"></DIV>
 													</td>
 													<td >
 														&nbsp;&nbsp;
-													</td>
+													</td> 
 												</tr>
 											</table>
 										</DIV>
@@ -1185,7 +1181,7 @@ __do__so+=1
     </DIV> <!-- DIV EPROOF -->
 	<script type="text/javascript">
 		//-----Proof Pre-Processing------
-		//__SID__ is the extension of the Class and
+		//__SID__ is the extension of the Class and 
 		var vEProof__QID__ = new EProof__SID__();
 		var vRootID = "EPROOF___QID___";
 		vRootID = "EPROOF__QID__";
@@ -1196,8 +1192,8 @@ __do__so+=1
 		//---------------------------
 	</script>
 	<!-- =====END DIV EPROOF===================================================== -->
-
-</FORM> <!-- END: FORM -->
+	
+</FORM> <!-- END: FORM --> 
 <center>
 <font size=-2>Version: 2015/10/07</font>
 </center>

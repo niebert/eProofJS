@@ -1,0 +1,53 @@
+
+//#################################################################
+//# Global: unionarrays  
+//# unionarrays(array,array): Unions two arrays, preventing duplicates, into a new array
+//#################################################################
+function unionarrays (x, y) {
+  var obj = {};
+  var i = 0;
+  while (i != x.length) {
+     obj[x[i]] = x[i];
+     i++;
+  }
+  i = 0;
+  while (i != y.length) {
+    obj[y[i]] = y[i];
+    i++;
+  }
+  var res = []
+  for (var k in obj) {
+     if (obj.hasOwnProperty(k)) {
+     	res.push(obj[k]);
+     }
+  }
+  return res;
+}
+
+//#################################################################
+//# Global: intersectionarrays  
+//# intersectarrays(array,array): Finds the intersection of two arrays
+//#################################################################
+function intersectionarrays (x,y) {
+  var reshash=[], res=[];
+  for(var i=0;i<x.length;i++)
+    reshash[x[i]]=true;
+  for(var i=0;i<y.length;i++)
+    if(reshash[y[i]]) res.push(y[i]);
+  return res;
+}
+//#################################################################
+//# Global: diffarrays  
+//# diffarrays(array1,array2): Returns all elements in array1 that are not also in array2
+//#################################################################
+function diffarrays(x, y) {
+  var diffhash=[], diff=[];
+  for(var i=0;i<x.length;i++)
+    diffhash[x[i]]=true;
+  for(var i=0;i<y.length;i++)
+    if(diffhash[y[i]]) delete diffhash[y[i]];
+    else diffhash[y[i]]=true;
+  for(var k in diffhash)
+    diff.push(k);
+  return diff;
+}

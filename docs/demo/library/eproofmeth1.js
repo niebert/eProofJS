@@ -1,13 +1,13 @@
-<html><body><form><center><textarea id='input'  rows='10' cols='100'>//#################################################################
+//#################################################################
 //# Javascript Class:         EProof__SID__()
 //#   Method Definition File: eproofmeth1.js
-//#                
-//# Author of Class:      Engelbert Niehaus                    
-//# email:                niehaus@uni-landau.de                 
-//# created               24.2.2015             
-//# last modifications    17.11.2015, 07:57:39            
+//#
+//# Author of Class:      Engelbert Niehaus
+//# email:                niehaus@uni-landau.de
+//# created               24.2.2015
+//# last modifications    __DATE__
 //# GNU Public License - OpenSource
-//# created with JavaScript Class Generator by Engelbert Niehaus 
+//# created with JavaScript Class Generator by Engelbert Niehaus
 //#################################################################
 function appendMethods_EProof__SID__ () {
     //#################################################################
@@ -35,7 +35,7 @@ function appendMethods_EProof__SID__ () {
 		var vJustIDs = this.getElementsByClassName("ID_"+pType+"LIST"+this.aQID);
 		while (i !=vJustIDs.length) {
 			vJustString += vComma + vJustIDs[i].value;
-			vComma =","; 
+			vComma =",";
 			i++;
 		};
 		return vJustString;
@@ -68,7 +68,7 @@ function appendMethods_EProof__SID__ () {
 			this.createStep2SA();
 		};
 		return this.aAllSteps;
-	};  
+	};
     //#################################################################
 	//# Nested: getDateString()
 	//#################################################################
@@ -89,7 +89,7 @@ function appendMethods_EProof__SID__ () {
 			//alert(vRes);
 			pNumber -= vZ;
 		};
-		var vChar = String.fromCharCode(pNumber+ord("A")); 
+		var vChar = String.fromCharCode(pNumber+ord("A"));
 		//alert(vRes + vChar);
 		return vRes + vChar;
 	};
@@ -98,10 +98,10 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	this.getStringQID = function (pQID) {
 		function ord(x) { return x.charCodeAt(0) }
-		function chr(x) { 
+		function chr(x) {
 			var n = parseInt(x+"");
 			n = n % 25;
-			return String.fromCharCode(n+ord("A")) 
+			return String.fromCharCode(n+ord("A"))
 		};
 		if (pQID == "") {
 			var vNow = new Date();
@@ -124,8 +124,8 @@ function appendMethods_EProof__SID__ () {
 	//this.getEProofHTML = function(pLibPath,pMathJaxPath,pMathJaxConfig) {
 	this.getEProofHTML = function(pLibPath,pMathJaxPath,pMathJaxConfig) {
 		var vLibPath  = pLibPath || "library/";
-		var vMathJaxPath = pMathJaxPath || "../MathJax/";
-		//var vMathJaxPath = pMathJaxPath || "../MathJax/";
+		var vMathJaxPath = pMathJaxPath || "../MathJax/";
+		//var vMathJaxPath = pMathJaxPath || "../MathJax/";
 		//var vOut = this.getWeeblyEProof(pLibPath,pMathJaxPath,pMathJaxConfig);
 		return this.getWrappedHTML(vOut);
 	};
@@ -260,7 +260,7 @@ function appendMethods_EProof__SID__ () {
 		//vOut = this.replaceString(vOut,"\t"," ");
 		vOut = this.replaceString(vOut,"\t","");
 		//---Remove HTML Comments-------
-		//alert(encodeURI("vOut = vOut.replace(/<!--(.*?)-->/gm, \"\")")); 
+		//alert(encodeURI("vOut = vOut.replace(/<!--(.*?)-->/gm, \"\")"));
 		eval(decodeURI("vOut%20=%20vOut.replace(/%3C!--(.*?)--%3E/gm,%20%22%22)"));
 		return vOut;
 	};
@@ -292,9 +292,9 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
     this.getUsedCounter = function (pName,pStep) {
     	var vUsed = this.getElementById(pName+this.aQID+pStep);
-		return parseInt(vUsed.value);	
+		return parseInt(vUsed.value);
     	//var vAssUsed = this.getElementById("inASSESSMENTUSED"+this.aQID+vStep);
-		//var vCount = parseInt(vAssUsed.value);	
+		//var vCount = parseInt(vAssUsed.value);
     };
     //#################################################################
 	//# Nested: getIMathDisplayOption()
@@ -364,13 +364,13 @@ function appendMethods_EProof__SID__ () {
 		if (vReturn == -1) {
 			alert("ERROR: getIndex4ID("+pID+") - no step found for ID=["+this.aMappedID[pID]+"]");
 		};
-		return vReturn; 
+		return vReturn;
 	};
 	//#################################################################
 	//# Nested: getIndex4Step(pStep)
 	//#################################################################
     this.getIndex4Step = function (pStep) {
-		// this.aStep2SA	  	  = new Array(); // Hash with Step Number to StudentAnswer 
+		// this.aStep2SA	  	  = new Array(); // Hash with Step Number to StudentAnswer
 		// this.aIndex2Step  	  = new Array();
 		// this.aStep2Index  	  = new Array();
 		// this.aIndex2ID        = new Array();
@@ -389,7 +389,7 @@ function appendMethods_EProof__SID__ () {
 			vIndex = 0;
 		} else {
 			alert("getIndex4Step() oldPOSITION for "+pStep+" undefined");
-		};	
+		};
  		return vIndex;
     };
 	//#################################################################
@@ -416,14 +416,14 @@ function appendMethods_EProof__SID__ () {
 			var pair = vars[i].split("=");
 			vQuery[pair[0]] = decodeURIComponent(pair[1]);
 			i++;
-		}; 
+		};
 		return vQuery;
 	};
     //#################################################################
 	//# Nested: getQuery2Settings()
 	//#################################################################
 	this.getQuery2Settings = function  (pSettings) {
-		// This function is anonymous, is executed immediately and 
+		// This function is anonymous, is executed immediately and
 		// the return value is assigned to QueryString!
 		var vQueryString = this.getQueryHash();
 		for (var key in vQueryString) {
@@ -441,7 +441,7 @@ function appendMethods_EProof__SID__ () {
 	//# Nested: getStep4ID(pID)
 	//#################################################################
     this.getStep4ID = function (pID) {
-		// this.aStep2SA	  	  = new Array(); // Hash with Step Number to StudentAnswer 
+		// this.aStep2SA	  	  = new Array(); // Hash with Step Number to StudentAnswer
 		// this.aIndex2Step  	  = new Array();
 		// this.aStep2Index  	  = new Array();
 		// this.aIndex2ID        = new Array();
@@ -475,7 +475,7 @@ function appendMethods_EProof__SID__ () {
 	//# Nested: getStep4Index(pIndex)
 	//#################################################################
 	this.getStep4Index = function (pIndex) {
-		// this.aStep2SA	  	  = new Array(); // Hash with Step Number to StudentAnswer 
+		// this.aStep2SA	  	  = new Array(); // Hash with Step Number to StudentAnswer
 		// this.aIndex2Step  	  = new Array();
 		// this.aStep2Index  	  = new Array();
 		// this.aIndex2ID        = new Array();
@@ -624,7 +624,7 @@ function appendMethods_EProof__SID__ () {
 	//# Nested: getTemplateDOM()
 	//#################################################################
 	this.getTemplateDOM = function () {
-		//var vUsedList = this.getChildrenByClassName(this.aUsedDOM,"inSTEPID"+this.aQID); 
+		//var vUsedList = this.getChildrenByClassName(this.aUsedDOM,"inSTEPID"+this.aQID);
 		var vRes = this.aTemplateDOM;
 		if (!vRes) {
 			vRes = document.getElementById(this.aTemplateID);
@@ -641,7 +641,7 @@ function appendMethods_EProof__SID__ () {
 	//# Nested: getUsedIDs()
 	//#################################################################
 	this.getUsedIDs = function () {
-		//var vUsedList = this.getChildrenByClassName(this.aUsedDOM,"inSTEPID"+this.aQID); 
+		//var vUsedList = this.getChildrenByClassName(this.aUsedDOM,"inSTEPID"+this.aQID);
 		var vUsedList =this.getUsed4DOM("inSTEPID");
 		var k=0;
 		var vUsedIDs = new Array();
@@ -672,7 +672,7 @@ function appendMethods_EProof__SID__ () {
 			this.aUnusedDOM = this.getElementById("UNUSEDSTEPS"+this.aQID);
 			this.aUnusedSteps = this.getChildrenByClassName(this.aUnusedDOM,"STUDENTANSWER"+this.aQID);
 			//alert("getUnusedSteps() length="+this.aUnusedSteps.length);
-			
+
 		}
 		return this.aUnusedSteps;
 		//this.getChildrenByClassName(this.aUnusedDOM,"STUDENTANSWER"+this.aQID);
@@ -697,7 +697,7 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	this.getWeeblyEProof = function(pLibPath,pMathJaxPath,pMathJaxConfig,pQID,pThisQ,pSID,pAuthoring,pRootID) {
 		var vInsertLibs = true;
-		if (pRootID) {	
+		if (pRootID) {
 			vInsertLibs = false;
 		};
 		var vQID = pQID || "__QID__";
@@ -711,10 +711,10 @@ function appendMethods_EProof__SID__ () {
 		//<script type="text/javascript" src="/files/theme/mobile.js" ></script>
 		//<script type="text/javascript" src="/files/theme/custom.js" ></script>
 		var vLibPath  = pLibPath || "/files/theme/";
-		var vMathJaxPath = pMathJaxPath || "http://cdn.mathjax.org/mathjax/latest/";
-		var vMathJaxConfig = pMathJaxConfig || "AM_HTMLorMML"; 
+		var vMathJaxPath = pMathJaxPath || "http://cdn.mathjax.org/mathjax/latest/";
+		var vMathJaxConfig = pMathJaxConfig || "AM_HTMLorMML";
 		if (pMathJaxConfig.toUpperCase() == "LATEX") {
-			// LaTeX-Config: TeX-AMS-MML_HTMLorMML 
+			// LaTeX-Config: TeX-AMS-MML_HTMLorMML
 			vMathJaxConfig = "TeX-AMS-MML_HTMLorMML";
 		} else if (pMathJaxConfig.toUpperCase() == "ASCIIMATH") {
 			// ASCII-Math Config: AM_HTMLorMML
@@ -734,15 +734,15 @@ function appendMethods_EProof__SID__ () {
 			//Path: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=AM_HTMLorMML"
 			vReturn += vStartJS + vMathJaxPath + "MathJax.js?config=" + vMathJaxConfig + vEndJS;
 			//vReturn += this.LT+"script src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=AM_HTMLorMML\""+this.GT+""+this.LT+"/script"+this.GT+this.CR;
-			//vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","_SID"); 
+			//vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","_SID");
 		} else {
 			vReturn += this.LT + "html id='HTMLROOT'"+ this.GT;
 		};
-		vReturn += this.getIMathEProofInnerHTML(cln,vQID,vThisQ,vSID,vAuthoring); 
+		vReturn += this.getIMathEProofInnerHTML(cln,vQID,vThisQ,vSID,vAuthoring);
 		if (!vInsertLibs) {
 			vReturn += this.LT + "/html"+ this.GT;
 		};
-		return vReturn;	
+		return vReturn;
 	};
 	//#################################################################
 	//# Nested: getWrappedHTML(pString)
@@ -750,7 +750,7 @@ function appendMethods_EProof__SID__ () {
 	this.getWrappedHTML = function(pString)
 	{
 		var vDate = new Date().toLocaleString();
-		//pString = pString.replace(/17.11.2015, 07:57:39/g,vDate);
+		//pString = pString.replace(/__DATE__/g,vDate);
 		var vHTML = this.LT+"HTML"+this.GT+this.CR;
 		vHTML += "  "+this.LT+"HEAD"+this.GT+this.CR;
 		vHTML += "    "+this.LT+"META http-equiv='Content-Type' content='text/html"+this.CO+" charset=UTF-8'"+this.GT+this.CR;
@@ -770,7 +770,7 @@ function appendMethods_EProof__SID__ () {
 		var vReturn = "";
 		var vComma="";
 		for (var iID in pHash) {
-			vReturn += vComma+pHash[iID];  
+			vReturn += vComma+pHash[iID];
 			vComma=",";
 		}
 		return vReturn;
@@ -823,7 +823,7 @@ function appendMethods_EProof__SID__ () {
 		return vRet;
 	};
 	//#################################################################
-	//# Nested: intersectionarrays  
+	//# Nested: intersectionarrays
 	//# intersectarrays(array,array): Finds the intersection of two arrays
 	//#################################################################
 	this.intersectionarrays = function (x,y) {
@@ -841,7 +841,7 @@ function appendMethods_EProof__SID__ () {
 		return res;
 	};
 	//#################################################################
-	//# Nested: isSettingExportID(piID) 
+	//# Nested: isSettingExportID(piID)
 	//#################################################################
 	this.isSettingExportID = function (piID) {
 		var vReturn = true;
@@ -871,15 +871,15 @@ function appendMethods_EProof__SID__ () {
 		return vRes.join(",");
 	};
 	//#################################################################
-	//# Method: list2IMathAS(pList) 
-	//#################################################################	
+	//# Method: list2IMathAS(pList)
+	//#################################################################
 	this.list2IMathAS = function (pList) {
 		if (pList != "") pList = (pList.split(",")).join(this.aComma);
 		return pList;
 	};
 	//#################################################################
 	//# Method:loadSettingsVar(pName,pValue)
-	//#################################################################	
+	//#################################################################
 	this.loadSettingsVar = function (pName,pValue) {
 		pName = pName.toUpperCase();
 		if (pName == "TITLE") pName = "THEOREM_TITLE";
@@ -891,8 +891,8 @@ function appendMethods_EProof__SID__ () {
 	};
 	//#################################################################
 	//# Method:loadDisplayOption()
-	//#################################################################	
-	this.loadDisplayOption = function () {	
+	//#################################################################
+	this.loadDisplayOption = function () {
 		this.getElementById("sDISPLAYOPTION"+this.aQID).value = this.getElementById("imathDISPLAYOPTION").value;
 	};
 	//#################################################################
@@ -1080,20 +1080,20 @@ function appendMethods_EProof__SID__ () {
 		this.getElementById("PROOFCOUNT"+this.aQID).value = vProofKeys.length;
 	};
 	//#################################################################
-	//# Method: parseXML  
+	//# Method: parseXML
 	//#    used in Class: XMLparser
-	//#                
-	//# Comment: if this.aTAG="BODY" then this.aText contains the block                       
-	//#          between <BODY> and </BODY>. Parsing append all 
-	//#          Children to this.aChilden. aTAG="" means block is 
+	//#
+	//# Comment: if this.aTAG="BODY" then this.aText contains the block
+	//#          between <BODY> and </BODY>. Parsing append all
+	//#          Children to this.aChilden. aTAG="" means block is
 	//#          a string without XML-Tags.
-	//# created               22.10.2014             
-	//# last modifications    22.10.2014             
+	//# created               22.10.2014
+	//# last modifications    22.10.2014
 	//#################################################################
-	
+
 	this.parseXML = function (pXMLstring) {
 		//----Debugging------------------------------------------
-		// The following alert-Command is useful for debugging 
+		// The following alert-Command is useful for debugging
 		//alert("XMLparser:1939 parseXML()-Call")
 		//-------------------------------------------------------
 		//alert("parseXML:1941 - pXMLstring="+pXMLstring+"");
@@ -1116,7 +1116,7 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	this.randomizeStepOrder  = function () {
 		//var vUnusedList = this.getChildrenByClassName(this.aUnusedDOM,"STUDENTANSWER"+this.aQID);
-		var vUnusedList = this.getUnusedSteps(); 
+		var vUnusedList = this.getUnusedSteps();
 		//alert("randomizeStepOrder() Unused="+vUnusedList.length);
 		var vPosArr = new Array();
 		var k=0;
@@ -1180,6 +1180,8 @@ function appendMethods_EProof__SID__ () {
 			this.clearProofInput();
 			this.updateStepCount(0);
 			this.setStepCount(0);
+      //this.clear_LocalStorage();
+      localStorage.removeItem("imathEPROOF");
 		} else {
 			alert(vLanguage["Cancel"].toUpperCase()+": "+ vLanguage["Delete"] +"-Operation.");
 		}
@@ -1210,7 +1212,7 @@ function appendMethods_EProof__SID__ () {
 				vOut += chr(c-ord("0")+ord("B"));
 			};
 			i++;
-		}	
+		}
 		//var vInteger = Math.round(pScore*1000);
 		//alert("vScore*1000="+vInteger);
 		//alert ("vScore="+vScore+" vOut="+vOut+" Encoded="+this.rotEncode(vOut));
@@ -1271,7 +1273,7 @@ function appendMethods_EProof__SID__ () {
 		var s = [];
 		var vMinCode = 32;
 		var vMaxCode = 126;
-		var vMod = vMaxCode-vMinCode+1; 
+		var vMod = vMaxCode-vMinCode+1;
 		var i = 0;
 		var j = 0;
 		while (i != pString.length) {
@@ -1298,8 +1300,8 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	this.saveStep = function (pButtonDOM) {
 		//alert("saveStep()-Call: pChildSA.id="+pChildSA.id+" Offline="+this.aOffline);
-		//this.aStepType4ID = new Array(); //Hash maps ID to StepType PRECONDITION, PROOFSTEP, CONCLUSION, JUSTIFICATION 
-		//this.aStep2SA	  	= new Array(); // Hash with Step Number to StudentAnswer 
+		//this.aStepType4ID = new Array(); //Hash maps ID to StepType PRECONDITION, PROOFSTEP, CONCLUSION, JUSTIFICATION
+		//this.aStep2SA	  	= new Array(); // Hash with Step Number to StudentAnswer
 		//this.aIndex2Step  = new Array();
 		//this.aStep2Index  = new Array();
 		//this.aIndex2ID    = new Array();
@@ -1313,7 +1315,7 @@ function appendMethods_EProof__SID__ () {
 		var vListSE = this.getChildByClassName(vStudentAnswerNode,vName);
 		if (vListSE) {
 			this.toggleNode(vListSE);
-			//this.save(pButtonDOM); 
+			//this.save(pButtonDOM);
 			this.updateIMathById(this.aStepType4ID[vID]);
 			var vOut = this.saveEProof2Form();
 		} else {
@@ -1374,7 +1376,7 @@ function appendMethods_EProof__SID__ () {
 		} else if (vCon == "") {
 			alert ("WARNING: No Connection was selected!"+this.CR+"selectSuggestion()");
 		} else {
-			//alert("selectSuggestion():1342 find SelNode for vID=["+vID+"]"); 
+			//alert("selectSuggestion():1342 find SelNode for vID=["+vID+"]");
 			var vListSA = document.getElementsByClassName("STUDENTANSWER"+this.aQID);
 			var vSelIndex = 0;
 			var vFound = false;
@@ -1388,7 +1390,7 @@ function appendMethods_EProof__SID__ () {
 					vSelIndex++
 				};
 			};
-			//alert("selectSuggestion():1371 SelNode for vID=["+vID+"] vMapID=["+this.aMappedID[vID]+"] found at index="+vSelIndex); 
+			//alert("selectSuggestion():1371 SelNode for vID=["+vID+"] vMapID=["+this.aMappedID[vID]+"] found at index="+vSelIndex);
 			//----END search SelNode -- does not work as subroutine-Call-----
 			//var vSelStep = vSelNode.getAttribute("step"); //does not work Offline
 			var vSelStep = this.getChildByClassName(vSelNode,"STEPNR"+this.aQID).value;
@@ -1410,10 +1412,10 @@ function appendMethods_EProof__SID__ () {
 			var vSugNodeIndex = this.getElementById("oldPOSITION"+this.aQID+pStep).value;
 			var vNewIndex = parseInt(vSugNodeIndex+"") + 1;
 			var vNewStep = pStep; //this.aIndex2Step[vNewIndex];
-			//alert("selectSuggestion("+pStep+") vID=["+vID+"] vSelIndex="+vSelIndex+" vNewIndex="+vNewIndex); 
-			var vIDm = this.aMappedID[vID]; 
+			//alert("selectSuggestion("+pStep+") vID=["+vID+"] vSelIndex="+vSelIndex+" vNewIndex="+vNewIndex);
+			var vIDm = this.aMappedID[vID];
 			if (this.lower(vSelIndex,vNewIndex)) {
-				if (vSelIndex != 0)	{	
+				if (vSelIndex != 0)	{
 					var vNew = vNewIndex-1;
 					alert("WARNING: Step ["+vIDm+"] already used at position "+vSelIndex+". Step will be moved to positon "+vNew+".");
 				};
@@ -1421,7 +1423,7 @@ function appendMethods_EProof__SID__ () {
 			//--------------------------------------------------------------------
 			//---Provide User Feedback for Selected Step--------------------------
 			//--------------------------------------------------------------------
-			alert(vLanguage["Suggestion"]+" ("+vNewIndex+"): "+this.vConnectionArray[vCon]+" ["+vIDm+"] ");			
+			alert(vLanguage["Suggestion"]+" ("+vNewIndex+"): "+this.vConnectionArray[vCon]+" ["+vIDm+"] ");
 			//--------------------------------------------------------------------
 			//---Now we can move the selected step to the appropriate position----
 			var vUsedList = this.getUsedSteps();
@@ -1444,14 +1446,14 @@ function appendMethods_EProof__SID__ () {
 		//---displayJUSTIFICATIONS----
 		var vID = this.getElementById("inSTEPID"+this.aQID+pStep).value;
 		var vInJust = this.getElementById("inJUSTIFICATION"+this.aQID+pStep).value;
-		//alert("setJustifications("+pStep+") vInJust="+vInJust+" DISPLAY: createJustifications()-Call");	
+		//alert("setJustifications("+pStep+") vInJust="+vInJust+" DISPLAY: createJustifications()-Call");
 		var vContent = this.createDisplayJustifications(vInJust,this.aMappedID[vID]);
 		this.getElementById("displayJUSTIFICATIONS"+this.aQID+pStep).innerHTML = vContent;
 		var vSelJust = this.getElementById("selectJUSTIFICATION"+this.aQID+pStep).value;
 		var vAppend_Just = this.getElementById("appendJUSTIFICATION"+this.aQID+pStep).value;
 		var vSelectFromJust = this.concatList(vSelJust,vAppend_Just);
 		//---editJUSTIFICATIONS----
-		//alert("setJustifications("+pStep+") vInJust="+vInJust+" CHECKBOX: createJustifications()-Call");	
+		//alert("setJustifications("+pStep+") vInJust="+vInJust+" CHECKBOX: createJustifications()-Call");
 		vContent =  this.createJustifications(vInJust,vSelectFromJust,vAppend_Just,true,this.aMappedID[vID]);
 		this.getElementById("editJUSTIFICATIONS"+this.aQID+pStep).innerHTML = vContent;
 	};
@@ -1478,7 +1480,7 @@ function appendMethods_EProof__SID__ () {
 			//this.createSuggestionStep(vStep);
 			vStep++;
 		};
-		// Suggestions determine the selection of Justifications 
+		// Suggestions determine the selection of Justifications
 		this.setAllJustifications();
 	};
 	//#################################################################
@@ -1580,7 +1582,7 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	//# Nested: setJustAssValue (pStep,pAssRoot,pSA,pNodeID)
 	//#################################################################
-	this.setJustAssValue = function (pStep,pAssRoot,pSA,pNodeID) {	
+	this.setJustAssValue = function (pStep,pAssRoot,pSA,pNodeID) {
 		var vOutRow = this.getChildById(pAssRoot,"out"+pNodeID+this.aQID+pStep);
 		var vIDs = this.getChildById(pSA,"ass"+pNodeID+this.aQID+pStep).value;
 		var vValue = "";
@@ -1593,7 +1595,7 @@ function appendMethods_EProof__SID__ () {
 		} else {
 			vOutRow.style.color = "red";
 			s = vIDs.split(",").length;
-			var perc = this.aErrorDefault; //parseInt(this.aSettings["Per_Error_Minus_Percent"])/100;		
+			var perc = this.aErrorDefault; //parseInt(this.aSettings["Per_Error_Minus_Percent"])/100;
 			vValue = "-"+this.createPercent(s * perc);
 		};
 		this.setStepAssValue(pStep,pAssRoot,"out"+pNodeID,vText,vValue);
@@ -1614,7 +1616,7 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	//# Nested: setStepAssPrevNext (pStep,pAssRoot,pSA,pNodeID,pNextCon,pID,pPrevNextID)
 	//#################################################################
-	this.setStepAssPrevNext = function (pStep,pAssRoot,pSA,pNodeID,pNextCon,pMapID,pPrevNextID,pPrevNext,pText) {	
+	this.setStepAssPrevNext = function (pStep,pAssRoot,pSA,pNodeID,pNextCon,pMapID,pPrevNextID,pPrevNext,pText) {
 		var vName = "out"+pNodeID+this.aQID+pStep;
 		//alert("pAssRoot.id="+pAssRoot.id+" vName="+vName);
 		var vOutRow = this.getChildById(pAssRoot,vName);
@@ -1625,7 +1627,7 @@ function appendMethods_EProof__SID__ () {
 		var vValue = "";
 		var vText = "";
 		var vID = this.aOriginalID[pMapID];
-		if (!pPrevNextID) pPrevNextID = "?";
+		if (!pPrevNextID) pPrevNextID = "?";
 		//alert(pPrevNext+": pPrevNextID=["+pPrevNextID+"] - setStepAssPrevNext()-Call:1326");
 		vOutRow.style.color = "red";
 		if (vCountStr == "-1") {
@@ -1634,7 +1636,7 @@ function appendMethods_EProof__SID__ () {
 			vText += vLanguage["WRONG"];
 			vText += pText;
 			vValue = "-"+this.createPercent(0.5);
-		} else if (vCount == 0) {
+		} else if (vCount == 0) {
 			vValue = "-0%";
 			vOutRow.style.color = "green";
 			vText = vLanguage["ProofStep"] +" ["+vMapPrevNext+"] ";
@@ -1650,7 +1652,7 @@ function appendMethods_EProof__SID__ () {
 			vText+= vLanguage["RIGHT"];
 			if (!pPrevNextID) vText = "---";
 		} else {
-			var perc = this.aErrorDefault; //parseInt(this.aSettings["Per_Error_Minus_Percent"])/100;	
+			var perc = this.aErrorDefault; //parseInt(this.aSettings["Per_Error_Minus_Percent"])/100;
 			var reduc = vCount * perc;
 			if (this.greater(reduc,0.5)) reduc=0.5;
 			this.aErrorStep["STEP"+pStep] -= reduc;
@@ -1668,7 +1670,7 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	//# Nested: setStepAssValue (pStep,pAssRoot,pNodeID,pText,pValue)
 	//#################################################################
-	this.setStepAssValue = function (pStep,pAssRoot,pNodeID,pText,pValue) {	
+	this.setStepAssValue = function (pStep,pAssRoot,pNodeID,pText,pValue) {
 		var vTextNode = this.getChildById(pAssRoot,pNodeID+"TEXT"+this.aQID+pStep);
 		var vValueNode = this.getChildById(pAssRoot,pNodeID+"SCORE"+this.aQID+pStep);
 		if (vTextNode) {
@@ -1681,7 +1683,7 @@ function appendMethods_EProof__SID__ () {
 		} else {
 		 	alert("pNodeID='"+pNodeID+"SCORE"+this.aQID+pStep+"' undefined. setStepAssValue():1951")
 		}
-		
+
 	};
 	//#################################################################
 	//# Nested: setUnused4Step(pStep)
@@ -1711,7 +1713,7 @@ function appendMethods_EProof__SID__ () {
 		if (this.aSettings["show_suggestions"] != "0") {
 			// [Suggestion]
 			this.show("bSuggestion"+this.aQID+pStep,"block");
-		} else {
+		} else {
 			// [Suggestion]
 			this.hide("bSuggestion"+this.aQID+pStep);
 		};
@@ -1738,7 +1740,7 @@ function appendMethods_EProof__SID__ () {
 				if (this.aSettings["show_suggestions"] == "1") {
 					//this.show("FIRSTSSUGGESTION"+this.aQID);
 					this.show("bSuggestionFirst"+this.aQID);
-				} else {
+				} else {
 					//this.hide("FIRSTSSUGGESTION"+this.aQID);
 					this.hide("bSuggestionFirst"+this.aQID);
 				};
@@ -1875,7 +1877,7 @@ function appendMethods_EProof__SID__ () {
 	//#################################################################
 	//# Nested: storeCorrectSuggestions()
 	//#################################################################
-	this.storeCorrectSuggestions = function () {	
+	this.storeCorrectSuggestions = function () {
 		//alert("store correct Suggestions according to Solution");
 		this.clearSuggestions();
 		var vStep=0;
@@ -1888,13 +1890,13 @@ function appendMethods_EProof__SID__ () {
 			this.getElementById("selectJUSTIFICATION"+this.aQID+vStep).value = this.getSugJust(vID);
 			vStep++;
 		};
-		
+
 	};
 	//#################################################################
 	//# Nested: toggleEdit(pButtonEDIT)
 	//#################################################################
 	this.toggleEdit = function (pButtonEDIT) {
-		//parentNode= editSTUDENTANSWER 
+		//parentNode= editSTUDENTANSWER
 		//parentNode.parentNode= STUDENTANSWER
 		//parentNode.parentNode.parentNode= STUDENTANSWERLIST or UNUSEDSTEPS
 		var vStudentAnswerNode = this.getParentStudentAnswer(pButtonEDIT);
@@ -1903,7 +1905,7 @@ function appendMethods_EProof__SID__ () {
 		//alert("eproofmain.js - toggleEdit():3298  vStep="+vStep);
 		var vNode = this.getElementById("STEPEDITOR"+this.aQID+vStep);
 		if (vNode) {
-			if (vNode.style.display=="none") { 
+			if (vNode.style.display=="none") {
 				var vEditNode = this.getElementById("taSTEPEDITOR"+this.aQID+vStep);
 				var vSourceNode = this.getElementById("EDITSTEP-"+this.aQID+"-"+vID);
 				vEditNode.value = this.decodeTextarea(vSourceNode.value);
@@ -1914,7 +1916,7 @@ function appendMethods_EProof__SID__ () {
 		}
 	};
 	//#################################################################
-	//# Nested: setminusarrays  
+	//# Nested: setminusarrays
 	//#################################################################
 	this.setminusarrays = function (x, y) {
 		var res = [];
@@ -1928,7 +1930,7 @@ function appendMethods_EProof__SID__ () {
 		return res;
 	};
 	//#################################################################
-	//# Nested: unionarrays  
+	//# Nested: unionarrays
 	//# unionarrays(array,array): Unions two arrays, preventing duplicates, into a new array
 	//#################################################################
 	this.unionarrays = function (x, y) {
@@ -1960,7 +1962,7 @@ function appendMethods_EProof__SID__ () {
 		return res;
 	};
 	//#################################################################
-	//# Nested: sortArrayID(pArray)  
+	//# Nested: sortArrayID(pArray)
 	//#################################################################
 	this.sortArrayID = function (pArray) {
 		var k=0;
@@ -1978,7 +1980,7 @@ function appendMethods_EProof__SID__ () {
 		//return pArray
 	};
 	//#################################################################
-	//# Nested: uniquearray  
+	//# Nested: uniquearray
 	//# uniquearray(array): preventing duplicates, save into a new array
 	//#################################################################
 	this.uniquearray = function (x) {
@@ -2136,7 +2138,7 @@ function appendMethods_EProof__SID__ () {
 	//# Nested: updateStudentAnswer()
 	//#################################################################
 	this.updateStudentAnswer = function () {
-		this.aStudentAnswerList = this.aAllSteps; 
+		this.aStudentAnswerList = this.aAllSteps;
 		this.aCount = this.aStudentAnswerList.length;
 		return this.aStudentAnswerList;
 	};
@@ -2155,8 +2157,8 @@ function appendMethods_EProof__SID__ () {
 	//# Nested: updateStepDef(pID,pTextareaID)
 	//#################################################################
 	this.updateStepDef = function (pID,pTextareaID,pValue) {
-		//this.aStudentAnswerList = this.getElementsByClassName("STUDENTANSWER"+this.aQID); 
-		this.aStudentAnswerList = this.getAllSteps(); 
+		//this.aStudentAnswerList = this.getElementsByClassName("STUDENTANSWER"+this.aQID);
+		this.aStudentAnswerList = this.getAllSteps();
 		//alert("updateStepDef('"+pID+"','"+pTextareaID+"','"+pValue+"')");
 		//if TextareaID is not JUSTIFICATION then it is necessary to update two DOMs
 		if (pTextareaID != "JUSTIFICATION") {
@@ -2188,8 +2190,8 @@ function appendMethods_EProof__SID__ () {
 		//alert("vListNode.length="+vListNode.length);
 		var vUsedNodes   = this.getUsedSteps(); //this.getChildrenByClassName(this.aUsedDOM,"STUDENTANSWER"+this.aQID);
 		var vUnusedNodes = this.getUnusedSteps(); //ChildrenByClassName(this.aUnusedDOM,"STUDENTANSWER"+this.aQID);
- 		var vProof       = this.aUsedDOM; 
-		var vUnused      = this.aUnusedDOM; 
+ 		var vProof       = this.aUsedDOM;
+		var vUnused      = this.aUnusedDOM;
 		var vDelPos = vUsedNodes.length - 1;
 		var vParent = null;
 		//alert("Set Number of Proof Steps="+pCount+" All="+this.aCount+" vUsedNodes="+vUsedNodes.length+" Unused="+vUnusedNodes.length+")");
@@ -2206,7 +2208,7 @@ function appendMethods_EProof__SID__ () {
 				//vUnused.appendChild(vRemovedChild);
 				vDelPos--;
 				pCount++;
-			}	
+			}
 		} else if (this.greater(pCount , vUsedNodes.length)) {
 			//---Proof [0,1,2,3,4] Unused [5,6,7,8,9] pCount=6
 			//alert("Increase Number of Steps form "+vUsedNodes.length +" to "+pCount);
@@ -2218,7 +2220,7 @@ function appendMethods_EProof__SID__ () {
 				vProof.appendChild(vRemovedChild);
 				vDelPos++;
 				pCount--;
-			}	
+			}
 		};
 		//alert("updateStepCount() - 1.1");
 		this.checkUnusedCount();
@@ -2245,7 +2247,7 @@ function appendMethods_EProof__SID__ () {
 			//var vMod = ord("z")-32+1;
 			//alert("vMod="+vMod);
 			return decode	? chr((vMod + ord(a) - ord(b)) % vMod + ord(vMinChar))
-					: chr((vMod + ord(a) + ord(b) - ord(vMinChar) * 2) % vMod + ord(vMinChar)) 
+					: chr((vMod + ord(a) + ord(b) - ord(vMinChar) * 2) % vMod + ord(vMinChar))
 		}
 		function transEnc(msg, key) {
 			//alert("Encode");
@@ -2255,13 +2257,13 @@ function appendMethods_EProof__SID__ () {
 			var k=0;
 			var vMaxChar = 35;
 			var vOut = "";
-			var c1,c2; 
+			var c1,c2;
 			while (i != msg.length) {
 				cc = msg.charCodeAt(i);
 				k = key.charCodeAt(i % key.length) - ord("A");
 				cc += k;
 				cc = cc % 256;
-				c1 = chr(Math.floor(cc / 16) + ord("A")); 
+				c1 = chr(Math.floor(cc / 16) + ord("A"));
 				c2 = chr((cc % 16)+ ord("A"));
 				//alert("Enc("+i+")="+cc);
 				vOut +=c1+c2;
@@ -2280,7 +2282,7 @@ function appendMethods_EProof__SID__ () {
 			var k=0;
 			var vOut = "";
 			var vSplit = "";
-			var c1,c2; 
+			var c1,c2;
 			var vMax = Math.floor(msg.length/2);
 			while (i != vMax) {
 				c1= msg.charCodeAt(2*i)-ord("A");
@@ -2294,7 +2296,7 @@ function appendMethods_EProof__SID__ () {
 			};
 			return vOut;
 		};
-		
+
 		if (pEncode == "encode") {
 			return transEnc(pString,pKeyword);
 		} else {
@@ -2354,7 +2356,7 @@ function appendMethods_EProof__SID__ () {
 		if (vOutNode) {
 			vOutNode.innerHTML = pContent;
 		} else {
-			this.alertDOM("For ID="+pID+" is writeParentInnerHTML() not defined");		
+			this.alertDOM("For ID="+pID+" is writeParentInnerHTML() not defined");
 		}
 	};
 	//#################################################################
@@ -2365,7 +2367,7 @@ function appendMethods_EProof__SID__ () {
 		if (vOutNode) {
 			vOutNode.value = pContent;
 		} else {
-			this.alertDOM("For ParentID="+pParent.id+" and ID="+pID+" in writeParentValue() not defined");		
+			this.alertDOM("For ParentID="+pParent.id+" and ID="+pID+" in writeParentValue() not defined");
 		}
 	};
 	//#################################################################
@@ -2393,14 +2395,14 @@ function appendMethods_EProof__SID__ () {
 	this.writeSelectionClick = function (pStep,pClassID,pValue) {
 		//alert("writeSelectionClick():2402 - Value="+pValue+" writeDOM to "+pClassID+this.aQID+pStep);
 		var vNode = this.getElementById(pClassID+this.aQID+pStep);
-		vNode.value = pValue; 
+		vNode.value = pValue;
 	};
 	//#################################################################
 	//# Nested: writeValue4Step
 	//#################################################################
 	this.writeValue4Step = function (pStep,pClassID,pValue) {
 		var vNode = this.getElementById(pClassID+this.aQID+pStep);
-		vNode.value = pValue; 
+		vNode.value = pValue;
 	};
 	//#################################################################
 	//# Nested: writeInnerHTML4Root
@@ -2505,7 +2507,7 @@ function appendMethods_EProof__SID__ () {
 	};
 	//#################################################################
 	//# Method: debugValue()
-	//#################################################################	
+	//#################################################################
 	this.debugValue = function (pLabel) {
 		var vDOM = "imathSTUDENTANSWER";
 		var vValue = this.getElementById(vDOM).value;
@@ -2518,7 +2520,7 @@ function appendMethods_EProof__SID__ () {
 
 	};
 	//#################################################################
-	//# Nested: decodeValue  
+	//# Nested: decodeValue
 	//#################################################################
 	this.decodeValue = function (pValue) {
 		var vRet = "undefined decodeValue()";
@@ -2529,7 +2531,7 @@ function appendMethods_EProof__SID__ () {
 		return vRet;
 	};
 	//#################################################################
-	//# Nested: decodeValueNoQuotes  
+	//# Nested: decodeValueNoQuotes
 	//#################################################################
 	this.decodeValueNoQuotes = function (pValue) {
 		if (pValue) {
@@ -2553,7 +2555,7 @@ function appendMethods_EProof__SID__ () {
 		}
 	};
 	//#################################################################
-	//# Nested: encodeCR  
+	//# Nested: encodeCR
 	//#################################################################
 	this.encodeCR = function (pValue) {
 		// __n__ eval(decodeURI("pValue=pValue.replace(/%5C%5Cn/g,%22__n__%22)"));
@@ -2561,21 +2563,21 @@ function appendMethods_EProof__SID__ () {
 		return pValue;
 	};
 	//#################################################################
-	//# Nested: encodeCommaForm  
+	//# Nested: encodeCommaForm
 	//#################################################################
 	this.encodeCommaForm = function (pValue) {
 		pValue = pValue.replace(/,/g,this.aComma);
 		return pValue;
 	};
 	//#################################################################
-	//# Nested: decodeCommaForm  
+	//# Nested: decodeCommaForm
 	//#################################################################
 	this.decodeCommaForm = function (pValue) {
 		eval("pValue=pValue.replace(/"+this.aComma+"/g,',')");
 		return pValue;
 	};
 	//#################################################################
-	//# Nested: decodeCR  
+	//# Nested: decodeCR
 	//#################################################################
 	this.decodeCR = function (pValue) {
 		//pValue = pValue.replace(/__n__/g,this.CR);
@@ -2583,7 +2585,7 @@ function appendMethods_EProof__SID__ () {
 		return pValue;
 	};
 	//#################################################################
-	//# Nested: decodeTextarea  
+	//# Nested: decodeTextarea
 	//#################################################################
 	this.decodeTextarea = function (pValue) {
 	  pValue = this.decodeValue(pValue);
@@ -2592,7 +2594,7 @@ function appendMethods_EProof__SID__ () {
 	  return pValue;
 	};
 	//#################################################################
-	//# Nested: encodeTextarea  
+	//# Nested: encodeTextarea
 	//#################################################################
 	this.encodeTextarea = function (pValue) {
 	  pValue = this.encodeValue(pValue);
@@ -2602,14 +2604,14 @@ function appendMethods_EProof__SID__ () {
 	  return pValue;
 	};
 	//#################################################################
-	//# Nested: encodeTextareaCR  
+	//# Nested: encodeTextareaCR
 	//#################################################################
 	this.encodeTextareaCR = function (pValue) {
 	  eval(decodeURI("pValue=pValue.replace(/%5Cn/g,%22__n__%22)"));
 	  return pValue;
 	};
 	//#################################################################
-	//# Nested: encodeValue  
+	//# Nested: encodeValue
 	//#################################################################
 	this.encodeValue = function (pValue) {
 		if (pValue) {
@@ -2634,5 +2636,3 @@ function appendMethods_EProof__SID__ () {
 	};
 	//#################################################################
 };
-
-</textarea></center></form></body></html>

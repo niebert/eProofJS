@@ -860,9 +860,9 @@ function appendMethods_EProof__SID__ () {
 			vReturn += vStartJS + vLibPath +"eproofmain.js" + vEndJS;
 			vReturn += vStartJS + vLibPath +"eproofmeth1.js" + vEndJS;
 			vReturn += vStartJS + vLibPath +"eproofmeth2.js" + vEndJS;
-			//Path: "http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML"
+			//Path: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=AM_HTMLorMML"
 			vReturn += vStartJS + vMathJaxPath + "MathJax.js?config=" + vMathJaxConfig + vEndJS;
-			//vReturn += this.LT+"script src=\"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML\""+this.GT+""+this.LT+"/script"+this.GT+this.CR;
+			//vReturn += this.LT+"script src=\"https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=AM_HTMLorMML\""+this.GT+""+this.LT+"/script"+this.GT+this.CR;
 			//vReturn += this.getIMathEProofInnerHTML(cln,"_WEB","__THISQ__","_SID");
 		};
 		vReturn += this.getIMathEProofInnerHTML(cln,vQID,vThisQ,vSID,vAuthoring);
