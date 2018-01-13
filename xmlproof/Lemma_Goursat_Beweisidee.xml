@@ -1,0 +1,91 @@
+<EPROOF>
+  <VARIABLE NAME='Theorem_Title' VALUE='Goursat' />
+  <VARIABLE NAME='Theorem_Label' VALUE='Theorem' />
+  <VARIABLE NAME='Author' VALUE='Author Name' />
+  <VARIABLE NAME='eMail' VALUE='mail@author.inf' />
+  <VARIABLE NAME='LANGUAGE' VALUE='DE' />
+  <VARIABLE NAME='Theorem_Appendix' VALUE='Wikipedia: __lt__a href__eq____qu__http://http://de.wikipedia.org/wiki/Lemma_von_Goursat__qu__ target__eq____qu___blank__qu____gt__Lemma von Goursat__lt__/a__gt__' />
+  <VARIABLE NAME='Per_Error_Minus_Percent' VALUE='9' />
+  <VARIABLE NAME='Assessment_Minus_Percent' VALUE='2' />
+  <VARIABLE NAME='Suggestion_Minus_Percent' VALUE='17' />
+  <VARIABLE NAME='unnecessary_connections' VALUE='3' />
+  <VARIABLE NAME='unnecessary_proofsteps' VALUE='3' />
+  <VARIABLE NAME='unnecessary_justifications' VALUE='2' />
+  <VARIABLE NAME='selectbox_proofsteps' VALUE='1' />
+  <VARIABLE NAME='allow_own_proofsteps' VALUE='1' />
+  <VARIABLE NAME='remap_proofstep_IDs' VALUE='1' />
+  <VARIABLE NAME='randomize_proofstep_IDs' VALUE='1' />
+  <VARIABLE NAME='cryptkey' VALUE='ACBSD' />
+  <VARIABLE NAME='show_Load_Save_Control' VALUE='1' />
+  <VARIABLE NAME='show_Main_Control' VALUE='1' />
+  <VARIABLE NAME='show_links' VALUE='1' />
+  <VARIABLE NAME='show_assessment' VALUE='1' />
+  <VARIABLE NAME='show_suggestions' VALUE='1' />
+  <VARIABLE NAME='show_proof_solution' VALUE='1' />
+  <VARIABLE NAME='AuthoringMode' VALUE='1' />
+  <VARIABLE NAME='AssessmentMode' VALUE='0' />
+  <VARIABLE NAME='MathFormat' VALUE='AM_HTMLorMML' />
+  <VARIABLE NAME='COMMONCONTROL' VALUE='4980__co__4981__co__4982__co__4983' />
+  <VARIABLE NAME='QUESTIONTEXT' VALUE='4980__co__4981__co__4982__co__4983' />
+  <VARIABLE NAME='vQID' VALUE='SANTSK' />
+  <VARIABLE NAME='alertDOM' VALUE='0' />
+  <VARIABLE NAME='Offline' VALUE='' />
+  <VARLIST NAME='PRECONDITION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='P1' VALUE='Sei __math__U subseteq CC__math__ eine offene Teilmenge__co__ ' />
+    <STEPDEF SIZE='2' ID='P2' VALUE='Seien __math__z_1 __co__z_2 __co__ z_3 in CC__math__ drei nicht kollineare Punkte__co__ die das Dreieck __math__Delta (z_{1}__co__z_{2}__co__z_{3}) :__eq__ { sum_{k__eq__1}^3 lambda_k * z_k | (sum_{k__eq__1}^3 lambda_k __eq__ 1) ^^ AA_{k in {1__co__2__co__3}} : lambda_k in [0__co__1] } subset U__math__ definieren__co__' />
+    <STEPDEF SIZE='2' ID='P3' VALUE='Sei __math__f:U -__gt__ CC__math__ eine holomorphe Funktion__co__' />
+    <STEPDEF SIZE='2' ID='P4' VALUE='Sei __math__langle z_1__co__z_2__co__z_3 rangle : [0__co__3] -__gt__ CC __math__ der geschlossene Weg __ue__ber den Dreiecksrand von __math__Delta (z_{1}__co__z_{2}__co__z_{3})__math__ mit Startpunkt __math__z_1__math__' />
+  </VARLIST>
+  <VARLIST NAME='CONCLUSION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='C1' VALUE='__math__int_{langle z_1__co__z_2__co__z_3 rangle} f(z) d z __eq__ 0__math__ ' />
+  </VARLIST>
+  <VARLIST NAME='JUSTIFICATION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='DU' VALUE=' __math__AA_(a__co__b in CC) : |a + b| __lt____eq__ |a| + |b| __math__' />
+    <STEPDEF SIZE='2' ID='DG' VALUE=' __math__AA_(a__co__b__co__c in M) : a * (b + c) __eq__ a * b + a * c__math__ ' />
+    <STEPDEF SIZE='2' ID='AG' VALUE=' __math__AA_(a__co__b__co__c in M) : (a + b) + c __eq__ a + (b + c)__math__ ' />
+    <STEPDEF SIZE='2' ID='DI' VALUE='Definition: Sei __math__M subset C__math__ eine Menge __math__diam(M) :__eq__ text(sup){ |b-a| : a__co__b in M } __math__' />
+    <STEPDEF SIZE='2' ID='WE' VALUE='Definition (Weg): Sei __math__U subseteq CC__math__ eine Teilmenge und __math__a__co__b in RR__math__ mit __math__a __lt__ b__math__. Ein Weg __math__gamma__math__ in __math__U__math__ ist eine stetige Abbildung __math__gamma : [a__co__b] -__gt__ CC__math__ mit __math__gamma(U) subseteq U__math__.' />
+    <STEPDEF SIZE='2' ID='SPU' VALUE='Definition (Spur): Sei __math__gamma: [a__co__b] -__gt__ CC__math__ eine Weg. Die Spur von __math__gamma__math__ ist definiert als:  __math____qu__Spur__qu__(gamma):__eq__ { gamma(t) in CC | t in [a__co__b] }__math__. ' />
+    <STEPDEF SIZE='2' ID='WZ' VALUE='Definition (wegzusammenh__ae__ngend): Sei __math__U subseteq CC__math__ eine Teilmenge. __math__U__math__ hei__sz__t wegzusammenh__ae__ngend__co__  wenn es zu beliebigen Punkt __math__z_1__co__ z_2 in U__math__ einen Weg __math__gamma:[a__co__b] -__gt__ CC__math__ gibt__co__ mit __math__gamma(a)__eq__z_1__math____co____math__gamma(b)__eq__z_2__math__ und __math____qu__Spur__qu__(gamma) subseteq U__math__. ' />
+    <STEPDEF SIZE='2' ID='GE' VALUE='Definition (Gebiet): Eine Teilmenge __math__G subseteq CC__math__ hei__sz__t Gebiet__co__ wenn (1) __math__G__math__ offen__co__ (2) __math__G !__eq__ emptyset__math__ und (3) __math__G__math__ wegzusammenh__ae__ngend ist.' />
+    <STEPDEF SIZE='2' ID='WG1' VALUE='Definition (Weg glatt): Ein Weg __math__gamma: [a__co__b] -__gt__ CC__math__ hei__sz__t glatt__co__ wenn dieser stetig differenzierbar ist.' />
+    <STEPDEF SIZE='2' ID='UT' VALUE='Definition (Unterteilung): Sei __math__[a__co__b]__math__ ein Intervall__co__ __math__n in NN__math__ und __math__a__eq__u_0__lt__ ...__lt__ u_n __eq__ b__math__. __math__(u_0__co__ ...__co__ u_{n}) in RR^{n+1}__math__ hei__sz__t dann Unterteilung von __math__[a__co__b]__math__.' />
+    <STEPDEF SIZE='2' ID='WG2' VALUE='Definition (Wegunterteilung): Sei __math__gamma: [a__co__b] -__gt__ CC__math__ ein Weg in __math__U subseteq CC__math____co__ __math__n in NN__math____co__ __math__(u_0__co__ ...__co__ u_{n})__math__ eine Unterteilung von __math__[a__co__b]__math____co__ __math__gamma_k : [u_{k-1} __co__ u_k] -__gt__ CC__math__ f__ue__r alle __math__k in {1__co__ ... __co__n}__math__ ein Weg in __math__U__math__. __math__(gamma_{1}__co__ ...__co__ gamma_{n})__math__ hei__sz__t Wegunterteilung von __math__gamma__math____co__ wenn gilt __math__gamma_n(b) __eq__ gamma(b)__math__ und  __math__AA_{k in {1__co__...__co__n} } AA_{t in [u_{k-1} __co__ u_k )} : gamma_k(t) __eq__ gamma(t) ^^ gamma_k(u_{k-1}) __eq__ gamma_{k-1}(u_k)__math__.' />
+    <STEPDEF SIZE='2' ID='WG3' VALUE='Definition (Weg st__ue__ckweise glatt): Ein Weg __math__gamma: [a__co__b] -__gt__ CC__math__ hei__sz__t st__ue__ckweise glatt__co__ wenn eine Wegunterteilung __math__(gamma_1 __co__... gamma_n)__math__ aus glatten Wegen __math__gamma_k__math__ f__ue__r alle __math__k in {1__co__ ... __co__ n}__math__ existiert.' />
+    <STEPDEF SIZE='2' ID='WG4' VALUE='Definition (Wegintegral): Sei __math__f: U -__gt__ CC__math__ eine stetige Funktion und __math__gamma: [a__co__b]__math__ ein glatter Weg__co__ dann ist das Wegintegral wie folgt definiert: __math__int_{gamma} f :__eq__ int_{gamma} f(xi) d xi :__eq__ int_{a}^{b} f(gamma(t)) * gamma__ap__(t) dt__math__. Ist __math__gamma__math__ st__ue__ckweise glatt bzgl. einer Wegunterteilung __math__(gamma_{1}__co__ ...__co__ gamma_{n})__math____co__ dann definiert man __math__int_{gamma} f(xi) d xi :__eq__ sum_{k__eq__1}^{n} int_{gamma_{k}} f(xi) d xi__math__.' />
+    <STEPDEF SIZE='2' ID='SF' VALUE='Satz (Stammfunktion mit geschlossenen Wegen): Besitzt eine stetige Funktion __math__f:U -__gt__ CC__math__ eine Stammfunktion __math__F__math____co__ dann gilt f__ue__r den st__ue__ckweise glatten Weg __math__gamma : [a__co__b] -__gt__ U__math____co__ dass __math__int_{gamma} f(z) dz __eq__ F(gamma(b))-F(gamma(a))__math__ gilt.' />
+  </VARLIST>
+  <VARLIST NAME='PROOFSTEP_OPTIONS'>
+    <STEPDEF SIZE='2' ID='S1' VALUE='F__ue__r die Beweisidee in 8 Schritten muss eine Folge von Dreieickswegen rekursiv __math__gamma^{(n)} :__eq__ langle z_1^{(n)}__co__z_2^{(n)}__co__z_3^{(n)} rangle__math__ definiert werden__co__ bei der __math__gamma^{(n)}__math__ die 2-fache L__ae__nge von __math__gamma^{(n+1)}__math__ besitzt.' />
+    <STEPDEF SIZE='2' ID='S1_F1' VALUE='F__ue__r die Beweisidee in 8 Schritten muss eine Folge von Dreieickswegen rekursiv __math__gamma^{(n)} :__eq__ langle z_1^{(n)}__co__z_2^{(n)}__co__z_3^{(n)} rangle__math__ definiert werden__co__ bei der __math__gamma^{(n+1)}__math__ die 4-fache L__ae__nge von __math__gamma^{(n)}__math__ besitzt.' />
+    <STEPDEF SIZE='2' ID='S1_F2' VALUE='F__ue__r die Beweisidee in 8 Schrittenmuss eine Folge von Dreieickswegen rekursiv __math__gamma^{(n)} :__eq__ langle z_1^{(n)}__co__z_2^{(n)}__co__z_3^{(n)} rangle__math__ definiert werden__co__ bei der __math__gamma^{(n)}__math__ die 4-fache L__ae__nge von __math__gamma^{(n+1)}__math__ besitzt.' />
+    <STEPDEF SIZE='2' ID='S2_F1' VALUE='F__ue__r die Definition  der geschlossenen Dreieckswege werden glatte Wege der Form __math__gamma^{(n)}(t):__eq__  z_1*e^{it} + z_2*e^{it} + z_3*e^{it}__math__ verwendet' />
+    <STEPDEF SIZE='2' ID='S2_F2' VALUE='F__ue__r die Definition  der geschlossenen Dreieckswege wird jeweils ein glatter Wege __math__gamma^{(n)}(t)__math__ aus Konvexkombinationen verwendet.' />
+    <STEPDEF SIZE='2' ID='S2' VALUE='F__ue__r die Definition  der geschlossenen Dreieckswege wird jeweils ein st__ue__ckweise glatter Weg __math__gamma^{(n)}(t)__math__ verwendet__co__ wobei __math__gamma^{(0)}(t)__math__ als Weg __ue__ber den Rand des Ausgangsdreicks __math__Delta (z_{1}__co__z_{2}__co__z_{3})__math__ definiert wird' />
+    <STEPDEF SIZE='2' ID='S3_F1' VALUE='F__ue__r die Definition  der n__ae__chsten geschlossenen Dreieckswege __math__gamma^{(n+1)}(t)__math__ wird der Wege __math__gamma^{(n)}(t)__math__ in 4 Teilwege aufgeteilt.' />
+    <STEPDEF SIZE='2' ID='S3_F2' VALUE='F__ue__r die Definition  der n__ae__chsten geschlossenen Dreieckswege __math__gamma^{(n+1)}(t)__math__ werden an den Seitenmitten 3 zus__ae__tzliche Wege eingef__ue__gt und __math__gamma^{(n)}(t)__math__ in 6 Teilwege aufgeteilt.' />
+    <STEPDEF SIZE='2' ID='S3_F3' VALUE='F__ue__r die Definition  der n__ae__chsten geschlossenen Dreieckswege __math__gamma^{(n+1)}(t)__math__ werden an den Seitenmitten 4 zus__ae__tzliche Wege eingef__ue__gt und __math__gamma^{(n)}(t)__math__ in 6 Teilwege aufgeteilt.' />
+    <STEPDEF SIZE='2' ID='S3' VALUE='F__ue__r die Definition  der n__ae__chsten geschlossenen Dreieckswege __math__gamma^{(n+1)}(t)__math__ werden an den Seitenmitten 6 zus__ae__tzliche Wege eingef__ue__gt und __math__gamma^{(n)}(t)__math__ in 6 Teilwege aufgeteilt.' />
+    <STEPDEF SIZE='2' ID='S4_F1' VALUE='Es entstehen 4 weitere geschlossenen Dreieckswege __math__int_{gamma_k^{(n)}} f(z) dz__math__ werden an den Seitenmitten 6 zus__ae__tzliche Wege eingef__ue__gt und __math__gamma^{(n)}(t)__math__ in 6 Teilwege aufgeteilt.' />
+    <STEPDEF SIZE='2' ID='S4' VALUE='Es entstehen 4 weitere geschlossenen Dreieckswege __math__gamma_k^{(n)}__math__ f__ue__r __math__k in {1__co__2__co__3__co__4}__math__.' />
+    <STEPDEF SIZE='2' ID='S5_F1' VALUE='Man w__ae__hlt den Weg __math__gamma_k^{(n)}__math__ als __math__gamma^{(n+1)}(t)__math____co__ der den gr__oe____sz__ten Wert __math__|gamma_i^{(n)}(t)|__math__' />
+    <STEPDEF SIZE='2' ID='S5' VALUE='Man w__ae__hlt den Weg __math__gamma_k^{(n)}__math__ als __math__gamma^{(n+1)}(t)__math____co__ der den gr__oe____sz__ten Wert __math__|int_{gamma_k^{(n)}} f(z) dz|__math__ f__ue__r __math__k in {1__co____co__2__co__3__co__4}__math__ annimmt' />
+    <STEPDEF SIZE='2' ID='S5_F2' VALUE='Man w__ae__hlt den Weg __math__gamma_k^{(n)}__math__ als __math__gamma^{(n+1)}(t)__math____co__ der den gr__oe____sz__ten Wert __math__int_{gamma_k^{(n)}} f(z) dz__math__ f__ue__r __math__k in {1__co____co__2__co__3__co__4}__math__ annimmt' />
+    <STEPDEF SIZE='2' ID='S6_F1' VALUE='Dann geht die Holomorphie von __math__f__math__ durch Anwendung des Satzes von Goursat ein.' />
+    <STEPDEF SIZE='2' ID='S6_F2' VALUE='Dann geht die Holomorphie von __math__f__math__ durch Anwendung der linearen Approximierbarkeit __math__f(z)__eq__f(z_0)+f__ap__(z_0)*( z-z_0)  +r(z)__math__ ein__co__ wobei __math__r(z) __eq__ 0__math__ wegen Differenzierbarkeit von __math__f__math__ in __math__z_o__math__ gilt.' />
+    <STEPDEF SIZE='2' ID='S6_F3' VALUE='Dann geht die Holomorphie von __math__f__math__ durch Anwendung der linearen Approximierbarkeit __math__f(z)__eq__f(z_0)+f__ap__(z_0)*( z-z_0)  +r(z)__math__ ein__co__ wobei __math__f(z_0)+f__ap__(z_0)*( z-z_0) __eq__ 0__math__ wegen Differenzierbarkeit von __math__f__math__ in __math__z_o__math__  gilt.' />
+    <STEPDEF SIZE='2' ID='S6_F4' VALUE='Dann geht die Holomorphie von __math__f__math__ durch Anwendung der linearen Approximierbarkeit __math__f(z)__eq__f(z_0)+f__ap__(z_0)*( z-z_0)  +r(z)__math__ ein__co__ wobei __math__int_{gamma^{(n)}} f(z_0)+f__ap__(z_0)*( z-z_0) \ dz __eq__ 0__math__ wegen Differenzierbarkeit gilt.' />
+    <STEPDEF SIZE='2' ID='S6' VALUE='Dann geht die Holomorphie von __math__f__math__ durch Anwendung der linearen Approximation __math__f(z)__eq__f(z_0)+f__ap__(z_0)*( z-z_0)  +r(z)__math__ ein__co__ wobei __math__int_{gamma^{(n)}} f(z_0)+f__ap__(z_0)*( z-z_0) \ dz __eq__ 0__math__ wegen Existenz einer Stammfunktion erf__ue__llt ist.' />
+    <STEPDEF SIZE='2' ID='S7_F1' VALUE='Insgesamt werden die Wegintegrale wie folgt abgesch__ae__tzt __math__0 le 4^n * |int_{gamma^{(n+1)}} f(z) dz| le |int_{langle z_1__co__z_2__co__z_3 rangle} f(z) d z| le epsilon * 4^n' />
+    <STEPDEF SIZE='2' ID='S7_F2' VALUE='Insgesamt werden die Wegintegrale wie folgt abgesch__ae__tzt __math__0 le |int_{langle z_1__co__z_2__co__z_3 rangle} f(z) d z| 4^n * |int_{gamma^{(n+1)}} f(z) dz| le  4^n * int_{gamma_k^{(n)}} epsilon * |z-z_0| dz__math____co__ wobei __math__z_0__math__ ein Eckpunkt des Ausgangsdreiecks ist.' />
+    <STEPDEF SIZE='2' ID='S7' VALUE='Insgesamt werden die Wegintegrale wie folgt abgesch__ae__tzt __math__0 le |int_{langle z_1__co__z_2__co__z_3 rangle} f(z) d z| 4^n * |int_{gamma^{(n+1)}} f(z) dz| le  4^n * int_{gamma_k^{(n)}} epsilon * |z-z_0| dz__math____co__ wobei __math__z_0__math__ der Punkt ist__co__ der von allen Dreieckswegen __math__gamma_k^{(n)}__math__ f__ue__r __math__n in NN__math__ umrundet wird.' />
+    <STEPDEF SIZE='5' ID='S1' CONNECTION=' ' JUST='' OPTJUST='' VALUE='F__ue__r die Beweisidee in 8 Schritten muss eine Folge von Dreieickswegen rekursiv __math__gamma^{(n)} :__eq__ langle z_1^{(n)}__CO__z_2^{(n)}__CO__z_3^{(n)} rangle__math__ definiert werden__CO__ bei der __math__gamma^{(n)}__math__ die 2-fache L__ae__nge von __math__gamma^{(n+1)}__math__ besitzt.' />
+    <STEPDEF SIZE='5' ID='S2' CONNECTION='__eq____gt__' JUST='P4' OPTJUST='UT' VALUE='F__ue__r die Definition  der geschlossenen Dreieckswege wird jeweils ein st__ue__ckweise glatter Weg __math__gamma^{(n)}(t)__math__ verwendet__CO__ wobei __math__gamma^{(0)}(t)__math__ als Weg __ue__ber den Rand des Ausgangsdreicks __math__Delta (z_{1}__CO__z_{2}__CO__z_{3})__math__ definiert wird' />
+    <STEPDEF SIZE='5' ID='S3' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='F__ue__r die Definition  der n__ae__chsten geschlossenen Dreieckswege __math__gamma^{(n+1)}(t)__math__ werden an den Seitenmitten 6 zus__ae__tzliche Wege eingef__ue__gt und __math__gamma^{(n)}(t)__math__ in 6 Teilwege aufgeteilt.' />
+    <STEPDEF SIZE='5' ID='S4' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='Es entstehen 4 weitere geschlossenen Dreieckswege __math__gamma_k^{(n)}__math__ f__ue__r __math__k in {1__CO__2__CO__3__CO__4}__math__.' />
+    <STEPDEF SIZE='5' ID='S5' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='Man w__ae__hlt den Weg __math__gamma_k^{(n)}__math__ als __math__gamma^{(n+1)}(t)__math____CO__ der den gr__oe____sz__ten Wert __math__|int_{gamma_k^{(n)}} f(z) dz|__math__ f__ue__r __math__k in {1__CO____CO__2__CO__3__CO__4}__math__ annimmt' />
+    <STEPDEF SIZE='5' ID='S6' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='Dann geht die Holomorphie von __math__f__math__ durch Anwendung der linearen Approximation __math__f(z)__eq__f(z_0)+f__ap__(z_0)*( z-z_0)  +r(z)__math__ ein__CO__ wobei __math__int_{gamma^{(n)}} f(z_0)+f__ap__(z_0)*( z-z_0) \ dz __eq__ 0__math__ wegen Existenz einer Stammfunktion erf__ue__llt ist.' />
+    <STEPDEF SIZE='5' ID='S7' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='Insgesamt werden die Wegintegrale wie folgt abgesch__ae__tzt __math__0 le |int_{langle z_1__CO__z_2__CO__z_3 rangle} f(z) d z| 4^n * |int_{gamma^{(n+1)}} f(z) dz| le  4^n * int_{gamma_k^{(n)}} epsilon * |z-z_0| dz__math____CO__ wobei __math__z_0__math__ der Punkt ist__CO__ der von allen Dreieckswegen __math__gamma_k^{(n)}__math__ f__ue__r __math__n in NN__math__ umrundet wird.' />
+    <STEPDEF SIZE='5' ID='C1' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='' />
+  </VARLIST>
+</EPROOF>

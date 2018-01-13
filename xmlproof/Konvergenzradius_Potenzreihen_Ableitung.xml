@@ -1,0 +1,86 @@
+<EPROOF>
+  <VARIABLE NAME='Theorem_Title' VALUE='Konvergenzradius von Potenzreihen - Ableitung' />
+  <VARIABLE NAME='Theorem_Label' VALUE='Theorem' />
+  <VARIABLE NAME='Author' VALUE='Author Name' />
+  <VARIABLE NAME='eMail' VALUE='mail@author.inf' />
+  <VARIABLE NAME='LANGUAGE' VALUE='DE' />
+  <VARIABLE NAME='Theorem_Appendix' VALUE='Wikipedia: __lt__a href__eq____qu__http://de.wikipedia.org/wiki/Konvergenzradius__qu__ target__eq____qu___blank__qu____gt__Konvergenzradius__lt__/a__gt__' />
+  <VARIABLE NAME='Per_Error_Minus_Percent' VALUE='9' />
+  <VARIABLE NAME='Assessment_Minus_Percent' VALUE='2' />
+  <VARIABLE NAME='Suggestion_Minus_Percent' VALUE='17' />
+  <VARIABLE NAME='unnecessary_connections' VALUE='3' />
+  <VARIABLE NAME='unnecessary_proofsteps' VALUE='3' />
+  <VARIABLE NAME='unnecessary_justifications' VALUE='2' />
+  <VARIABLE NAME='selectbox_proofsteps' VALUE='1' />
+  <VARIABLE NAME='allow_own_proofsteps' VALUE='1' />
+  <VARIABLE NAME='remap_proofstep_IDs' VALUE='1' />
+  <VARIABLE NAME='randomize_proofstep_IDs' VALUE='1' />
+  <VARIABLE NAME='cryptkey' VALUE='ACBSD' />
+  <VARIABLE NAME='show_Load_Save_Control' VALUE='1' />
+  <VARIABLE NAME='show_Main_Control' VALUE='1' />
+  <VARIABLE NAME='show_links' VALUE='1' />
+  <VARIABLE NAME='show_assessment' VALUE='1' />
+  <VARIABLE NAME='show_suggestions' VALUE='1' />
+  <VARIABLE NAME='show_proof_solution' VALUE='1' />
+  <VARIABLE NAME='AuthoringMode' VALUE='1' />
+  <VARIABLE NAME='AssessmentMode' VALUE='0' />
+  <VARIABLE NAME='MathFormat' VALUE='AM_HTMLorMML' />
+  <VARIABLE NAME='COMMONCONTROL' VALUE='4980__co__4981__co__4982__co__4983' />
+  <VARIABLE NAME='QUESTIONTEXT' VALUE='4980__co__4981__co__4982__co__4983' />
+  <VARIABLE NAME='vQID' VALUE='SANTBR' />
+  <VARIABLE NAME='alertDOM' VALUE='0' />
+  <VARIABLE NAME='Offline' VALUE='' />
+  <VARLIST NAME='PRECONDITION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='P1' VALUE='Sei __math__(c_n)_{n in NN_0} in CC^{NN_0}__math__ Folge in __math__CC__math__ und __math__a in CC__math__der Entwicklungspunkt der Potenzreihe __math__P(z):__eq__sum_{n__eq__0}^{oo} c_n * (z-a)^{n}__math__' />
+    <STEPDEF SIZE='2' ID='P2' VALUE='__math__(b_n)_{n in NN_0}  in CC^{NN_0}__math__ Folge in __math__CC__math__ und __math__b_{n}:__eq__ (n+1) * c_{n+1}  in CC__math__ f__ue__r alle __math__n in NN_0__math__' />
+    <STEPDEF SIZE='2' ID='P3' VALUE='Sei __math__rho__math__ der Konvergenzradius von der Potenzreihe __math__P(z)__math__' />
+  </VARLIST>
+  <VARLIST NAME='CONCLUSION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='C1' VALUE='__math__ Q(z):__eq__sum_{n__eq__0}^{oo} b_n * (z-a)^{n}__math__ hat ebenfalls den Konvergenzradius __math__rho__math__ ' />
+  </VARLIST>
+  <VARLIST NAME='JUSTIFICATION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='DU' VALUE=' __math__AA_(a__co__b in CC) : |a + b| __lt____eq__ |a| + |b| __math__' />
+    <STEPDEF SIZE='2' ID='DG' VALUE=' __math__AA_(a__co__b__co__c in M) : a * (b + c) __eq__ a * b + a * c__math__  hh' />
+    <STEPDEF SIZE='2' ID='AG' VALUE=' __math__AA_(a__co__b__co__c in M) : (a + b) + c __eq__ a + (b + c)__math__ ' />
+    <STEPDEF SIZE='2' ID='KG' VALUE=' __math__AA_(a__co__b in M) : a * b __eq__ b * c __math__' />
+    <STEPDEF SIZE='2' ID='PG' VALUE=' __math__AA_{a__co__b in RR__co__ b!__eq__0} AA_{n in NN} : (a/b)^n __eq__ a^n/b^n__math__ ' />
+    <STEPDEF SIZE='2' ID='CH' VALUE='Satz von Cauchy-Hadamard' />
+    <STEPDEF SIZE='2' ID='LIM' VALUE=' __math__lim_{n-__gt__oo} 1/n * ln(n+1) __eq__0__math__' />
+    <STEPDEF SIZE='2' ID='LG' VALUE=' __math__AA_{a__co__b__gt__0}  : __qu__ __qu__  a * ln(b) __eq__ ln (b^a)__math__' />
+  </VARLIST>
+  <VARLIST NAME='PROOFSTEP_OPTIONS'>
+    <STEPDEF SIZE='2' ID='S1' VALUE='Sei __math__r__math__ der Konvergenzradius der Potenreihen __math__Q(z):__eq__sum_{n__eq__0}^{oo} b_n * (z-a)^{n}__math__' />
+    <STEPDEF SIZE='2' ID='S2' VALUE=' __math__1/r __eq__ lim_{n-__gt__oo}__qu__sup __qu__  (|b_n|^{1/n}) __eq__  lim_{n-__gt__oo}__qu__sup __qu__  ((n+1)^{1/n} * |c_{n+1}|^{1/n})__math__  ' />
+    <STEPDEF SIZE='2' ID='S3' VALUE=' __math__lim_{n-__gt__oo}__qu__sup __qu__  (exp(ln|(n+1)^{1/n}|) * |c_{n+1}|^{1/n})__math__' />
+    <STEPDEF SIZE='2' ID='S4' VALUE=' __math__lim_{n-__gt__oo}__qu__sup __qu__  (exp(1/n * ln(n+1)) *| c_{n+1}|^{1/n})__math__' />
+    <STEPDEF SIZE='2' ID='S5' VALUE=' __math__lim_{n-__gt__oo}__qu__sup __qu__  ( |c_{n+1}|^{1/n})__math__' />
+    <STEPDEF SIZE='2' ID='S6' VALUE='  __math__r__math__ ist zugleich auch der Konvergenzradius der Reihe __math__R(z) :__eq__ sum_{n__eq__0}^{oo} c_{n+1} * (z-a)^{n}__math__ (Unterschied __math__R(z)__math__ und __math__P(z) __eq__ sum_{n__eq__0}^{oo} c_{n} * (z-a)^{n}__math__ beachten)' />
+    <STEPDEF SIZE='2' ID='S7' VALUE='__math__lim_{N -__gt__ oo} sum_{n__eq__0}^{N} c_{n+1} * (z-a)^{n}__math__ existiert f__ue__r __math__z in CC__math__ mit __math__|z-a| __lt__ r__math__ ' />
+    <STEPDEF SIZE='2' ID='S8' VALUE='__math__lim_{N -__gt__ oo} c_o + (z-a) * sum_{n__eq__0}^{N} c_{n+1} * (z-a)^{n}__math__ existiert f__ue__r __math__z in CC__math__ mit __math__0 __lt__ |z-a| __lt__ r__math__ ' />
+    <STEPDEF SIZE='2' ID='S9' VALUE='__math__lim_{N -__gt__ oo} c_o +  sum_{n__eq__0}^{N} c_{n+1} * (z-a)^{n+1} __eq__ lim_{N -__gt__ oo} sum_{n__eq__0}^{N+1} c_{n} * (z-a)^{n}__math__ existiert f__ue__r __math__z in CC__math__ mit __math__0 __lt__ |z-a| __lt__ r__math__ ' />
+    <STEPDEF SIZE='2' ID='S10' VALUE='__math__0 __lt__ |z-a| __lt__ r __lt____eq__ rho__math__' />
+    <STEPDEF SIZE='2' ID='S11' VALUE='Exisitiert umgekehrt __math__lim_{N -__gt__ oo} sum_{n__eq__0}^{N} c_{n} * (z-a)^{n}__math__ f__ue__r __math__z in CC__math__ mit __math__0  __lt__ |z-a| __lt__ rho__math__' />
+    <STEPDEF SIZE='2' ID='S12' VALUE='__math__lim_{N -__gt__ oo} sum_{n__eq__0}^{N} c_{n} * (z-a)^{n}__math__ existiert f__ue__r __math__z in CC__math__ mit __math__0 __lt__ |z-a| __lt__ rho__math__' />
+    <STEPDEF SIZE='2' ID='S13' VALUE='__math__lim_{N -__gt__ oo} (-c_o + sum_{n__eq__0}^{N} c_{n} * (z-a)^{n})__math__ existiert f__ue__r __math__z in CC__math__ mit __math__0 __lt__ |z-a| __lt__ rho__math__' />
+    <STEPDEF SIZE='2' ID='S14' VALUE='__math__lim_{N -__gt__ oo} (-c_o + 1/(z-a) * sum_{n__eq__0}^{N} c_{n} * (z-a)^{n}) __eq__ lim_{N -__gt__ oo} sum_{n__eq__0}^{N-1} c_{n+1} * (z-a)^{n} __math__ existiert f__ue__r __math__z in CC__math__ mit __math__0 __lt__ |z-a| __lt__ rho__math__' />
+    <STEPDEF SIZE='2' ID='S15' VALUE='__math__0 __lt__ |z-a| __lt__ rho __lt____eq__ r__math__' />
+    <STEPDEF SIZE='2' ID='S16' VALUE='__math__rho __eq__ r__math__' />
+    <STEPDEF SIZE='5' ID='S1' CONNECTION=' ' JUST='P2' OPTJUST='P1' VALUE='Sei __math__r__math__ der Konvergenzradius der Potenreihen __math__Q(z):__eq__sum_{n__eq__0}^{oo} b_n * (z-a)^{n}__math__' />
+    <STEPDEF SIZE='5' ID='S2' CONNECTION='__eq____gt__' JUST='CH' OPTJUST='' VALUE=' __math__1/r __eq__ lim_{n-__gt__oo}__qu__sup __qu__  (|b_n|^{1/n}) __eq__  lim_{n-__gt__oo}__qu__sup __qu__  ((n+1)^{1/n} * |c_{n+1}|^{1/n})__math__  ' />
+    <STEPDEF SIZE='5' ID='S3' CONNECTION='__eq__' JUST='' OPTJUST='' VALUE=' __math__lim_{n-__gt__oo}__qu__sup __qu__  (exp(ln|(n+1)^{1/n}|) * |c_{n+1}|^{1/n})__math__' />
+    <STEPDEF SIZE='5' ID='S4' CONNECTION='__eq__' JUST='LG' OPTJUST='' VALUE=' __math__lim_{n-__gt__oo}__qu__sup __qu__  (exp(1/n * ln(n+1)) *| c_{n+1}|^{1/n})__math__' />
+    <STEPDEF SIZE='5' ID='S5' CONNECTION='__eq__' JUST='LIM' OPTJUST='' VALUE=' __math__lim_{n-__gt__oo}__qu__sup __qu__  ( |c_{n+1}|^{1/n})__math__' />
+    <STEPDEF SIZE='5' ID='S6' CONNECTION='__eq____gt__' JUST='CH' OPTJUST='' VALUE='  __math__r__math__ ist zugleich auch der Konvergenzradius der Reihe __math__R(z) :__eq__ sum_{n__eq__0}^{oo} c_{n+1} * (z-a)^{n}__math__ (Unterschied __math__R(z)__math__ und __math__P(z) __eq__ sum_{n__eq__0}^{oo} c_{n} * (z-a)^{n}__math__ beachten)' />
+    <STEPDEF SIZE='5' ID='S7' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__lim_{N -__gt__ oo} sum_{n__eq__0}^{N} c_{n+1} * (z-a)^{n}__math__ existiert f__ue__r __math__z in CC__math__ mit __math__|z-a| __lt__ r__math__ ' />
+    <STEPDEF SIZE='5' ID='S8' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__lim_{N -__gt__ oo} c_o + (z-a) * sum_{n__eq__0}^{N} c_{n+1} * (z-a)^{n}__math__ existiert f__ue__r __math__z in CC__math__ mit __math__0 __lt__ |z-a| __lt__ r__math__ ' />
+    <STEPDEF SIZE='5' ID='S9' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__lim_{N -__gt__ oo} c_o +  sum_{n__eq__0}^{N} c_{n+1} * (z-a)^{n+1} __eq__ lim_{N -__gt__ oo} sum_{n__eq__0}^{N+1} c_{n} * (z-a)^{n}__math__ existiert f__ue__r __math__z in CC__math__ mit __math__0 __lt__ |z-a| __lt__ r__math__ ' />
+    <STEPDEF SIZE='5' ID='S10' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__0 __lt__ |z-a| __lt__ r __lt____eq__ rho__math__' />
+    <STEPDEF SIZE='5' ID='S11' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='Exisitiert umgekehrt __math__lim_{N -__gt__ oo} sum_{n__eq__0}^{N} c_{n} * (z-a)^{n}__math__ f__ue__r __math__z in CC__math__ mit __math__0  __lt__ |z-a| __lt__ rho__math__' />
+    <STEPDEF SIZE='5' ID='S12' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__lim_{N -__gt__ oo} sum_{n__eq__0}^{N} c_{n} * (z-a)^{n}__math__ existiert f__ue__r __math__z in CC__math__ mit __math__0 __lt__ |z-a| __lt__ rho__math__' />
+    <STEPDEF SIZE='5' ID='S13' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__lim_{N -__gt__ oo} (-c_o + sum_{n__eq__0}^{N} c_{n} * (z-a)^{n})__math__ existiert f__ue__r __math__z in CC__math__ mit __math__0 __lt__ |z-a| __lt__ rho__math__' />
+    <STEPDEF SIZE='5' ID='S14' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__lim_{N -__gt__ oo} (-c_o + 1/(z-a) * sum_{n__eq__0}^{N} c_{n} * (z-a)^{n}) __eq__ lim_{N -__gt__ oo} sum_{n__eq__0}^{N-1} c_{n+1} * (z-a)^{n} __math__ existiert f__ue__r __math__z in CC__math__ mit __math__0 __lt__ |z-a| __lt__ rho__math__' />
+    <STEPDEF SIZE='5' ID='S15' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__0 __lt__ |z-a| __lt__ rho __lt____eq__ r__math__' />
+    <STEPDEF SIZE='5' ID='S16' CONNECTION='__eq____gt__' JUST='S10' OPTJUST='' VALUE='__math__rho __eq__ r__math__' />
+    <STEPDEF SIZE='5' ID='C1' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='' />
+  </VARLIST>
+</EPROOF>

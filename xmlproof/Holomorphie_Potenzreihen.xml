@@ -1,0 +1,99 @@
+<EPROOF>
+  <VARIABLE NAME='Theorem_Title' VALUE='Holomorphie von Potenzreihen' />
+  <VARIABLE NAME='Theorem_Label' VALUE='Theorem' />
+  <VARIABLE NAME='Author' VALUE='Author Name' />
+  <VARIABLE NAME='eMail' VALUE='mail@author.inf' />
+  <VARIABLE NAME='LANGUAGE' VALUE='DE' />
+  <VARIABLE NAME='Theorem_Appendix' VALUE='Wikipedia: __lt__a href__eq____qu__http://de.wikipedia.org/wiki/Konvergenzradius__qu__ target__eq____qu___blank__qu____gt__Konvergenzradius__lt__/a__gt__' />
+  <VARIABLE NAME='Per_Error_Minus_Percent' VALUE='9' />
+  <VARIABLE NAME='Assessment_Minus_Percent' VALUE='2' />
+  <VARIABLE NAME='Suggestion_Minus_Percent' VALUE='17' />
+  <VARIABLE NAME='unnecessary_connections' VALUE='3' />
+  <VARIABLE NAME='unnecessary_proofsteps' VALUE='3' />
+  <VARIABLE NAME='unnecessary_justifications' VALUE='2' />
+  <VARIABLE NAME='selectbox_proofsteps' VALUE='1' />
+  <VARIABLE NAME='allow_own_proofsteps' VALUE='1' />
+  <VARIABLE NAME='remap_proofstep_IDs' VALUE='1' />
+  <VARIABLE NAME='randomize_proofstep_IDs' VALUE='1' />
+  <VARIABLE NAME='cryptkey' VALUE='ACBSD' />
+  <VARIABLE NAME='show_Load_Save_Control' VALUE='1' />
+  <VARIABLE NAME='show_Main_Control' VALUE='1' />
+  <VARIABLE NAME='show_links' VALUE='1' />
+  <VARIABLE NAME='show_assessment' VALUE='1' />
+  <VARIABLE NAME='show_suggestions' VALUE='1' />
+  <VARIABLE NAME='show_proof_solution' VALUE='1' />
+  <VARIABLE NAME='AuthoringMode' VALUE='1' />
+  <VARIABLE NAME='AssessmentMode' VALUE='0' />
+  <VARIABLE NAME='MathFormat' VALUE='AM_HTMLorMML' />
+  <VARIABLE NAME='COMMONCONTROL' VALUE='4980__co__4981__co__4982__co__4983' />
+  <VARIABLE NAME='QUESTIONTEXT' VALUE='4980__co__4981__co__4982__co__4983' />
+  <VARIABLE NAME='vQID' VALUE='SANTEG' />
+  <VARIABLE NAME='alertDOM' VALUE='0' />
+  <VARIABLE NAME='Offline' VALUE='' />
+  <VARLIST NAME='PRECONDITION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='P1' VALUE='Sei __math__(c_n)_{n in NN_0} in CC^{NN_0}__math__ Folge in __math__CC__math__ und __math__a in CC__math__der Entwicklungspunkt der Potenzreihe __math__f(z):__eq__sum_{n__eq__0}^{oo} c_n * (z-a)^{n}__math__ ' />
+    <STEPDEF SIZE='2' ID='P2' VALUE='__math__(b_n)_{n in NN_0}  in CC^{NN_0}__math__ Folge in __math__CC__math__ und __math__b_{n}:__eq__ (n+1) * c_{n+1}  in CC__math__ f__ue__r alle __math__n in NN_0__math__' />
+    <STEPDEF SIZE='2' ID='P3' VALUE='__math__rho __gt__ 0__math__ ist der Konvergenzradius von der Potenzreihe  __math__f : B_rho (a) -__gt__ CC __math__ und __math__z |-__gt__ f(z) __eq__ sum_{n__eq__0}^{oo} c_n *  (z-a)^{n} __math__  mit __math__B_rho (a):__eq__ { {: z in NN | \ |z-a| __lt__ rho }__math__' />
+    <STEPDEF SIZE='2' ID='P4' VALUE='Sei __math__g__math__ die Potenzreihe mit __math__g : B_r (a) -__gt__ CC __math__ und __math__z |-__gt__ g(z) __eq__ sum_{n__eq__0}^{oo} b_n *  (z-a)^{n} __math__ ' />
+  </VARLIST>
+  <VARLIST NAME='CONCLUSION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='C1' VALUE=' __math__g__math__ ist holomorph und es gilt __math__f^{/} __eq__ g__math__.' />
+  </VARLIST>
+  <VARLIST NAME='JUSTIFICATION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='J1' VALUE='Satz: Hat __math__f(z):__eq__sum_{n__eq__0}^{oo} c_n * (z-a)^{n}__math__ den Konvergenzradius __math__rho __gt__ 0__math____co____lt__br/__gt__  so hat auch __math__g(z)__eq__sum_{n__eq__0}^{oo} b_n * (z-a)^{n}__math__ den Konvergenzradius __math__rho__math__.' />
+    <STEPDEF SIZE='2' ID='J2' VALUE=' __math__S_N__math__ ist als Polynom mit __math__Grad(S_N) __lt____eq__ N__math__ eine holomorphe Funktion.' />
+    <STEPDEF SIZE='2' ID='DU' VALUE=' __math__AA_(a__co__b in CC) : |a + b| __lt____eq__ |a| + |b| __math__' />
+    <STEPDEF SIZE='2' ID='DG' VALUE=' __math__AA_(a__co__b__co__c in CC) : a * (b + c) __eq__ a * b + a * c__math__  ' />
+    <STEPDEF SIZE='2' ID='AG' VALUE=' __math__AA_(a__co__b__co__c in CC) : (a + b) + c __eq__ a + (b + c)__math__ ' />
+    <STEPDEF SIZE='2' ID='KG' VALUE=' __math__AA_(a__co__b in CC) : a + b __eq__ b + a __math__' />
+    <STEPDEF SIZE='2' ID='NU' VALUE=' __math__AA_{a__co__b in CC}  : b + (a - a) __eq__ b__math__ ' />
+    <STEPDEF SIZE='2' ID='PD' VALUE=' Polynomdivision durch __math__(x_{n}^{n} - x_{0}^{n})  :   (x_n - x_0)__math__ berechnen.' />
+  </VARLIST>
+  <VARLIST NAME='PROOFSTEP_OPTIONS'>
+    <STEPDEF SIZE='2' ID='S1' VALUE='Es ist zu zeigen__co__ dass f__ue__r alle __math__z_0 in B_rho (a)__math__ gilt:  __math__f^{/}(z_0) __eq__ lim_{z -__gt__ z_0} (f(z) - f(z_0))/(z - z_0)__eq__ g(z_0)__math__ bzw. __math__lim_{z -__gt__ z_0} ( (f(z) - f(z_0))/(z - z_0) - g(z_0) ) __eq__ 0__math__' />
+    <STEPDEF SIZE='2' ID='S2' VALUE='Sei __math__z_0 in B_rho (a)__math__  beliebig gew__ae__hlt.' />
+    <STEPDEF SIZE='2' ID='S3' VALUE=' __math__EE_{delta in RR^{+}} : |z_0 - a| __lt__ delta __lt__ rho__math__ ' />
+    <STEPDEF SIZE='2' ID='S4' VALUE=' __math__EE_{delta in RR^{+}} : z_0 in B_{delta} (a) subset B_rho(a) __math__ ' />
+    <STEPDEF SIZE='2' ID='S5' VALUE=' Sei __math__(z_n)_{n in NN} in (B_delta (a) setminus {z_0})^{NN}__math__ mit __math__lim_{n -__gt__ oo} z_n __eq__ z_0__math____co__ d.h. __math__AA_{n in NN} : z_n !__eq__ z_0 ^^ z_n in B_delta (a)__math__' />
+    <STEPDEF SIZE='2' ID='S6' VALUE='__math__f(z_0)__math__ und __math__g(z_0)__math__ konvergieren mit __math__r__eq__rho__math__ als Konvergenzradius von __math__g__math__' />
+    <STEPDEF SIZE='2' ID='S7' VALUE='__math__AA_{N in NN} : f(z_0)__eq__ S_N (z_0) + R_N(z_0)__math____co__ wobei die Potenzreihe __math__f(z)__math__ in zwei Teilsummen  __math__S_N (z) __eq__ sum_{n__eq__0}^{N} c_n * (z-a)^{n}__math__ und  __math__R_N (z) __eq__ sum_{n__eq__N+1}^{oo} c_n * (z-a)^{n}__math__ aufgeteilt werden. ' />
+    <STEPDEF SIZE='2' ID='S8' VALUE=' __math__AA_{n__co__N in NN}  :  (f(z_n) - f(z_0))/(z_n - z_0) - g(z_0) __eq__  ((S_N(z_n)  + R_N(z_n)) - (S_N(z_0) + R_N(z_0)))/(z_n - z_0) - g(z_0) __math__' />
+    <STEPDEF SIZE='2' ID='S9' VALUE=' __math__  ((S_N(z_n)  -S_N(z_0) ) + (R_N(z_n) - R_N(z_0)))/(z_n - z_0) - g(z_0) __math__' />
+    <STEPDEF SIZE='2' ID='S10' VALUE=' __math__  (S_N(z_n)  -S_N(z_0) )/(z_n - z_0)  + (R_N(z_n) - R_N(z_0))/(z_n - z_0) - g(z_0) __math__' />
+    <STEPDEF SIZE='2' ID='S11' VALUE=' __math__  (S_N(z_n)  -S_N(z_0) )/(z_n - z_0) + (- S_N^{/}(z_0) + S_N^{/}(z_0)) - g(z_0) + (R_N(z_n) - R_N(z_0))/(z_n - z_0)  __math__' />
+    <STEPDEF SIZE='2' ID='S12' VALUE=' __math__ ( (S_N(z_n)  -S_N(z_0) )/(z_n - z_0)  - S_N^{/}(z_0) ) + (S_N^{/}(z_0) - g(z_0)) + (R_N(z_n) - R_N(z_0))/(z_n - z_0)  __math__' />
+    <STEPDEF SIZE='2' ID='S13A' VALUE=' __math__lim_{n -__gt__ oo} ( (S_N(z_n)  -S_N(z_0) )/(z_n - z_0)  - S_N^{/}(z_0) )  __eq__ 0__math____co__ __lt__br/__gt__  __math__lim_{N -__gt__ oo} S_N^{/}(z_0) - g(z_0) __eq__ lim_{N -__gt__ oo} - sum_{n __eq__ N+1}^{oo} (n+1)*c_{n+1 } * (z-a)^{n} __eq__ 0__math__ __lt__br/__gt__ wegen absoluter Konvergenz von __math__g(z_0)__math__ und einem Restterm __math__(R_N(z_n) - R_N(z_0))/(z_n - z_0) __math____co__ __lt__br/__gt__  der noch weiter auf Konvergenz untersucht werden muss. ' />
+    <STEPDEF SIZE='2' ID='S13' VALUE=' W__ae__hle __math__N__co__n __gt____eq__ n_0__math__ mit __math__| (S_N(z_n)  -S_N(z_0) )/(z_n - z_0)  - S_N^{/}(z_0) | __lt__ epsilon/3__math__ und __math__| S_N^{/}(z_0) - g(z_0) | __lt__ epsilon/3__math__' />
+    <STEPDEF SIZE='2' ID='S14' VALUE=' __math__ (R_N(z_n) - R_N(z_0))/(z_n - z_0)  __eq__  1/(z_n - z_0) * sum_{n __eq__ N+1}^{oo} c_{n } *( (z_n -a)^{n} - (z_0 -a)^{n})__math__  __math__ __eq__ 1/((z_n - a) - (z_0 - a)) * sum_{n __eq__ N+1}^{oo} c_{n } *( (z_n -a)^{n} - (z_0 -a)^{n})__math__' />
+    <STEPDEF SIZE='2' ID='S15' VALUE=' __math__ 1/((z_n - a) - (z_0 - a)) * sum_{n __eq__ N+1}^{oo} c_{n } *( (z_n -a)^{n} - (z_0 -a)^{n}) __eq__   sum_{n __eq__ N+1}^{oo} c_{n } *( (z_n -a)^{n} - (z_0 -a)^{n})/((z_n - a) - (z_0 - a)) __eq__ sum_{n __eq__ N+1}^{oo} c_{n } *( x_n ^{n} - x_0^{n})/(x_n - x_0)__math____lt__br/__gt__  mit __math__x_n :__eq__ z_n - a__math__ und __math__x_0 :__eq__ z_0 -a__math__' />
+    <STEPDEF SIZE='2' ID='S16' VALUE=' __math__  sum_{n __eq__ N+1}^{oo} c_{n } *( sum_{k__eq__0}^{n-1} x_{n}^{k} * x_0^{n-1-k})__math__ mit __math__x_n :__eq__ z_n - a__math__ und __math__x_0 :__eq__ z_0 -a__math__ ' />
+    <STEPDEF SIZE='2' ID='S17' VALUE='__math__AA_{n__co__N in NN} : |(R_N(z_n) - R_N(z_0))/(z_n - z_0) | __lt____eq__ sum_{n __eq__ N+1}^{oo} |c_{n }|  * | sum_{k__eq__0}^{n-1} x_{n}^{k} * x_0^{n-1-k}| __lt____eq__ sum_{n __eq__ N+1}^{oo} |c_{n }| *( sum_{k__eq__0}^{n-1} |x_{n}^{k} * x_0^{n-1-k}|)__math__. __lt__br/__gt__  W__ae__hle __math__n_epsilon in NN__math__ so gro__sz____co__ dass f__ue__r alle __math__n__co__N __gt____eq__ n_epsilon __gt____eq__ n_0__math__ __math__|(R_N(z_n) - R_N(z_0))/(z_n - z_0) |  __lt__ epsilon/3 __math__ ' />
+    <STEPDEF SIZE='2' ID='S18' VALUE='__math__sum_{n __eq__ N+1}^{oo} |c_{n }| *( sum_{k__eq__0}^{n-1} |x_{n}|^{k} * |x_0|^{n-1-k}) __lt____eq__ sum_{n __eq__ N+1}^{oo} |c_{n }| * n* delta^{n-1}__math__ konvergent f__ue__r __math__N -__gt__ oo__math__' />
+    <STEPDEF SIZE='2' ID='S19' VALUE=' __math__AA_{epsilon __gt__0} EE_{n_epsilon in NN} AA_{m __gt__ n __gt____eq__ n_epsilon} : | (f(z_n) - f(z_0))/(z_n - z_0) - g(z_0) | __math__ __lt__br/__gt__ __math____eq__  |  (S_N(z_n)  -S_N(z_0) )/(z_n - z_0) + (- S_N^{/}(z_0) + S_N^{/}(z_0)) - g(z_0) + (R_N(z_n) - R_N(z_0))/(z_n - z_0) |__math__' />
+    <STEPDEF SIZE='2' ID='S20' VALUE=' __math__|  (S_N(z_n)  -S_N(z_0) )/(z_n - z_0) - S_N^{/}(z_0) | + |S_N^{/}(z_0) - g(z_0)| + | (R_N(z_n) - R_N(z_0))/(z_n - z_0) | __lt__ epsilon/3 + epsilon/3 +epsilon/3 __eq__ epsilon__math__' />
+    <STEPDEF SIZE='2' ID='S21' VALUE=' __math__AA_{epsilon __gt__0} EE_{n_epsilon in NN} AA_{m __gt__ n __gt____eq__ n_epsilon} : | (f(z_n) - f(z_0))/(z_n - z_0) - g(z_0) | __lt__  epsilon__math__' />
+    <STEPDEF SIZE='5' ID='S1' CONNECTION=' ' JUST='' OPTJUST='' VALUE='Es ist zu zeigen__CO__ dass f__ue__r alle __math__z_0 in B_rho (a)__math__ gilt:  __math__f^{/}(z_0) __eq__ lim_{z -__gt__ z_0} (f(z) - f(z_0))/(z - z_0)__eq__ g(z_0)__math__ bzw. __math__lim_{z -__gt__ z_0} ( (f(z) - f(z_0))/(z - z_0) - g(z_0) ) __eq__ 0__math__' />
+    <STEPDEF SIZE='5' ID='S2' CONNECTION=' ' JUST='' OPTJUST='' VALUE='Sei __math__z_0 in B_rho (a)__math__  beliebig gew__ae__hlt.' />
+    <STEPDEF SIZE='5' ID='S3' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE=' __math__EE_{delta in RR^{+}} : |z_0 - a| __lt__ delta __lt__ rho__math__ ' />
+    <STEPDEF SIZE='5' ID='S4' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE=' __math__EE_{delta in RR^{+}} : z_0 in B_{delta} (a) subset B_rho(a) __math__ ' />
+    <STEPDEF SIZE='5' ID='S5' CONNECTION=' ' JUST='S4' OPTJUST='' VALUE=' Sei __math__(z_n)_{n in NN} in (B_delta (a) setminus {z_0})^{NN}__math__ mit __math__lim_{n -__gt__ oo} z_n __eq__ z_0__math____CO__ d.h. __math__AA_{n in NN} : z_n !__eq__ z_0 ^^ z_n in B_delta (a)__math__' />
+    <STEPDEF SIZE='5' ID='S6' CONNECTION='__eq____gt__' JUST='J1' OPTJUST='' VALUE='__math__f(z_0)__math__ und __math__g(z_0)__math__ konvergieren mit __math__r__eq__rho__math__ als Konvergenzradius von __math__g__math__' />
+    <STEPDEF SIZE='5' ID='S7' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='__math__AA_{N in NN} : f(z_0)__eq__ S_N (z_0) + R_N(z_0)__math____CO__ wobei die Potenzreihe __math__f(z)__math__ in zwei Teilsummen  __math__S_N (z) __eq__ sum_{n__eq__0}^{N} c_n * (z-a)^{n}__math__ und  __math__R_N (z) __eq__ sum_{n__eq__N+1}^{oo} c_n * (z-a)^{n}__math__ aufgeteilt werden. ' />
+    <STEPDEF SIZE='5' ID='S8' CONNECTION=' ' JUST='S1' OPTJUST='' VALUE=' __math__AA_{n__CO__N in NN}  :  (f(z_n) - f(z_0))/(z_n - z_0) - g(z_0) __eq__  ((S_N(z_n)  + R_N(z_n)) - (S_N(z_0) + R_N(z_0)))/(z_n - z_0) - g(z_0) __math__' />
+    <STEPDEF SIZE='5' ID='S9' CONNECTION='__eq__' JUST='AG,KG' OPTJUST='' VALUE=' __math__  ((S_N(z_n)  -S_N(z_0) ) + (R_N(z_n) - R_N(z_0)))/(z_n - z_0) - g(z_0) __math__' />
+    <STEPDEF SIZE='5' ID='S10' CONNECTION='__eq__' JUST='DG' OPTJUST='' VALUE=' __math__  (S_N(z_n)  -S_N(z_0) )/(z_n - z_0)  + (R_N(z_n) - R_N(z_0))/(z_n - z_0) - g(z_0) __math__' />
+    <STEPDEF SIZE='5' ID='S11' CONNECTION='__eq__' JUST='KG,NU' OPTJUST='' VALUE=' __math__  (S_N(z_n)  -S_N(z_0) )/(z_n - z_0) + (- S_N^{/}(z_0) + S_N^{/}(z_0)) - g(z_0) + (R_N(z_n) - R_N(z_0))/(z_n - z_0)  __math__' />
+    <STEPDEF SIZE='5' ID='S12' CONNECTION='__eq__' JUST='AG,J2' OPTJUST='' VALUE=' __math__ ( (S_N(z_n)  -S_N(z_0) )/(z_n - z_0)  - S_N^{/}(z_0) ) + (S_N^{/}(z_0) - g(z_0)) + (R_N(z_n) - R_N(z_0))/(z_n - z_0)  __math__' />
+    <STEPDEF SIZE='5' ID='S13A' CONNECTION='__eq____gt__' JUST='J1' OPTJUST='P4' VALUE=' __math__lim_{n -__gt__ oo} ( (S_N(z_n)  -S_N(z_0) )/(z_n - z_0)  - S_N^{/}(z_0) )  __eq__ 0__math____CO__ __lt__br/__gt__  __math__lim_{N -__gt__ oo} S_N^{/}(z_0) - g(z_0) __eq__ lim_{N -__gt__ oo} - sum_{n __eq__ N+1}^{oo} (n+1)*c_{n+1 } * (z-a)^{n} __eq__ 0__math__ __lt__br/__gt__ wegen absoluter Konvergenz von __math__g(z_0)__math__ und einem Restterm __math__(R_N(z_n) - R_N(z_0))/(z_n - z_0) __math____CO__ __lt__br/__gt__  der noch weiter auf Konvergenz untersucht werden muss. ' />
+    <STEPDEF SIZE='5' ID='S13' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE=' W__ae__hle __math__N__CO__n __gt____eq__ n_0__math__ mit __math__| (S_N(z_n)  -S_N(z_0) )/(z_n - z_0)  - S_N^{/}(z_0) | __lt__ epsilon/3__math__ und __math__| S_N^{/}(z_0) - g(z_0) | __lt__ epsilon/3__math__' />
+    <STEPDEF SIZE='5' ID='S14' CONNECTION=' ' JUST='' OPTJUST='S13A' VALUE=' __math__ (R_N(z_n) - R_N(z_0))/(z_n - z_0)  __eq__  1/(z_n - z_0) * sum_{n __eq__ N+1}^{oo} c_{n } *( (z_n -a)^{n} - (z_0 -a)^{n})__math__  __math__ __eq__ 1/((z_n - a) - (z_0 - a)) * sum_{n __eq__ N+1}^{oo} c_{n } *( (z_n -a)^{n} - (z_0 -a)^{n})__math__' />
+    <STEPDEF SIZE='5' ID='S15' CONNECTION='__eq____gt__' JUST='DG' OPTJUST='' VALUE=' __math__ 1/((z_n - a) - (z_0 - a)) * sum_{n __eq__ N+1}^{oo} c_{n } *( (z_n -a)^{n} - (z_0 -a)^{n}) __eq__   sum_{n __eq__ N+1}^{oo} c_{n } *( (z_n -a)^{n} - (z_0 -a)^{n})/((z_n - a) - (z_0 - a)) __eq__ sum_{n __eq__ N+1}^{oo} c_{n } *( x_n ^{n} - x_0^{n})/(x_n - x_0)__math____lt__br/__gt__  mit __math__x_n :__eq__ z_n - a__math__ und __math__x_0 :__eq__ z_0 -a__math__' />
+    <STEPDEF SIZE='5' ID='S16' CONNECTION='__eq__' JUST='DG,PD' OPTJUST='' VALUE=' __math__  sum_{n __eq__ N+1}^{oo} c_{n } *( sum_{k__eq__0}^{n-1} x_{n}^{k} * x_0^{n-1-k})__math__ mit __math__x_n :__eq__ z_n - a__math__ und __math__x_0 :__eq__ z_0 -a__math__ ' />
+    <STEPDEF SIZE='5' ID='S17' CONNECTION='__eq____gt__' JUST='DU,S13' OPTJUST='S14,S15' VALUE='__math__AA_{n__CO__N in NN} : |(R_N(z_n) - R_N(z_0))/(z_n - z_0) | __lt____eq__ sum_{n __eq__ N+1}^{oo} |c_{n }|  * | sum_{k__eq__0}^{n-1} x_{n}^{k} * x_0^{n-1-k}| __lt____eq__ sum_{n __eq__ N+1}^{oo} |c_{n }| *( sum_{k__eq__0}^{n-1} |x_{n}^{k} * x_0^{n-1-k}|)__math__. __lt__br/__gt__  W__ae__hle __math__n_epsilon in NN__math__ so gro__sz____CO__ dass f__ue__r alle __math__n__CO__N __gt____eq__ n_epsilon __gt____eq__ n_0__math__ __math__|(R_N(z_n) - R_N(z_0))/(z_n - z_0) |  __lt__ epsilon/3 __math__ ' />
+    <STEPDEF SIZE='5' ID='S18' CONNECTION='__eq____gt__' JUST='S3' OPTJUST='' VALUE='__math__sum_{n __eq__ N+1}^{oo} |c_{n }| *( sum_{k__eq__0}^{n-1} |x_{n}|^{k} * |x_0|^{n-1-k}) __lt____eq__ sum_{n __eq__ N+1}^{oo} |c_{n }| * n* delta^{n-1}__math__ konvergent f__ue__r __math__N -__gt__ oo__math__' />
+    <STEPDEF SIZE='5' ID='S19' CONNECTION='__eq____gt__' JUST='S12' OPTJUST='' VALUE=' __math__AA_{epsilon __gt__0} EE_{n_epsilon in NN} AA_{m __gt__ n __gt____eq__ n_epsilon} : | (f(z_n) - f(z_0))/(z_n - z_0) - g(z_0) | __math__ __lt__br/__gt__ __math____eq__  |  (S_N(z_n)  -S_N(z_0) )/(z_n - z_0) + (- S_N^{/}(z_0) + S_N^{/}(z_0)) - g(z_0) + (R_N(z_n) - R_N(z_0))/(z_n - z_0) |__math__' />
+    <STEPDEF SIZE='5' ID='S20' CONNECTION='__lt____eq__' JUST='DU' OPTJUST='' VALUE=' __math__|  (S_N(z_n)  -S_N(z_0) )/(z_n - z_0) - S_N^{/}(z_0) | + |S_N^{/}(z_0) - g(z_0)| + | (R_N(z_n) - R_N(z_0))/(z_n - z_0) | __lt__ epsilon/3 + epsilon/3 +epsilon/3 __eq__ epsilon__math__' />
+    <STEPDEF SIZE='5' ID='S21' CONNECTION='__eq____gt__' JUST='S17,S13A' OPTJUST='S3' VALUE=' __math__AA_{epsilon __gt__0} EE_{n_epsilon in NN} AA_{m __gt__ n __gt____eq__ n_epsilon} : | (f(z_n) - f(z_0))/(z_n - z_0) - g(z_0) | __lt__  epsilon__math__' />
+    <STEPDEF SIZE='5' ID='C1' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='' />
+  </VARLIST>
+</EPROOF>

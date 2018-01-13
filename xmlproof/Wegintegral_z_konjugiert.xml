@@ -1,0 +1,103 @@
+<EPROOF>
+  <VARIABLE NAME='Theorem_Title' VALUE='Integrale von __math__bar{z}__math__ und __math__1/z__math__' />
+  <VARIABLE NAME='Theorem_Label' VALUE='Theorem' />
+  <VARIABLE NAME='Author' VALUE='Author Name' />
+  <VARIABLE NAME='eMail' VALUE='mail@author.inf' />
+  <VARIABLE NAME='LANGUAGE' VALUE='DE' />
+  <VARIABLE NAME='Theorem_Appendix' VALUE='Wikipedia: __lt__a href__eq____qu__http://de.wikipedia.org/wiki/Kurvenintegral__qu__ target__eq____qu___blank__qu____gt__Kurvenintegral__lt__/a__gt__' />
+  <VARIABLE NAME='Per_Error_Minus_Percent' VALUE='9' />
+  <VARIABLE NAME='Assessment_Minus_Percent' VALUE='2' />
+  <VARIABLE NAME='Suggestion_Minus_Percent' VALUE='17' />
+  <VARIABLE NAME='unnecessary_connections' VALUE='3' />
+  <VARIABLE NAME='unnecessary_proofsteps' VALUE='3' />
+  <VARIABLE NAME='unnecessary_justifications' VALUE='2' />
+  <VARIABLE NAME='selectbox_proofsteps' VALUE='1' />
+  <VARIABLE NAME='allow_own_proofsteps' VALUE='1' />
+  <VARIABLE NAME='remap_proofstep_IDs' VALUE='1' />
+  <VARIABLE NAME='randomize_proofstep_IDs' VALUE='1' />
+  <VARIABLE NAME='cryptkey' VALUE='ACBSD' />
+  <VARIABLE NAME='show_Load_Save_Control' VALUE='1' />
+  <VARIABLE NAME='show_Main_Control' VALUE='1' />
+  <VARIABLE NAME='show_links' VALUE='1' />
+  <VARIABLE NAME='show_assessment' VALUE='1' />
+  <VARIABLE NAME='show_suggestions' VALUE='1' />
+  <VARIABLE NAME='show_proof_solution' VALUE='1' />
+  <VARIABLE NAME='AuthoringMode' VALUE='1' />
+  <VARIABLE NAME='AssessmentMode' VALUE='0' />
+  <VARIABLE NAME='MathFormat' VALUE='AM_HTMLorMML' />
+  <VARIABLE NAME='COMMONCONTROL' VALUE='4980__co__4981__co__4982__co__4983' />
+  <VARIABLE NAME='QUESTIONTEXT' VALUE='4980__co__4981__co__4982__co__4983' />
+  <VARIABLE NAME='vQID' VALUE='SANTKL' />
+  <VARIABLE NAME='alertDOM' VALUE='0' />
+  <VARIABLE NAME='Offline' VALUE='' />
+  <VARLIST NAME='PRECONDITION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='P1' VALUE='Sei __math__r__co__epsilon __gt__ 0__math__ und __math__U:__eq__{ z in C : |z| __lt__ r + epsilon } __math__ eine Teilmenge von __math__CC__math__.' />
+    <STEPDEF SIZE='2' ID='P2' VALUE='Sei __math__gamma: [0__co__2 pi] -__gt__ CC__math__ mit __math__t mapsto r * e^{i*t}__math__ der kreisf__oe__rmige glatte Weg in __math__U__math__' />
+    <STEPDEF SIZE='2' ID='P3' VALUE='Sei __math__g: U -__gt__ CC__math__ mit __math__z mapsto g(z) __eq__ bar{z}__math__' />
+    <STEPDEF SIZE='2' ID='P4' VALUE='Sei __math__f: U -__gt__ CC__math__ mit __math__z mapsto f(z) __eq__ 1/z__math__' />
+  </VARLIST>
+  <VARLIST NAME='CONCLUSION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='C1' VALUE='__math__int_{gamma} g(z) \  d z __eq__ int_{gamma} bar{z} \  d z  __eq__ 2 pi * r^2 * i__math__ ' />
+    <STEPDEF SIZE='2' ID='C2' VALUE='__math__int_{gamma} f(z) \ d z __eq__ int_{gamma} 1/z \ d z __eq__ 2 pi i__math__ ' />
+  </VARLIST>
+  <VARLIST NAME='JUSTIFICATION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='DU' VALUE=' __math__AA_(a__co__b in CC) : |a + b| __lt____eq__ |a| + |b| __math__' />
+    <STEPDEF SIZE='2' ID='DG' VALUE=' __math__AA_(a__co__b__co__c in M) : a * (b + c) __eq__ a * b + a * c__math__ ' />
+    <STEPDEF SIZE='2' ID='AG' VALUE=' __math__AA_(a__co__b__co__c in M) : (a + b) + c __eq__ a + (b + c)__math__ ' />
+    <STEPDEF SIZE='2' ID='KG' VALUE=' __math__AA_(a__co__b in M) : a * b __eq__ b * c __math__' />
+    <STEPDEF SIZE='2' ID='PG' VALUE=' __math__AA_{a__co__b in RR__co__ b!__eq__0} AA_{n in NN} : (a/b)^n __eq__ a^n/b^n__math__ ' />
+    <STEPDEF SIZE='2' ID='WE' VALUE='Definition (Weg): Sei __math__U subseteq CC__math__ eine Teilmenge und __math__a__co__b in RR__math__ mit __math__a __lt__ b__math__. Ein Weg __math__gamma__math__ in __math__U__math__ ist eine stetige Abbildung __math__gamma : [a__co__b] -__gt__ CC__math__ mit __math__gamma(U) subseteq U__math__.' />
+    <STEPDEF SIZE='2' ID='SPU' VALUE='Definition (Spur): Sei __math__gamma: [a__co__b] -__gt__ CC__math__ eine Weg. Die Spur von __math__gamma__math__ ist definiert als:  __math____qu__Spur__qu__(gamma):__eq__ { gamma(t) in CC | t in [a__co__b] }__math__. ' />
+    <STEPDEF SIZE='2' ID='WZ' VALUE='Definition (wegzusammenh__ae__ngend): Sei __math__U subseteq CC__math__ eine Teilmenge. __math__U__math__ hei__sz__t wegzusammenh__ae__ngend__co__  wenn es zu beliebigen Punkt __math__z_1__co__ z_2 in U__math__ einen Weg __math__gamma:[a__co__b] -__gt__ CC__math__ gibt__co__ mit __math__gamma(a)__eq__z_1__math____co____math__gamma(b)__eq__z_2__math__ und __math____qu__Spur__qu__(gamma) subseteq U__math__. ' />
+    <STEPDEF SIZE='2' ID='GE' VALUE='Definition (Gebiet): Eine Teilmenge __math__G subseteq CC__math__ hei__sz__t Gebiet__co__ wenn (1) __math__G__math__ offen__co__ (2) __math__G !__eq__ emptyset__math__ und (3) __math__G__math__ wegzusammenh__ae__ngend ist.' />
+    <STEPDEF SIZE='2' ID='WG1' VALUE='Definition (Weg glatt): Ein Weg __math__gamma: [a__co__b] -__gt__ CC__math__ hei__sz__t glatt__co__ wenn dieser stetig differenzierbar ist.' />
+    <STEPDEF SIZE='2' ID='UT' VALUE='Definition (Unterteilung): Sei __math__[a__co__b]__math__ ein Intervall__co__ __math__n in NN__math__ und __math__a__eq__u_0__lt__ ...__lt__ u_n __eq__ b__math__. __math__(u_0__co__ ...__co__ u_{n}) in RR^{n+1}__math__ hei__sz__t dann Unterteilung von __math__[a__co__b]__math__.' />
+    <STEPDEF SIZE='2' ID='WG2' VALUE='Definition (Wegunterteilung): Sei __math__gamma: [a__co__b] -__gt__ CC__math__ ein Weg in __math__U subseteq CC__math____co__ __math__n in NN__math____co__ __math__(u_0__co__ ...__co__ u_{n})__math__ eine Unterteilung von __math__[a__co__b]__math____co__ __math__gamma_k : [u_{k-1} __co__ u_k] -__gt__ CC__math__ f__ue__r alle __math__k in {1__co__ ... __co__n}__math__ ein Weg in __math__U__math__. __math__(gamma_{1}__co__ ...__co__ gamma_{n})__math__ hei__sz__t Wegunterteilung von __math__gamma__math____co__ wenn gilt __math__AA_{k in {1__co__...__co__n} } AA_{t in [u_{k-1} __co__ u_k ]} : gamma_k(t) __eq__ gamma(t)__math__.' />
+    <STEPDEF SIZE='2' ID='WG3' VALUE='Definition (Weg st__ue__ckweise glatt): Ein Weg __math__gamma: [a__co__b] -__gt__ CC__math__ hei__sz__t st__ue__ckweise glatt__co__ wenn eine Wegunterteilung __math__(gamma_1 __co__... gamma_n)__math__ aus glatten Wegen __math__gamma_k__math__ f__ue__r alle __math__k in {1__co__ ... __co__ n}__math__ existiert.' />
+    <STEPDEF SIZE='2' ID='WG4' VALUE='Definition (Wegintegral): Sei __math__f: U -__gt__ CC__math__ eine stetige Funktion und __math__gamma: [a__co__b]__math__ ein glatter Weg__co__ dann ist das Wegintegral wie folgt definiert: __math__int_{gamma} f :__eq__ int_{gamma} f(xi) d xi :__eq__ int_{a}^{b} f(gamma(t)) * gamma´(t) dt__math__. Ist __math__gamma__math__ st__ue__ckweise glatt bzgl. einer Wegunterteilung __math__(gamma_{1}__co__ ...__co__ gamma_{n})__math____co__ dann definiert man __math__int_{gamma} f(xi) d xi :__eq__ sum_{k__eq__1}^{n} int_{gamma_{k}} f(xi) d xi__math__.' />
+    <STEPDEF SIZE='2' ID='KK' VALUE='Berechnung: __math__ bar{e^{i*t}} __eq__ bar{cos(t) + i sin(t)} __math__ __math____eq__ cos(t) - i sin(t) __eq__ cos(t) + i sin(-t) __math__ __math__ __eq__ cos(-t) + i sin(-t) __eq__   e^{-i*t} __math__ f__ue__r alle __math__t in RR__math__' />
+    <STEPDEF SIZE='2' ID='LIN' VALUE='Das Integral ist linear__co__ d.h. __math__int lambda * f(z) + mu * g(z) dz __eq__ lambda int f(z) dz + mu * int g(z) dz__math__' />
+    <STEPDEF SIZE='2' ID='PE' VALUE='Pythagoras am Einheitskreis: __math__cos^2(alpha) + sin^2(alpha) __eq__ 1__math__' />
+    <STEPDEF SIZE='2' ID='EX' VALUE='__math__e^{it} __eq__ cos(t) +i *sin(t)__math__ f__ue__r __math__t in RR__math__' />
+    <STEPDEF SIZE='2' ID='BE' VALUE='__math__|z| __eq__ sqrt(z * bar{z}) __eq__ sqrt(z_1^2 + z_2^2)__math__ f__ue__r __math__z__eq__z_1 + iz_2__math__und __math__z_1__co__z_2 in RR__math__' />
+  </VARLIST>
+  <VARLIST NAME='PROOFSTEP_OPTIONS'>
+    <STEPDEF SIZE='2' ID='S1' VALUE='Wir zeigen zun__ae__chst__co__ dass __math__int_{gamma} bar{z}   d z __eq__ 2 pi * r^2 * i__math__ mit __math__g(z):__eq__ bar{z}__math__ gilt.' />
+    <STEPDEF SIZE='2' ID='S2' VALUE='__math__int_{gamma} bar{z}  d z __eq__ int_{0}^{2 pi} g(gamma(t)) * gamma__ap__(t) dt__math__' />
+    <STEPDEF SIZE='2' ID='S3' VALUE=' __math__int_{0}^{2 pi} bar{r * e^{i*t}} * (r * i * e^{i*t})  dt__math__' />
+    <STEPDEF SIZE='2' ID='S4' VALUE=' __math__int_{0}^{2 pi} r * bar{e^{i*t}} * (r * i * e^{i*t})  dt__math__' />
+    <STEPDEF SIZE='2' ID='S5' VALUE=' __math__int_{0}^{2 pi} r * e^{-i*t} * (r * i* e^{i*t})  dt__math__' />
+    <STEPDEF SIZE='2' ID='S6' VALUE=' __math__r^2 * i * int_{0}^{2 pi}  e^{-i*t} * e^{i*t}  dt __math__' />
+    <STEPDEF SIZE='2' ID='S7' VALUE=' __math__r^2 * i * int_{0}^{2 pi}  1 dt__math__ ' />
+    <STEPDEF SIZE='2' ID='S8' VALUE=' __math__ r^2 * i * (z |_0^{2 pi}) __eq__ r^2 * i * (2 pi - 0) __eq__ 2 pi * r^2 * i__math__' />
+    <STEPDEF SIZE='2' ID='S9' VALUE='Wir setzen nun die G__ue__ltigkeit von [C1] voraus und beweisen [C2]:' />
+    <STEPDEF SIZE='2' ID='S10' VALUE='__math__int_{gamma} 1/z d z__math__' />
+    <STEPDEF SIZE='2' ID='S11' VALUE='__math__int_{0}^{2 pi} 1/(gamma(t)) * gamma(t)__ap__ dt__math__' />
+    <STEPDEF SIZE='2' ID='S12' VALUE='__math__int_{gamma} 1/z * bar{z} / bar{z} d z__math__ mit __math__z __eq__ r*e^{it} !__eq__ 0__math__ f__ue__r alle __math__t in [0__co__ 2 pi]__math__' />
+    <STEPDEF SIZE='2' ID='P13' VALUE='__math__int_{gamma} bar{z} /(z bar{z}) d z__math__ mit __math__z __eq__ r*e^{it} !__eq__ 0__math__ f__ue__r alle __math__t in [0__co__ 2 pi]__math__' />
+    <STEPDEF SIZE='2' ID='P14' VALUE='__math__int_{gamma} bar{z} /{ |z|^2 } d z__math__ mit __math__|z| __eq__ r __gt__ 0__math__ ' />
+    <STEPDEF SIZE='2' ID='P14A' VALUE='__math__int_{gamma} bar{z} /{ |z|^2 } d z__math__ mit __math__z __eq__ r*(cos (t) +i sin(t)) !__eq__ 0__math__ f__ue__r alle __math__t in [0__co__ 2 pi]__math__' />
+    <STEPDEF SIZE='2' ID='P15A' VALUE='__math__int_{gamma} bar{z} /{ r^2 * (cos^2(t) + sin^2(t)) } d z__math__ mit __math__z __eq__ r*(cos (t} +i sin(t)) !__eq__ 0__math__ f__ue__r alle __math__t in [0__co__ 2 pi]__math__' />
+    <STEPDEF SIZE='2' ID='P16' VALUE='__math__int_{gamma} bar{z} /{ r^2)   d z __eq__ 1/( r^2) int_{gamma} bar{z}    d z __eq__ (2pi * r^2 * i)/( r^2} __eq__ 2pii__math__' />
+    <STEPDEF SIZE='5' ID='S1' CONNECTION=' ' JUST='P3' OPTJUST='' VALUE='Wir zeigen zun__ae__chst__CO__ dass __math__int_{gamma} bar{z}   d z __eq__ 2 pi * r^2 * i__math__ mit __math__g(z):__eq__ bar{z}__math__ gilt.' />
+    <STEPDEF SIZE='5' ID='S2' CONNECTION=' ' JUST='WG4' OPTJUST='' VALUE='__math__int_{gamma} bar{z}  d z __eq__ int_{0}^{2 pi} g(gamma(t)) * gamma__ap__(t) dt__math__' />
+    <STEPDEF SIZE='5' ID='S3' CONNECTION='__eq__' JUST='P2' OPTJUST='' VALUE=' __math__int_{0}^{2 pi} bar{r * e^{i*t}} * (r * i * e^{i*t})  dt__math__' />
+    <STEPDEF SIZE='5' ID='S4' CONNECTION='__eq__' JUST='P1' OPTJUST='' VALUE=' __math__int_{0}^{2 pi} r * bar{e^{i*t}} * (r * i * e^{i*t})  dt__math__' />
+    <STEPDEF SIZE='5' ID='S5' CONNECTION='__eq__' JUST='KK' OPTJUST='' VALUE=' __math__int_{0}^{2 pi} r * e^{-i*t} * (r * i* e^{i*t})  dt__math__' />
+    <STEPDEF SIZE='5' ID='S6' CONNECTION='__eq__' JUST='LIN' OPTJUST='' VALUE=' __math__r^2 * i * int_{0}^{2 pi}  e^{-i*t} * e^{i*t}  dt __math__' />
+    <STEPDEF SIZE='5' ID='S7' CONNECTION='__eq__' JUST='' OPTJUST='' VALUE=' __math__r^2 * i * int_{0}^{2 pi}  1 dt__math__ ' />
+    <STEPDEF SIZE='5' ID='S8' CONNECTION='__eq__' JUST='' OPTJUST='' VALUE=' __math__ r^2 * i * (z |_0^{2 pi}) __eq__ r^2 * i * (2 pi - 0) __eq__ 2 pi * r^2 * i__math__' />
+    <STEPDEF SIZE='5' ID='C1' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='' />
+    <STEPDEF SIZE='5' PREVIOUS=' ' ID='S9' CONNECTION=' ' JUST='' OPTJUST='' VALUE='Wir setzen nun die G__ue__ltigkeit von [C1] voraus und beweisen [C2]:' />
+    <STEPDEF SIZE='5' ID='S10' CONNECTION=' ' JUST='P4' OPTJUST='' VALUE='__math__int_{gamma} 1/z d z__math__' />
+    <STEPDEF SIZE='5' ID='S11' CONNECTION='__eq__' JUST='WG4' OPTJUST='' VALUE='__math__int_{0}^{2 pi} 1/(gamma(t)) * gamma(t)__ap__ dt__math__' />
+    <STEPDEF SIZE='5' ID='S12' CONNECTION='__eq__' JUST='' OPTJUST='' VALUE='__math__int_{gamma} 1/z * bar{z} / bar{z} d z__math__ mit __math__z __eq__ r*e^{it} !__eq__ 0__math__ f__ue__r alle __math__t in [0__CO__ 2 pi]__math__' />
+    <STEPDEF SIZE='5' ID='P13' CONNECTION='__eq__' JUST='' OPTJUST='' VALUE='__math__int_{gamma} bar{z} /(z bar{z}) d z__math__ mit __math__z __eq__ r*e^{it} !__eq__ 0__math__ f__ue__r alle __math__t in [0__CO__ 2 pi]__math__' />
+    <STEPDEF SIZE='5' ID='P14' CONNECTION='__eq__' JUST='BE' OPTJUST='' VALUE='__math__int_{gamma} bar{z} /{ |z|^2 } d z__math__ mit __math__|z| __eq__ r __gt__ 0__math__ ' />
+    <STEPDEF SIZE='5' ID='P16' CONNECTION='__eq__' JUST='LIN,C1' OPTJUST='' VALUE='__math__int_{gamma} bar{z} /{ r^2)   d z __eq__ 1/( r^2) int_{gamma} bar{z}    d z __eq__ (2pi * r^2 * i)/( r^2} __eq__ 2pii__math__' />
+    <STEPDEF SIZE='5' ID='C2' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE='' />
+    <STEPDEF SIZE='5' PREVIOUS='P13' ID='P14A' CONNECTION='__eq__' JUST='EX' OPTJUST='' VALUE='__math__int_{gamma} bar{z} /{ |z|^2 } d z__math__ mit __math__z __eq__ r*(cos (t) +i sin(t)) !__eq__ 0__math__ f__ue__r alle __math__t in [0__CO__ 2 pi]__math__' />
+    <STEPDEF SIZE='5' ID='P15A' CONNECTION='__eq__' JUST='' OPTJUST='' VALUE='__math__int_{gamma} bar{z} /{ r^2 * (cos^2(t) + sin^2(t)) } d z__math__ mit __math__z __eq__ r*(cos (t} +i sin(t)) !__eq__ 0__math__ f__ue__r alle __math__t in [0__CO__ 2 pi]__math__' />
+    <STEPDEF SIZE='5' ID='P16' CONNECTION='__eq__' JUST='LIN,C1' OPTJUST='' VALUE='' />
+  </VARLIST>
+</EPROOF>

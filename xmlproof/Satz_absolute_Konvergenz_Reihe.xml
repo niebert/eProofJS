@@ -1,0 +1,58 @@
+<EPROOF>
+  <VARIABLE NAME='Theorem_Title' VALUE='Absolute Konvergenz und Konvergenz eine Reihe' />
+  <VARIABLE NAME='Theorem_Label' VALUE='Theorem' />
+  <VARIABLE NAME='Author' VALUE='Author Name' />
+  <VARIABLE NAME='eMail' VALUE='mail@author.inf' />
+  <VARIABLE NAME='LANGUAGE' VALUE='DE' />
+  <VARIABLE NAME='Theorem_Appendix' VALUE='Siehe Definition __lt__a href__eq__'http://de.wikipedia.org/wiki/Absolute_Konvergenz' target__eq__'blank'__gt__Wiki:Absolute Konvergenz__lt__/a__gt__' />
+  <VARIABLE NAME='Per_Error_Minus_Percent' VALUE='9' />
+  <VARIABLE NAME='Assessment_Minus_Percent' VALUE='2' />
+  <VARIABLE NAME='Suggestion_Minus_Percent' VALUE='17' />
+  <VARIABLE NAME='unnecessary_connections' VALUE='3' />
+  <VARIABLE NAME='unnecessary_proofsteps' VALUE='3' />
+  <VARIABLE NAME='unnecessary_justifications' VALUE='2' />
+  <VARIABLE NAME='selectbox_proofsteps' VALUE='1' />
+  <VARIABLE NAME='allow_own_proofsteps' VALUE='1' />
+  <VARIABLE NAME='remap_proofstep_IDs' VALUE='1' />
+  <VARIABLE NAME='randomize_proofstep_IDs' VALUE='1' />
+  <VARIABLE NAME='cryptkey' VALUE='ACBSD' />
+  <VARIABLE NAME='show_Load_Save_Control' VALUE='1' />
+  <VARIABLE NAME='show_Main_Control' VALUE='1' />
+  <VARIABLE NAME='show_links' VALUE='1' />
+  <VARIABLE NAME='show_assessment' VALUE='1' />
+  <VARIABLE NAME='show_suggestions' VALUE='1' />
+  <VARIABLE NAME='show_proof_solution' VALUE='1' />
+  <VARIABLE NAME='AuthoringMode' VALUE='1' />
+  <VARIABLE NAME='AssessmentMode' VALUE='0' />
+  <VARIABLE NAME='MathFormat' VALUE='AM_HTMLorMML' />
+  <VARIABLE NAME='COMMONCONTROL' VALUE='4980__co__4981__co__4982__co__4983' />
+  <VARIABLE NAME='QUESTIONTEXT' VALUE='4980__co__4981__co__4982__co__4983' />
+  <VARIABLE NAME='vQID' VALUE='SANTEG' />
+  <VARIABLE NAME='alertDOM' VALUE='0' />
+  <VARIABLE NAME='Offline' VALUE='' />
+  <VARLIST NAME='PRECONDITION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='P1' VALUE='__math__(a_(n))_(n in NN) in CC^{NN}__math__ ist eine Folge in __math__CC__math__' />
+    <STEPDEF SIZE='2' ID='P2' VALUE='__math__sum_(n__eq__0)^(oo) a_n__math__ ist absolute konvergent' />
+  </VARLIST>
+  <VARLIST NAME='CONCLUSION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='C1' VALUE='__math__sum_(n__eq__0)^(oo) a_n__math__ ist konvergent' />
+  </VARLIST>
+  <VARLIST NAME='JUSTIFICATION_OPTIONS'>
+    <STEPDEF SIZE='2' ID='CK' VALUE='Nach Cauchy-Kriterium f__ue__r konvergente Reihen __math__sum_(k__eq__0)^(oo) z_k__math__ gilt __math__AA_(epsilon__gt__0) EE_(n_epsilon in NN) AA_(n__gt__m__gt____eq__ n_epsilon) |sum_(k__eq__m+1)^(n) z_k| __lt__ epsilon__math__ . ' />
+    <STEPDEF SIZE='2' ID='DU' VALUE='Dreiecksungleichung __math__AA_(v__co__w in CC):  |v+w|__lt____eq__|v|+|w|__math__ .' />
+    <STEPDEF SIZE='2' ID='AK' VALUE='Definition der absoluten Konvergenz' />
+  </VARLIST>
+  <VARLIST NAME='PROOFSTEP_OPTIONS'>
+    <STEPDEF SIZE='2' ID='S1' VALUE='Gegeben sei die absolut konvergente Reihe __math__sum_(n__eq__0)^(oo) a_n __math__ ' />
+    <STEPDEF SIZE='2' ID='S2_F1' VALUE='__math__AA_(epsilon __gt__ 0) EE_(n_epsilon in NN) AA_(n__gt__m__gt____eq__ n_epsilon) |  sum_(k__eq__0)^(n) {:|a_k|:} - sum_(k__eq__0)^(m) {:|a_k|:} | __eq__ |sum_(k__eq__m)^(n) {:|a_k|:} | __lt__ epsilon __math__ .' />
+    <STEPDEF SIZE='2' ID='S2' VALUE='__math__AA_(epsilon __gt__ 0) EE_(n_epsilon in NN) AA_(n__gt__m__gt____eq__ n_epsilon) |  sum_(k__eq__0)^(n) {:|a_k|:} - sum_(k__eq__0)^(m) {:|a_k|:} | __eq__ |sum_(k__eq__m+1)^(n) {:|a_k|:} | __lt__ epsilon __math__ .' />
+    <STEPDEF SIZE='2' ID='S3' VALUE=' __math__AA_(epsilon __gt__ 0) EE_(n_epsilon in NN) AA_(n__gt__m__gt____eq__ n_epsilon) | sum_(k__eq__m+1)^(n) {:|a_k|:} | __eq__ sum_(k__eq__m+1)^(n) |a_k| __lt__ epsilon __math__.  ' />
+    <STEPDEF SIZE='2' ID='S3_F1' VALUE=' __math__AA_(epsilon __gt__ 0) EE_(n_epsilon in NN) AA_(n__gt__m__gt____eq__ n_epsilon) | sum_(k__eq__m+1)^(n) {:|a_k|:} | __lt__ sum_(k__eq__m+1)^(n) |a_k| __lt__ epsilon __math__. ' />
+    <STEPDEF SIZE='2' ID='S4' VALUE=' __math__AA_(epsilon __gt__ 0) EE_(n_epsilon in NN) AA_(n__gt__m__gt____eq__ n_epsilon) |sum_(k__eq__m+1)^(n) a_k|__math__ __math____lt____eq__ sum_(k__eq__m+1)^(n) |a_k| __lt__ epsilon __math__.  ' />
+    <STEPDEF SIZE='5' ID='S1' CONNECTION=' ' JUST='' OPTJUST='P1' VALUE='Gegeben sei die absolut konvergente Reihe __math__sum_(n__eq__0)^(oo) a_n __math__ ' />
+    <STEPDEF SIZE='5' ID='S2' CONNECTION='__eq____gt__' JUST='AK,CK' OPTJUST='P2' VALUE='__math__AA_(epsilon __gt__ 0) EE_(n_epsilon in NN) AA_(n__gt__m__gt____eq__ n_epsilon) |  sum_(k__eq__0)^(n) {:|a_k|:} - sum_(k__eq__0)^(m) {:|a_k|:} | __eq__ |sum_(k__eq__m+1)^(n) {:|a_k|:} | __lt__ epsilon __math__ .' />
+    <STEPDEF SIZE='5' ID='S3' CONNECTION='__eq____gt__' JUST='' OPTJUST='' VALUE=' __math__AA_(epsilon __gt__ 0) EE_(n_epsilon in NN) AA_(n__gt__m__gt____eq__ n_epsilon) | sum_(k__eq__m+1)^(n) {:|a_k|:} | __eq__ sum_(k__eq__m+1)^(n) |a_k| __lt__ epsilon __math__.  ' />
+    <STEPDEF SIZE='5' ID='S4' CONNECTION='__eq____gt__' JUST='DU' OPTJUST='' VALUE=' __math__AA_(epsilon __gt__ 0) EE_(n_epsilon in NN) AA_(n__gt__m__gt____eq__ n_epsilon) |sum_(k__eq__m+1)^(n) a_k|__math__ __math____lt____eq__ sum_(k__eq__m+1)^(n) |a_k| __lt__ epsilon __math__.  ' />
+    <STEPDEF SIZE='5' ID='C1' CONNECTION='__eq____gt__' JUST='CK' OPTJUST='' VALUE='' />
+  </VARLIST>
+</EPROOF>
